@@ -1703,12 +1703,18 @@ if (window.matchMedia('(display-mode: standalone)').matches) {
   console.log("Running as installed app");
 }
 
-// Service Worker for offline use (optional but powerful)
 if ('serviceWorker' in navigator) {
+  // Use absolute path for GitHub Pages
+  const swPath = '/Digital-forest-of-support/sw.js';  // ← Your repo name
+  
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(err => {
-      console.log('ServiceWorker registration failed: ', err);
-    });
+    navigator.serviceWorker.register(swPath)
+      .then(registration => {
+        console.log('SW registered: ', registration);
+      })
+      .catch(err => {
+        console.log('SW registration failed: ', err);
+      });
   });
 }
     </script>
