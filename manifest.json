@@ -1,0 +1,21 @@
+{
+  "name": "Forest of Support",
+  "short_name": "ForestHeal",
+  "description": "Digital sanctuary based on tree-healing principles",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e6f2e6",
+  "theme_color": "#4a7c3f",
+  "icons": [
+    {
+      "src": "https://emojicdn.elk.sh/🌳",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://emojicdn.elk.sh/🌳",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
