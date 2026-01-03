@@ -1698,5 +1698,18 @@ function determineCategoryFromText(text) {
             localStorage.setItem('forestTree', JSON.stringify(myTree));
         }
     </script>
+// Check if app is installed
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  console.log("Running as installed app");
+}
+
+// Service Worker for offline use (optional but powerful)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(err => {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
 </body>
   </html>
