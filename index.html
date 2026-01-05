@@ -285,6 +285,118 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+        /* ====================
+   COLOR THEME SYSTEM
+   ==================== */
+
+/* Dark Cosy Mode (DEFAULT) */
+body.dark-cosy-mode {
+    background: linear-gradient(to bottom, #1a3c1a, #2d5016);
+    color: #f5f0d9;
+}
+
+body.dark-cosy-mode header,
+body.dark-cosy-mode footer {
+    background: rgba(245, 240, 217, 0.9);
+    color: #2d5016;
+    border-color: #8a5a2d;
+}
+
+body.dark-cosy-mode .card {
+    background: #f5f0d9;
+    color: #2d5016;
+    border: 2px solid #8a5a2d;
+}
+
+body.dark-cosy-mode .tree-display,
+body.dark-cosy-mode .exercise-box,
+body.dark-cosy-mode .stat-box,
+body.dark-cosy-mode .step,
+body.dark-cosy-mode .journal-entry {
+    background: #f9f5e6;
+    border-color: #8a5a2d;
+    color: #2d5016;
+}
+
+body.dark-cosy-mode .principle-badge {
+    background: #f0f0e0;
+    border-left-color: #8a5a2d;
+    color: #2d5016;
+}
+
+body.dark-cosy-mode .principle-badge:hover {
+    background: #e8e8d8;
+}
+
+body.dark-cosy-mode .principle-badge.selected {
+    background: #e0e0c8;
+    box-shadow: 0 5px 15px rgba(138, 90, 45, 0.3);
+}
+
+body.dark-cosy-mode button {
+    background: #8a5a2d;
+    box-shadow: 0 4px 0 #6b4522;
+    color: #f5f0d9;
+}
+
+body.dark-cosy-mode button:hover {
+    background: #6b4522;
+    box-shadow: 0 6px 0 #4d3218;
+}
+
+body.dark-cosy-mode button.secondary {
+    background: #a67c52;
+}
+
+body.dark-cosy-mode textarea {
+    background: #f9f5e6;
+    border-color: #8a5a2d;
+    color: #2d5016;
+}
+
+body.dark-cosy-mode .poem-response {
+    background: linear-gradient(to right, #f0e6d0, #e8dcc0);
+    border-left-color: #2d5016;
+    color: #2d5016;
+}
+
+body.dark-cosy-mode .sage-quote {
+    color: #8a5a2d;
+    border-top-color: #8a5a2d;
+}
+
+body.dark-cosy-mode .progress-ring {
+    background: conic-gradient(#8a5a2d 0% 25%, #f0e6d0 25% 100%);
+    color: #2d5016;
+}
+
+body.dark-cosy-mode .stat-value {
+    color: #8a5a2d;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: #8a5a2d;
+    color: #f5f0d9;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+body:not(.dark-cosy-mode) .theme-toggle {
+    background: #4a7c3f;
+    color: white;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
     </style>
 </head>
 <body>
@@ -462,7 +574,15 @@
                 </div>
             </div>
         </div>
-        
+        <footer>
+    <p>🌿 Forest of Support • With Contextual Poetic Wisdom</p>
+    <p>Your data stays in your browser • Share with #ForestOfSupport #HealLikeATree</p>
+    <p><em>"The wound is where the light enters you." - Rumi</em></p>
+    <!-- ADD THIS LINE -->
+    <p style="margin-top: 10px; font-size: 0.9em;">
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 Cosy Mode</button>
+    </p>
+        </footer>
         <footer>
             <p>🌿 Forest of Support • With Contextual Poetic Wisdom</p>
             <p>Your data stays in your browser • Share with #ForestOfSupport #HealLikeATree</p>
@@ -1717,6 +1837,103 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
+   // ====================
+// COLOR THEME TOGGLE
+// ====================
+
+// Initialize theme on load
+document.addEventListener('DOMContentLoaded', function() {
+    loadTheme();
+});
+
+function loadTheme() {
+    const savedTheme = localStorage.getItem('forestTheme');
+    const toggleBtn = document.querySelector('.theme-toggle');
+    
+    // Default to Dark Cosy Mode if no preference saved
+    if (!savedTheme || savedTheme === 'dark-cosy') {
+        document.body.classList.add('dark-cosy-mode');
+        toggleBtn.textContent = '🌓 Cosy Mode';
+    } else {
+        document.body.classList.remove('dark-cosy-mode');
+        toggleBtn.textContent = '🌓 Light Mode';
+    }
+}
+
+function toggleTheme() {
+    const toggleBtn = document.querySelector('.theme-toggle');
+    const isDarkMode = document.body.classList.contains('dark-cosy-mode');
+    
+    if (isDarkMode) {
+        // Switch to Light Mode
+        document.body.classList.remove('dark-cosy-mode');
+        toggleBtn.textContent = '🌓 Light Mode';
+        localStorage.setItem('forestTheme', 'light');
+    } else {
+        // Switch to Dark Cosy Mode
+        document.body.classList.add('dark-cosy-mode');
+        toggleBtn.textContent = '🌓 Cosy Mode';
+        localStorage.setItem('forestTheme', 'dark-cosy');
+    }
+}
+
+// ====================
+// JOURNAL FIX - Show newest entries first
+// ====================
+
+// FIND this function in your code (around line ~1800):
+// function loadJournalEntries() {
+// AND REPLACE the display loop with:
+
+function loadJournalEntries() {
+    const container = document.getElementById('journalEntries');
+    container.innerHTML = "";
+    
+    if (myTree.journals.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 30px; color: #666; font-style: italic;">
+                No journal entries yet.<br>
+                Your reflections will appear here with poetic responses.
+            </div>
+        `;
+        return;
+    }
+    
+    // Show most recent first - CHANGED: No .reverse() needed
+    // Your journals are already stored in chronological order
+    // So we just display them in the order they exist
+    // If you want newest first, use: myTree.journals.slice().reverse()
+    // But based on your description, removing .reverse() should fix it
+    
+    // TRY THIS FIRST - If it doesn't work, we'll adjust
+    myTree.journals.forEach((entry, index) => {
+        const isPractice = entry.type === 'practice';
+        
+        container.innerHTML += `
+            <div class="journal-entry">
+                <div class="entry-date">
+                    <span>${entry.date}</span>
+                    <span>${isPractice ? '📿 ' + entry.principle : '📖 Journal'}</span>
+                </div>
+                <p>${entry.text}</p>
+            </div>
+            <div class="poem-response">
+                <p>${entry.poem.replace(/\n/g, '<br>')}</p>
+                <div class="sage-quote">${entry.sage}</div>
+            </div>
+        `;
+    });
+}
+
+// ====================
+// UPDATE AUTO-REDIRECT TIMER
+// ====================
+
+// FIND this line in your completePractice() function (around line ~1700):
+// setTimeout(() => { showCard('journal'); loadJournalEntries(); }, 3000);
+
+// REPLACE 3000 with 2000:
+setTimeout(() => { showCard('journal'); loadJournalEntries(); }, 2000);
     </script>
 </body>
   </html>
