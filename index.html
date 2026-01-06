@@ -2204,7 +2204,104 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
-
+// Add this right after your existing service worker registration
+// UPDATE DETECTION SYSTEM
+if ('serviceWorker' in navigator) {
+  // Listen for new service worker installation
+  let newWorker;
+  
+  navigator.serviceWorker.addEventListener('controllerchange', function() {
+    console.log('🌳 Controller changed - reloading for update');
+    window.location.reload();
+  });
+  
+  // Check for updates periodically
+  function checkForUpdates() {
+    navigator.serviceWorker.getRegistration().then(reg => {
+      if (reg) {
+        reg.update(); // Force check for updates
+        
+        // Listen for installing new worker
+        reg.addEventListener('updatefound', () => {
+          newWorker = reg.installing;
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              // New update available - show notification
+              showUpdateNotification(newWorker);
+            }
+          });
+        });
+      }
+    });
+  }
+  
+  function showUpdateNotification(worker) {
+    // Create update notification
+    const updateDiv = document.createElement('div');
+    updateDiv.innerHTML = `
+      <div style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #4a7c3f;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 9999;
+        max-width: 300px;
+        animation: fadeIn 0.5s;
+      ">
+        <strong>🌳 Update Available!</strong>
+        <p style="margin: 8px 0; font-size: 0.9em;">New features available. Update now?</p>
+        <div style="display: flex; gap: 10px; margin-top: 10px;">
+          <button onclick="installUpdate(this)" style="
+            background: white;
+            color: #4a7c3f;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            flex: 1;
+          ">Update Now</button>
+          <button onclick="this.parentElement.parentElement.remove()" style="
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            flex: 1;
+          ">Later</button>
+        </div>
+      </div>
+    `;
+    
+    document.body.appendChild(updateDiv);
+    
+    // Add global function for the button
+    window.installUpdate = function(btn) {
+      btn.innerHTML = 'Updating...';
+      btn.disabled = true;
+      
+      // Tell service worker to skip waiting
+      if (worker) {
+        worker.postMessage({action: 'skipWaiting'});
+      }
+      
+      // The controllerchange event will trigger reload
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    };
+  }
+  
+  // Check for updates on load and every hour
+  window.addEventListener('load', function() {
+    setTimeout(checkForUpdates, 3000); // Check 3 seconds after load
+    setInterval(checkForUpdates, 60 * 60 * 1000); // Check every hour
+  });
+}
         // Optional: Add to any card to see poem statistics
 function showPoemStats() {
     let stats = "📊 Poem Usage Statistics:\n\n";
