@@ -2204,7 +2204,29 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
-   // ====================
+
+        // Optional: Add to any card to see poem statistics
+function showPoemStats() {
+    let stats = "📊 Poem Usage Statistics:\n\n";
+    let totalShown = 0;
+    let totalPoems = 0;
+    
+    for (const [category, poems] of Object.entries(poeticWisdom)) {
+        const shownCount = myTree.shownPoemsByCategory[category]?.length || 0;
+        const totalInCategory = poems.length;
+        totalShown += shownCount;
+        totalPoems += totalInCategory;
+        
+        stats += `${category}: ${shownCount}/${totalInCategory} poems shown\n`;
+    }
+    
+    stats += `\nTotal: ${totalShown}/${totalPoems} poems shown`;
+    stats += `\nLast Practice: ${myTree.lastPracticePrinciple || 'None yet'}`;
+    
+    alert(stats);
+}
+  
+// ====================
 // COLOR THEME TOGGLE
 // ====================
 
