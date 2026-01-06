@@ -1930,8 +1930,16 @@ function getContextualPoem(journalText, practicePrinciple = null) {
                 return;
             }
             
-            const journalText = document.getElementById('practiceJournal').value.trim();
-            const principle = principles.find(p => p.id === selectedPrinciple);
+    // Get contextual poem with practice principle
+    const principle = principles.find(p => p.id === selectedPrinciple);
+    const poem = getContextualPoem(journalText, principle.id);
+    
+      /*const journalText = document.getElementById('practiceJournal').value.trim();
+        const principle = principles.find(p => p.id === selectedPrinciple);*/
+  
+            // Update last practice principle
+    myTree.lastPracticePrinciple = principle.id;
+    
             
             if (!journalText) {
                 alert("Please write a journal reflection before completing.");
