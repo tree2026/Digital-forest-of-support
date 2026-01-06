@@ -593,16 +593,43 @@ body:not(.dark-cosy-mode) .theme-toggle {
     <script>
         // Forest of Support - With Contextual Poetic Wisdom
         // 144 poems organized in 12 categories
-        
-        let myTree = {
-            name: "",
-            plantedDate: "",
-            rings: 0,
-            stage: 1,
-            journals: [],
-            practices: [],
-            poemsReceived: 0
-        };
+
+
+        // Replace the current myTree initialization with:
+let myTree = {
+    name: "",
+    plantedDate: "",
+    rings: 0,
+    stage: 1,
+    journals: [],
+    practices: [],
+    poemsReceived: 0,
+    lastPracticePrinciple: null,  // Track last practice category
+    poemUsage: {},  // Track poem usage counts: {"rooting_0": 1, "bark_3": 2}
+    shownPoemsByCategory: {  // Track which poems shown per category
+        rooting: [],
+        bark: [],
+        rings: [],
+        release: [],
+        reaching: [],
+        network: [],
+        bending: [],
+        shape: [],
+        seasons: [],
+        wholeness: [],
+        patience: [],
+        presence: []
+    }
+};
+       // let myTree = {
+           // name: "",
+           // plantedDate: "",
+           // rings: 0,
+           // stage: 1,
+           // journals: [],
+           // practices: [],
+          //  poemsReceived: 0
+       // };
         
         let currentStep = 1;
         let selectedPrinciple = null;
