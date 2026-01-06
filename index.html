@@ -1716,8 +1716,162 @@ let myTree = {
             currentStep--;
             document.getElementById(`step${currentStep}`).style.display = 'block';
         }
+
+        // Enhanced poem selection with scoring system
+function getContextualPoem(journalText, practicePrinciple = null) {
+    const text = journalText.toLowerCase();
+    
+    // Determine keyword matching scores for each category
+    const categoryKeywords = {
+        rooting: ['ground', 'stable', 'foundation', 'root', 'shake', 'tremble', 'unsure', 'lost', 'anchor', 'steady', 'earth', 'soil', 'foundation'],
+        bark: ['boundary', 'protect', 'shield', 'defend', 'wall', 'barrier', 'safe', 'vulnerable', 'guard', 'limit', 'protect', 'shell', 'armor'],
+        rings: ['grow', 'learn', 'experience', 'year', 'time', 'past', 'memory', 'history', 'story', 'lesson', 'age', 'circle', 'ring'],
+        release: ['let go', 'release', 'forgive', 'move on', 'past', 'old', 'change', 'end', 'goodbye', 'leave', 'shed', 'autumn', 'fall'],
+        reaching: ['goal', 'aspire', 'light', 'reach', 'aim', 'purpose', 'dream', 'future', 'hope', 'want', 'aspiration', 'target', 'ambition'],
+        network: ['connect', 'friend', 'family', 'community', 'together', 'alone', 'isolated', 'support', 'help', 'share', 'together', 'community', 'connection'],
+        bending: ['flexible', 'bend', 'storm', 'challenge', 'difficult', 'hard', 'resilient', 'adapt', 'change', 'yield', 'flex', 'wind', 'weather'],
+        shape: ['authentic', 'true', 'self', 'identity', 'who am i', 'unique', 'different', 'real', 'genuine', 'me', 'authenticity', 'individual'],
+        seasons: ['cycle', 'season', 'change', 'phase', 'period', 'time', 'rhythm', 'pattern', 'repeat', 'return', 'spring', 'summer', 'winter', 'autumn'],
+        wholeness: ['heal', 'whole', 'complete', 'integrate', 'scar', 'broken', 'repair', 'mend', 'fix', 'recover', 'healing', 'integration', 'scars'],
+        patience: ['wait', 'patience', 'slow', 'time', 'process', 'gradual', 'evolve', 'develop', 'grow', 'unfold', 'patience', 'waiting', 'gradual'],
+        presence: ['now', 'present', 'mindful', 'aware', 'moment', 'here', 'today', 'attention', 'focus', 'current', 'now', 'present', 'mindfulness']
+    };
+    
+    // Calculate category scores based on keyword matches
+    let categoryScores = {};
+    let keywordMatches = {};
+    
+    for (const [cat, keywords] of Object.entries(categoryKeywords)) {
+        let score = 0;
+        let matches = [];
         
-        // Analyze journal text and match to wisdom category
+        keywords.forEach(keyword => {
+            if (text.includes(keyword)) {
+                score += 2; // Base score for keyword match
+                matches.push(keyword);
+                
+                // Bonus for exact phrase matches
+                if (text.includes(` ${keyword} `) || 
+                    text.startsWith(`${keyword} `) || 
+                    text.endsWith(` ${keyword}`)) {
+                    score += 1;
+                }
+            }
+        });
+        
+        categoryScores[cat] = score;
+        keywordMatches[cat] = matches;
+    }
+    
+    // Get top categories (sort by score)
+    const sortedCategories = Object.entries(categoryScores)
+        .sort((a, b) => b[1] - a[1])
+        .filter(([cat, score]) => score > 0);
+    
+    // Get highest scoring category
+    const highestCategory = sortedCategories.length > 0 ? sortedCategories[0][0] : 'rooting';
+    
+    // Determine which category to prioritize (latest practice or highest keyword)
+    const priorityCategory = practicePrinciple || highestCategory;
+    
+    // Prepare list of all poems with scores
+    let poemCandidates = [];
+    
+    // Score all poems across all categories
+    for (const [category, poems] of Object.entries(poeticWisdom)) {
+        poems.forEach((poemObj, index) => {
+            const poemId = poemObj.id || `${category}_${index}`;
+            const usageCount = myTree.poemUsage[poemId] || 0;
+            const hasBeenShownTwice = usageCount >= 2;
+            
+            // Skip poems shown twice (according to your requirement)
+            if (hasBeenShownTwice) {
+                return;
+            }
+            
+            let score = 0;
+            const isUnseen = usageCount === 0;
+            
+            // Priority 1: Latest practice principle + unseen (100 points)
+            if (category === priorityCategory && isUnseen) {
+                score = 100;
+            }
+            // Priority 2: Exact match + unseen (80 points)
+            else if (category === highestCategory && isUnseen) {
+                score = 80;
+            }
+            // Priority 3: Same category + unseen (70 points)
+            else if (category === highestCategory && isUnseen) {
+                score = 70;
+            }
+            // Priority 4: Different category + high keyword match + unseen (60 points)
+            else if (categoryScores[category] > 0 && isUnseen) {
+                score = 60;
+            }
+            // Priority 5: Exact match + seen once (50 points)
+            else if (category === highestCategory && usageCount === 1) {
+                score = 50;
+            }
+            // Fallback: Random (10 points)
+            else {
+                score = 10;
+            }
+            
+            // Bonus for poems that contain user's keywords in the poem text
+            const poemText = poemObj.poem.toLowerCase();
+            keywordMatches[category]?.forEach(keyword => {
+                if (poemText.includes(keyword)) {
+                    score += 5; // Bonus for contextual relevance
+                }
+            });
+            
+            poemCandidates.push({
+                poem: poemObj,
+                score: score,
+                category: category,
+                poemId: poemId,
+                usageCount: usageCount,
+                isUnseen: isUnseen
+            });
+        });
+    }
+    
+    // Sort by score (highest first)
+    poemCandidates.sort((a, b) => b.score - a.score);
+    
+    // If no candidates (all poems shown twice), fallback to random from highest category
+    if (poemCandidates.length === 0) {
+        const fallbackPoems = poeticWisdom[highestCategory] || poeticWisdom.rooting;
+        const randomIndex = Math.floor(Math.random() * fallbackPoems.length);
+        return {
+            poem: fallbackPoems[randomIndex].poem,
+            sage: fallbackPoems[randomIndex].sage,
+            category: highestCategory,
+            poemId: `${highestCategory}_${randomIndex}`
+        };
+    }
+    
+    // Select top scoring poem
+    const selectedCandidate = poemCandidates[0];
+    
+    // Update usage tracking
+    const poemId = selectedCandidate.poemId;
+    myTree.poemUsage[poemId] = (myTree.poemUsage[poemId] || 0) + 1;
+    
+    // Track by category
+    if (!myTree.shownPoemsByCategory[selectedCandidate.category].includes(poemId)) {
+        myTree.shownPoemsByCategory[selectedCandidate.category].push(poemId);
+    }
+    
+    return {
+        poem: selectedCandidate.poem.poem,
+        sage: selectedCandidate.poem.sage,
+        category: selectedCandidate.category,
+        poemId: poemId,
+        score: selectedCandidate.score
+    };
+                      }
+      /*  // Analyze journal text and match to wisdom category
         function getContextualPoem(journalText) {
             const text = journalText.toLowerCase();
             
@@ -1762,7 +1916,7 @@ let myTree = {
             const poems = poeticWisdom[chosenCategory];
             const randomIndex = Math.floor(Math.random() * poems.length);
             return poems[randomIndex];
-        }
+        } */
         
         function completePractice() {
             if (!myTree.name) {
