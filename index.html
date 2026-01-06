@@ -1485,5 +1485,18 @@ if ('serviceWorker' in navigator) {
     }, 1000);
 }
     </script>
+    <script>
+// FORCE SERVICE WORKER UPDATE - ADD THIS BEFORE </body>
+if ('serviceWorker' in navigator && window.location.search.includes('forceupdate')) {
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        registrations.forEach(function(registration) {
+            registration.unregister();
+        });
+    }).then(function() {
+        localStorage.setItem('lastForceUpdate', new Date().toISOString());
+        window.location.href = window.location.href.split('?')[0] + '?v=' + Date.now();
+    });
+}
+    </script>
 </body>
 </html>
