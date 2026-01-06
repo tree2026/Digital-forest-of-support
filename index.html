@@ -1413,26 +1413,7 @@
             localStorage.setItem('forestTree', JSON.stringify(myTree));
         }
         
-        function showPoemStats() {
-            let stats = "📊 Poem Usage Statistics:\n\n";
-            let totalShown = 0;
-            let totalPoems = 0;
             
-            for (const [category, poems] of Object.entries(poeticWisdom)) {
-                const shownCount = myTree.shownPoemsByCategory[category]?.length || 0;
-                const totalInCategory = poems.length;
-                totalShown += shownCount;
-                totalPoems += totalInCategory;
-                
-                stats += `${category}: ${shownCount}/${totalInCategory} poems shown\n`;
-            }
-            
-            stats += `\nTotal: ${totalShown}/${totalPoems} poems shown`;
-            stats += `\nLast Practice: ${myTree.lastPracticePrinciple || 'None yet'}`;
-            stats += `\nApp Version: ${APP_VERSION}`;
-            
-            alert(stats);
-        }
     </script>
     
     <script>
