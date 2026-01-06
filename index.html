@@ -1632,12 +1632,32 @@ let myTree = {
             plantTree();
         }
         
-        function loadTree() {
+    function loadTree() {
+    const saved = localStorage.getItem('forestTree');
+    if (saved) {
+        myTree = JSON.parse(saved);
+        
+        // Ensure new properties exist if loading old data
+        myTree.lastPracticePrinciple = myTree.lastPracticePrinciple || null;
+        myTree.poemUsage = myTree.poemUsage || {};
+        myTree.shownPoemsByCategory = myTree.shownPoemsByCategory || {
+            rooting: [], bark: [], rings: [], release: [], reaching: [],
+            network: [], bending: [], shape: [], seasons: [], wholeness: [],
+            patience: [], presence: []
+        };
+    }
+}
+
+function saveTree() {
+    localStorage.setItem('forestTree', JSON.stringify(myTree));
+}
+      
+        /* function loadTree() {
             const saved = localStorage.getItem('forestTree');
             if (saved) {
                 myTree = JSON.parse(saved);
             }
-        }
+        }*/
         
         function updatePracticeCard() {
             const status = document.getElementById('practiceStatus');
