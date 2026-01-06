@@ -1,3 +1,14 @@
+// ADD THIS AT THE VERY TOP OF sw.js
+self.addEventListener('install', function(event) {
+    self.skipWaiting(); // Force immediate activation
+    console.log('🌳 SKIP WAITING - Force activating new service worker');
+});
+
+self.addEventListener('activate', function(event) {
+    event.waitUntil(clients.claim()); // Take control immediately
+    console.log('🌳 CLAIMING CLIENTS - Taking control of all pages');
+});
+
 // sw.js - Forest of Support Service Worker
 const APP_VERSION = '1.1';
 const CACHE_NAME = `forest-cache-v${APP_VERSION}`;
