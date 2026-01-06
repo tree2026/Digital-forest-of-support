@@ -1458,5 +1458,32 @@
             }
         }, 60 * 60 * 1000); // Check every hour
     </script>
+    <script>
+// FORCE SERVICE WORKER UPDATE
+if ('serviceWorker' in navigator) {
+    // Unregister ALL service workers
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+            registration.unregister();
+            console.log('🌳 Unregistered old service worker');
+        }
+    });
+    
+    // Clear all caches
+    if ('caches' in window) {
+        caches.keys().then(function(cacheNames) {
+            cacheNames.forEach(function(cacheName) {
+                caches.delete(cacheName);
+                console.log('🌳 Deleted cache:', cacheName);
+            });
+        });
+    }
+    
+    // Force reload after 1 second
+    setTimeout(function() {
+        window.location.reload(true); // true = hard reload
+    }, 1000);
+}
+    </script>
 </body>
 </html>
