@@ -2002,7 +2002,21 @@ function getContextualPoem(journalText, practicePrinciple = null) {
             }, 3000);
         }
         
-        function saveJournalEntry() {
+       function saveJournalEntry() {
+    const text = document.getElementById('newJournalEntry').value.trim();
+    
+    if (!text) {
+        alert("Please write something first.");
+        return;
+    }
+    
+    // Get contextual poem - use last practice principle if available
+    const practicePrinciple = myTree.lastPracticePrinciple || null;
+    const poem = getContextualPoem(text, practicePrinciple);
+    myTree.poemsReceived++;
+    
+    
+        /*function saveJournalEntry() {
             const text = document.getElementById('newJournalEntry').value.trim();
             
             if (!text) {
@@ -2012,7 +2026,7 @@ function getContextualPoem(journalText, practicePrinciple = null) {
             
             // Get contextual poem based on journal content
             const poem = getContextualPoem(text);
-            myTree.poemsReceived++;
+            myTree.poemsReceived++;*/
             
             myTree.journals.push({
                 date: new Date().toLocaleString(),
