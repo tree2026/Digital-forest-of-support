@@ -2135,111 +2135,112 @@ presence: [
     </script>
     
     <script>
-        // PWA Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                // Use absolute path for GitHub Pages
-                const swPath = 'sw.js?v=' + APP_VERSION;
-                
-                navigator.serviceWorker.register(swPath)
-                    .then(function(registration) {
-                        console.log('🌳 ServiceWorker registered: ', registration.scope);
-                        
-                        // Check for updates
-                        registration.addEventListener('updatefound', () => {
-                            const newWorker = registration.installing;
-                            console.log('🌳 New service worker found:', newWorker.state);
-                            
-                            newWorker.addEventListener('statechange', () => {
-                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    // New update available
-                                    console.log('🌳 New content available, please refresh.');
-                                    
-                                    // Show update notification
-                                    const updateMsg = currentLanguage === 'en' 
-                                        ? '🌳 New update available for Forest of Support!\n\nRefresh to get the latest features?'
-                                        : '🌳 მხარდაჭერის ტყეს ახალი განახლება ხელმისაწვდომია!\n\nგანაახლოთ უახლესი ფუნქციების მისაღებად?';
-                                    
-                                    if (confirm(updateMsg)) {
-                                        window.location.reload();
-                                    }
-                                }
-                            });
-                        });
-                    })
-                    .catch(function(err) {
-                        console.log('🌳 ServiceWorker registration failed: ', err);
-                    });
-            });
-        }
-        
-        // Check for updates periodically
-        setInterval(() => {
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.getRegistration().then(reg => {
-                    if (reg) {
-                        reg.update();
-                    }
-                });
-            }
-        }, 60 * 60 * 1000); // Check every hour
-    </script>
-
-    <script>
-        // FORCE SERVICE WORKER UPDATE
-        if ('serviceWorker' in navigator && window.location.search.includes('forceupdate')) {
-            navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                registrations.forEach(function(registration) {
-                    registration.unregister();
-                });
-            }).then(function() {
-                localStorage.setItem('lastForceUpdate', new Date().toISOString());
-                window.location.href = window.location.href.split('?')[0] + '?v=' + Date.now();
-            });
-        }
-    </script>
-    
-    <script>
-    // ==================== AUTOMATIC UPDATE PROMPT ====================
-    // Add this to prompt user when update is ready
-    
+    // ==================== PWA SERVICE WORKER REGISTRATION ====================
     if ('serviceWorker' in navigator) {
-        // Listen for when new service worker is waiting
-        navigator.serviceWorker.addEventListener('message', event => {
-            if (event.data && event.data.type === 'UPDATE_READY') {
-                showUpdatePrompt();
-            }
+        window.addEventListener('load', function() {
+            // Use relative path (works for both local and GitHub Pages)
+            const swPath = 'sw.js?v=' + APP_VERSION;
+            
+            navigator.serviceWorker.register(swPath)
+                .then(function(registration) {
+                    console.log('🌳 ServiceWorker registered successfully:', registration.scope);
+                    
+                    // Check for updates immediately
+                    registration.update();
+                })
+                .catch(function(err) {
+                    console.log('🌳 ServiceWorker registration failed:', err);
+                });
         });
-        
-        // Check if there's a waiting service worker on page load
-        navigator.serviceWorker.ready.then(registration => {
-            if (registration.waiting) {
-                showUpdatePrompt();
-            }
-        });
-    }
-    
-    function showUpdatePrompt() {
-        const lang = localStorage.getItem('forestLanguage') || 'en';
-        const messages = lang === 'ge' ? {
-            title: '🔄 ახალი განახლება ხელმისაწვდომია',
-            message: 'განაახლოთ მხარდაჭერის ტყე უახლესი ვერსიის მისაღებად?',
-            refresh: 'განახლება',
-            later: 'მოგვიანებით'
-        } : {
-            title: '🔄 New Update Available',
-            message: 'Refresh Forest of Support to get the latest version?',
-            refresh: 'Refresh',
-            later: 'Later'
-        };
-        
-        // Show after a short delay so it doesn't interrupt initial load
-        setTimeout(() => {
-            if (confirm(messages.title + '\n\n' + messages.message)) {
-                window.location.reload();
-            }
-        }, 2000);
     }
     </script>
+    
+   <script> 
+   // ==================== UNIFIED UPDATE HANDLER ====================
+// Listen for service worker updates
+if ('serviceWorker' in navigator) {
+    // Listen for messages from service worker
+    navigator.serviceWorker.addEventListener('message', event => {
+        if (event.data && event.data.type === 'UPDATE_READY') {
+            showUpdateNotification();
+        }
+    });
+    
+    // Check for waiting service worker on page load
+    navigator.serviceWorker.ready.then(registration => {
+        if (registration.waiting) {
+            showUpdateNotification();
+        }
+        
+        // Listen for new service worker installation
+        registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    // New content is available
+                    setTimeout(() => {
+                        showUpdateNotification();
+                    }, 3000);
+                }
+            });
+        });
+    });
+    
+    // Periodically check for updates
+    setInterval(() => {
+        navigator.serviceWorker.getRegistration().then(registration => {
+            if (registration) {
+                registration.update();
+            }
+        });
+    }, 60 * 60 * 1000); // Check every hour
+}
+
+// Unified update notification function
+function showUpdateNotification() {
+    // Prevent multiple notifications
+    if (sessionStorage.getItem('updateNotificationShown')) {
+        return;
+    }
+    
+    const lang = currentLanguage === 'ge' ? 'ge' : 'en';
+    const messages = {
+        ge: {
+            title: '🔄 ახალი ვერსია ხელმისაწვდომია',
+            message: 'განაახლოთ მხარდაჭერის ტყე უახლესი ვერსიის მისაღებად?',
+            update: 'განახლება',
+            later: 'მოგვიანებით'
+        },
+        en: {
+            title: '🔄 New Version Available',
+            message: 'Update Forest of Support to get the latest version?',
+            update: 'Update',
+            later: 'Later'
+        }
+    };
+    
+    const msg = messages[lang];
+    
+    // Show after short delay (user experience)
+    setTimeout(() => {
+        if (confirm(msg.title + '\n\n' + msg.message)) {
+            sessionStorage.setItem('updateNotificationShown', 'true');
+            window.location.reload();
+        } else {
+            sessionStorage.setItem('updateNotificationShown', 'true');
+            // Clear after 1 hour so they can be asked again
+            setTimeout(() => {
+                sessionStorage.removeItem('updateNotificationShown');
+            }, 60 * 60 * 1000);
+        }
+    }, 1500);
+}
+
+// Clear update flag on new session
+window.addEventListener('beforeunload', () => {
+    sessionStorage.removeItem('updateNotificationShown');
+}); 
+   </script>
+
 </body>
     </html>
