@@ -1668,6 +1668,87 @@ presence: [
             }
         }
         
+// ==================== DATA PRESERVATION ON UPDATE ====================
+// Add this AFTER your existing loadTree() function (around line ~260)
+
+function preserveUserDataOnUpdate() {
+    // 1. Always create a backup when app starts
+    const backupKey = 'forest_user_backup_' + APP_VERSION;
+    localStorage.setItem(backupKey, JSON.stringify(myTree));
+    
+    // 2. Check for old backups from previous versions
+    const oldKeys = Object.keys(localStorage).filter(key => 
+        key.startsWith('forest_user_backup_') && key !== backupKey
+    );
+    
+    // 3. If current tree is empty but we have old backups, restore
+    if ((!myTree.name || myTree.journals.length === 0) && oldKeys.length > 0) {
+        // Get the most recent backup
+        const latestKey = oldKeys[oldKeys.length - 1];
+        const backup = JSON.parse(localStorage.getItem(latestKey));
+        
+        if (backup && backup.name) {
+            console.log('🌳 Restoring from backup:', latestKey);
+            
+            // Preserve core data
+            myTree.name = backup.name || myTree.name;
+            myTree.plantedDate = backup.plantedDate || myTree.plantedDate;
+            myTree.rings = backup.rings || myTree.rings;
+            myTree.stage = backup.stage || myTree.stage;
+            myTree.journals = backup.journals || myTree.journals;
+            myTree.practices = backup.practices || myTree.practices;
+            myTree.poemsReceived = backup.poemsReceived || myTree.poemsReceived;
+            
+            // Preserve poem history if it exists
+            if (backup.shownPoemsByCategory) {
+                myTree.shownPoemsByCategory = backup.shownPoemsByCategory;
+            }
+            if (backup.poemUsage) {
+                myTree.poemUsage = backup.poemUsage;
+            }
+            
+            saveTree();
+        }
+    }
+    
+    // 4. Clean up old backups (keep last 3 versions)
+    if (oldKeys.length > 3) {
+        oldKeys.slice(0, -3).forEach(key => {
+            localStorage.removeItem(key);
+        });
+    }
+}
+
+// ==================== SIMPLE VERSION CHECK ====================
+function checkVersionAndPreserveData() {
+    const lastVersion = localStorage.getItem('forest_last_version');
+    
+    // If version changed, make extra backup
+    if (lastVersion !== APP_VERSION) {
+        console.log('🌳 Version change detected:', lastVersion, '→', APP_VERSION);
+        
+        // Create version-specific backup
+        const versionBackupKey = `forest_v${lastVersion || '1.0'}_backup`;
+        localStorage.setItem(versionBackupKey, JSON.stringify(myTree));
+        
+        // Update version
+        localStorage.setItem('forest_last_version', APP_VERSION);
+        
+        // Ensure new properties exist
+        if (!myTree.shownPoemsByCategory) {
+            myTree.shownPoemsByCategory = {
+                rooting: [], bark: [], rings: [], release: [], reaching: [],
+                network: [], bending: [], shape: [], seasons: [], wholeness: [],
+                patience: [], presence: []
+            };
+        }
+        if (!myTree.poemUsage) {
+            myTree.poemUsage = {};
+        }
+        
+        saveTree();
+    }
+}
         function updatePracticeCard() {
             const t = TEXT[currentLanguage];
             const status = document.getElementById('practiceStatus');
