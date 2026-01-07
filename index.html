@@ -341,12 +341,14 @@
         </header>
 
         <!-- Navigation -->
-<div style="text-align: center; margin-bottom: 30px; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
-    <button onclick="showCard('welcome')" id="nav-welcome">🏠 Welcome</button>
-    <button onclick="showCard('plant')" id="nav-plant">🪴 Plant Tree</button>
-    <button onclick="showCard('practice')" id="nav-practice">📿 Daily Practice</button>
-    <button onclick="showCard('forest')" id="nav-forest">🌲 My Forest</button>
-    <button onclick="showCard('journal')" id="nav-journal">📖 Journal</button>
+<div style="text-align: center; margin-bottom: 30px;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 300px; margin: 0 auto;">
+        <button onclick="showCard('welcome')" id="nav-welcome" style="width: 100%; max-width: 250px;">🏠 Welcome</button>
+        <button onclick="showCard('plant')" id="nav-plant" style="width: 100%; max-width: 250px;">🪴 Plant Tree</button>
+        <button onclick="showCard('practice')" id="nav-practice" style="width: 100%; max-width: 250px;">📿 Daily Practice</button>
+        <button onclick="showCard('forest')" id="nav-forest" style="width: 100%; max-width: 250px;">🌲 My Forest</button>
+        <button onclick="showCard('journal')" id="nav-journal" style="width: 100%; max-width: 250px;">📖 Journal</button>
+    </div>
 </div>
         
         <!-- Welcome Card -->
