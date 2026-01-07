@@ -2139,7 +2139,7 @@ presence: [
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
                 // Use absolute path for GitHub Pages
-                const swPath = '/Digital-forest-of-support/sw.js?v=' + APP_VERSION;
+                const swPath = 'sw.js?v=' + APP_VERSION;
                 
                 navigator.serviceWorker.register(swPath)
                     .then(function(registration) {
