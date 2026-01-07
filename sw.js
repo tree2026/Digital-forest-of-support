@@ -68,3 +68,16 @@ self.addEventListener('fetch', event => {
       })
   );
 });
+// In your sw.js file, add this:
+self.addEventListener('activate', event => {
+    // Tell the page that an update is ready
+    event.waitUntil(
+        self.clients.matchAll().then(clients => {
+            clients.forEach(client => {
+                client.postMessage({
+                    type: 'UPDATE_READY'
+                });
+            });
+        })
+    );
+});
