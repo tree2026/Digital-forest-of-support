@@ -344,7 +344,8 @@
         <!-- Navigation -->
 
 <div style="text-align: center; margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px;">
-    <button onclick="showCard('welcome')" id="nav-welcome">🏠 Welcome</button>
+   <button onclick="testButtonClick(); showCard('welcome')" id="nav-welcome">🏠 Welcome</button>
+   <!-- <button onclick="showCard('welcome')" id="nav-welcome">🏠 Welcome</button> -->
     <button onclick="showCard('plant')" id="nav-plant">🪴 Plant Tree</button>
     <button onclick="showCard('practice')" id="nav-practice">📿 Daily Practice</button>
     <button onclick="showCard('forest')" id="nav-forest">🌲 My Forest</button>
@@ -540,7 +541,12 @@
         const APP_VERSION = '1.2';
         const VERSION_KEY = 'forestAppVersion';
         const LANG_KEY = 'forestLanguage';
-        
+       
+        // DEBUG FUNCTION - TEST BUTTON CLICKS
+function testButtonClick() {
+    alert("Button clicked! JavaScript is working!");
+    console.log("Button test successful");
+}
         // Language state
         let currentLanguage = 'en'; // 'en' or 'ge'
         
@@ -2355,6 +2361,28 @@ window.addEventListener('beforeunload', () => {
     sessionStorage.removeItem('updateNotificationShown');
 }); 
    </script>
-
+<script>
+// EMERGENCY FIX - Manual button wiring
+document.addEventListener('DOMContentLoaded', function() {
+    // Manually wire up buttons
+    document.getElementById('nav-welcome').onclick = function() {
+        showCard('welcome');
+    };
+    document.getElementById('nav-plant').onclick = function() {
+        showCard('plant');
+    };
+    document.getElementById('nav-practice').onclick = function() {
+        showCard('practice');
+    };
+    document.getElementById('nav-forest').onclick = function() {
+        showCard('forest');
+    };
+    document.getElementById('nav-journal').onclick = function() {
+        showCard('journal');
+    };
+    
+    console.log("Buttons manually wired up");
+});
+</script>
 </body>
     </html>
