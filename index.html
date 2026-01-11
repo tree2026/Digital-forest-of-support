@@ -2384,5 +2384,27 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("Buttons manually wired up");
 });
 </script>
+
+<script>
+// SIMPLE FIX - Make sure showCard works
+window.showCard = function(cardId) {
+    // Hide all cards
+    document.querySelectorAll('.card').forEach(card => {
+        card.classList.remove('active');
+    });
+    
+    // Show selected card
+    const selectedCard = document.getElementById(cardId);
+    if (selectedCard) {
+        selectedCard.classList.add('active');
+    }
+    
+    // Special updates
+    if (cardId === 'practice') updatePracticeCard();
+    if (cardId === 'forest') updateForestCard();
+    if (cardId === 'journal') loadJournalEntries();
+};
+</script>
+    
 </body>
     </html>
