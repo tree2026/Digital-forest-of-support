@@ -1469,7 +1469,18 @@ presence: [
         
         // ==================== INITIALIZATION ====================
         
-      document.addEventListener('DOMContentLoaded', function() {
+       document.addEventListener('DOMContentLoaded', function() {
+    detectLanguage();
+    loadTree(); 
+    preserveUserDataOnUpdate();
+    checkVersionAndPreserveData();
+    checkAppVersion();
+    updateUI();
+    updateDisplay();
+    
+}); 
+        
+/*  document.addEventListener('DOMContentLoaded', function() {
     // Initialize in correct order:
     
     // 1. First, load any existing tree data
@@ -1493,7 +1504,7 @@ presence: [
     
     // 7. Show the welcome card by default
     showCard('welcome');
-});
+}); */
         
       /*  document.addEventListener('DOMContentLoaded', function() {
             detectLanguage();
