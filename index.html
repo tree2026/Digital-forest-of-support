@@ -2341,18 +2341,6 @@ function checkVersionAndPreserveData() {
             localStorage.setItem('forestTree', JSON.stringify(myTree));
         }
 
-
-        // TEST: Check if all cards exist
-   function testCardsExist() {
-    const cardIds = ['welcome', 'plant', 'practice', 'forest', 'journal'];
-    cardIds.forEach(id => {
-        const card = document.getElementById(id);
-        console.log("Card", id, "exists:", card ? "YES" : "NO");
-    });
-}
-
-// Call test after page loads
-setTimeout(testCardsExist, 500);
         
         function checkAppVersion() {
             const savedVersion = localStorage.getItem(VERSION_KEY);
@@ -2507,4 +2495,4 @@ window.addEventListener('beforeunload', () => {
 
 
 </body>
-    </html>
+</html>
