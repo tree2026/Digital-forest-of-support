@@ -1474,7 +1474,23 @@ presence: [
         
         // ==================== INITIALIZATION ====================
         
-       document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    loadTree();
+    detectLanguage(); 
+    updateUI();
+    preserveUserDataOnUpdate();
+    checkVersionAndPreserveData();
+    checkAppVersion();
+    loadPrinciples();
+    updateDisplay();
+    
+    // DELAY showing the card to ensure everything is loaded
+    setTimeout(function() {
+        showCard('welcome');
+    }, 100);
+});
+        
+        /*   document.addEventListener('DOMContentLoaded', function() {
     loadTree();
     detectLanguage(); 
     updateUI();
@@ -1485,33 +1501,8 @@ presence: [
     updateDisplay();
     showCard('welcome');
     
-}); 
-        
-/*  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize in correct order:
-    
-    // 1. First, load any existing tree data
-    loadTree();
-    
-    // 2. Detect and set the language
-    detectLanguage();
-    
-    // 3. Check for updates and preserve data
-    checkVersionAndPreserveData();
-    preserveUserDataOnUpdate();
-    
-    // 4. Update the user interface with correct language
-    updateUI();
-    
-    // 5. Load the tree principles
-    loadPrinciples();
-    
-    // 6. Update the forest display
-    updateDisplay();
-    
-    // 7. Show the welcome card by default
-    showCard('welcome');
 }); */
+    
         
       /*  document.addEventListener('DOMContentLoaded', function() {
             detectLanguage();
@@ -2322,6 +2313,19 @@ function checkVersionAndPreserveData() {
         function saveTree() {
             localStorage.setItem('forestTree', JSON.stringify(myTree));
         }
+
+
+        // TEST: Check if all cards exist
+   function testCardsExist() {
+    const cardIds = ['welcome', 'plant', 'practice', 'forest', 'journal'];
+    cardIds.forEach(id => {
+        const card = document.getElementById(id);
+        console.log("Card", id, "exists:", card ? "YES" : "NO");
+    });
+}
+
+// Call test after page loads
+setTimeout(testCardsExist, 500);
         
         function checkAppVersion() {
             const savedVersion = localStorage.getItem(VERSION_KEY);
