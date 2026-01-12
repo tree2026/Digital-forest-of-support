@@ -545,6 +545,7 @@
         const APP_VERSION = '1.2';
         const VERSION_KEY = 'forestAppVersion';
         const LANG_KEY = 'forestLanguage';
+        
        
         // DEBUG FUNCTION - TEST BUTTON CLICKS
 function testButtonClick() {
@@ -1474,13 +1475,15 @@ presence: [
         // ==================== INITIALIZATION ====================
         
        document.addEventListener('DOMContentLoaded', function() {
-    detectLanguage();
-    loadTree(); 
+    loadTree();
+    detectLanguage(); 
+    updateUI();
     preserveUserDataOnUpdate();
     checkVersionAndPreserveData();
     checkAppVersion();
-    updateUI();
+    loadPrinciples();
     updateDisplay();
+    showCard('welcome');
     
 }); 
         
