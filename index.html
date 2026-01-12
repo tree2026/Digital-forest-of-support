@@ -1569,8 +1569,104 @@ presence: [
                 updatePracticeCard();
             }
         }
-        
+
+
         function updateUI() {
+    const t = TEXT[currentLanguage];
+    
+    // Helper function with proper property handling
+    function safeUpdate(id, property, value) {
+        const element = document.getElementById(id);
+        if (!element) return; // Skip if element doesn't exist
+        
+        // Handle different property types correctly
+        if (property === 'innerHTML') {
+            element.innerHTML = value;
+        } else if (property === 'placeholder') {
+            element.placeholder = value;
+        } else if (property === 'textContent') {
+            element.textContent = value;
+        } else {
+            // Default to setting property directly
+            element[property] = value;
+        }
+    }
+    
+    // Update navigation
+    safeUpdate('nav-welcome', 'textContent', t.navWelcome);
+    safeUpdate('nav-plant', 'textContent', t.navPlant);
+    safeUpdate('nav-practice', 'textContent', t.navPractice);
+    safeUpdate('nav-forest', 'textContent', t.navForest);
+    safeUpdate('nav-journal', 'textContent', t.navJournal);
+    
+    // Update app titles
+    safeUpdate('app-title', 'textContent', t.appTitle);
+    safeUpdate('app-tagline', 'textContent', t.appTagline);
+    safeUpdate('app-subtitle', 'textContent', t.appSubtitle);
+    
+    // Update welcome card
+    safeUpdate('welcome-title', 'textContent', t.welcomeTitle);
+    safeUpdate('welcome-text', 'innerHTML', t.welcomeText);
+    safeUpdate('principles-title', 'textContent', t.principlesTitle);
+    safeUpdate('how-it-works', 'innerHTML', t.howItWorks);
+    safeUpdate('start-journey-btn', 'textContent', t.startJourneyBtn);
+    
+    // Update plant tree card
+    safeUpdate('plant-title', 'textContent', t.plantTitle);
+    safeUpdate('plant-text', 'textContent', t.plantText);
+    safeUpdate('treeName', 'placeholder', t.treeNamePlaceholder);
+    safeUpdate('plant-btn', 'textContent', t.plantBtn);
+    safeUpdate('demo-btn', 'textContent', t.demoBtn);
+    
+    // Update practice card
+    safeUpdate('practice-title', 'textContent', t.practiceTitle);
+    safeUpdate('practiceStatus', 'textContent', t.practiceStatus);
+    safeUpdate('step1-title', 'textContent', t.step1Title);
+    safeUpdate('step1-text', 'textContent', t.step1Text);
+    safeUpdate('step2-title', 'textContent', t.step2Title);
+    safeUpdate('step3-title', 'textContent', t.step3Title);
+    safeUpdate('step3-text', 'textContent', t.step3Text);
+    safeUpdate('practiceJournal', 'placeholder', t.practiceJournalPlaceholder);
+    safeUpdate('nextBtn1', 'textContent', t.nextBtn);
+    safeUpdate('prev-btn', 'textContent', t.prevBtn);
+    safeUpdate('next-btn2', 'textContent', t.nextBtn);
+    safeUpdate('prev-btn2', 'textContent', t.prevBtn);
+    safeUpdate('complete-btn', 'textContent', t.completeBtn);
+    // SKIP: view-journal-btn (doesn't exist)
+    
+    // Update forest card
+    safeUpdate('forest-title', 'textContent', t.forestTitle);
+    safeUpdate('start-practice-btn', 'textContent', t.startPracticeBtn);
+    safeUpdate('stat-rings-label', 'textContent', t.statRingsLabel);
+    safeUpdate('stat-stage-label', 'textContent', t.statStageLabel);
+    safeUpdate('stat-journals-label', 'textContent', t.statJournalsLabel);
+    safeUpdate('stat-poems-label', 'textContent', t.statPoemsLabel);
+    
+    // Update journal card
+    safeUpdate('journal-title', 'textContent', t.journalTitle);
+    safeUpdate('journal-subtitle', 'textContent', t.journalSubtitle);
+    // SKIP: new-entry-title (doesn't exist)
+    safeUpdate('newJournalEntry', 'placeholder', t.journalPlaceholder);
+    safeUpdate('save-entry-btn', 'textContent', t.saveEntryBtn);
+    safeUpdate('clear-btn', 'textContent', t.clearBtn);
+    safeUpdate('journey-title', 'textContent', t.journeyTitle);
+    
+    // Update footer
+    safeUpdate('footer-version', 'textContent', t.footerVersion);
+    safeUpdate('footer-data', 'textContent', t.footerData);
+    safeUpdate('footer-quote', 'innerHTML', `<em>${t.footerQuote}</em>`);
+    
+    // Update tree display if no tree
+    if (!myTree.name) {
+        safeUpdate('treeNameDisplay', 'textContent', t.noTree);
+        safeUpdate('treeAscii', 'textContent', t.plantToBegin);
+    }
+    
+    // Update language toggle button
+    safeUpdate('lang-toggle', 'textContent', '🌐 ' + (currentLanguage === 'en' ? 'ENG/GE' : 'GE/ENG'));
+        }
+        
+      /*  function updateUI() {
             const t = TEXT[currentLanguage];
             
             // Update navigation
@@ -1642,7 +1738,7 @@ presence: [
                 document.getElementById('treeNameDisplay').textContent = t.noTree;
                 document.getElementById('treeAscii').textContent = t.plantToBegin;
             }
-        }
+        }*/
         
         function loadPrinciples() {
             const container = document.getElementById('principlesList');
