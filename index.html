@@ -2504,50 +2504,7 @@ window.addEventListener('beforeunload', () => {
     sessionStorage.removeItem('updateNotificationShown');
 }); 
    </script>
-<script>
-// EMERGENCY FIX - Manual button wiring
-document.addEventListener('DOMContentLoaded', function() {
-    // Manually wire up buttons
-    document.getElementById('nav-welcome').onclick = function() {
-        showCard('welcome');
-    };
-    document.getElementById('nav-plant').onclick = function() {
-        showCard('plant');
-    };
-    document.getElementById('nav-practice').onclick = function() {
-        showCard('practice');
-    };
-    document.getElementById('nav-forest').onclick = function() {
-        showCard('forest');
-    };
-    document.getElementById('nav-journal').onclick = function() {
-        showCard('journal');
-    };
-    
-    console.log("Buttons manually wired up");
-});
-</script>
 
-<script>
-// SIMPLE FIX - Make sure showCard works
-window.showCard = function(cardId) {
-    // Hide all cards
-    document.querySelectorAll('.card').forEach(card => {
-        card.classList.remove('active');
-    });
-    
-    // Show selected card
-    const selectedCard = document.getElementById(cardId);
-    if (selectedCard) {
-        selectedCard.classList.add('active');
-    }
-    
-    // Special updates
-    if (cardId === 'practice') updatePracticeCard();
-    if (cardId === 'forest') updateForestCard();
-    if (cardId === 'journal') loadJournalEntries();
-};
-</script>
-    
+
 </body>
     </html>
