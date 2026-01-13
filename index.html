@@ -1641,6 +1641,9 @@
             // Update principles display
             loadPrinciples();
             
+            // Update seed preview
+            updateSeedPreview();
+            
             // Update practice card if needed
             if (document.getElementById('practiceContent').style.display !== 'none') {
                 updatePracticeCard();
@@ -1741,6 +1744,9 @@
     
     // Update language toggle button
     safeUpdate('lang-toggle', 'textContent', '🌐 ' + (currentLanguage === 'en' ? 'ENG/GE' : 'GE/ENG'));
+    
+    // Update seed preview text
+    updateSeedPreview();
 }
       
         function updateSeedPreview() {
