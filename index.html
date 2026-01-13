@@ -407,13 +407,17 @@
             
           
             <div class="tree-display" id="seedPreview">
+                <pre style="font-size: 1.3em; line-height: 1.4; text-align: center;"></pre>
+            </div>
+           
+            <!-- <div class="tree-display" id="seedPreview">
                 <pre style="font-size: 1.3em; line-height: 1.4;">
                     🌱
                     <span id="seed-text-line1"></span>
                     <span id="seed-text-line2"></span>
                     <span id="seed-text-line3"></span>
                 </pre>
-            </div>
+            </div>-->
            
             <!--  <div class="tree-display" id="seedPreview">
                 <pre style="font-size: 1.3em; line-height: 1.4;">
@@ -1759,7 +1763,27 @@
     updateSeedPreview();
 }
       
+      
         function updateSeedPreview() {
+            const seedPreviews = {
+                en: `       🌱
+      Your seed
+     is planted with
+      intention`,
+        
+                ge: `       🌱
+    შენი თესლი
+   განზრახვით არის
+    დათესილი`
+            };
+    
+            const previewElement = document.getElementById('seedPreview').querySelector('pre');
+            if (previewElement) {
+                previewElement.textContent = seedPreviews[currentLanguage];
+            }
+        }
+        
+        /* function updateSeedPreview() {
             const seedLines = {
                 en: ["Your seed", "is planted with", "intention"],
                 ge: ["თესლი", "განზრახვით", "ითესება"]
@@ -1769,7 +1793,7 @@
             document.getElementById('seed-text-line1').textContent = lines[0];
             document.getElementById('seed-text-line2').textContent = lines[1];
             document.getElementById('seed-text-line3').textContent = lines[2];    
-        }
+        }*/
         
         function loadPrinciples() {
             const container = document.getElementById('principlesList');
