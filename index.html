@@ -394,14 +394,24 @@
             <input type="text" id="treeName" placeholder="Enter your tree's name..." 
                    style="width: 100%; padding: 15px; margin: 20px 0; font-size: 1.2em; border: 2px solid #b8d8a8; border-radius: 10px; text-align: center;">
             
+          
             <div class="tree-display" id="seedPreview">
+                <pre style="font-size: 1.3em; line-height: 1.4;">
+                    🌱
+                    <span id="seed-text-line1"></span>
+                    <span id="seed-text-line2"></span>
+                    <span id="seed-text-line3"></span>
+                </pre>
+            </div>
+           
+            <!--  <div class="tree-display" id="seedPreview">
                 <pre style="font-size: 1.3em; line-height: 1.4;">
        🌱
       Your seed
      is planted with
       intention
                 </pre>
-            </div>
+            </div> -->
             
             <div style="text-align: center;">
                 <button onclick="plantTree()" id="plant-btn">🌱 Plant My Tree</button>
@@ -1428,8 +1438,92 @@
     }
 };
             
+
+        // Tree visual Stages 
+
+        const treeStages = {
+    en: [
+        `       🌱
+      Your seed
+     is planted with
+      intention`,
         
-        // Tree visual stages (same for both languages)
+        `       🌿
+      /  \\
+     /    \\
+    /______\\
+      |  |
+     ~~~~~`,
+        
+        `       🌳
+      /🍃\\
+     /    \\
+    /      \\
+   /________\\
+      |||
+    ~~~~~~~`,
+        
+        `       🌳🌳
+      /    \\
+     /      \\
+    /        \\
+   /          \\
+  /____________\\
+      |||||
+    ~~~~~~~~~`,
+        
+        `     🌳 WISDOM 🌳
+    /           \\
+   /   RINGS OF  \\
+  /    GROWTH     \\
+ /                 \\
+/___________________\\
+      |||||||
+   ~~~~~~~~~~~~`
+    ],
+    
+    ge: [
+        `       🌱
+      შენი თესლი
+    განზრახვით არის
+     დათესილი`,
+        
+        `       🌿
+      /  \\
+     /    \\
+    /______\\
+      |  |
+     ~~~~~`,
+        
+        `       🌳
+      /🍃\\
+     /    \\
+    /      \\
+   /________\\
+      |||
+    ~~~~~~~`,
+        
+        `       🌳🌳
+      /    \\
+     /      \\
+    /        \\
+   /          \\
+  /____________\\
+      |||||
+    ~~~~~~~~~`,
+        
+        `     🌳 სიბრძნე 🌳
+    /           \\
+   /   ზრდის    \\
+  /    რგოლები   \\
+ /                \\
+/__________________\\
+      |||||||
+   ~~~~~~~~~~~~`
+    ]
+};
+        
+        /*// Tree visual stages (same for both languages)
         const treeStages = [
             `       🌱
       Your seed
@@ -1468,7 +1562,7 @@
 /___________________\\
       |||||||
    ~~~~~~~~~~~~`
-        ];
+        ]; */
         
         // ==================== INITIALIZATION ====================
         
@@ -1488,19 +1582,6 @@
     }, 100);
 });
         
-        /*   document.addEventListener('DOMContentLoaded', function() {
-    loadTree();
-    detectLanguage(); 
-    updateUI();
-    preserveUserDataOnUpdate();
-    checkVersionAndPreserveData();
-    checkAppVersion();
-    loadPrinciples();
-    updateDisplay();
-    showCard('welcome');
-    
-}); */
-    
         
       /*  document.addEventListener('DOMContentLoaded', function() {
             detectLanguage();
@@ -1662,79 +1743,17 @@
     safeUpdate('lang-toggle', 'textContent', '🌐 ' + (currentLanguage === 'en' ? 'ENG/GE' : 'GE/ENG'));
 }
       
-      /*  function updateUI() {
-            const t = TEXT[currentLanguage];
-            
-            // Update navigation
-            document.getElementById('nav-welcome').textContent = t.navWelcome;
-            document.getElementById('nav-plant').textContent = t.navPlant;
-            document.getElementById('nav-practice').textContent = t.navPractice;
-            document.getElementById('nav-forest').textContent = t.navForest;
-            document.getElementById('nav-journal').textContent = t.navJournal;
-            
-            // Update app titles
-            document.getElementById('app-title').textContent = t.appTitle;
-            document.getElementById('app-tagline').textContent = t.appTagline;
-            document.getElementById('app-subtitle').textContent = t.appSubtitle;
-            
-            // Update welcome card
-            document.getElementById('welcome-title').textContent = t.welcomeTitle;
-            document.getElementById('welcome-text').innerHTML = t.welcomeText;
-            document.getElementById('principles-title').textContent = t.principlesTitle;
-            document.getElementById('how-it-works').innerHTML = t.howItWorks;
-            document.getElementById('start-journey-btn').textContent = t.startJourneyBtn;
-            
-            // Update plant tree card
-            document.getElementById('plant-title').textContent = t.plantTitle;
-            document.getElementById('plant-text').textContent = t.plantText;
-            document.getElementById('treeName').placeholder = t.treeNamePlaceholder;
-            document.getElementById('plant-btn').textContent = t.plantBtn;
-            document.getElementById('demo-btn').textContent = t.demoBtn;
-            
-            // Update practice card
-            document.getElementById('practice-title').textContent = t.practiceTitle;
-            document.getElementById('practiceStatus').textContent = t.practiceStatus;
-            document.getElementById('step1-title').textContent = t.step1Title;
-            document.getElementById('step1-text').textContent = t.step1Text;
-            document.getElementById('step2-title').textContent = t.step2Title;
-            document.getElementById('step3-title').textContent = t.step3Title;
-            document.getElementById('step3-text').textContent = t.step3Text;
-            document.getElementById('practiceJournal').placeholder = t.practiceJournalPlaceholder;
-            document.getElementById('nextBtn1').textContent = t.nextBtn;
-            document.getElementById('prev-btn').textContent = t.prevBtn;
-            document.getElementById('next-btn2').textContent = t.nextBtn;
-            document.getElementById('prev-btn2').textContent = t.prevBtn;
-            document.getElementById('complete-btn').textContent = t.completeBtn;
-            document.getElementById('view-journal-btn').textContent = t.viewJournalBtn;
-            
-            // Update forest card
-            document.getElementById('forest-title').textContent = t.forestTitle;
-            document.getElementById('start-practice-btn').textContent = t.startPracticeBtn;
-            document.getElementById('stat-rings-label').textContent = t.statRingsLabel;
-            document.getElementById('stat-stage-label').textContent = t.statStageLabel;
-            document.getElementById('stat-journals-label').textContent = t.statJournalsLabel;
-            document.getElementById('stat-poems-label').textContent = t.statPoemsLabel;
-            
-            // Update journal card
-            document.getElementById('journal-title').textContent = t.journalTitle;
-            document.getElementById('journal-subtitle').textContent = t.journalSubtitle;
-            document.getElementById('new-entry-title').textContent = t.newEntryTitle;
-            document.getElementById('newJournalEntry').placeholder = t.journalPlaceholder;
-            document.getElementById('save-entry-btn').textContent = t.saveEntryBtn;
-            document.getElementById('clear-btn').textContent = t.clearBtn;
-            document.getElementById('journey-title').textContent = t.journeyTitle;
-            
-            // Update footer
-            document.getElementById('footer-version').textContent = t.footerVersion;
-            document.getElementById('footer-data').textContent = t.footerData;
-            document.getElementById('footer-quote').innerHTML = `<em>${t.footerQuote}</em>`;
-            
-            // Update tree display if no tree
-            if (!myTree.name) {
-                document.getElementById('treeNameDisplay').textContent = t.noTree;
-                document.getElementById('treeAscii').textContent = t.plantToBegin;
-            }
-        }*/
+        function updateSeedPreview() {
+            const seedLines = {
+                en: ["Your seed", "is planted with", "intention"],
+                ge: ["შენი თესლი", "განზრახვით არის", "დათესილი"]
+            };
+    
+            const lines = seedLines[currentLanguage];
+            document.getElementById('seed-text-line1').textContent = lines[0];
+            document.getElementById('seed-text-line2').textContent = lines[1];
+            document.getElementById('seed-text-line3').textContent = lines[2];    
+        }
         
         function loadPrinciples() {
             const container = document.getElementById('principlesList');
@@ -2314,9 +2333,13 @@ function checkVersionAndPreserveData() {
             
             document.getElementById('treeNameDisplay').textContent = myTree.name;
             
-            // Show appropriate tree stage
+            // Show appropriate tree stage in current language
+            const stageIndex = Math.min(myTree.stage - 1, treeStages[currentLanguage].length - 1);
+            document.getElementById('treeAscii').textContent = treeStages[currentLanguage][stageIndex];
+            
+            /*// Show appropriate tree stage
             const stageIndex = Math.min(myTree.stage - 1, treeStages.length - 1);
-            document.getElementById('treeAscii').textContent = treeStages[stageIndex];
+            document.getElementById('treeAscii').textContent = treeStages[stageIndex];*/
             
             // Update progress ring
             const progressPercent = (myTree.stage / 5) * 100;
