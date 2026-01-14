@@ -545,10 +545,7 @@
             <p id="journal-subtitle">Each entry receives a contextual poem that responds to your words.</p>
             
             <div style="margin: 25px 0;">
-                <h3 id="new-entry-title">  <!-- added 1.0 -->
-                    <script>document.write(currentLanguage === 'en' ? "New Journal Entry" : "დღიურის ახალი ჩანაწერი")</script> <!-- added 1.0 -->
-                </h3>
-               <!-- <h3 id="new-entry-title">New Journal Entry</h3> -->
+                <h3 id="new-entry-title">New Journal Entry</h3>
                 <textarea id="newJournalEntry" placeholder="Write your thoughts, feelings, reflections... A healing poem will respond to your words."></textarea>
                 <div style="text-align: center;">
                     <button onclick="saveJournalEntry()" id="save-entry-btn">Save Entry & Receive Poem</button>
@@ -1754,7 +1751,8 @@
     safeUpdate('newJournalEntry', 'placeholder', t.journalPlaceholder);
     safeUpdate('save-entry-btn', 'textContent', t.saveEntryBtn);
     safeUpdate('clear-btn', 'textContent', t.clearBtn);
-    safeUpdate('journey-title', 'textContent', t.journeyTitle);
+    safeUpdate('journey-title', 'textContent', t.journeyTitle); 
+    safeUpdate('new-entry-title', 'textContent', t.newEntryTitle);
     
     // Update footer
     safeUpdate('footer-version', 'textContent', t.footerVersion);
