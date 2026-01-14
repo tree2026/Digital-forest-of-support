@@ -505,7 +505,7 @@
                 </div>
                 
                 <div class="tree-display" id="mainTreeDisplay">
-                    <pre id="treeAscii" style="font-size: 1.1em; line-height: 1.3;">Plant a tree to begin your journey</pre>
+                    <pre id="treeAscii" style="font-size: 1.0em; line-height: 1.3;">Plant a tree to begin your journey</pre>
                 </div>
                 
                 <div class="progress-ring">
@@ -545,7 +545,10 @@
             <p id="journal-subtitle">Each entry receives a contextual poem that responds to your words.</p>
             
             <div style="margin: 25px 0;">
-                <h3 id="new-entry-title">New Journal Entry</h3>
+                <h3 id="new-entry-title">  <!-- added 1.0 -->
+                    <script>document.write(currentLanguage === 'en' ? "New Journal Entry" : "დღიურის ახალი ჩანაწერი")</script> <!-- added 1.0 -->
+                </h3>
+               <!-- <h3 id="new-entry-title">New Journal Entry</h3> -->
                 <textarea id="newJournalEntry" placeholder="Write your thoughts, feelings, reflections... A healing poem will respond to your words."></textarea>
                 <div style="text-align: center;">
                     <button onclick="saveJournalEntry()" id="save-entry-btn">Save Entry & Receive Poem</button>
