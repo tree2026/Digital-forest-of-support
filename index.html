@@ -2298,6 +2298,14 @@ function checkVersionAndPreserveData() {
         
         function saveJournalEntry() {
             const t = TEXT[currentLanguage];
+            
+            // Check if tree exists
+            if (!myTree.name) {
+                alert(t.alertPlantFirst);  // Use existing alert message
+                showCard('plant');  // Redirect to plant tree card
+                return;
+            }
+            
             const text = document.getElementById('newJournalEntry').value.trim();
             
             if (!text) {
