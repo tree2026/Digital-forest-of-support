@@ -1783,6 +1783,7 @@
     if (!myTree.name) {
         safeUpdate('treeNameDisplay', 'textContent', t.noTree);
         safeUpdate('treeAscii', 'textContent', t.plantToBegin);
+        safeUpdate('progressText', 'textContent', "0/6");
     }
     
     // Update language toggle button
@@ -1894,6 +1895,8 @@
             
             myTree.name = name;
             myTree.plantedDate = new Date().toLocaleDateString();
+            myTree.rings = 0;
+            myTree.stage = 1;
             
             // Save to browser storage
             saveTree();
