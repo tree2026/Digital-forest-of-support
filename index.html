@@ -510,7 +510,7 @@
                 
                 <div class="progress-ring">
                     <div class="progress-ring-inner">
-                        <span id="progressText">0/6</span>
+                        <span id="progressText">0/5</span>
                     </div>
                 </div>
                 
@@ -1504,7 +1504,7 @@
       |||||||
    ~~~~~~~~~~~~`
 
-        `      🌳🌲 SAGE 🌲🌳
+     /* `      🌳🌲 SAGE 🌲🌳
      /               \\
     /   WISDOM OF     \\
    /     AGES PAST     \\
@@ -1512,7 +1512,7 @@
  /                       \\
 /_________________________\\
         ||||||||
-     ~~~~~~~~~~~~~~`
+     ~~~~~~~~~~~~~~`*/
     ],
     
     ge: [
@@ -1553,7 +1553,7 @@
       |||||||
    ~~~~~~~~~~~~`
 
-        `      🌳🌲 ბრძენი 🌲🌳
+        /*`      🌳🌲 ბრძენი 🌲🌳
      /               \\
     /   ხანის         \\
    /     სიბრძნე       \\
@@ -1561,7 +1561,7 @@
  /                       \\
 /_________________________\\
         ||||||||
-     ~~~~~~~~~~~~~~`
+     ~~~~~~~~~~~~~~`*/
     ]
 };
         
@@ -1783,7 +1783,7 @@
     if (!myTree.name) {
         safeUpdate('treeNameDisplay', 'textContent', t.noTree);
         safeUpdate('treeAscii', 'textContent', t.plantToBegin);
-        safeUpdate('progressText', 'textContent', "0/6");
+        /*safeUpdate('progressText', 'textContent', "0/6");*/
     }
     
     // Update language toggle button
@@ -1895,8 +1895,8 @@
             
             myTree.name = name;
             myTree.plantedDate = new Date().toLocaleDateString();
-            myTree.rings = 0;
-            myTree.stage = 1;
+           // myTree.rings = 0;
+           // myTree.stage = 1;
             
             // Save to browser storage
             saveTree();
@@ -1905,7 +1905,7 @@
             alert(t.alertTreePlanted.replace('{name}', name));
             showCard('practice');
             updatePracticeCard();
-            updateForestcard();
+            //updateForestcard();
         }
         
         function loadDemoTree() {
@@ -2285,8 +2285,8 @@ function checkVersionAndPreserveData() {
             else if (myTree.rings < 8) myTree.stage = 2;
             else if (myTree.rings < 13) myTree.stage = 3;
             else if (myTree.rings < 18) myTree.stage = 4; 
-            else if (myTree.rings < 32) myTree.stage = 5;
-            else myTree.stage = 6;
+           // else if (myTree.rings < 32) myTree.stage = 5;
+            else myTree.stage = 5;
             
             // Add to journals
             myTree.journals.push({
@@ -2409,7 +2409,7 @@ function checkVersionAndPreserveData() {
             if (!myTree.name) {
                 document.getElementById('treeNameDisplay').textContent = t.noTree;
                 document.getElementById('treeAscii').textContent = t.plantToBegin;
-                document.getElementById('progressText').textContent = "0/6";
+                document.getElementById('progressText').textContent = "0/5";
                 return;
             }
             
@@ -2424,10 +2424,10 @@ function checkVersionAndPreserveData() {
             document.getElementById('treeAscii').textContent = treeStages[stageIndex];*/
             
             // Update progress ring
-            const progressPercent = (myTree.stage / 6) * 100;
+            const progressPercent = (myTree.stage / 5) * 100;
             document.querySelector('.progress-ring').style.background = 
                 `conic-gradient(#4a7c3f 0% ${progressPercent}%, #e8f5e8 ${progressPercent}% 100%)`;
-            document.getElementById('progressText').textContent = `${myTree.stage}/6`;
+            document.getElementById('progressText').textContent = `${myTree.stage}/5`;
             
             // Update stats
             document.getElementById('statRings').textContent = myTree.rings;
