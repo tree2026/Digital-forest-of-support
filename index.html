@@ -1503,6 +1503,17 @@
 /___________________\\
       |||||||
    ~~~~~~~~~~~~`
+
+        // NEW: Stage 6 "SAGE" - 32+ rings
+`      🌳🌲 SAGE 🌲🌳
+     /               \\
+    /   WISDOM OF     \\
+   /     AGES PAST     \\
+  /                     \\
+ /                       \\
+/_________________________\\
+        ||||||||
+     ~~~~~~~~~~~~~~`
     ],
     
     ge: [
@@ -1534,7 +1545,7 @@
       |||||
     ~~~~~~~~~`,
         
-        `     🌳 სიბრძნე 🌳
+        `     🌳 ჭკვიანი 🌳
     /           \\
    /   ზრდის    \\
   /    რგოლები   \\
@@ -1542,6 +1553,17 @@
 /__________________\\
       |||||||
    ~~~~~~~~~~~~`
+
+        // NEW: Stage 6 "ბრძენი" - 32+ რგოლი
+`      🌳🌲 ბრძენი 🌲🌳
+     /               \\
+    /   ხანის         \\
+   /     სიბრძნე       \\
+  /                     \\
+ /                       \\
+/_________________________\\
+        ||||||||
+     ~~~~~~~~~~~~~~`
     ]
 };
         
@@ -2260,8 +2282,9 @@ function checkVersionAndPreserveData() {
             if (myTree.rings < 4) myTree.stage = 1;
             else if (myTree.rings < 8) myTree.stage = 2;
             else if (myTree.rings < 13) myTree.stage = 3;
-            else if (myTree.rings < 18) myTree.stage = 4;
-            else myTree.stage = 5;
+            else if (myTree.rings < 18) myTree.stage = 4; 
+            else if (myTree.rings < 32) myTree.stage = 5;
+            else myTree.stage = 6;
             
             // Add to journals
             myTree.journals.push({
@@ -2399,10 +2422,10 @@ function checkVersionAndPreserveData() {
             document.getElementById('treeAscii').textContent = treeStages[stageIndex];*/
             
             // Update progress ring
-            const progressPercent = (myTree.stage / 5) * 100;
+            const progressPercent = (myTree.stage / 6) * 100;
             document.querySelector('.progress-ring').style.background = 
                 `conic-gradient(#4a7c3f 0% ${progressPercent}%, #e8f5e8 ${progressPercent}% 100%)`;
-            document.getElementById('progressText').textContent = `${myTree.stage}/5`;
+            document.getElementById('progressText').textContent = `${myTree.stage}/6`;
             
             // Update stats
             document.getElementById('statRings').textContent = myTree.rings;
