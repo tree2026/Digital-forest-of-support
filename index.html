@@ -2379,7 +2379,9 @@ function checkVersionAndPreserveData() {
             // Scroll to show new entry
             const journalEntries = document.getElementById('journalEntries');
             if (journalEntries.firstChild) {
-                journalEntries.firstChild.scrollIntoView({ behavior: 'smooth' });
+                // scroll to the actual newest entry (first element after reversal)
+                journalEntries.firstChild.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // journalEntries.firstChild.scrollIntoView({ behavior: 'smooth' });
             }
         }
         
