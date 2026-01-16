@@ -2094,10 +2094,24 @@ function checkVersionAndPreserveData() {
         }
         
         // Enhanced poem selection with language support
+        
         function getContextualPoem(journalText, practicePrinciple = null) {
             const text = journalText.toLowerCase();
             const lang = currentLanguage;
-            
+
+            // ADD THIS MAPPING OBJECT:
+            const principleToCategory = {
+                'root': 'rooting',        // "Root First" → rooting category
+                'bark': 'bark',           // "Bark Boundaries" → bark category
+                'rings': 'rings',         // "Grow Rings" → rings category
+                'release': 'release',     // "Seasonal Release" → release category
+                'light': 'reaching',      // "Reach for Light" → reaching category
+                'network': 'network',     // "Forest Network" → network category
+                'bend': 'bending',        // "Bend in Storms" → bending category
+                'shape': 'shape'          // "Your True Shape" → shape category
+                // Note: seasons, wholeness, patience, presence have no corresponding principles
+            };
+
             // Get appropriate keywords for current language
             const keywords = categoryKeywords[lang];
             
@@ -2136,7 +2150,11 @@ function checkVersionAndPreserveData() {
             const highestCategory = sortedCategories.length > 0 ? sortedCategories[0][0] : 'rooting';
             
             // Determine which category to prioritize (latest practice or highest keyword)
-            const priorityCategory = practicePrinciple || highestCategory;
+            // const priorityCategory = practicePrinciple || highestCategory;
+            
+            // Fixed: map practice principle to category
+            const practiceCategory = practicePrinciple ? principleToCategory[practicePrinciple] : null;
+            const priorityCategory = practiceCategory || highestCategory;
             
             // Prepare list of all poems with scores
             let poemCandidates = [];
