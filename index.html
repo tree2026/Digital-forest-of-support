@@ -66,7 +66,7 @@
     --bg-gradient-start: #132212;
     --bg-gradient-end: #0d1a0d;
     --text-primary: #c2e1ae;
-    --text-secondary: #a1ba91;
+    --text-secondary: #819a6e;
     --text-tertiary: #405f34;
     --text-quaternary: #badba5;
     --card-bg: #1f1f1f;
@@ -76,29 +76,30 @@
     --button-hover: #0a250b;
     --button-secondary: #284d1d;
     --principle-bg: #152216;
-    --principle-border: #194a0c;
+    --principle-border: #2e5b25;
     --principle-selected: #0a250b;
     --journal-bg: #2a2a2a;
-    --journal-placeholder: #575757;
-    --journal-date: #a1ba91;
-    --poem-bg-start: #221d0d;
-    --poem-bg-end: #1a1508;
+    --journal-placeholder: #979797;
+    --journal-date: #aeaeae;
+    --poem-bg-start: #221e0d;
+    --poem-bg-end: #221e0d;
     --poem-border: #724115;
-    --poem-text: #d8e8c8;
-    --sage-text: #c8d8b8;
+    --poem-text: #c2e1ab;
+    --sage-text: #a3c387;
     --exercise-outer: #1b211a;
     --exercise-inner: #182119;
     --stat-bg: #182119;
-    --stat-border: #2a3a2a;
-    --stat-value: #4a8c3f;
+    --stat-border: #405f34;
+    --stat-value: #c2e1ae;
     --progress-ring-bg: #001200;
     --footer-bg: #202020;
-    --footer-text: #405f34;
+    --footer-text: #819a6e;
     --tree-display-bg: #182119;
     --tree-ascii-color: #c2e1ae;
     --input-bg: #2a2a2a;
-    --input-border: #405f34;
-    --input-text: #badba5; 
+    --input-border: #3b5731;
+    --input-text: #ededed; 
+    --input-placeholder: #979797;
         }
        
         /* [data-theme="dark"] {
@@ -514,15 +515,15 @@
     color: var(--text-quaternary);
 }
 
-[data-theme="dark"] .principle-badge:hover {
+/*[data-theme="dark"] .principle-badge:hover {
     background: var(--principle-bg);
     border-left-color: var(--button-hover);
-}
+}*/
 
-[data-theme="dark"] .principle-badge.selected {
+/* [data-theme="dark"] .principle-badge.selected {
     background: var(--principle-selected);
     border-left-color: var(--button-hover);
-}
+}*/
 
 /* Tree display - keep original border */
 [data-theme="dark"] .tree-display {
@@ -638,7 +639,7 @@
     background: rgba(41, 122, 31, 0.15);
     border-radius: 2px;
 }
-        
+
     @media (max-width: 768px) {
         .container {
             padding: 10px;
