@@ -467,33 +467,28 @@
 /* Body background */
 [data-theme="dark"] body {
     background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
-    color: var(--text-quaternary); /* Default text color */
+    color: var(--text-quaternary);
 }
 
 /* Headers */
 [data-theme="dark"] header {
     background: var(--card-bg);
-    border-color: var(--card-border); /* Keep original 2px border */
+    border-color: var(--card-border);
 }
 
 [data-theme="dark"] h1 {
     color: var(--text-primary);
 }
 
-[data-theme="dark"] .tagline {
-    color: var(--text-secondary);
+[data-theme="dark"] .taglr(--text-secondary);
 }
 
-[data-theme="dark"] #app-tagline {
-    color: var(--text-secondary);
-}
-
-/* Cards - keep original shadow, only change background */
+/* Cards */
 [data-theme="dark"] .card {
     background: var(--card-bg);
 }
 
-/* Buttons - keep original shadows, only change colors */
+/* Buttons */
 [data-theme="dark"] button {
     background: var(--button-bg);
     box-shadow: 0 4px 0 var(--button-shadow);
@@ -502,22 +497,25 @@
 [data-theme="dark"] button:hover {
     background: var(--button-hover);
     box-shadow: 0 6px 0 var(--button-shadow);
+    transform: none; /* ADDED: Prevent movement */
 }
 
 [data-theme="dark"] button.secondary {
     background: var(--button-secondary);
 }
 
-/* Principle badges - keep original left border */
+/* Principle badges */
 [data-theme="dark"] .principle-badge {
     background: var(--principle-bg);
-    border-left-color: var(--principle-border); /* Keep 5px left border */
+    border-left-color: var(--principle-border);
     color: var(--text-quaternary);
 }
 
 [data-theme="dark"] .principle-badge:hover {
     background: var(--principle-bg);
     border-left-color: var(--principle-border);
+    transform: translateX(5px); /* ADD BACK slight movement */
+    position: relative; /* Keep for eclipse effect */
 }
 
 [data-theme="dark"] .principle-badge.selected {
@@ -525,10 +523,22 @@
     border-left-color: var(--principle-border);
 }
 
-/* Tree display - keep original border */
+/* Eclipse effect - UPDATED to work with hover */
+[data-theme="dark"] .principle-badge:hover::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 5px;
+    width: 8px;
+    height: calc(100% - 10px);
+    background: rgba(41, 122, 31, 0.15);
+    border-radius: 2px;
+}
+
+/* Tree display */
 [data-theme="dark"] .tree-display {
     background: var(--tree-display-bg);
-    border-color: var(--card-border); /* Keep 2px border */
+    border-color: var(--card-border);
 }
 
 [data-theme="dark"] #treeAscii,
@@ -536,11 +546,11 @@
     color: var(--tree-ascii-color);
 }
 
-/* Textareas - keep original border */
+/* Textareas */
 [data-theme="dark"] textarea {
     background: var(--journal-bg);
     color: var(--input-text);
-    border-color: var(--input-border); /* Keep 2px border */
+    border-color: var(--input-border);
 }
 
 [data-theme="dark"] textarea::placeholder {
@@ -551,19 +561,24 @@
 [data-theme="dark"] input[type="text"] {
     background: var(--input-bg);
     color: var(--input-text);
-    border-color: var(--input-border); /* Keep 2px border */
+    border-color: var(--input-border);
 }
 
-/* Exercise box - keep original border */
+/* Input placeholder */
+[data-theme="dark"] input[type="text"]::placeholder {
+    color: var(--input-placeholder);
+}
+
+/* Exercise box */
 [data-theme="dark"] .exercise-box {
     background: var(--exercise-outer);
-    border-color: var(--card-border); /* Keep 2px border */
+    border-color: var(--card-border);
 }
 
-/* Poem response - keep original left border */
+/* Poem response */
 [data-theme="dark"] .poem-response {
     background: var(--poem-bg-start);
-    border-left-color: var(--poem-border); /* Keep 8px left border */
+    border-left-color: var(--poem-border);
 }
 
 [data-theme="dark"] .poem-response p {
@@ -574,29 +589,31 @@
     color: var(--sage-text);
 }
 
-/* Journal entries - keep original left border */
+/* Journal entries */
 [data-theme="dark"] .journal-entry {
     background: var(--exercise-inner);
-    border-left-color: var(--principle-border); 
+    border-left-color: var(--principle-border);
 }
 
 [data-theme="dark"] .entry-date {
     color: var(--journal-date);
 }
 
-/* Stats boxes - keep original border */
+/* Stats boxes */
 [data-theme="dark"] .stat-box {
     background: var(--stat-bg);
-    border-color: var(--stat-border); /* Keep 2px border */
+    border-color: var(--stat-border);
 }
+
 [data-theme="dark"] .stat-box span {
     color: var(--stat-value);
 }
+
 [data-theme="dark"] .stat-value {
     color: var(--stat-value);
 }
 
-/* Progress ring - replace colors only */
+/* Progress ring */
 [data-theme="dark"] .progress-ring {
     background: conic-gradient(var(--button-bg) 0% 25%, var(--progress-ring-bg) 25% 100%);
 }
@@ -609,10 +626,10 @@
     color: var(--text-primary);
 }
 
-/* Step boxes - keep original border */
+/* Step boxes */
 [data-theme="dark"] .step {
     background: var(--exercise-outer);
-    border-color: var(--card-border); /* Keep 2px border */
+    border-color: var(--card-border);
 }
 
 /* Footer */
@@ -626,33 +643,12 @@
     color: var(--footer-text);
 }
 
-/* Simple eclipse effect on hover */
-[data-theme="dark"] .principle-badge:hover {
-    position: relative;
-}
-
-[data-theme="dark"] .principle-badge:hover::before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: 5px;
-    width: 8px;
-    height: calc(100% - 10px);
-    background: rgba(41, 122, 31, 0.15);
-    border-radius: 2px;
-}
-
-/* Input placeholder color */
-[data-theme="dark"] input[type="text"]::placeholder {
-    color: var(--input-placeholder);
-}
-
 /* Double border focus effect */
 [data-theme="dark"] input[type="text"]:focus,
 [data-theme="dark"] textarea:focus {
     outline: none;
     border: 2px double;
-    border-color: #e29c21 #f1d3a0; /* Outer: #f1d3a0, Inner: #e29c21 */
+    border-color: #e29c21 #f1d3a0;
 }
 
 /* Specific journal card background */
@@ -660,28 +656,23 @@
     background: var(--card-bg);
 }
 
-/* Prevent size changes on hover */
-[data-theme="dark"] button:hover,
-[data-theme="dark"] .principle-badge:hover {
-    transform: none;
-}
-
 /* Keep button color same on click */
 [data-theme="dark"] button:active {
     background: var(--button-bg);
 }
 
-/* Ensure no size changes */
+/* Ensure no size changes - REMOVE or KEEP? Your choice */
 [data-theme="dark"] .exercise-box,
 [data-theme="dark"] .principle-badge,
 [data-theme="dark"] .card,
 [data-theme="dark"] .step,
 [data-theme="dark"] .tree-display,
 [data-theme="dark"] .stat-box {
-    width: auto;
+    /* These might not be needed if sizes are already correct */
+    /* width: auto;
     height: auto;
     padding: inherit;
-    margin: inherit;        
+    margin: inherit; */
 }
         
     @media (max-width: 768px) {
