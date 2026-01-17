@@ -26,17 +26,441 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+   
     
     <style>
+    /* ==================== CSS VARIABLES ==================== */
+        :root {
+        /* Light theme (default - your current design) */
+        --bg-gradient-start: #e6f2e6;
+        --bg-gradient-end: #c9e4c9;
+        --text-primary: #2d5016;
+        --text-secondary: #5a7d3e;
+        --card-bg: white;
+        --card-border: #b8d8a8;
+        --header-bg: rgba(255, 255, 255, 0.9);
+        --button-bg: #4a7c3f;
+        --button-shadow: #3a6530;
+        --button-hover: #3a6530;
+        --button-secondary: #8aae7f;
+        --tree-display-bg: #f9fff9;
+        --principle-bg: #e8f5e8;
+        --principle-hover: #d4e8d4;
+        --principle-selected: #c9e4c9;
+        --textarea-border: #c9e4c9;
+        --exercise-bg: #f0f7f0;
+        --poem-bg-start: #f9f5e6;
+        --poem-bg-end: #f5f0d9;
+        --poem-border: #8a5a2d;
+        --journal-bg: #f9fff9;
+        --step-bg: #f9fff9;
+        --step-border: #d4e8d4;
+        --stat-bg: #f0f7f0;
+        --stat-border: #d4e8d4;
+        --footer-bg: rgba(255, 255, 255, 0.9);
+        --footer-text: #5a7d3e;
+        }
+    
+        [data-theme="dark"] {
+        /* Dark theme */
+        --bg-gradient-start: #1a2f1a;
+        --bg-gradient-end: #0d1f0d;
+        --text-primary: #e0f0d0;
+        --text-secondary: #a8c8a0;
+        --card-bg: #2d3c2d;
+        --card-border: #3a5a3a;
+        --header-bg: rgba(45, 60, 45, 0.9);
+        --button-bg: #3a6530;
+        --button-shadow: #2d5016;
+        --button-hover: #2d5016;
+        --button-secondary: #5a8a4f;
+        --tree-display-bg: #253225;
+        --principle-bg: #2d3c2d;
+        --principle-hover: #3a4a3a;
+        --principle-selected: #2d5016;
+        --textarea-border: #3a5a3a;
+        --exercise-bg: #253225;
+        --poem-bg-start: #3a3525;
+        --poem-bg-end: #2d2819;
+        --poem-border: #8a5a2d;
+        --journal-bg: #253225;
+        --step-bg: #253225;
+        --step-border: #3a5a3a;
+        --stat-bg: #2d3c2d;
+        --stat-border: #3a5a3a;
+        --footer-bg: rgba(45, 60, 45, 0.9);
+        --footer-text: #a8c8a0;
+        }
+    
         * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Georgia', serif;
+        }
+    
+    /* Georgian font fallback */
+    .georgian-lang {
+        font-family: 'Noto Sans Georgian', 'DejaVu Sans', 'BPG Nino', 'Georgia', serif;
+    }
+    
+    body {
+        background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+        color: var(--text-primary);
+        min-height: 100vh;
+        padding: 20px;
+        line-height: 1.6;
+        transition: background 0.5s ease, color 0.5s ease;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 30px;
+        background: var(--header-bg);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 2px solid var(--card-border);
+        transition: all 0.5s ease;
+    }
+    
+    h1 {
+        color: var(--text-primary);
+        font-size: 2.8em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tagline {
+        font-style: italic;
+        color: var(--text-secondary);
+        font-size: 1.2em;
+    }
+    
+    .card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        display: none;
+        transition: all 0.5s ease;
+    }
+    
+    .card.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    button {
+        background: var(--button-bg);
+        color: white;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 50px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 10px 8px;
+        box-shadow: 0 4px 0 var(--button-shadow);
+    }
+    
+    button:hover {
+        background: var(--button-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 0 var(--button-shadow);
+    }
+    
+    button.secondary {
+        background: var(--button-secondary);
+    }
+    
+    .tree-display {
+        text-align: center;
+        font-family: 'Courier New', monospace;
+        line-height: 1.2;
+        margin: 25px 0;
+        padding: 25px;
+        background: var(--tree-display-bg);
+        border-radius: 15px;
+        border: 2px solid var(--card-border);
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+    
+    .principle-badge {
+        display: inline-block;
+        background: var(--principle-bg);
+        padding: 12px 20px;
+        margin: 8px;
+        border-radius: 25px;
+        border-left: 5px solid var(--button-bg);
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .principle-badge:hover {
+        background: var(--principle-hover);
+        transform: translateX(5px);
+    }
+    
+    .principle-badge.selected {
+        background: var(--principle-selected);
+        box-shadow: 0 5px 15px rgba(74, 124, 63, 0.3);
+    }
+    
+    textarea {
+        width: 100%;
+        min-height: 150px;
+        padding: 20px;
+        border: 2px solid var(--textarea-border);
+        border-radius: 15px;
+        font-size: 1.1em;
+        margin: 15px 0;
+        resize: vertical;
+        font-family: 'Georgia', serif;
+        background: var(--card-bg);
+        color: var(--text-primary);
+        transition: all 0.5s ease;
+    }
+    
+    .georgian-lang textarea {
+        font-family: 'Noto Sans Georgian', 'DejaVu Sans', 'BPG Nino', 'Georgia', serif;
+    }
+    
+    .exercise-box {
+        background: var(--exercise-bg);
+        padding: 25px;
+        margin: 20px 0;
+        border-radius: 15px;
+        border: 2px solid var(--card-border);
+        transition: all 0.5s ease;
+    }
+    
+    .poem-response {
+        background: linear-gradient(to right, var(--poem-bg-start), var(--poem-bg-end));
+        padding: 30px;
+        margin: 20px 0;
+        border-radius: 15px;
+        border-left: 8px solid var(--poem-border);
+        font-style: italic;
+        line-height: 1.8;
+        text-align: center;
+        font-size: 1.1em;
+        transition: all 0.5s ease;
+    }
+    
+    .sage-quote {
+        text-align: right;
+        margin-top: 15px;
+        font-style: normal;
+        font-weight: bold;
+        color: var(--text-secondary);
+        padding-top: 15px;
+        border-top: 1px dashed var(--card-border);
+    }
+    
+    .journal-entry {
+        background: var(--journal-bg);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 15px;
+        border-left: 5px solid var(--button-bg);
+        transition: all 0.5s ease;
+    }
+    
+    .entry-date {
+        color: var(--text-secondary);
+        font-size: 0.9em;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .step {
+        padding: 25px;
+        margin: 20px 0;
+        background: var(--step-bg);
+        border-radius: 15px;
+        border: 2px solid var(--step-border);
+        transition: all 0.5s ease;
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        margin: 25px 0;
+    }
+    
+    .stat-box {
+        background: var(--stat-bg);
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        border: 2px solid var(--stat-border);
+        transition: all 0.5s ease;
+    }
+    
+    .stat-value {
+        font-size: 2em;
+        font-weight: bold;
+        color: var(--button-bg);
+        display: block;
+    }
+    
+    .tree-name-display {
+        font-size: 2em;
+        color: var(--text-primary);
+        margin: 20px 0;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .progress-ring {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: conic-gradient(var(--button-bg) 0% 25%, var(--principle-bg) 25% 100%);
+        margin: 20px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--text-primary);
+        font-size: 1.2em;
+        transition: all 0.5s ease;
+    }
+    
+    .progress-ring-inner {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: var(--card-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+    }
+    
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        padding: 25px;
+        color: var(--footer-text);
+        background: var(--footer-bg);
+        border-radius: 15px;
+        transition: all 0.5s ease;
+    }
+    
+    .language-footer {
+        text-align: center;
+        margin: 5px 0;
+        padding: 5px;
+    }
+
+    .language-toggle {
+        background: var(--button-secondary);
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 50px;
+        font-size: 0.85em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+    }
+
+    .language-toggle:hover {
+        background: var(--button-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Theme toggle button */
+    .theme-toggle {
+        background: var(--button-secondary);
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 50px;
+        font-size: 0.85em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    
+    .theme-toggle:hover {
+        background: var(--button-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .theme-footer {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 10px 0;
+    }
+    
+    @media (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+        }
+
+        .poem-response {
+            font-size: 1em;
+        }
+        
+        .stats-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        button {
+            padding: 12px 20px;
+            font-size: 1em;
+            margin: 5px;
+        }
+        
+        .theme-footer {
+            flex-direction: column;
+            align-items: center;
+        }
+    }  
+    </style>
+    
+ <!--   <style> 
+      /*  * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Georgia', serif;
-        }
+        }*/
         
         /* Georgian font fallback */
-        .georgian-lang {
+      /*  .georgian-lang {
             font-family: 'Noto Sans Georgian', 'DejaVu Sans', 'BPG Nino', 'Georgia', serif;
         }
         
@@ -134,25 +558,6 @@
             justify-content: center;
             align-items: center;
         }
-        
-        /* Center align tree displays */
-       /* Comment out to test
-        .tree-display pre {
-            text-align: center;
-            margin: 0 auto;
-            white-space: pre;
-        }*/
-        
-       /* Fix seed preview alignment */
-       /* #seedPreview pre {
-            text-align: center;
-            margin: 0 auto;
-        }
-    
-        #seedPreview pre span {
-            display: block;
-            text-align: center;
-        }*/
         
         .principle-badge {
             display: inline-block;
@@ -267,17 +672,17 @@
             font-weight: bold;
             color: #4a7c3f;
             display: block;
-        }
+        }*/
         
-        .tree-name-display {
+       /* .tree-name-display {
             font-size: 2em;
             color: #2d5016;
             margin: 20px 0;
             font-weight: bold;
             text-align: center;
-        }
+        }*/
         
-        .progress-ring {
+        /* .progress-ring {
             width: 120px;
             height: 120px;
             border-radius: 50%;
@@ -289,9 +694,9 @@
             font-weight: bold;
             color: #2d5016;
             font-size: 1.2em;
-        }
+        }*/
         
-        .progress-ring-inner {
+       /* .progress-ring-inner {
             width: 90px;
             height: 90px;
             border-radius: 50%;
@@ -299,24 +704,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
+        }*/
         
-        footer {
+       /* footer {
     text-align: center;
-    margin-top: 30px;  /* Changed from 40px to 30px */
-    padding: 25px;
+    margin-top: 30px;*/  /* Changed from 40px to 30px */
+   /* padding: 25px;
     color: #5a7d3e;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
-        }
+        }*/
         
-        .language-footer {
+      /*  .language-footer {
     text-align: center;
     margin: 5px 0;
     padding: 5px;
-}
+}*/
 
-.language-toggle {
+/*.language-toggle {
     background: #8aae7f;
     color: white;
     border: none;
@@ -326,15 +731,15 @@
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: bold;
-}
+}*/
 
-.language-toggle:hover {
+/*.language-toggle:hover {
     background: #7a9e6f;
     transform: translateY(-2px);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-}
+}*/
         
-        @media (max-width: 768px) {
+      /*  @media (max-width: 768px) {
             .container {
                 padding: 10px;
             }
@@ -355,9 +760,9 @@
                 padding: 12px 20px;
                 font-size: 1em;
                 margin: 5px;
-            }
-        }
-    </style>
+            }*/
+      /*  }*/
+    </style> -->
 </head>
 <body> 
     <div class="container">
