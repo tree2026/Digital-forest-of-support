@@ -453,205 +453,93 @@
     /* ============ DARK MODE ENHANCEMENTS ============= */
 
     [data-theme="dark"] {
-    /* === COSY FOREST NIGHT MODE === */
+    /* Enhanced contrast for better readability */
+    --text-primary: #f0f8e0;  /* Brighter text (was #e0f0d0) */
+    --text-secondary: #c8d8b8; /* Brighter secondary (was #a8c8a0) */
     
-    /* Background - Deep forest floor */
-    --bg-gradient-start: #2d382d;
-    --bg-gradient-end: #1e281e;
+    /* Enhanced borders for better separation */
+    --card-border: #4a6a4a;  /* Brighter border (was #3a5a3a) */
+    --step-border: #4a6a4a;  /* Match card borders */
+    --stat-border: #4a6a4a;
     
-    /* Text - Warm candlelight */
-    --text-primary: #f8f0e0;
-    --text-secondary: #d8c8a8;
+    /* Enhanced buttons for better visibility */
+    --button-bg: #4a8c3f;    /* Brighter green (was #3a6530) */
+    --button-shadow: #2d5016;
+    --button-hover: #3a7530; /* Brighter hover */
+    --button-secondary: #6a9a5f; /* Brighter secondary button */
     
-    /* Cards - Fallen leaves brown */
-    --card-bg: #3c463c;
-    --card-border: #6a7a5a;
+    /* Enhanced card backgrounds for depth */
+    --card-bg: #2a3a2a;      /* Slightly lighter (was #2d3c2d) */
+    --header-bg: rgba(50, 65, 50, 0.95); /* More opaque */
     
-    /* Headers - Mossy stone */
-    --header-bg: rgba(60, 70, 60, 0.95);
+    /* Enhanced poem background */
+    --poem-bg-start: #4a4525;
+    --poem-bg-end: #3d3819;
     
-    /* Buttons - Forest moss */
-    --button-bg: #5a8c4a;
-    --button-shadow: #3a6a3a;
-    --button-hover: #4a7c3a;
-    --button-secondary: #7a9a6a;
-    
-    /* Tree areas - Under-canopy dark */
-    --tree-display-bg: #364236;
-    
-    /* Principles - Bark texture */
-    --principle-bg: #3c463c;
-    --principle-hover: #4c564c;
-    --principle-selected: #5a8c4a;
-    
-    /* Inputs - Soft focus */
-    --textarea-border: #6a7a5a;
-    
-    /* Exercises - Shaded ground */
-    --exercise-bg: #364236;
-    
-    /* Poems - Parchment in firelight */
-    --poem-bg-start: #4c4736;
-    --poem-bg-end: #3d3829;
-    --poem-border: #9a8a6d;
-    
-    /* Journals - Consistent with exercises */
-    --journal-bg: #364236;
-    
-    /* Steps - Structured growth */
-    --step-bg: #364236;
-    --step-border: #6a7a5a;
-    
-    /* Stats - Forest data */
-    --stat-bg: #3c463c;
-    --stat-border: #6a7a5a;
-    
-    /* Footer - Forest floor */
-    --footer-bg: rgba(60, 70, 60, 0.9);
-    --footer-text: #d8c8a8;
+    /* Enhanced progress ring contrast */
+    --principle-bg: #2a3a2a;  /* Match card bg */
 }
 
-/* === ENHANCED COSY STYLES === */
-[data-theme="dark"] body {
-    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
-}
-
+/* Additional dark mode specific styles */
 [data-theme="dark"] .card {
-    background: var(--card-bg);
-    border: 2px solid var(--card-border);
-    border-radius: 18px; /* Slightly more rounded */
-    box-shadow: 
-        0 10px 25px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-[data-theme="dark"] header {
-    background: var(--header-bg);
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--card-border);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
-
-[data-theme="dark"] button {
-    background: var(--button-bg);
-    border: none;
-    box-shadow: 
-        0 4px 0 var(--button-shadow),
-        0 6px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease;
-}
-
-[data-theme="dark"] button:hover {
-    transform: translateY(-3px);
-    box-shadow: 
-        0 6px 0 var(--button-shadow),
-        0 8px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
 }
 
 [data-theme="dark"] .tree-display {
-    background: var(--tree-display-bg);
-    border: 2px solid var(--card-border);
-    box-shadow: 
-        inset 0 0 20px rgba(0, 0, 0, 0.4),
-        0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-[data-theme="dark"] .principle-badge {
-    background: var(--principle-bg);
-    border-left: 5px solid var(--button-bg);
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease;
-}
-
-[data-theme="dark"] .principle-badge:hover {
-    background: var(--principle-hover);
-    transform: translateX(8px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Inner shadow for depth */
 }
 
 [data-theme="dark"] textarea {
-    background: var(--card-bg);
-    border: 2px solid var(--textarea-border);
-    border-radius: 12px;
-    box-shadow: 
-        inset 0 2px 4px rgba(0, 0, 0, 0.3),
-        0 2px 4px rgba(0, 0, 0, 0.1);
-    color: var(--text-primary);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2); /* Inner shadow */
 }
 
-[data-theme="dark"] .poem-response {
-    background: linear-gradient(135deg, var(--poem-bg-start), var(--poem-bg-end));
-    border-left: 8px solid var(--poem-border);
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+[data-theme="dark"] button {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for buttons */
+}
+
+[data-theme="dark"] .principle-badge {
+    border-left: 5px solid var(--button-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .journal-entry {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme="dark"] .sage-quote {
-    color: var(--text-secondary);
-    border-top: 1px dashed var(--card-border);
-    font-style: italic;
+    color: #d8e8c8; /* Brighter sage quote */
 }
 
-[data-theme="dark"] .progress-ring {
-    background: conic-gradient(var(--button-bg) 0% 25%, var(--principle-bg) 25% 100%);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+/* Make tree ASCII art more visible in dark mode */
+[data-theme="dark"] #treeAscii,
+[data-theme="dark"] #seedPreview pre {
+    color: #e0f0d0; /* Special brighter color for tree art */
+    text-shadow: 0 0 3px rgba(100, 150, 100, 0.3);
 }
 
+/* Fix any white elements that might appear in dark mode */
 [data-theme="dark"] .progress-ring-inner {
-    background: var(--card-bg);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: var(--card-bg); /* Was white */
 }
 
+/* Enhance form elements */
 [data-theme="dark"] input[type="text"] {
     background: var(--card-bg);
     color: var(--text-primary);
-    border: 2px solid var(--textarea-border);
-    border-radius: 12px;
-    box-shadow: 
-        inset 0 2px 4px rgba(0, 0, 0, 0.3),
-        0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--card-border);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1.2em;
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
 }
 
 [data-theme="dark"] input[type="text"]:focus {
     outline: none;
     border-color: var(--button-bg);
-    box-shadow: 
-        inset 0 2px 4px rgba(0, 0, 0, 0.3),
-        0 0 0 3px rgba(90, 140, 74, 0.3);
+    box-shadow: 0 0 0 3px rgba(74, 140, 63, 0.2);
 }
-
-/* Make tree ASCII art glow softly */
-[data-theme="dark"] #treeAscii,
-[data-theme="dark"] #seedPreview pre {
-    color: #f0e8d0;
-    text-shadow: 
-        0 0 5px rgba(200, 220, 150, 0.2),
-        0 0 10px rgba(150, 180, 120, 0.1);
-}
-
-/* Stat boxes with depth */
-[data-theme="dark"] .stat-box {
-    background: var(--stat-bg);
-    border: 2px solid var(--stat-border);
-    border-radius: 15px;
-    box-shadow: 
-        0 4px 8px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-[data-theme="dark"] .stat-value {
-    color: var(--button-bg);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Footer with subtle separation */
-[data-theme="dark"] footer {
-    background: var(--footer-bg);
-    border-top: 1px solid var(--card-border);
-    backdrop-filter: blur(5px);
-}
-
 
     </style>
     
