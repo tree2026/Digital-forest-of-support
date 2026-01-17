@@ -60,9 +60,48 @@
         --footer-bg: rgba(255, 255, 255, 0.9);
         --footer-text: #5a7d3e;
         }
-    
+
         [data-theme="dark"] {
-        /* Dark theme */
+    /* === COLOR VARIABLES ONLY === */
+    --bg-gradient-start: #132212;
+    --bg-gradient-end: #0d1a0d;
+    --text-primary: #c2e1ae;
+    --text-secondary: #a1ba91;
+    --text-tertiary: #405f34;
+    --text-quaternary: #badba5;
+    --card-bg: #1f1f1f;
+    --card-border: #405f34;
+    --button-bg: #194a0c;
+    --button-shadow: #2d5a1d;
+    --button-hover: #0a250b;
+    --button-secondary: #284d1d;
+    --principle-bg: #152216;
+    --principle-border: #194a0c;
+    --principle-selected: #0a250b;
+    --journal-bg: #2a2a2a;
+    --journal-placeholder: #575757;
+    --journal-date: #a1ba91;
+    --poem-bg-start: #221d0d;
+    --poem-bg-end: #1a1508;
+    --poem-border: #724115;
+    --poem-text: #d8e8c8;
+    --sage-text: #c8d8b8;
+    --exercise-outer: #1b211a;
+    --exercise-inner: #182119;
+    --stat-bg: #182119;
+    --stat-border: #2a3a2a;
+    --stat-value: #4a8c3f;
+    --progress-ring-bg: #001200;
+    --footer-bg: #202020;
+    --footer-text: #405f34;
+    --tree-display-bg: #182119;
+    --tree-ascii-color: #c2e1ae;
+    --input-bg: #2a2a2a;
+    --input-border: #405f34;
+    --input-text: #badba5; 
+        }
+       
+        /* [data-theme="dark"] {
         --bg-gradient-start: #1a2f1a;
         --bg-gradient-end: #0d1f0d;
         --text-primary: #e0f0d0;
@@ -90,7 +129,7 @@
         --stat-border: #3a5a3a;
         --footer-bg: rgba(45, 60, 45, 0.9);
         --footer-text: #a8c8a0;
-        }
+        } */
     
         * {
         margin: 0;
@@ -420,7 +459,186 @@
         gap: 10px;
         margin: 10px 0;
     }
-    
+    /* ==================== DARK MODE - COLOR CHANGE ONLY ==================== */
+
+    /* === APPLY COLORS TO EXISTING STRUCTURE === */
+
+/* Body background */
+[data-theme="dark"] body {
+    background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--text-quaternary); /* Default text color */
+}
+
+/* Headers */
+[data-theme="dark"] header {
+    background: var(--card-bg);
+    border-color: var(--card-border); /* Keep original 2px border */
+}
+
+[data-theme="dark"] h1 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .tagline {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] #app-tagline {
+    color: var(--text-tertiary);
+}
+
+/* Cards - keep original shadow, only change background */
+[data-theme="dark"] .card {
+    background: var(--card-bg);
+}
+
+/* Buttons - keep original shadows, only change colors */
+[data-theme="dark"] button {
+    background: var(--button-bg);
+    box-shadow: 0 4px 0 var(--button-shadow);
+}
+
+[data-theme="dark"] button:hover {
+    background: var(--button-hover);
+    box-shadow: 0 6px 0 var(--button-shadow);
+}
+
+[data-theme="dark"] button.secondary {
+    background: var(--button-secondary);
+}
+
+/* Principle badges - keep original left border */
+[data-theme="dark"] .principle-badge {
+    background: var(--principle-bg);
+    border-left-color: var(--principle-border); /* Keep 5px left border */
+    color: var(--text-quaternary);
+}
+
+[data-theme="dark"] .principle-badge:hover {
+    background: var(--principle-bg);
+    border-left-color: var(--button-hover);
+}
+
+[data-theme="dark"] .principle-badge.selected {
+    background: var(--principle-selected);
+    border-left-color: var(--button-hover);
+}
+
+/* Tree display - keep original border */
+[data-theme="dark"] .tree-display {
+    background: var(--tree-display-bg);
+    border-color: var(--card-border); /* Keep 2px border */
+}
+
+[data-theme="dark"] #treeAscii,
+[data-theme="dark"] #seedPreview pre {
+    color: var(--tree-ascii-color);
+}
+
+/* Textareas - keep original border */
+[data-theme="dark"] textarea {
+    background: var(--journal-bg);
+    color: var(--input-text);
+    border-color: var(--input-border); /* Keep 2px border */
+}
+
+[data-theme="dark"] textarea::placeholder {
+    color: var(--journal-placeholder);
+}
+
+/* Input fields */
+[data-theme="dark"] input[type="text"] {
+    background: var(--input-bg);
+    color: var(--input-text);
+    border-color: var(--input-border); /* Keep 2px border */
+}
+
+/* Exercise box - keep original border */
+[data-theme="dark"] .exercise-box {
+    background: var(--exercise-outer);
+    border-color: var(--card-border); /* Keep 2px border */
+}
+
+/* Poem response - keep original left border */
+[data-theme="dark"] .poem-response {
+    background: linear-gradient(to right, var(--poem-bg-start), var(--poem-bg-end));
+    border-left-color: var(--poem-border); /* Keep 8px left border */
+}
+
+[data-theme="dark"] .poem-response p {
+    color: var(--poem-text);
+}
+
+[data-theme="dark"] .sage-quote {
+    color: var(--sage-text);
+}
+
+/* Journal entries - keep original left border */
+[data-theme="dark"] .journal-entry {
+    background: var(--exercise-inner);
+    border-left-color: var(--button-bg); /* Keep 5px left border */
+}
+
+[data-theme="dark"] .entry-date {
+    color: var(--journal-date);
+}
+
+/* Stats boxes - keep original border */
+[data-theme="dark"] .stat-box {
+    background: var(--stat-bg);
+    border-color: var(--stat-border); /* Keep 2px border */
+}
+
+[data-theme="dark"] .stat-value {
+    color: var(--stat-value);
+}
+
+/* Progress ring - replace colors only */
+[data-theme="dark"] .progress-ring {
+    background: conic-gradient(var(--button-bg) 0% 25%, var(--progress-ring-bg) 25% 100%);
+}
+
+[data-theme="dark"] .progress-ring-inner {
+    background: var(--stat-bg);
+}
+
+[data-theme="dark"] #progressText {
+    color: var(--text-primary);
+}
+
+/* Step boxes - keep original border */
+[data-theme="dark"] .step {
+    background: var(--exercise-outer);
+    border-color: var(--card-border); /* Keep 2px border */
+}
+
+/* Footer */
+[data-theme="dark"] footer {
+    background: var(--footer-bg);
+}
+
+[data-theme="dark"] #footer-version,
+[data-theme="dark"] #footer-data,
+[data-theme="dark"] #footer-quote {
+    color: var(--footer-text);
+}
+
+/* Simple eclipse effect on hover */
+[data-theme="dark"] .principle-badge:hover {
+    position: relative;
+}
+
+[data-theme="dark"] .principle-badge:hover::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 5px;
+    width: 8px;
+    height: calc(100% - 10px);
+    background: rgba(41, 122, 31, 0.15);
+    border-radius: 2px;
+}
+        
     @media (max-width: 768px) {
         .container {
             padding: 10px;
@@ -454,76 +672,48 @@
 
     /* ============ SIMPLE DARK MODE - COLOR CHANGE ONLY ==================== */
 
-    [data-theme="dark"] {
-    /* === BACKGROUNDS === */
+    /* [data-theme="dark"] {
     --bg-gradient-start: #132212;
     --bg-gradient-end: #0d1a0d;
-    
-    /* === TEXT COLORS === */
     --text-primary: #c2e1ae;
     --text-secondary: #a1ba91;
     --text-tertiary: #405f34;
     --text-quaternary: #badba5;
-    
-    /* === CARD ELEMENTS === */
     --card-bg: #1f1f1f;
     --card-border: #405f34;
-    
-    /* === BUTTONS === */
     --button-bg: #194a0c;
     --button-shadow: #2d5a1d;
     --button-hover: #0a250b;
     --button-secondary: #284d1d;
-    
-    /* === PRINCIPLE BUTTONS === */
     --principle-bg: #152216;
     --principle-border: #194a0c;
     --principle-selected: #0a250b;
-    
-    /* === JOURNAL ELEMENTS === */
     --journal-bg: #2a2a2a;
     --journal-placeholder: #575757;
-    --journal-date: #a1ba91; /* LIGHTER DATE COLOR */
-    
-    /* === POEM BOX === */
+    --journal-date: #a1ba91; 
     --poem-bg-start: #221d0d;
     --poem-bg-end: #1a1508;
     --poem-border: #724115;
     --poem-text: #d8e8c8;
     --sage-text: #c8d8b8;
-    
-    /* === EXERCISE BOXES === */
     --exercise-outer: #1b211a;
     --exercise-inner: #182119;
-    
-    /* === FOREST STATS === */
     --stat-bg: #182119;
     --stat-border: #2a3a2a;
     --stat-value: #4a8c3f;
     --progress-ring-bg: #001200;
-    
-    /* === FOOTER === */
     --footer-bg: #202020;
     --footer-text: #405f34;
-    
-    /* === TREE DISPLAY === */
     --tree-display-bg: #182119;
     --tree-ascii-color: #c2e1ae;
-    
-    /* === FORM ELEMENTS === */
     --input-bg: #2a2a2a;
     --input-border: #405f34;
     --input-text: #badba5;
 }
-
-/* ==================== COLOR APPLICATIONS ONLY ==================== */
-
-/* Body background only */
+        
 [data-theme="dark"] body {
     background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
 }
-
-/* Text colors only - NO BORDERS, NO SHADOWS, NO SIZE CHANGES */
 [data-theme="dark"] h1,
 [data-theme="dark"] h2,
 [data-theme="dark"] h3,
@@ -531,200 +721,142 @@
 [data-theme="dark"] #app-title {
     color: var(--text-primary);
 }
-
 [data-theme="dark"] .tagline,
 [data-theme="dark"] #app-subtitle {
     color: var(--text-secondary);
 }
-
 [data-theme="dark"] #app-tagline {
     color: var(--text-tertiary);
 }
-
 [data-theme="dark"] p,
 [data-theme="dark"] #welcome-text,
 [data-theme="dark"] #how-it-works,
 [data-theme="dark"] .card p {
     color: var(--text-quaternary);
 }
-
-/* Cards - background only */
 [data-theme="dark"] .card {
     background: var(--card-bg);
 }
-
-/* Headers - background only */
 [data-theme="dark"] header {
     background: var(--card-bg);
-    border: 2px solid var(--card-border); /* Only this border exists in screenshot */
+    border: 2px solid var(--card-border);
 }
-
-/* Main navigation buttons - NO EXTRA BORDERS */
 [data-theme="dark"] button {
     background: var(--button-bg);
     color: white;
     box-shadow: 0 4px 0 var(--button-shadow);
 }
-
 [data-theme="dark"] button:hover {
     background: var(--button-hover);
     box-shadow: 0 4px 0 var(--button-shadow);
-    transform: none; /* Remove movement */
+    transform: none; 
 }
-
 [data-theme="dark"] button.secondary {
     background: var(--button-secondary);
 }
-
-/* Principle buttons - left border only */
 [data-theme="dark"] .principle-badge {
     background: var(--principle-bg);
     border-left: 5px solid var(--principle-border);
     color: var(--text-quaternary);
 }
-
 [data-theme="dark"] .principle-badge:hover {
     background: var(--principle-bg);
     border-left: 5px solid var(--button-hover);
 }
-
 [data-theme="dark"] .principle-badge.selected {
     background: var(--principle-selected);
     border-left: 5px solid var(--button-hover);
 }
-
-/* Tree display - background only */
 [data-theme="dark"] .tree-display {
     background: var(--tree-display-bg);
 }
-
 [data-theme="dark"] #treeAscii,
 [data-theme="dark"] #seedPreview pre {
     color: var(--tree-ascii-color);
 }
-
-/* Textareas - background only */
 [data-theme="dark"] textarea {
     background: var(--journal-bg);
     color: var(--input-text);
 }
-
 [data-theme="dark"] textarea::placeholder {
     color: var(--journal-placeholder);
 }
-
-/* Input fields */
 [data-theme="dark"] input[type="text"] {
     background: var(--input-bg);
     color: var(--input-text);
     border: 2px solid var(--input-border);
 }
-
-/* Exercise boxes - NO OUTER BORDER */
 [data-theme="dark"] .exercise-box {
     background: var(--exercise-outer);
 }
-
 [data-theme="dark"] .exercise-box h4,
 [data-theme="dark"] .exercise-box p {
     color: var(--text-quaternary);
 }
-
-/* Poem response */
 [data-theme="dark"] .poem-response {
     background: linear-gradient(to right, var(--poem-bg-start), var(--poem-bg-end));
     border-left: 8px solid var(--poem-border);
 }
-
 [data-theme="dark"] .poem-response p {
     color: var(--poem-text);
 }
-
 [data-theme="dark"] .sage-quote {
     color: var(--sage-text);
 }
-
-/* Journal entries */
 [data-theme="dark"] .journal-entry {
     background: var(--exercise-inner);
     border-left: 5px solid var(--button-bg);
 }
-
 [data-theme="dark"] .entry-date {
-    color: var(--journal-date); /* Lighter date color */
+    color: var(--journal-date);
 }
-
-/* Stats boxes */
 [data-theme="dark"] .stat-box {
     background: var(--stat-bg);
 }
-
 [data-theme="dark"] .stat-value {
     color: var(--stat-value);
 }
-
-/* Progress ring */
 [data-theme="dark"] .progress-ring {
     background: conic-gradient(var(--button-bg) 0% 25%, var(--progress-ring-bg) 25% 100%);
 }
-
 [data-theme="dark"] .progress-ring-inner {
     background: var(--stat-bg);
 }
-
 [data-theme="dark"] #progressText {
     color: var(--text-primary);
 }
-
-/* Step boxes - NO BORDERS */
 [data-theme="dark"] .step {
     background: var(--exercise-outer);
 }
-
-/* Footer */
 [data-theme="dark"] footer {
     background: var(--footer-bg);
 }
-
 [data-theme="dark"] #footer-version,
 [data-theme="dark"] #footer-data,
 [data-theme="dark"] #footer-quote {
     color: var(--footer-text);
 }
-
-/* Remove all extra borders from practice, forest, journal cards */
 [data-theme="dark"] #practice.card,
 [data-theme="dark"] #forest.card,
 [data-theme="dark"] #journal.card {
     border: none;
 }
-
-/* Remove border from step boxes */
 [data-theme="dark"] .step {
     border: none;
 }
-
-/* Remove border from exercise box */
 [data-theme="dark"] .exercise-box {
     border: none;
 }
-
-/* Remove border from tree display */
 [data-theme="dark"] .tree-display {
     border: none;
 }
-
-/* Remove border from stat boxes */
 [data-theme="dark"] .stat-box {
     border: none;
 }
-
-/* Simple button hover effect - light shadow on left like eclipse */
 [data-theme="dark"] .principle-badge:hover,
 [data-theme="dark"] button:hover {
     position: relative;
 }
-
 [data-theme="dark"] .principle-badge:hover::after,
 [data-theme="dark"] button:hover::after {
     content: '';
@@ -737,7 +869,7 @@
     background: rgba(41, 122, 31, 0.3);
     border-radius: 2px;
     z-index: -1;
-}
+}*/
     
 
     </style>
