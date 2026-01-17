@@ -2103,14 +2103,15 @@
         function updateThemeButton() {
             const button = document.getElementById('theme-toggle');
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-    
-            if (currentTheme === 'dark') {
+            button.innerHTML = currentTheme === 'dark' ? '☀️' : '🌙';
+            
+            /*if (currentTheme === 'dark') {
                 button.innerHTML = '☀️';
                 button.title = 'Switch to light mode';
             } else {
                 button.innerHTML = '🌙';
                 button.title = 'Switch to dark mode';
-            }
+            }*/
         }
         
         function toggleLanguage() {
