@@ -485,7 +485,7 @@
 }
 
 [data-theme="dark"] #app-tagline {
-    color: var(--text-tertiary);
+    color: var(--text-secondary);
 }
 
 /* Cards - keep original shadow, only change background */
@@ -515,15 +515,15 @@
     color: var(--text-quaternary);
 }
 
-/*[data-theme="dark"] .principle-badge:hover {
+[data-theme="dark"] .principle-badge:hover {
     background: var(--principle-bg);
-    border-left-color: var(--button-hover);
-}*/
+    border-left-color: var(--principle-border);
+}
 
-/* [data-theme="dark"] .principle-badge.selected {
+[data-theme="dark"] .principle-badge.selected {
     background: var(--principle-selected);
-    border-left-color: var(--button-hover);
-}*/
+    border-left-color: var(--principle-border);
+}
 
 /* Tree display - keep original border */
 [data-theme="dark"] .tree-display {
@@ -562,7 +562,7 @@
 
 /* Poem response - keep original left border */
 [data-theme="dark"] .poem-response {
-    background: linear-gradient(to right, var(--poem-bg-start), var(--poem-bg-end));
+    background: var(--poem-bg-start);
     border-left-color: var(--poem-border); /* Keep 8px left border */
 }
 
@@ -577,7 +577,7 @@
 /* Journal entries - keep original left border */
 [data-theme="dark"] .journal-entry {
     background: var(--exercise-inner);
-    border-left-color: var(--button-bg); /* Keep 5px left border */
+    border-left-color: var(--principle-border); 
 }
 
 [data-theme="dark"] .entry-date {
@@ -589,7 +589,9 @@
     background: var(--stat-bg);
     border-color: var(--stat-border); /* Keep 2px border */
 }
-
+[data-theme="dark"] .stat-box span {
+    color: var(--stat-value);
+}
 [data-theme="dark"] .stat-value {
     color: var(--stat-value);
 }
@@ -640,6 +642,48 @@
     border-radius: 2px;
 }
 
+/* Input placeholder color */
+[data-theme="dark"] input[type="text"]::placeholder {
+    color: var(--input-placeholder);
+}
+
+/* Double border focus effect */
+[data-theme="dark"] input[type="text"]:focus,
+[data-theme="dark"] textarea:focus {
+    outline: none;
+    border: 2px double;
+    border-color: #e29c21 #f1d3a0; /* Outer: #f1d3a0, Inner: #e29c21 */
+}
+
+/* Specific journal card background */
+[data-theme="dark"] #journal.card {
+    background: var(--card-bg);
+}
+
+/* Prevent size changes on hover */
+[data-theme="dark"] button:hover,
+[data-theme="dark"] .principle-badge:hover {
+    transform: none;
+}
+
+/* Keep button color same on click */
+[data-theme="dark"] button:active {
+    background: var(--button-bg);
+}
+
+/* Ensure no size changes */
+[data-theme="dark"] .exercise-box,
+[data-theme="dark"] .principle-badge,
+[data-theme="dark"] .card,
+[data-theme="dark"] .step,
+[data-theme="dark"] .tree-display,
+[data-theme="dark"] .stat-box {
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;        
+}
+        
     @media (max-width: 768px) {
         .container {
             padding: 10px;
