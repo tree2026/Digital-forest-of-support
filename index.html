@@ -969,8 +969,12 @@
    
        <!-- Replace your current footer -->
 <footer>
-    <div style="text-align: center; margin: 10px 0;">
+   <!-- <div style="text-align: center; margin: 10px 0;"> -->
+       <!-- <button class="language-toggle" onclick="toggleLanguage()" id="lang-toggle">🌐 ENG/GE</button> -->
+   <!-- </div> -->
+    <div class="theme-footer">
         <button class="language-toggle" onclick="toggleLanguage()" id="lang-toggle">🌐 ENG/GE</button>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">🌙</button>
     </div>
     <p id="footer-version">🌿 Forest of Support v1.2 • With Contextual Poetic Wisdom</p>
     <p id="footer-data">Your data stays in your browser • Share with #ForestOfSupport #HealLikeATree</p>
@@ -2065,6 +2069,46 @@
                 document.body.classList.add('georgian-lang');
             } else {
                 document.body.classList.remove('georgian-lang');
+            }
+        }
+
+        // =========== THEME MANAGEMENT =============
+        const THEME_KEY = 'forestTheme';
+
+        // Initialize theme
+        function initTheme() {
+            const savedTheme = localStorage.getItem(THEME_KEY);
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+            // Priority: saved preference > system preference > light
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    
+            setTheme(theme);
+            updateThemeButton();
+        }
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem(THEME_KEY, theme);
+            updateThemeButton();
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        }
+
+        function updateThemeButton() {
+            const button = document.getElementById('theme-toggle');
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    
+            if (currentTheme === 'dark') {
+                button.innerHTML = '☀️';
+                button.title = 'Switch to light mode';
+            } else {
+                button.innerHTML = '🌙';
+                button.title = 'Switch to dark mode';
             }
         }
         
