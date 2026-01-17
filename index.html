@@ -448,7 +448,96 @@
             flex-direction: column;
             align-items: center;
         }
-    }  
+    }
+        /* ==================== DARK MODE ENHANCEMENTS ==================== */
+[data-theme="dark"] {
+    /* Enhanced contrast for better readability */
+    --text-primary: #f0f8e0;  /* Brighter text (was #e0f0d0) */
+    --text-secondary: #c8d8b8; /* Brighter secondary (was #a8c8a0) */
+    
+    /* Enhanced borders for better separation */
+    --card-border: #4a6a4a;  /* Brighter border (was #3a5a3a) */
+    --step-border: #4a6a4a;  /* Match card borders */
+    --stat-border: #4a6a4a;
+    
+    /* Enhanced buttons for better visibility */
+    --button-bg: #4a8c3f;    /* Brighter green (was #3a6530) */
+    --button-shadow: #2d5016;
+    --button-hover: #3a7530; /* Brighter hover */
+    --button-secondary: #6a9a5f; /* Brighter secondary button */
+    
+    /* Enhanced card backgrounds for depth */
+    --card-bg: #2a3a2a;      /* Slightly lighter (was #2d3c2d) */
+    --header-bg: rgba(50, 65, 50, 0.95); /* More opaque */
+    
+    /* Enhanced poem background */
+    --poem-bg-start: #4a4525;
+    --poem-bg-end: #3d3819;
+    
+    /* Enhanced progress ring contrast */
+    --principle-bg: #2a3a2a;  /* Match card bg */
+}
+
+/* Additional dark mode specific styles */
+[data-theme="dark"] .card {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+[data-theme="dark"] .tree-display {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Inner shadow for depth */
+}
+
+[data-theme="dark"] textarea {
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2); /* Inner shadow */
+}
+
+[data-theme="dark"] button {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for buttons */
+}
+
+[data-theme="dark"] .principle-badge {
+    border-left: 5px solid var(--button-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .journal-entry {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .sage-quote {
+    color: #d8e8c8; /* Brighter sage quote */
+}
+
+/* Make tree ASCII art more visible in dark mode */
+[data-theme="dark"] #treeAscii,
+[data-theme="dark"] #seedPreview pre {
+    color: #e0f0d0; /* Special brighter color for tree art */
+    text-shadow: 0 0 3px rgba(100, 150, 100, 0.3);
+}
+
+/* Fix any white elements that might appear in dark mode */
+[data-theme="dark"] .progress-ring-inner {
+    background: var(--card-bg); /* Was white */
+}
+
+/* Enhance form elements */
+[data-theme="dark"] input[type="text"] {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 2px solid var(--card-border);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1.2em;
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+[data-theme="dark"] input[type="text"]:focus {
+    outline: none;
+    border-color: var(--button-bg);
+    box-shadow: 0 0 0 3px rgba(74, 140, 63, 0.2);
+}
     </style>
     
  <!--   <style> 
