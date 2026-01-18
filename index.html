@@ -2590,7 +2590,8 @@ function checkVersionAndPreserveData() {
             myTree.poemsReceived++;
             
             // Update stage based on rings
-            if (myTree.rings < 4) myTree.stage = 1;
+            if (myTree.rings === 0) myTree.stage = 0;
+            else if (myTree.rings < 4) myTree.stage = 1;
             else if (myTree.rings < 8) myTree.stage = 2;
             else if (myTree.rings < 13) myTree.stage = 3;
             else if (myTree.rings < 18) myTree.stage = 4; 
