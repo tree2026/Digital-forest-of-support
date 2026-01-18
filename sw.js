@@ -1,5 +1,5 @@
 // sw.js - Forest of Support Service Worker
-const APP_VERSION = '1.3';
+const APP_VERSION = '1.3';  // ← CHANGED TO 1.3
 const CACHE_NAME = `forest-cache-v${APP_VERSION}`;
 const APP_PREFIX = self.location.pathname.includes('Digital-forest-of-support') 
     ? '/Digital-forest-of-support/' 
@@ -16,7 +16,7 @@ self.addEventListener('install', event => {
   self.skipWaiting(); // Force activation
 });
 
-// ACTIVATE
+// ACTIVATE (COMBINED VERSION)
 self.addEventListener('activate', event => {
   console.log('🌳 Service Worker activating v' + APP_VERSION);
   
@@ -32,6 +32,13 @@ self.addEventListener('activate', event => {
       );
     }).then(() => {
       return self.clients.claim();
+    }).then(() => {
+      // Send update message to all clients
+      return self.clients.matchAll().then(clients => {
+        clients.forEach(client => {
+          client.postMessage({ type: 'UPDATE_READY' });
+        });
+      });
     })
   );
 });
@@ -68,17 +75,4 @@ self.addEventListener('fetch', event => {
           });
       })
   );
-});
-// In your sw.js file, add this:
-self.addEventListener('activate', event => {
-    // Tell the page that an update is ready
-    event.waitUntil(
-        self.clients.matchAll().then(clients => {
-            clients.forEach(client => {
-                client.postMessage({
-                    type: 'UPDATE_READY'
-                });
-            });
-        })
-    );
 });
