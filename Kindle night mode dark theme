@@ -1,0 +1,423 @@
+/* ==================== KINDLE NIGHT MODE DARK THEME ==================== */
+[data-theme="dark"] {
+    /* === BACKGROUNDS === */
+    --bg-gradient-start: #132212;  /* Main background */
+    --bg-gradient-end: #0d1a0d;
+    
+    /* === TEXT COLORS === */
+    --text-primary: #c2e1ae;       /* Forest of Support title, main headings */
+    --text-secondary: #a1ba91;     /* Your journal receives... */
+    --text-tertiary: #405f34;      /* A digital sanctuary... */
+    --text-quaternary: #badba5;    /* Welcome text, principle buttons */
+    
+    /* === CARD ELEMENTS === */
+    --card-bg: #1f1f1f;           /* Welcome card, footer */
+    --card-border: #405f34;       /* Card borders */
+    --card-shadow: rgba(25, 74, 12, 0.3); /* Button shadow color */
+    
+    /* === BUTTONS === */
+    --button-bg: #194a0c;         /* Main buttons */
+    --button-shadow: #2d5a1d;     /* Lighter green shadow */
+    --button-hover: #0a250b;      /* Enhanced when clicked */
+    --button-secondary: #284d1d;  /* Clear field, demo tree */
+    
+    /* === PRINCIPLE BUTTONS === */
+    --principle-bg: #152216;      /* 8 tree principles */
+    --principle-border: #194a0c;  /* Left shadow/border */
+    --principle-selected: #0a250b; /* When selected */
+    
+    /* === JOURNAL ELEMENTS === */
+    --journal-bg: #2a2a2a;        /* New journal entry box */
+    --journal-placeholder: #575757; /* Placeholder text */
+    --journal-date: #515450;      /* Date color */
+    
+    /* === POEM BOX === */
+    --poem-bg-start: #221d0d;     /* Poem background */
+    --poem-bg-end: #1a1508;
+    --poem-border: #724115;       /* Left shadow/border */
+    --poem-text: #d8e8c8;         /* Poem text */
+    --sage-text: #c8d8b8;         /* Slightly darker sage */
+    
+    /* === EXERCISE BOXES === */
+    --exercise-outer: #1b211a;    /* Outer exercise box */
+    --exercise-inner: #182119;    /* Inner exercise box */
+    
+    /* === FOREST STATS === */
+    --stat-bg: #182119;           /* Tree stage, growth rings boxes */
+    --stat-border: #2a3a2a;
+    --stat-value: #00ff00;        /* Green numbers */
+    --progress-ring-bg: #001200;  /* 5/5 completeness ring */
+    
+    /* === FOOTER === */
+    --footer-bg: #202020;         /* Slightly lighter than card */
+    --footer-text: #405f34;       /* Same as tertiary text */
+    
+    /* === TREE DISPLAY === */
+    --tree-display-bg: #182119;
+    --tree-ascii-color: #c2e1ae;  /* Tree art text */
+    
+    /* === FORM ELEMENTS === */
+    --input-bg: #2a2a2a;
+    --input-border: #405f34;
+    --input-text: #badba5;
+}
+
+/* ==================== SPECIFIC ELEMENT STYLES ==================== */
+
+/* Body background */
+[data-theme="dark"] body {
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+}
+
+/* Main cards */
+[data-theme="dark"] .card {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Headers */
+[data-theme="dark"] header {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Main titles */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] .tree-name-display {
+    color: var(--text-primary);
+    text-shadow: 0 0 3px rgba(194, 225, 174, 0.2); /* Phosphor glow */
+}
+
+/* Subtitles and taglines */
+[data-theme="dark"] .tagline,
+[data-theme="dark"] #app-subtitle,
+[data-theme="dark"] #app-tagline {
+    color: var(--text-secondary);
+}
+
+/* Secondary text */
+[data-theme="dark"] #app-tagline {
+    color: var(--text-tertiary);
+}
+
+/* Welcome text, paragraph text */
+[data-theme="dark"] p,
+[data-theme="dark"] #welcome-text,
+[data-theme="dark"] #how-it-works {
+    color: var(--text-quaternary);
+}
+
+/* === BUTTONS === */
+[data-theme="dark"] button {
+    background: var(--button-bg);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 0 var(--button-shadow);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] button:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 var(--button-shadow);
+}
+
+[data-theme="dark"] button.secondary {
+    background: var(--button-secondary);
+}
+
+/* Navigation buttons */
+[data-theme="dark"] #nav-welcome,
+[data-theme="dark"] #nav-plant,
+[data-theme="dark"] #nav-practice,
+[data-theme="dark"] #nav-forest,
+[data-theme="dark"] #nav-journal {
+    background: var(--button-bg);
+    box-shadow: 0 4px 0 var(--button-shadow);
+}
+
+/* === PRINCIPLE BUTTONS === */
+[data-theme="dark"] .principle-badge {
+    background: var(--principle-bg);
+    border-left: 5px solid var(--principle-border);
+    color: var(--text-quaternary);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .principle-badge:hover {
+    background: #1a2a1a;
+    border-left: 5px solid var(--button-hover);
+}
+
+[data-theme="dark"] .principle-badge.selected {
+    background: var(--principle-selected);
+    border-left: 5px solid var(--button-hover);
+    box-shadow: 0 5px 15px rgba(10, 37, 11, 0.4);
+}
+
+/* === TREE DISPLAY === */
+[data-theme="dark"] .tree-display {
+    background: var(--tree-display-bg);
+    border: 2px solid var(--card-border);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] #treeAscii,
+[data-theme="dark"] #seedPreview pre {
+    color: var(--tree-ascii-color);
+    text-shadow: 0 0 5px rgba(194, 225, 174, 0.3); /* Glow effect */
+}
+
+/* === TEXTAREAS === */
+[data-theme="dark"] textarea {
+    background: var(--journal-bg);
+    color: var(--input-text);
+    border: 2px solid var(--input-border);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] textarea::placeholder {
+    color: var(--journal-placeholder);
+}
+
+/* Input fields */
+[data-theme="dark"] input[type="text"] {
+    background: var(--input-bg);
+    color: var(--input-text);
+    border: 2px solid var(--input-border);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] input[type="text"]:focus {
+    outline: none;
+    border-color: var(--button-bg);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.4),
+        0 0 0 3px rgba(25, 74, 12, 0.3);
+}
+
+/* === EXERCISE BOXES === */
+[data-theme="dark"] .exercise-box {
+    background: var(--exercise-outer);
+    border: 2px solid var(--card-border);
+}
+
+[data-theme="dark"] .exercise-box h4,
+[data-theme="dark"] .exercise-box p {
+    color: var(--text-quaternary);
+}
+
+[data-theme="dark"] .exercise-box em {
+    color: var(--text-secondary);
+}
+
+/* === POEM RESPONSE === */
+[data-theme="dark"] .poem-response {
+    background: linear-gradient(to right, var(--poem-bg-start), var(--poem-bg-end));
+    border-left: 8px solid var(--poem-border);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .poem-response p {
+    color: var(--poem-text);
+    text-shadow: 0 0 2px rgba(216, 232, 200, 0.2);
+}
+
+[data-theme="dark"] .sage-quote {
+    color: var(--sage-text);
+    border-top: 1px dashed var(--card-border);
+}
+
+/* === JOURNAL ENTRIES === */
+[data-theme="dark"] .journal-entry {
+    background: var(--exercise-inner);
+    border-left: 5px solid var(--button-bg);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .entry-date {
+    color: var(--journal-date);
+}
+
+[data-theme="dark"] .journal-entry p {
+    color: var(--text-quaternary);
+}
+
+/* === STATS BOXES === */
+[data-theme="dark"] .stat-box {
+    background: var(--stat-bg);
+    border: 2px solid var(--stat-border);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .stat-value {
+    color: var(--stat-value);
+    text-shadow: 0 0 4px rgba(0, 255, 0, 0.3);
+}
+
+/* === PROGRESS RING === */
+[data-theme="dark"] .progress-ring {
+    background: conic-gradient(var(--button-bg) 0% 25%, var(--progress-ring-bg) 25% 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .progress-ring-inner {
+    background: var(--stat-bg);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] #progressText {
+    color: var(--text-primary);
+    text-shadow: 0 0 3px rgba(194, 225, 174, 0.2);
+}
+
+/* === STEP BOXES === */
+[data-theme="dark"] .step {
+    background: var(--exercise-outer);
+    border: 2px solid var(--card-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* === FOOTER === */
+[data-theme="dark"] footer {
+    background: var(--footer-bg);
+    border-top: 1px solid var(--card-border);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] #footer-version,
+[data-theme="dark"] #footer-data,
+[data-theme="dark"] #footer-quote {
+    color: var(--footer-text);
+}
+
+/* === PHOSPHOR GLOW EFFECT === */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] .tree-name-display,
+[data-theme="dark"] #treeAscii,
+[data-theme="dark"] .stat-value,
+[data-theme="dark"] .poem-response p {
+    animation: phosphorGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes phosphorGlow {
+    0% {
+        text-shadow: 0 0 3px rgba(194, 225, 174, 0.2),
+                     0 0 6px rgba(194, 225, 174, 0.1);
+    }
+    100% {
+        text-shadow: 0 0 4px rgba(194, 225, 174, 0.3),
+                     0 0 8px rgba(194, 225, 174, 0.2),
+                     0 0 12px rgba(194, 225, 174, 0.1);
+    }
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 768px) {
+    [data-theme="dark"] .card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    [data-theme="dark"] button {
+        padding: 12px 20px;
+        margin: 5px;
+    }
+}
+
+
+/* ==================== DARK MODE ENHANCEMENTS ==================== */
+[data-theme="dark"] {
+    /* Enhanced contrast for better readability */
+    --text-primary: #f0f8e0;  /* Brighter text (was #e0f0d0) */
+    --text-secondary: #c8d8b8; /* Brighter secondary (was #a8c8a0) */
+    
+    /* Enhanced borders for better separation */
+    --card-border: #4a6a4a;  /* Brighter border (was #3a5a3a) */
+    --step-border: #4a6a4a;  /* Match card borders */
+    --stat-border: #4a6a4a;
+    
+    /* Enhanced buttons for better visibility */
+    --button-bg: #4a8c3f;    /* Brighter green (was #3a6530) */
+    --button-shadow: #2d5016;
+    --button-hover: #3a7530; /* Brighter hover */
+    --button-secondary: #6a9a5f; /* Brighter secondary button */
+    
+    /* Enhanced card backgrounds for depth */
+    --card-bg: #2a3a2a;      /* Slightly lighter (was #2d3c2d) */
+    --header-bg: rgba(50, 65, 50, 0.95); /* More opaque */
+    
+    /* Enhanced poem background */
+    --poem-bg-start: #4a4525;
+    --poem-bg-end: #3d3819;
+    
+    /* Enhanced progress ring contrast */
+    --principle-bg: #2a3a2a;  /* Match card bg */
+}
+
+/* Additional dark mode specific styles */
+[data-theme="dark"] .card {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+[data-theme="dark"] .tree-display {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Inner shadow for depth */
+}
+
+[data-theme="dark"] textarea {
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2); /* Inner shadow */
+}
+
+[data-theme="dark"] button {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for buttons */
+}
+
+[data-theme="dark"] .principle-badge {
+    border-left: 5px solid var(--button-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .journal-entry {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .sage-quote {
+    color: #d8e8c8; /* Brighter sage quote */
+}
+
+/* Make tree ASCII art more visible in dark mode */
+[data-theme="dark"] #treeAscii,
+[data-theme="dark"] #seedPreview pre {
+    color: #e0f0d0; /* Special brighter color for tree art */
+    text-shadow: 0 0 3px rgba(100, 150, 100, 0.3);
+}
+
+/* Fix any white elements that might appear in dark mode */
+[data-theme="dark"] .progress-ring-inner {
+    background: var(--card-bg); /* Was white */
+}
+
+/* Enhance form elements */
+[data-theme="dark"] input[type="text"] {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 2px solid var(--card-border);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1.2em;
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+[data-theme="dark"] input[type="text"]:focus {
+    outline: none;
+    border-color: var(--button-bg);
+    box-shadow: 0 0 0 3px rgba(74, 140, 63, 0.2);
+}
