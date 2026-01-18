@@ -1435,6 +1435,10 @@
     <div class="theme-footer">
         <button class="language-toggle" onclick="toggleLanguage()" id="lang-toggle">🌐 ENG/GE</button>
         <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">🌙</button>
+        <!-- ADD THIS BUTTON: -->
+        <button class="install-toggle" onclick="promptInstall()" id="install-btn" style="display: none;">
+            📱 Install App
+        </button>
     </div>
     <p id="footer-version">🌿 Forest of Support v1.2 • With Contextual Poetic Wisdom</p>
     <p id="footer-data">Your data stays in your browser • Share with #ForestOfSupport #HealLikeATree</p>
@@ -3525,8 +3529,30 @@ function showUpdateNotification() {
 window.addEventListener('beforeunload', () => {
     sessionStorage.removeItem('updateNotificationShown');
 }); 
-   </script>
+   
+       // Add this function for app intall button
+       let deferredInstallPrompt;
 
+       window.addEventListener('beforeinstallprompt', (e) => {
+           e.preventDefault();
+           deferredInstallPrompt = e;
+           document.getElementById('install-btn').style.display = 'inline-block';
+       });
+
+       function promptInstall() {
+           if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        deferredInstallPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                document.getElementById('install-btn').style.display = 'none';
+                alert('🌳 Thank you for installing! Your healing forest is now with you always.');
+            }
+            deferredInstallPrompt = null;
+        });
+           }
+       }
+       
+   </script>
 
 </body>
 </html>
