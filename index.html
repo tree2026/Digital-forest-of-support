@@ -896,7 +896,7 @@
         // 144 poems in both English and Georgian
         
         // APP CONFIG
-        const APP_VERSION = '1.2';
+        const APP_VERSION = '1.3';
         const VERSION_KEY = 'forestAppVersion';
         const LANG_KEY = 'forestLanguage';
         
@@ -1012,8 +1012,8 @@
                 
                 // Update message
                 updateTitle: "📋 Update v{version}",
-                updateNewPoem: "<strong>New Poem System:</strong>",
-                updateList: "<li>Poems won't repeat until you've seen all in a category</li><li>Better matching to your journal words</li><li>Tracks which poems you've received</li><li>Prioritizes poems related to your latest practice</li>",
+                // updateNewPoem: "<strong>New Poem System:</strong>",
+                // updateList: "<li>Poems won't repeat until you've seen all in a category</li><li>Better matching to your journal words</li><li>Tracks which poems you've received</li><li>Prioritizes poems related to your latest practice</li>",
                 updatePreserved: "Your existing journal entries and tree progress are preserved."
             },
             
@@ -2780,7 +2780,7 @@ function checkVersionAndPreserveData() {
                 if (savedVersion) {
                     setTimeout(() => {
                         const t = TEXT[currentLanguage];
-                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Enhanced poem selection' : 'გაუმჯობესებული პოემის შერჩევა'}\n• ${currentLanguage === 'en' ? 'No repeated poems' : 'პოემები არ განმეორდება'}\n• ${currentLanguage === 'en' ? 'Better contextual matching' : 'უკეთესი კონტექსტუალური შესაბამისობა'}\n• ${currentLanguage === 'en' ? 'Tracks your progress' : 'აკონტროლებს თქვენს პროგრესს'}`;
+                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Dark-light mode' : 'ნათელი და მუქი რეჟიმი'}\n• ${currentLanguage === 'en' ? 'Better contextual matching' : 'უკეთესი კონტექსტუალური შესაბამისობა'}\n• ${currentLanguage === 'en' ? 'Available in two languages' : 'ხელმისაწვდომია ორ ენაზე'}`;
                         if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
                             showCard('welcome');
                             document.getElementById('welcome').innerHTML += `
