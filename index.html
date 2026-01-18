@@ -101,36 +101,6 @@
     --input-text: #ededed; 
     --input-placeholder: #979797;
         }
-       
-        /* [data-theme="dark"] {
-        --bg-gradient-start: #1a2f1a;
-        --bg-gradient-end: #0d1f0d;
-        --text-primary: #e0f0d0;
-        --text-secondary: #a8c8a0;
-        --card-bg: #2d3c2d;
-        --card-border: #3a5a3a;
-        --header-bg: rgba(45, 60, 45, 0.9);
-        --button-bg: #3a6530;
-        --button-shadow: #2d5016;
-        --button-hover: #2d5016;
-        --button-secondary: #5a8a4f;
-        --tree-display-bg: #253225;
-        --principle-bg: #2d3c2d;
-        --principle-hover: #3a4a3a;
-        --principle-selected: #2d5016;
-        --textarea-border: #3a5a3a;
-        --exercise-bg: #253225;
-        --poem-bg-start: #3a3525;
-        --poem-bg-end: #2d2819;
-        --poem-border: #8a5a2d;
-        --journal-bg: #253225;
-        --step-bg: #253225;
-        --step-border: #3a5a3a;
-        --stat-bg: #2d3c2d;
-        --stat-border: #3a5a3a;
-        --footer-bg: rgba(45, 60, 45, 0.9);
-        --footer-text: #a8c8a0;
-        } */
     
         * {
         margin: 0;
@@ -453,7 +423,25 @@
         transform: translateY(-2px);
         box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
     }
-    
+        
+    .install-toggle {
+    background: var(--button-secondary);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    }
+
+    .install-toggle:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
+        
     .theme-footer {
         display: flex;
         justify-content: center;
@@ -705,524 +693,8 @@
         }
     }
         
-    /* ============ DARK MODE ENHANCEMENTS ============= */
-
-    /* ============ SIMPLE DARK MODE - COLOR CHANGE ONLY ==================== */
-
-    /* [data-theme="dark"] {
-    --bg-gradient-start: #132212;
-    --bg-gradient-end: #0d1a0d;
-    --text-primary: #c2e1ae;
-    --text-secondary: #a1ba91;
-    --text-tertiary: #405f34;
-    --text-quaternary: #badba5;
-    --card-bg: #1f1f1f;
-    --card-border: #405f34;
-    --button-bg: #194a0c;
-    --button-shadow: #2d5a1d;
-    --button-hover: #0a250b;
-    --button-secondary: #284d1d;
-    --principle-bg: #152216;
-    --principle-border: #194a0c;
-    --principle-selected: #0a250b;
-    --journal-bg: #2a2a2a;
-    --journal-placeholder: #575757;
-    --journal-date: #a1ba91; 
-    --poem-bg-start: #221d0d;
-    --poem-bg-end: #1a1508;
-    --poem-border: #724115;
-    --poem-text: #d8e8c8;
-    --sage-text: #c8d8b8;
-    --exercise-outer: #1b211a;
-    --exercise-inner: #182119;
-    --stat-bg: #182119;
-    --stat-border: #2a3a2a;
-    --stat-value: #4a8c3f;
-    --progress-ring-bg: #001200;
-    --footer-bg: #202020;
-    --footer-text: #405f34;
-    --tree-display-bg: #182119;
-    --tree-ascii-color: #c2e1ae;
-    --input-bg: #2a2a2a;
-    --input-border: #405f34;
-    --input-text: #badba5;
-}
-        
-[data-theme="dark"] body {
-    background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
-}
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] .tree-name-display,
-[data-theme="dark"] #app-title {
-    color: var(--text-primary);
-}
-[data-theme="dark"] .tagline,
-[data-theme="dark"] #app-subtitle {
-    color: var(--text-secondary);
-}
-[data-theme="dark"] #app-tagline {
-    color: var(--text-tertiary);
-}
-[data-theme="dark"] p,
-[data-theme="dark"] #welcome-text,
-[data-theme="dark"] #how-it-works,
-[data-theme="dark"] .card p {
-    color: var(--text-quaternary);
-}
-[data-theme="dark"] .card {
-    background: var(--card-bg);
-}
-[data-theme="dark"] header {
-    background: var(--card-bg);
-    border: 2px solid var(--card-border);
-}
-[data-theme="dark"] button {
-    background: var(--button-bg);
-    color: white;
-    box-shadow: 0 4px 0 var(--button-shadow);
-}
-[data-theme="dark"] button:hover {
-    background: var(--button-hover);
-    box-shadow: 0 4px 0 var(--button-shadow);
-    transform: none; 
-}
-[data-theme="dark"] button.secondary {
-    background: var(--button-secondary);
-}
-[data-theme="dark"] .principle-badge {
-    background: var(--principle-bg);
-    border-left: 5px solid var(--principle-border);
-    color: var(--text-quaternary);
-}
-[data-theme="dark"] .principle-badge:hover {
-    background: var(--principle-bg);
-    border-left: 5px solid var(--button-hover);
-}
-[data-theme="dark"] .principle-badge.selected {
-    background: var(--principle-selected);
-    border-left: 5px solid var(--button-hover);
-}
-[data-theme="dark"] .tree-display {
-    background: var(--tree-display-bg);
-}
-[data-theme="dark"] #treeAscii,
-[data-theme="dark"] #seedPreview pre {
-    color: var(--tree-ascii-color);
-}
-[data-theme="dark"] textarea {
-    background: var(--journal-bg);
-    color: var(--input-text);
-}
-[data-theme="dark"] textarea::placeholder {
-    color: var(--journal-placeholder);
-}
-[data-theme="dark"] input[type="text"] {
-    background: var(--input-bg);
-    color: var(--input-text);
-    border: 2px solid var(--input-border);
-}
-[data-theme="dark"] .exercise-box {
-    background: var(--exercise-outer);
-}
-[data-theme="dark"] .exercise-box h4,
-[data-theme="dark"] .exercise-box p {
-    color: var(--text-quaternary);
-}
-[data-theme="dark"] .poem-response {
-    background: linear-gradient(to right, var(--poem-bg-start), var(--poem-bg-end));
-    border-left: 8px solid var(--poem-border);
-}
-[data-theme="dark"] .poem-response p {
-    color: var(--poem-text);
-}
-[data-theme="dark"] .sage-quote {
-    color: var(--sage-text);
-}
-[data-theme="dark"] .journal-entry {
-    background: var(--exercise-inner);
-    border-left: 5px solid var(--button-bg);
-}
-[data-theme="dark"] .entry-date {
-    color: var(--journal-date);
-}
-[data-theme="dark"] .stat-box {
-    background: var(--stat-bg);
-}
-[data-theme="dark"] .stat-value {
-    color: var(--stat-value);
-}
-[data-theme="dark"] .progress-ring {
-    background: conic-gradient(var(--button-bg) 0% 25%, var(--progress-ring-bg) 25% 100%);
-}
-[data-theme="dark"] .progress-ring-inner {
-    background: var(--stat-bg);
-}
-[data-theme="dark"] #progressText {
-    color: var(--text-primary);
-}
-[data-theme="dark"] .step {
-    background: var(--exercise-outer);
-}
-[data-theme="dark"] footer {
-    background: var(--footer-bg);
-}
-[data-theme="dark"] #footer-version,
-[data-theme="dark"] #footer-data,
-[data-theme="dark"] #footer-quote {
-    color: var(--footer-text);
-}
-[data-theme="dark"] #practice.card,
-[data-theme="dark"] #forest.card,
-[data-theme="dark"] #journal.card {
-    border: none;
-}
-[data-theme="dark"] .step {
-    border: none;
-}
-[data-theme="dark"] .exercise-box {
-    border: none;
-}
-[data-theme="dark"] .tree-display {
-    border: none;
-}
-[data-theme="dark"] .stat-box {
-    border: none;
-}
-[data-theme="dark"] .principle-badge:hover,
-[data-theme="dark"] button:hover {
-    position: relative;
-}
-[data-theme="dark"] .principle-badge:hover::after,
-[data-theme="dark"] button:hover::after {
-    content: '';
-    position: absolute;
-    left: -3px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 80%;
-    background: rgba(41, 122, 31, 0.3);
-    border-radius: 2px;
-    z-index: -1;
-}*/
-    
-
     </style>
     
- <!--   <style> 
-      /*  * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Georgia', serif;
-        }*/
-        
-        /* Georgian font fallback */
-      /*  .georgian-lang {
-            font-family: 'Noto Sans Georgian', 'DejaVu Sans', 'BPG Nino', 'Georgia', serif;
-        }
-        
-        body {
-            background: linear-gradient(to bottom, #e6f2e6, #c9e4c9);
-            color: #2d5016;
-            min-height: 100vh;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 2px solid #b8d8a8;
-        }
-        
-        h1 {
-            color: #2d5016;
-            font-size: 2.8em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .tagline {
-            font-style: italic;
-            color: #5a7d3e;
-            font-size: 1.2em;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            display: none;
-        }
-        
-        .card.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        button {
-            background: #4a7c3f;
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 10px 8px;
-            box-shadow: 0 4px 0 #3a6530;
-        }
-        
-        button:hover {
-            background: #3a6530;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 0 #2d5016;
-        }
-        
-        button.secondary {
-            background: #8aae7f;
-        }
-        
-        .tree-display {
-            text-align: center;
-            font-family: 'Courier New', monospace;
-            line-height: 1.2;
-            margin: 25px 0;
-            padding: 25px;
-            background: #f9fff9;
-            border-radius: 15px;
-            border: 2px solid #b8d8a8;
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .principle-badge {
-            display: inline-block;
-            background: #e8f5e8;
-            padding: 12px 20px;
-            margin: 8px;
-            border-radius: 25px;
-            border-left: 5px solid #4a7c3f;
-            width: 100%;
-            text-align: left;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .principle-badge:hover {
-            background: #d4e8d4;
-            transform: translateX(5px);
-        }
-        
-        .principle-badge.selected {
-            background: #c9e4c9;
-            box-shadow: 0 5px 15px rgba(74, 124, 63, 0.3);
-        }
-        
-        textarea {
-            width: 100%;
-            min-height: 150px;
-            padding: 20px;
-            border: 2px solid #c9e4c9;
-            border-radius: 15px;
-            font-size: 1.1em;
-            margin: 15px 0;
-            resize: vertical;
-            font-family: 'Georgia', serif;
-        }
-        
-        .georgian-lang textarea {
-            font-family: 'Noto Sans Georgian', 'DejaVu Sans', 'BPG Nino', 'Georgia', serif;
-        }
-        
-        .exercise-box {
-            background: #f0f7f0;
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 15px;
-            border: 2px solid #b8d8a8;
-        }
-        
-        .poem-response {
-            background: linear-gradient(to right, #f9f5e6, #f5f0d9);
-            padding: 30px;
-            margin: 20px 0;
-            border-radius: 15px;
-            border-left: 8px solid #8a5a2d;
-            font-style: italic;
-            line-height: 1.8;
-            text-align: center;
-            font-size: 1.1em;
-        }
-        
-        .sage-quote {
-            text-align: right;
-            margin-top: 15px;
-            font-style: normal;
-            font-weight: bold;
-            color: #5a7d3e;
-            padding-top: 15px;
-            border-top: 1px dashed #b8d8a8;
-        }
-        
-        .journal-entry {
-            background: #f9fff9;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 15px;
-            border-left: 5px solid #4a7c3f;
-        }
-        
-        .entry-date {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .step {
-            padding: 25px;
-            margin: 20px 0;
-            background: #f9fff9;
-            border-radius: 15px;
-            border: 2px solid #d4e8d4;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-        
-        .stat-box {
-            background: #f0f7f0;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid #d4e8d4;
-        }
-        
-        .stat-value {
-            font-size: 2em;
-            font-weight: bold;
-            color: #4a7c3f;
-            display: block;
-        }*/
-        
-       /* .tree-name-display {
-            font-size: 2em;
-            color: #2d5016;
-            margin: 20px 0;
-            font-weight: bold;
-            text-align: center;
-        }*/
-        
-        /* .progress-ring {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: conic-gradient(#4a7c3f 0% 25%, #e8f5e8 25% 100%);
-            margin: 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #2d5016;
-            font-size: 1.2em;
-        }*/
-        
-       /* .progress-ring-inner {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }*/
-        
-       /* footer {
-    text-align: center;
-    margin-top: 30px;*/  /* Changed from 40px to 30px */
-   /* padding: 25px;
-    color: #5a7d3e;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-        }*/
-        
-      /*  .language-footer {
-    text-align: center;
-    margin: 5px 0;
-    padding: 5px;
-}*/
-
-/*.language-toggle {
-    background: #8aae7f;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 50px;
-    font-size: 0.85em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: bold;
-}*/
-
-/*.language-toggle:hover {
-    background: #7a9e6f;
-    transform: translateY(-2px);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-}*/
-        
-      /*  @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            h1 {
-                font-size: 2.2em;
-            }
-
-            .poem-response {
-                font-size: 1em;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            button {
-                padding: 12px 20px;
-                font-size: 1em;
-                margin: 5px;
-            }*/
-      /*  }*/
-    </style> -->
 </head>
 <body> 
     <div class="container">
@@ -1242,16 +714,6 @@
     <button onclick="showCard('forest')" id="nav-forest">🌲 My Forest</button>
     <button onclick="showCard('journal')" id="nav-journal">📖 Journal</button>
 </div>
-        
-<!-- <div style="text-align: center; margin-bottom: 30px;">
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 300px; margin: 0 auto;">
-        <button onclick="showCard('welcome')" id="nav-welcome" style="width: 100%; max-width: 250px;">🏠 Welcome</button>
-        <button onclick="showCard('plant')" id="nav-plant" style="width: 100%; max-width: 250px;">🪴 Plant Tree</button>
-        <button onclick="showCard('practice')" id="nav-practice" style="width: 100%; max-width: 250px;">📿 Daily Practice</button>
-        <button onclick="showCard('forest')" id="nav-forest" style="width: 100%; max-width: 250px;">🌲 My Forest</button>
-        <button onclick="showCard('journal')" id="nav-journal" style="width: 100%; max-width: 250px;">📖 Journal</button>
-    </div>
-</div> -->
         
         <!-- Welcome Card -->
         <div id="welcome" class="card active">
@@ -1283,23 +745,6 @@
                 <pre style="font-size: 1.3em; line-height: 1.4; text-align: center;"></pre>
             </div>
            
-            <!-- <div class="tree-display" id="seedPreview">
-                <pre style="font-size: 1.3em; line-height: 1.4;">
-                    🌱
-                    <span id="seed-text-line1"></span>
-                    <span id="seed-text-line2"></span>
-                    <span id="seed-text-line3"></span>
-                </pre>
-            </div>-->
-           
-            <!--  <div class="tree-display" id="seedPreview">
-                <pre style="font-size: 1.3em; line-height: 1.4;">
-       🌱
-      Your seed
-     is planted with
-      intention
-                </pre>
-            </div> -->
             
             <div style="text-align: center;">
                 <button onclick="plantTree()" id="plant-btn">🌱 Plant My Tree</button>
@@ -1435,14 +880,14 @@
     <div class="theme-footer">
         <button class="language-toggle" onclick="toggleLanguage()" id="lang-toggle">🌐 ENG/GE</button>
         <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">🌙</button>
-        <!-- ADD THIS BUTTON: -->
-        <button class="install-toggle" onclick="promptInstall()" id="install-btn" style="display: none;">
-            📱 Install App
-        </button>
     </div>
     <p id="footer-version">🌿 Forest of Support v1.2 • With Contextual Poetic Wisdom</p>
     <p id="footer-data">Your data stays in your browser • Share with #ForestOfSupport #HealLikeATree</p>
     <p id="footer-quote"><em>"The wound is where the light enters you." - Rumi</em></p>
+    <!-- ADD THIS BUTTON: -->
+        <button class="install-toggle" onclick="promptInstall()" id="install-btn" style="display: none;">
+            📱 Install App
+        </button>
 </footer> 
     </div>
 
@@ -2438,47 +1883,6 @@
     ]
 };
         
-        /*// Tree visual stages (same for both languages)
-        const treeStages = [
-            `       🌱
-      Your seed
-     is planted with
-      intention`,
-            
-            `       🌿
-      /  \\
-     /    \\
-    /______\\
-      |  |
-     ~~~~~`,
-            
-            `       🌳
-      /🍃\\
-     /    \\
-    /      \\
-   /________\\
-      |||
-    ~~~~~~~`,
-            
-            `       🌳🌳
-      /    \\
-     /      \\
-    /        \\
-   /          \\
-  /____________\\
-      |||||
-    ~~~~~~~~~`,
-            
-            `     🌳 WISDOM 🌳
-    /           \\
-   /   RINGS OF  \\
-  /    GROWTH     \\
- /                 \\
-/___________________\\
-      |||||||
-   ~~~~~~~~~~~~`
-        ]; */
-        
         // ==================== INITIALIZATION ====================
         
   document.addEventListener('DOMContentLoaded', function() {
@@ -2497,15 +1901,6 @@
         showCard('welcome');
     }, 100);
 });
-        
-        
-      /*  document.addEventListener('DOMContentLoaded', function() {
-            detectLanguage();
-            loadTree();
-            checkAppVersion();
-            updateUI();
-            updateDisplay();
-        });*/
         
         // ==================== LANGUAGE FUNCTIONS ====================
         
@@ -2728,17 +2123,6 @@
             }
         }
         
-        /* function updateSeedPreview() {
-            const seedLines = {
-                en: ["Your seed", "is planted with", "intention"],
-                ge: ["თესლი", "განზრახვით", "ითესება"]
-            };
-    
-            const lines = seedLines[currentLanguage];
-            document.getElementById('seed-text-line1').textContent = lines[0];
-            document.getElementById('seed-text-line2').textContent = lines[1];
-            document.getElementById('seed-text-line3').textContent = lines[2];    
-        }*/
         
         function loadPrinciples() {
             const container = document.getElementById('principlesList');
@@ -2784,20 +2168,6 @@
     }
         }
         
-       /* function showCard(cardId) {
-            // Hide all cards
-            document.querySelectorAll('.card').forEach(card => {
-                card.classList.remove('active');
-            });
-            
-            // Show selected card
-            document.getElementById(cardId).classList.add('active');
-            
-            // Special updates
-            if (cardId === 'practice') updatePracticeCard();
-            if (cardId === 'forest') updateForestCard();
-            if (cardId === 'journal') loadJournalEntries();
-        }*/
         
         function plantTree() {
             const name = document.getElementById('treeName').value.trim();
