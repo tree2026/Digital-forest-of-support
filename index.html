@@ -886,7 +886,7 @@
     <p id="footer-quote"><em>"The wound is where the light enters you." - Rumi</em></p>
     <!-- ADD THIS BUTTON: -->
         <button class="install-toggle" onclick="promptInstall()" id="install-btn" style="display: none;">
-            📱 Install App
+           📱 <span id="install-text">Install App</span>
         </button>
 </footer> 
     </div>
@@ -1007,6 +1007,9 @@
                 // Result messages
                 practiceComplete: "✅ Practice complete!<br><strong>Principle:</strong> {principle}<br><strong>New growth ring added</strong><br><small>Your tree is now at stage {stage}</small>",
                 
+                // Add this line with the other navigation/text:
+                installBtn: "Install App",
+                
                 // Update message
                 updateTitle: "📋 Update v{version}",
                 updateNewPoem: "<strong>New Poem System:</strong>",
@@ -1092,6 +1095,9 @@
                 
                 // Result messages
                 practiceComplete: "✅ ვარჯიში დასრულდა!<br><strong>პრინციპი:</strong> {principle}<br><strong>დაემატა ახალი ზრდის რგოლი</strong><br><small>თქვენი ხე ახლა {stage} დონეზეა</small>",
+                
+                // Add this line:
+                installBtn: "აპლიკაციის დაყენება",  
                 
                 // Update message
                 updateTitle: "📋 განახლება v{version}",
@@ -2088,6 +2094,7 @@
     safeUpdate('footer-version', 'textContent', t.footerVersion);
     safeUpdate('footer-data', 'textContent', t.footerData);
     safeUpdate('footer-quote', 'innerHTML', `<em>${t.footerQuote}</em>`);
+    safeUpdate('install-text', 'textContent', t.installBtn);
     
     // Update tree display if no tree
     if (!myTree.name) {
@@ -2098,7 +2105,6 @@
     
     // Update language toggle button
     safeUpdate('lang-toggle', 'textContent', '🌐 ' + (currentLanguage === 'en' ? 'ENG/GE' : 'GE/ENG'));
-    
     // Update seed preview text
     updateSeedPreview();
 }
@@ -2911,11 +2917,16 @@ window.addEventListener('beforeunload', () => {
 
        function promptInstall() {
            if (deferredInstallPrompt) {
-        deferredInstallPrompt.prompt();
-        deferredInstallPrompt.userChoice.then((choiceResult) => {
+               deferredInstallPrompt.prompt();
+               deferredInstallPrompt.userChoice.then((choiceResult) => {
             if (choiceResult.outcome === 'accepted') {
                 document.getElementById('install-btn').style.display = 'none';
-                alert('🌳 Thank you for installing! Your healing forest is now with you always.');
+                // alert('🌳 Thank you for installing! Your healing forest is now with you always.');
+                // Localized thank you message
+                const thankYouMsg = currentLanguage === 'ge' 
+                    ? '🌳 გმადლობთ, დაყენებულია! თქვენი გამაჯანსაღებელი ტყე ახლა ყოველთვის თქვენთან არის.'
+                    : '🌳 Thank you for installing! Your healing forest is now with you always.';
+                alert(thankYouMsg);
             }
             deferredInstallPrompt = null;
         });
