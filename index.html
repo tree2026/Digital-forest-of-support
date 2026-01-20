@@ -2868,43 +2868,58 @@ function checkVersionAndPreserveData() {
                 }
             }
         }
-    
-    // ============= AMBIENT SOUND PLAYER ===============
+        
+    // ========== AMBIENT SOUND PLAYER ====================
+
     const audioManager = {
     audio: null,
     isPlaying: false,
-    volume: 0.3, // 30% volume - subtle background
+    volume: 0.3,
     audioFiles: {
-    birds: 'https://raw.githubusercontent.com/tree2026/Digital-forest-of-support/main/birdsong.mp3' 
+        birds: 'https://raw.githubusercontent.com/tree2026/Digital-forest-of-support/main/birdsong.mp3' 
     },
+    
     init() {
+        // Debug: log the audio URL
+        console.log('🌳 Loading audio from:', this.audioFiles.birds);
+        
         // Create audio element
         this.audio = new Audio(this.audioFiles.birds);
         this.audio.loop = true;
         this.audio.volume = this.volume;
         this.audio.preload = 'auto';
         
+        // Add debug event listeners
+        this.audio.addEventListener('canplay', () => {
+            console.log('✅ Audio can play');
+        });
+        
+        this.audio.addEventListener('error', (e) => {
+            console.error('❌ Audio error:', e);
+            console.error('Audio source:', this.audio.src);
+        });
+        
         // Load saved preference
         const savedPref = localStorage.getItem('forestAudioPref');
         if (savedPref === 'playing') {
-            setTimeout(() => this.toggle(), 1000); // Start after 1 sec delay
+            setTimeout(() => this.toggle(), 1000);
         }
         
-        // Auto-pause when tab is hidden (better UX)
+        // Auto-pause when tab is hidden
         document.addEventListener('visibilitychange', () => {
             if (document.hidden && this.isPlaying) {
                 this.pause();
-                // Will resume when tab becomes visible again
                 this.shouldResume = true;
             } else if (this.shouldResume) {
                 this.play();
                 this.shouldResume = false;
             }
         });
-        // Add to audioManager.init()
+        
+        // Mobile volume adjustment
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            // Lower default volume for mobile
-            this.volume = 0.2;   
+            this.volume = 0.2;
+            this.audio.volume = 0.2;
         }
     },
     
@@ -2919,7 +2934,6 @@ function checkVersionAndPreserveData() {
     play() {
         if (!this.audio) this.init();
         
-        // Modern browsers require user interaction first
         const playPromise = this.audio.play();
         
         if (playPromise !== undefined) {
@@ -2927,11 +2941,14 @@ function checkVersionAndPreserveData() {
                 this.isPlaying = true;
                 this.updateUI();
                 localStorage.setItem('forestAudioPref', 'playing');
+                console.log('🎵 Audio playing');
             }).catch(error => {
-                console.log('Audio play failed:', error);
-                // Show user instruction if needed
+                console.log('Audio play failed:', error.name);
+                // Show simple alert instead of calling missing function
                 if (error.name === 'NotAllowedError') {
-                    this.showPlayInstruction();
+                    alert(currentLanguage === 'ge' 
+                        ? 'დააწკაპუნეთ ხმის ღილაკზე ხმის სათამაშოდ' 
+                        : 'Click the sound button to play audio');
                 }
             });
         }
@@ -2943,6 +2960,7 @@ function checkVersionAndPreserveData() {
             this.isPlaying = false;
             this.updateUI();
             localStorage.setItem('forestAudioPref', 'paused');
+            console.log('🔇 Audio paused');
         }
     },
     
@@ -2975,11 +2993,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const musicButton = document.getElementById('music-toggle');
     if (musicButton) {
         musicButton.addEventListener('click', () => audioManager.toggle());
+        console.log('🎵 Music button found and listener added');
+    } else {
+        console.error('❌ Music button not found! Check HTML');
     }
     
     // Initialize audio manager after a delay
-    setTimeout(() => audioManager.init(), 500);
+    setTimeout(() => {
+        console.log('🎵 Initializing audio manager...');
+        audioManager.init();
+    }, 500);
 });
+    
     </script>
     
     <script>
