@@ -2880,52 +2880,51 @@ function checkVersionAndPreserveData() {
     const audioManager = {
     audio: null,
     isPlaying: false,
-    volume: 0.3,
-    
-    // Use a RELIABLE audio source that won't expire
+    volume: 0.3, // 30% volume - subtle background
     audioFiles: {
-        birds: 'https://files.catbox.moe/dgid57.mp3' // This one works
+        birds: 'https://files.catbox.moe/dgid57.mp3' // Free sample
+        // Alternative: Upload your own birdsong to GitHub and use:
+        // birds: 'audio/forest-birdsong.mp3'
     },
     
     init() {
-        console.log('🌳 Loading audio from:', this.audioFiles.birds);
-        
         // Create audio element
         this.audio = new Audio(this.audioFiles.birds);
         this.audio.loop = true;
         this.audio.volume = this.volume;
         this.audio.preload = 'auto';
         
-        // Debug listeners
-        this.audio.addEventListener('canplay', () => {
-            console.log('✅ Audio can play - ready!');
-        });
-        
-        this.audio.addEventListener('error', (e) => {
-            console.error('❌ Audio error:', e);
-            // Try a different fallback
-            console.log('Trying fallback audio...');
-            this.audio = new Audio('https://files.catbox.moe/dgid57.mp3');
-            this.audio.loop = true;
-            this.audio.volume = this.volume;
-        });
-        
         // Load saved preference
         const savedPref = localStorage.getItem('forestAudioPref');
         if (savedPref === 'playing') {
-            console.log('🔄 Restoring saved audio preference');
-            setTimeout(() => this.toggle(), 1000);
+            setTimeout(() => this.toggle(), 1000); // Start after 1 sec delay
         }
-        
-        // Mobile volume
+        // Add to audioManager.init()
+
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            this.volume = 0.2;
-            if (this.audio) this.audio.volume = 0.2;
+    // Lower default volume for mobile
+    this.volume = 0.2;
+    
+    // Show play instruction more prominently on mobile
+    const isFirstVisit = !localStorage.getItem('forestAudioPref');
+        if (isFirstVisit) {
+        setTimeout(() => this.showPlayInstruction(), 2000);
+            }
         }
+        // Auto-pause when tab is hidden (better UX)
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && this.isPlaying) {
+                this.pause();
+                // Will resume when tab becomes visible again
+                this.shouldResume = true;
+            } else if (this.shouldResume) {
+                this.play();
+                this.shouldResume = false;
+            }
+        });
     },
     
     toggle() {
-        console.log('🔘 Toggle clicked, isPlaying:', this.isPlaying);
         if (this.isPlaying) {
             this.pause();
         } else {
@@ -2934,31 +2933,27 @@ function checkVersionAndPreserveData() {
     },
     
     play() {
-        console.log('▶️ Attempting to play...');
+        if (!this.audio) this.init();
         
-        if (!this.audio) {
-            console.log('🎵 Initializing audio first...');
-            this.init();
+        // Modern browsers require user interaction first
+        const playPromise = this.audio.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                this.isPlaying = true;
+                this.updateUI();
+                localStorage.setItem('forestAudioPref', 'playing');
+            }).catch(error => {
+                console.log('Audio play failed:', error);
+                // Show user instruction if needed
+                if (error.name === 'NotAllowedError') {
+                    this.showPlayInstruction();
+                }
+            });
         }
-        
-        this.audio.play().then(() => {
-            console.log('✅ Play successful');
-            this.isPlaying = true;
-            this.updateUI();
-            localStorage.setItem('forestAudioPref', 'playing');
-        }).catch(error => {
-            console.error('❌ Play failed:', error.name, error.message);
-            
-            // Common error: needs user interaction
-            if (error.name === 'NotAllowedError') {
-                console.log('🔇 Browser requires user interaction first');
-                // The next click will work
-            }
-        });
     },
     
     pause() {
-        console.log('⏸️ Pausing...');
         if (this.audio) {
             this.audio.pause();
             this.isPlaying = false;
@@ -2970,79 +2965,50 @@ function checkVersionAndPreserveData() {
     updateUI() {
         const button = document.getElementById('music-toggle');
         if (button) {
-            console.log('🔄 Updating UI, isPlaying:', this.isPlaying);
-            
             if (this.isPlaying) {
                 button.classList.add('playing');
                 button.innerHTML = '🔊';
-                button.style.background = '#4a7c3f';
-                button.style.color = 'white';
                 button.title = currentLanguage === 'ge' ? 'ხმის გამორთვა' : 'Mute ambient sounds';
             } else {
                 button.classList.remove('playing');
                 button.innerHTML = '🎵';
-                button.style.background = 'transparent';
-                button.style.color = '#4a7c3f';
                 button.title = currentLanguage === 'ge' ? 'ხმის ჩართვა' : 'Play ambient sounds';
             }
-        } else {
-            console.error('❌ Button not found for UI update!');
+        }
+    },
+    
+    showPlayInstruction() {
+        // Only show once per session
+        if (!sessionStorage.getItem('audioInstructionShown')) {
+            const msg = currentLanguage === 'ge' 
+                ? 'ხმის სათამაშოდ, დააწკაპუნეთ ხმის ღილაკზე 🌳\n(ბრაუზერი მოითხოვს თქვენს ნებართვას)'
+                : 'To play sounds, click the music button 🌳\n(Browser requires your permission)';
+            
+            alert(msg);
+            sessionStorage.setItem('audioInstructionShown', 'true');
+        }
+    },
+    
+    setVolume(level) {
+        this.volume = Math.max(0, Math.min(1, level));
+        if (this.audio) {
+            this.audio.volume = this.volume;
         }
     }
 };
 
-// Initialize
+// Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 DOM loaded, setting up audio...');
-    
+    // Add event listener to button
     const musicButton = document.getElementById('music-toggle');
-    
     if (musicButton) {
-        console.log('✅ Found music button:', musicButton);
-        
-        // Add visual feedback on click
-        musicButton.addEventListener('mousedown', function() {
-            this.style.transform = 'scale(0.95)';
-        });
-        
-        musicButton.addEventListener('mouseup', function() {
-            this.style.transform = 'scale(1)';
-        });
-        
-        musicButton.addEventListener('click', function(e) {
-            console.log('🎯 Button clicked!');
-            e.preventDefault();
-            e.stopPropagation();
-            audioManager.toggle();
-        });
-        
-        // Initialize audio manager
-        setTimeout(() => {
-            console.log('🔊 Initializing audio manager...');
-            audioManager.init();
-            
-            // Update UI initially
-            audioManager.updateUI();
-        }, 1000);
-        
-    } else {
-        console.error('❌ CRITICAL: Music button not found in HTML!');
-        console.log('Looking for element with id="music-toggle"');
-        
-        // Emergency: create button if missing
-        const header = document.querySelector('header h1');
-        if (header) {
-            console.log('⚠️ Creating emergency button...');
-            const emergencyButton = document.createElement('button');
-            emergencyButton.id = 'music-toggle';
-            emergencyButton.innerHTML = '🎵';
-            emergencyButton.style.cssText = 'background:#4a7c3f;color:white;border:none;border-radius:50%;padding:10px;margin-right:10px;font-size:1.2em;';
-            emergencyButton.onclick = () => audioManager.toggle();
-            header.insertBefore(emergencyButton, header.firstChild);
-            console.log('✅ Emergency button created');
-        }
+        musicButton.addEventListener('click', () => audioManager.toggle());
     }
+    
+    // Initialize audio manager after a delay
+    setTimeout(() => audioManager.init(), 500);
 });
+
             
     
     
@@ -3183,20 +3149,6 @@ window.addEventListener('beforeunload', () => {
        }
        
    </script>
-<div style="position: fixed; bottom: 10px; right: 10px; background: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 9999;">
-    <h4>Debug Audio</h4>
-    <button onclick="audioManager.toggle()">Toggle Audio</button>
-    <button onclick="audioManager.play()">Force Play</button>
-    <button onclick="audioManager.pause()">Pause</button>
-    <div id="debug-status" style="margin-top: 5px; font-size: 12px;"></div>
-</div>
 
-<script>
-// Update debug panel
-setInterval(() => {
-    document.getElementById('debug-status').innerHTML = 
-        `Status: ${audioManager.isPlaying ? 'Playing' : 'Paused'}`;
-}, 1000);
-</script>
 </body>
 </html>
