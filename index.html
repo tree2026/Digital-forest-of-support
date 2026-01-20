@@ -2876,36 +2876,37 @@ function checkVersionAndPreserveData() {
     isPlaying: false,
     volume: 0.3,
     audioFiles: {
-        birds: 'https://files.catbox.moe/dgid57.mp3'
+        birds: 'https://tree2026.github.io/Digital-forest-of-support/birdsong.mp3'
+            /*'https://files.catbox.moe/dgid57.mp3'*/
             /*'https://assets.mixkit.co/sfx/preview/mixkit-forest-birds-1315.mp3',*/
            /* 'https://raw.githubusercontent.com/tree2026/Digital-forest-of-support/main/birdsong.mp3' */
     },
     
     init() {
-        // Debug: log the audio URL
-        console.log('🌳 Loading audio from:', this.audioFiles.birds);
-        
-        // Create audio element
-        this.audio = new Audio(this.audioFiles.birds);
-        this.audio.loop = true;
-        this.audio.volume = this.volume;
-        this.audio.preload = 'auto';
-        
-        // Add debug event listeners
-        this.audio.addEventListener('canplay', () => {
-            console.log('✅ Audio can play');
+    // Use fetch to get audio blob with correct type
+    fetch(this.audioFiles.birds)
+        .then(response => response.blob())
+        .then(blob => {
+            // Create object URL with correct MIME type
+            const objectUrl = URL.createObjectURL(blob);
+            this.audio = new Audio(objectUrl);
+            this.audio.loop = true;
+            this.audio.volume = this.volume;
+            
+            console.log('✅ Audio loaded as blob');
+            
+            // Load saved preference
+            const savedPref = localStorage.getItem('forestAudioPref');
+            if (savedPref === 'playing') {
+                setTimeout(() => this.toggle(), 1000);
+            }
+        })
+        .catch(error => {
+            console.error('Failed to load audio:', error);
+            // Fallback to MixKit
+            this.audioFiles.birds = 'https://assets.mixkit.co/sfx/preview/mixkit-forest-birds-1315.mp3';
+            setTimeout(() => this.init(), 1000); // Retry with fallback
         });
-        
-        this.audio.addEventListener('error', (e) => {
-            console.error('❌ Audio error:', e);
-            console.error('Audio source:', this.audio.src);
-        });
-        
-        // Load saved preference
-        const savedPref = localStorage.getItem('forestAudioPref');
-        if (savedPref === 'playing') {
-            setTimeout(() => this.toggle(), 1000);
-        }
         
         // Auto-pause when tab is hidden
         document.addEventListener('visibilitychange', () => {
