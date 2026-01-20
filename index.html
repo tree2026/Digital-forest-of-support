@@ -2884,7 +2884,7 @@ function checkVersionAndPreserveData() {
     
     // Use a RELIABLE audio source that won't expire
     audioFiles: {
-        birds: 'https://assets.mixkit.co/sfx/preview/mixkit-forest-birds-1315.mp3' // This one works
+        birds: 'https://files.catbox.moe/dgid57.mp3' // This one works
     },
     
     init() {
@@ -2905,7 +2905,7 @@ function checkVersionAndPreserveData() {
             console.error('❌ Audio error:', e);
             // Try a different fallback
             console.log('Trying fallback audio...');
-            this.audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-birds-chirping-1245.mp3');
+            this.audio = new Audio('https://files.catbox.moe/dgid57.mp3');
             this.audio.loop = true;
             this.audio.volume = this.volume;
         });
