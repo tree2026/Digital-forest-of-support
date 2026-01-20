@@ -3183,6 +3183,20 @@ window.addEventListener('beforeunload', () => {
        }
        
    </script>
+<div style="position: fixed; bottom: 10px; right: 10px; background: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 9999;">
+    <h4>Debug Audio</h4>
+    <button onclick="audioManager.toggle()">Toggle Audio</button>
+    <button onclick="audioManager.play()">Force Play</button>
+    <button onclick="audioManager.pause()">Pause</button>
+    <div id="debug-status" style="margin-top: 5px; font-size: 12px;"></div>
+</div>
 
+<script>
+// Update debug panel
+setInterval(() => {
+    document.getElementById('debug-status').innerHTML = 
+        `Status: ${audioManager.isPlaying ? 'Playing' : 'Paused'}`;
+}, 1000);
+</script>
 </body>
 </html>
