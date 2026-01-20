@@ -448,11 +448,60 @@
         gap: 5px/*10px*/;
         margin: 10px 0;
     }
-        
-    /* ==================== DARK MODE - COLOR CHANGE ONLY ==================== */
+    
+    /* Music toggle button */
+    .music-toggle {
+    background: transparent;
+    border: 2px solid var(--button-bg);
+    color: var(--button-bg);
+    padding: 8px 12px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    box-shadow: none !important; /* Remove button shadow */
+    }
+
+    .music-toggle:hover {
+    background: var(--button-bg);
+    color: white;
+    transform: scale(1.1);
+    }
+
+    .music-toggle.playing {
+    background: var(--button-bg);
+    color: white;
+    animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 124, 63, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(74, 124, 63, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 124, 63, 0); }
+    }
+
+    /* ============== DARK MODE - COLOR CHANGE ONLY ================= */
 
     /* === APPLY COLORS TO EXISTING STRUCTURE === */
 
+    /* For dark theme */
+[data-theme="dark"] .music-toggle {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .music-toggle:hover {
+    background: var(--button-bg);
+    color: var(--text-primary);
+}
+        
 /* Body background */
 [data-theme="dark"] body {
     background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
@@ -700,10 +749,12 @@
     <div class="container">
         <header>
             <h1 id="app-title">
-                <button id="music-toggle" style="background:transparent; border:2px solid #4a7c3f; color:#4a7c3f; padding:8px; border-radius:50%; cursor:pointer; margin-right:10px;">
-                    🎵
-                </button><!-- audio -->
-                🌳 Forest of Support</h1>
+        <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds">
+            🎵
+        </button>
+        🌳 <span id="title-text">Forest of Support</span>
+            </h1>
+            <!-- <h1 id="app-title">🌳 Forest of Support</h1> -->
             <p class="tagline" id="app-tagline">A digital sanctuary with contextual poetic wisdom</p>
             <p id="app-subtitle">Your journal receives personalized healing poems</p>
         </header>
@@ -913,31 +964,6 @@
         const VERSION_KEY = 'forestAppVersion';
         const LANG_KEY = 'forestLanguage';
 
-        // Audio
-        let forestAudio = null;
-        let isPlaying = false;
-
-        document.getElementById('music-toggle').addEventListener('click', function() {
-            if (!forestAudio) {
-        forestAudio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-forest-birds-1315.mp3');
-        forestAudio.loop = true;
-        forestAudio.volume = 0.3;
-            }
-    
-            if (isPlaying) {
-        forestAudio.pause();
-        this.innerHTML = '🎵';
-        this.style.background = 'transparent';
-            } else {
-        forestAudio.play().catch(e => {
-            alert('Click "Allow" if browser asks for audio permission');
-        });
-        this.innerHTML = '🔊';
-        this.style.background = '#4a7c3f';
-        this.style.color = 'white';
-            }
-            isPlaying = !isPlaying;
-        }); // audio end
        
         // Language state
         let currentLanguage = 'en'; // 'en' or 'ge'
@@ -2842,6 +2868,143 @@ function checkVersionAndPreserveData() {
                 }
             }
         }
+    
+    // ============= AMBIENT SOUND PLAYER ===============
+    const audioManager = {
+    audio: null,
+    isPlaying: false,
+    volume: 0.3, // 30% volume - subtle background
+    audioFiles: {
+    birds: 'audio/your-birdsong.mp3' // Relative path
+    },
+       /* audioFiles: {
+        birds: 'https://assets.mixkit.co/sfx/preview/mixkit-forest-birds-1315.mp3', // Free sample
+        // Alternative: Upload your own birdsong to GitHub and use:
+        // birds: 'audio/forest-birdsong.mp3'
+    },*/
+    
+    init() {
+        // Create audio element
+        this.audio = new Audio(this.audioFiles.birds);
+        this.audio.loop = true;
+        this.audio.volume = this.volume;
+        this.audio.preload = 'auto';
+        
+        // Load saved preference
+        const savedPref = localStorage.getItem('forestAudioPref');
+        if (savedPref === 'playing') {
+            setTimeout(() => this.toggle(), 1000); // Start after 1 sec delay
+        }
+        
+        // Auto-pause when tab is hidden (better UX)
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && this.isPlaying) {
+                this.pause();
+                // Will resume when tab becomes visible again
+                this.shouldResume = true;
+            } else if (this.shouldResume) {
+                this.play();
+                this.shouldResume = false;
+            }
+        });
+        // Add to audioManager.init()
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            // Lower default volume for mobile
+            this.volume = 0.2;
+    
+    
+            // Show play instruction more prominently on mobile
+            const isFirstVisit = !localStorage.getItem('forestAudioPref');
+            if (isFirstVisit) {
+                setTimeout(() => this.showPlayInstruction(), 2000);
+            }
+        }
+    },
+    
+    toggle() {
+        if (this.isPlaying) {
+            this.pause();
+        } else {
+            this.play();
+        }
+    },
+    
+    play() {
+        if (!this.audio) this.init();
+        
+        // Modern browsers require user interaction first
+        const playPromise = this.audio.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                this.isPlaying = true;
+                this.updateUI();
+                localStorage.setItem('forestAudioPref', 'playing');
+            }).catch(error => {
+                console.log('Audio play failed:', error);
+                // Show user instruction if needed
+                if (error.name === 'NotAllowedError') {
+                    this.showPlayInstruction();
+                }
+            });
+        }
+    },
+    
+    pause() {
+        if (this.audio) {
+            this.audio.pause();
+            this.isPlaying = false;
+            this.updateUI();
+            localStorage.setItem('forestAudioPref', 'paused');
+        }
+    },
+    
+    updateUI() {
+        const button = document.getElementById('music-toggle');
+        if (button) {
+            if (this.isPlaying) {
+                button.classList.add('playing');
+                button.innerHTML = '🔊';
+                button.title = currentLanguage === 'ge' ? 'ხმის გამორთვა' : 'Mute ambient sounds';
+            } else {
+                button.classList.remove('playing');
+                button.innerHTML = '🎵';
+                button.title = currentLanguage === 'ge' ? 'ხმის ჩართვა' : 'Play ambient sounds';
+            }
+        }
+    },
+    
+    showPlayInstruction() {
+        // Only show once per session
+        if (!sessionStorage.getItem('audioInstructionShown')) {
+            const msg = currentLanguage === 'ge' 
+                ? 'ხმის სათამაშოდ, დააწკაპუნეთ ხმის ღილაკზე 🌳\n(ბრაუზერი მოითხოვს თქვენს ნებართვას)'
+                : 'To play sounds, click the music button 🌳\n(Browser requires your permission)';
+            
+            alert(msg);
+            sessionStorage.setItem('audioInstructionShown', 'true');
+        }
+    },
+    
+    setVolume(level) {
+        this.volume = Math.max(0, Math.min(1, level));
+        if (this.audio) {
+            this.audio.volume = this.volume;
+        }
+    }
+};
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener to button
+    const musicButton = document.getElementById('music-toggle');
+    if (musicButton) {
+        musicButton.addEventListener('click', () => audioManager.toggle());
+    }
+    
+    // Initialize audio manager after a delay
+    setTimeout(() => audioManager.init(), 500);
+});
     </script>
     
     <script>
