@@ -699,7 +699,11 @@
 <body> 
     <div class="container">
         <header>
-            <h1 id="app-title">🌳 Forest of Support</h1>
+            <h1 id="app-title">
+                <button id="music-toggle" style="background:transparent; border:2px solid #4a7c3f; color:#4a7c3f; padding:8px; border-radius:50%; cursor:pointer; margin-right:10px;">
+                    🎵
+                </button><!-- audio -->
+                🌳 Forest of Support</h1>
             <p class="tagline" id="app-tagline">A digital sanctuary with contextual poetic wisdom</p>
             <p id="app-subtitle">Your journal receives personalized healing poems</p>
         </header>
@@ -908,7 +912,32 @@
         const APP_VERSION = '1.3';
         const VERSION_KEY = 'forestAppVersion';
         const LANG_KEY = 'forestLanguage';
-        
+
+        // Audio
+        let forestAudio = null;
+        let isPlaying = false;
+
+        document.getElementById('music-toggle').addEventListener('click', function() {
+            if (!forestAudio) {
+        forestAudio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-forest-birds-1315.mp3');
+        forestAudio.loop = true;
+        forestAudio.volume = 0.3;
+            }
+    
+            if (isPlaying) {
+        forestAudio.pause();
+        this.innerHTML = '🎵';
+        this.style.background = 'transparent';
+            } else {
+        forestAudio.play().catch(e => {
+            alert('Click "Allow" if browser asks for audio permission');
+        });
+        this.innerHTML = '🔊';
+        this.style.background = '#4a7c3f';
+        this.style.color = 'white';
+            }
+            isPlaying = !isPlaying;
+        }); // audio end
        
         // Language state
         let currentLanguage = 'en'; // 'en' or 'ge'
