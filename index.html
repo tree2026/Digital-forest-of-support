@@ -2875,38 +2875,15 @@ function checkVersionAndPreserveData() {
     isPlaying: false,
     volume: 0.3, // 30% volume - subtle background
     audioFiles: {
-    // Try m4a first, fallback to MP3 if needed
-    birds: 'https://raw.githubusercontent.com/tree2026/Digital-forest-of-support/main/birdsong.m4a',
-    fallback: 'https://assets.mixkit.co/sfx/preview/mixkit-forest-birds-1315.mp3'
+    birds: 'https://github.com/tree2026/Digital-forest-of-support/blob/main/birdsong.mp3' 
     },
-
+    
     init() {
-    // Create audio with error handling
-    this.audio = new Audio(this.audioFiles.birds);
-    
-    // If m4a fails, try fallback
-    this.audio.addEventListener('error', (e) => {
-        console.log('m4a failed, trying MP3 fallback');
-        this.audio = new Audio(this.audioFiles.fallback);
-        this.audio.loop = true;
-        this.audio.volume = this.volume;
-        this.audio.preload = 'auto';
-    
-    /*audioFiles: {
-    birds: 'https://github.com/tree2026/Digital-forest-of-support/blob/main/birdsong.m4a' 
-    },
-       /* audioFiles: {
-        birds: 'https://assets.mixkit.co/sfx/preview/mixkit-forest-birds-1315.mp3', // Free sample
-        // Alternative: Upload your own birdsong to GitHub and use:
-        // birds: 'audio/forest-birdsong.mp3'
-    },*/
-    
-   /* init() {
         // Create audio element
         this.audio = new Audio(this.audioFiles.birds);
         this.audio.loop = true;
         this.audio.volume = this.volume;
-        this.audio.preload = 'auto';*/
+        this.audio.preload = 'auto';
         
         // Load saved preference
         const savedPref = localStorage.getItem('forestAudioPref');
