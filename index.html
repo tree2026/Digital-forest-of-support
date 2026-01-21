@@ -2910,7 +2910,7 @@ function checkVersionAndPreserveData() {
         if (isFirstVisit) {
         setTimeout(() => this.showPlayInstruction(), 2000);
             }
-        }
+    
         // Auto-pause when tab is hidden (better UX)
         document.addEventListener('visibilitychange', () => {
             if (document.hidden && this.isPlaying) {
