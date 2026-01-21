@@ -2876,8 +2876,74 @@ function checkVersionAndPreserveData() {
         }
         
     // ========== AMBIENT SOUND PLAYER ====================
+const audioManager = {
+    audio: null,
+    isPlaying: false,
+    volume: 0.3,
+    
+    init() {
+        this.audio = new Audio('https://files.catbox.moe/dgid57.mp3');
+        this.audio.loop = true;
+        this.audio.volume = this.volume;
+        this.audio.preload = 'auto';
+        
+        const savedPref = localStorage.getItem('forestAudioPref');
+        if (savedPref === 'playing') {
+            setTimeout(() => this.toggle(), 1000);
+        }
+    },
+    
+    toggle() {
+        if (this.isPlaying) {
+            this.pause();
+        } else {
+            this.play();
+        }
+    },
+    
+    play() {
+        if (!this.audio) this.init();
+        const playPromise = this.audio.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                this.isPlaying = true;
+                this.updateUI();
+                localStorage.setItem('forestAudioPref', 'playing');
+            });
+        }
+    },
+    
+    pause() {
+        if (this.audio) {
+            this.audio.pause();
+            this.isPlaying = false;
+            this.updateUI();
+            localStorage.setItem('forestAudioPref', 'paused');
+        }
+    },
+    
+    updateUI() {
+        const button = document.getElementById('music-toggle');
+        if (button) {
+            if (this.isPlaying) {
+                button.classList.add('playing');
+                button.innerHTML = '🔊';
+            } else {
+                button.classList.remove('playing');
+                button.innerHTML = '🎵';
+            }
+        }
+    }
+};
 
-    const audioManager = {
+document.addEventListener('DOMContentLoaded', function() {
+    const musicButton = document.getElementById('music-toggle');
+    if (musicButton) {
+        musicButton.addEventListener('click', () => audioManager.toggle());
+    }
+    setTimeout(() => audioManager.init(), 500);
+});
+   /* const audioManager = {
     audio: null,
     isPlaying: false,
     volume: 0.3, // 30% volume - subtle background
@@ -3008,7 +3074,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize audio manager after a delay
     setTimeout(() => audioManager.init(), 500);
-});
+});*/
     
     </script>
     
