@@ -2899,18 +2899,19 @@ function checkVersionAndPreserveData() {
         if (savedPref === 'playing') {
             setTimeout(() => this.toggle(), 1000); // Start after 1 sec delay
         }
-        // Add to audioManager.init()
-
+        
+        // Mobile-specific settings
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-    // Lower default volume for mobile
-    this.volume = 0.2;
-    
-    // Show play instruction more prominently on mobile
-    const isFirstVisit = !localStorage.getItem('forestAudioPref');
-        if (isFirstVisit) {
-        setTimeout(() => this.showPlayInstruction(), 2000);
+            // Lower default volume for mobile
+            this.volume = 0.2;
+            
+            // Show play instruction more prominently on mobile
+            const isFirstVisit = !localStorage.getItem('forestAudioPref');
+            if (isFirstVisit) {
+                setTimeout(() => this.showPlayInstruction(), 2000);
             }
-    
+        }
+        
         // Auto-pause when tab is hidden (better UX)
         document.addEventListener('visibilitychange', () => {
             if (document.hidden && this.isPlaying) {
@@ -2922,7 +2923,7 @@ function checkVersionAndPreserveData() {
                 this.shouldResume = false;
             }
         });
-    },
+    },  // <-- THIS CLOSING BRACE WAS MISSING
     
     toggle() {
         if (this.isPlaying) {
@@ -3008,9 +3009,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize audio manager after a delay
     setTimeout(() => audioManager.init(), 500);
 });
-
-            
-    
     
     </script>
     
