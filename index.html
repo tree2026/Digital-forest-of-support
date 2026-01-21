@@ -2878,7 +2878,7 @@ function checkVersionAndPreserveData() {
     </script>
 
 
-<script>
+<!-- <script>
 // 2. Add this JavaScript
 let forestAudio = null;
 let isPlaying = false;
@@ -2904,10 +2904,135 @@ document.getElementById('music-toggle').addEventListener('click', function() {
     }
     isPlaying = !isPlaying;
 });
-</script>
+</script>-->
     
     
     <script>
+
+// ==================== AMBIENT SOUND PLAYER ====================
+const audioManager = {
+    audio: null,
+    isPlaying: false,
+    volume: 0.3, // 30% volume - subtle background
+    audioFiles: {
+        birds: 'https://assets.mixkit.co/sfx/preview/mixkit-forest-birds-1315.mp3', // Free sample
+        // Alternative: Upload your own birdsong to GitHub and use:
+        // birds: 'audio/forest-birdsong.mp3'
+    },
+    
+    init() {
+        // Create audio element
+        this.audio = new Audio(this.audioFiles.birds);
+        this.audio.loop = true;
+        this.audio.volume = this.volume;
+        this.audio.preload = 'auto';
+        
+        // Load saved preference
+        const savedPref = localStorage.getItem('forestAudioPref');
+        if (savedPref === 'playing') {
+            setTimeout(() => this.toggle(), 1000); // Start after 1 sec delay
+        }
+        
+        // Auto-pause when tab is hidden (better UX)
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && this.isPlaying) {
+                this.pause();
+                // Will resume when tab becomes visible again
+                this.shouldResume = true;
+            } else if (this.shouldResume) {
+                this.play();
+                this.shouldResume = false;
+            }
+        });
+    },
+    
+    toggle() {
+        if (this.isPlaying) {
+            this.pause();
+        } else {
+            this.play();
+        }
+    },
+    
+    play() {
+        if (!this.audio) this.init();
+        
+        // Modern browsers require user interaction first
+        const playPromise = this.audio.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                this.isPlaying = true;
+                this.updateUI();
+                localStorage.setItem('forestAudioPref', 'playing');
+            }).catch(error => {
+                console.log('Audio play failed:', error);
+                // Show user instruction if needed
+                if (error.name === 'NotAllowedError') {
+                    this.showPlayInstruction();
+                }
+            });
+        }
+    },
+    
+    pause() {
+        if (this.audio) {
+            this.audio.pause();
+            this.isPlaying = false;
+            this.updateUI();
+            localStorage.setItem('forestAudioPref', 'paused');
+        }
+    },
+    
+    updateUI() {
+        const button = document.getElementById('music-toggle');
+        if (button) {
+            if (this.isPlaying) {
+                button.classList.add('playing');
+                button.innerHTML = '🔊';
+                button.title = currentLanguage === 'ge' ? 'ხმის გამორთვა' : 'Mute ambient sounds';
+            } else {
+                button.classList.remove('playing');
+                button.innerHTML = '🎵';
+                button.title = currentLanguage === 'ge' ? 'ხმის ჩართვა' : 'Play ambient sounds';
+            }
+        }
+    },
+    
+    showPlayInstruction() {
+        // Only show once per session
+        if (!sessionStorage.getItem('audioInstructionShown')) {
+            const msg = currentLanguage === 'ge' 
+                ? 'ხმის სათამაშოდ, დააწკაპუნეთ ხმის ღილაკზე 🌳\n(ბრაუზერი მოითხოვს თქვენს ნებართვას)'
+                : 'To play sounds, click the music button 🌳\n(Browser requires your permission)';
+            
+            alert(msg);
+            sessionStorage.setItem('audioInstructionShown', 'true');
+        }
+    },
+    
+    setVolume(level) {
+        this.volume = Math.max(0, Math.min(1, level));
+        if (this.audio) {
+            this.audio.volume = this.volume;
+        }
+    }
+};
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener to button
+    const musicButton = document.getElementById('music-toggle');
+    if (musicButton) {
+        musicButton.addEventListener('click', () => audioManager.toggle());
+    }
+    
+    // Initialize audio manager after a delay
+    setTimeout(() => audioManager.init(), 500);
+});
+
+
+        
     // ==================== PWA SERVICE WORKER REGISTRATION ====================
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
