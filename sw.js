@@ -1,5 +1,5 @@
 // sw.js - Forest of Support Service Worker
-const APP_VERSION = '1.3';  // ← CHANGED TO 1.3
+const APP_VERSION = '1.4';  // ← CHANGED TO 1.3
 const CACHE_NAME = `forest-cache-v${APP_VERSION}`;
 const APP_PREFIX = self.location.pathname.includes('Digital-forest-of-support') 
     ? '/Digital-forest-of-support/' 
