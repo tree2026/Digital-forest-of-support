@@ -749,13 +749,7 @@
             align-items: center;
         }
     }
-        /* FORCE MUSIC BUTTON TO SHOW - ADD THIS LAST */
-#music-toggle {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    background: red !important; /* TEMPORARY - makes it obvious */
-}
+    
     </style>
     
 </head>
@@ -763,11 +757,15 @@
     <div class="container">
         <header>
             <h1 id="app-title">
-        🌳 <span id="title-text">Forest of Support</span>
-        <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds">
+            🌳 <span id="title-text">Forest of Support</span>
+            </h1>
+            <div style="position: relative; text-align: center;">
+        <button>
+            id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds">
             🎵
         </button>
-            </h1>
+            </div>
+            
           <!--  <div style="position: relative; text-align: center;">
         <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds" 
                 style="position: absolute; left: 10px/*20px*/; top: 50%; transform: translateY(-50%);">
