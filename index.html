@@ -465,7 +465,7 @@
     font-size: 1.2em;
     cursor: pointer;
     margin-left: 0;
-    margin-right: 10px;
+    margin-right: 5px/*10px*/;
     transition: all 0.3s ease;
     width: 45px;
     height: 45px;
@@ -754,6 +754,20 @@
 </head>
 <body> 
     <div class="container">
+        
+        <header style="text-align: center;">  <!--next to title-->
+    <div style="display: inline-flex; align-items: center; gap: 2px;">
+        <h1 id="app-title" style="margin: 0;">
+            🌳 <span id="title-text">Forest of Support</span>
+        </h1>
+        <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds" 
+                style="flex-shrink: 0;">
+            🎵
+        </button>
+    </div>
+        </header>
+
+        
        <!-- <header> // on bottom of title 
     <h1 id="app-title">
         🌳 <span id="title-text">Forest of Support</span>
@@ -793,7 +807,7 @@
     </div>
         </header> -->
     
-        <header>
+        <!--<header> // on top of title
         <div style="position: relative; text-align: center;">
         <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds" 
                 style="position: absolute; left: 10px/*20px*/; top: 50%; transform: translateY(-50%);">
@@ -803,9 +817,9 @@
             🌳 <span id="title-text">Forest of Support</span>
         </h1>
             </div>
-            <!--<p class="tagline" id="app-tagline">A digital sanctuary with contextual poetic wisdom</p>
-            <p id="app-subtitle">Your journal receives personalized healing poems</p>-->
-           </header>
+            <p class="tagline" id="app-tagline">A digital sanctuary with contextual poetic wisdom</p>
+            <p id="app-subtitle">Your journal receives personalized healing poems</p>
+           </header>-->
          
             
         <!-- Navigation -->
