@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#4a7c3f">
     <meta name="description" content="Forest of Support - A digital sanctuary with contextual poetic wisdom">
-    <link rel="manifest" href="manifest.json?v=1.3">
+    <link rel="manifest" href="manifest.json?v=1.4">
     
     <!-- Emoji as Icons (No image files needed) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
@@ -999,7 +999,7 @@
         <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">🌙</button>
     </div>
     
-    <p id="footer-version">🌿 Forest of Support v1.3 • Digital Healing Sanctuary</p>
+    <p id="footer-version">🌿 Forest of Support v1.4 • Digital Healing Sanctuary</p>
     <p id="footer-creator">Created by DeepSeek & Geoni</p>
     <p id="footer-data">Your data stays in your browser • Share with #ForestOfSupport #HealLikeATree</p>
     <p>
@@ -1022,7 +1022,7 @@
         // 144 poems in both English and Georgian
         
         // APP CONFIG
-        const APP_VERSION = '1.3';
+        const APP_VERSION = '1.4';
         const VERSION_KEY = 'forestAppVersion';
         const LANG_KEY = 'forestLanguage';
 
@@ -1118,7 +1118,7 @@
                 // Footer
                 languageLabel: "Language / ენა:",
                 currentLang: "Current: English",
-                footerVersion: "🌿 Forest of Support v1.2 • Digital Healing Sanctuary",
+                footerVersion: "🌿 Forest of Support v1.4 • Digital Healing Sanctuary",
                 footerData: "Your data stays in your browser • Share with #ForestOfSupport #HealLikeATree",
                 footerQuote: "\"The wound is where the light enters you.\" - Rumi",
                 footerCreator: "Created by DeepSeek & Geoni",
@@ -1209,7 +1209,7 @@
                 // Footer
                 languageLabel: "Language / ენა:",
                 currentLang: "მიმდინარე: ქართული",
-                footerVersion: "🌿 მხარდაჭერის ტყე v1.2 • მკურნალი ხის ციფრული ოთახი",
+                footerVersion: "🌿 მხარდაჭერის ტყე v1.4 • მკურნალი ხის ციფრული ოთახი",
                 footerData: "თქვენი მონაცემები რჩება თქვენს ბრაუზერში • გააზიარეთ #ForestOfSupport #HealLikeATree",
                 footerQuote: "\"ჭრილობა იქ არის, სადაც სინათლე შემოდის.\" - რუმი",
                 footerCreator: "DeepSeek-ის და ჯეონისგან",
@@ -2252,7 +2252,7 @@
                 ge: `       🌱
      ნერგი/*თესლი*/
   შთანერგვით/*განზრახვით*/
-    ინერგება/*ითესება*/`
+    ირგვება/*ითესება*/`
             };
     
             const previewElement = document.getElementById('seedPreview').querySelector('pre');
@@ -2912,7 +2912,7 @@ function checkVersionAndPreserveData() {
                 if (savedVersion) {
                     setTimeout(() => {
                         const t = TEXT[currentLanguage];
-                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Dark-light mode' : 'ნათელი და მუქი რეჟიმი'}\n• ${currentLanguage === 'en' ? 'Better contextual matching' : 'უკეთესი კონტექსტუალური შესაბამისობა'}\n• ${currentLanguage === 'en' ? 'Available in two languages' : 'ხელმისაწვდომია ორ ენაზე'}`;
+                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Birdsong in the forest' : 'ჩიტების ჭიკჭიკი ტყეში'}`;
                         if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
                             showCard('welcome');
                             document.getElementById('welcome').innerHTML += `
