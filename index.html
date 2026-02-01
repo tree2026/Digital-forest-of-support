@@ -2099,7 +2099,7 @@
         
         // ====== CANOPY WISDOM 1.5. ===================
 
-      /*  const canopyWisdom = {
+        const canopyWisdom = {
     en: [
         {
             id: "canopy_1",
@@ -2189,7 +2189,7 @@
             offering: "🌿 Offering: Pass on a resource to someone younger without expectation."
         }
     ]
-};*/
+};
 
         // ==================== KEYWORDS FOR CONTEXTUAL MATCHING ====================
         
@@ -2347,6 +2347,15 @@
     setTimeout(function() {
         showCard('welcome');
     }, 100);
+
+    //===== 1.5 canopy ======
+    // Initialize canopy system
+    if (myTree.canopyInsights) {
+        calculateUnlockedInsights();
+    }
+    
+    // Update canopy button on load
+    setTimeout(updateCanopyButton, 500); // 1.5 canopy
 });
         
         // ==================== LANGUAGE FUNCTIONS ====================
