@@ -495,32 +495,6 @@
     100% { box-shadow: 0 0 0 0 rgba(74, 124, 63, 0); }
     }
         
-        /* Canopy-specific styles 1.5 */
-        #canopy .journal-entry {
-    background: var(--principle-bg);
-    border-left: 5px solid #8a5a2d; /* Autumn brown */
-        }
-
-        #canopy .poem-response {
-    border-left-color: #8a5a2d;
-        }
-
-        /* Canopy tree visualization */
-        #canopy-ascii {
-    font-family: 'Courier New', monospace;
-    line-height: 1.2;
-    text-align: center;
-    color: var(--text-secondary);
-        }
-
-        /* Dark mode adjustments */
-        [data-theme="dark"] #canopy .journal-entry {
-    border-left-color: #a67c52;
-        }
-
-        [data-theme="dark"] #canopy .poem-response {
-    border-left-color: #a67c52;
-        }
    
     /* ============== DARK MODE - COLOR CHANGE ONLY ================= */
 
@@ -856,8 +830,6 @@
     <button onclick="showCard('plant')" id="nav-plant">🪴 Plant Tree</button>
     <button onclick="showCard('practice')" id="nav-practice">📿 Daily Practice</button>
     <button onclick="showCard('forest')" id="nav-forest">🌲 My Forest</button>
-    <!-- canopy 1.5 -->
-    <button onclick="showCard('canopy')" id="nav-canopy">🌤️ Wisdom Canopy</button>
     <button onclick="showCard('journal')" id="nav-journal">📖 Journal</button>
 </div>
         
@@ -995,32 +967,6 @@
             </div>
         </div>
         
-        <!-- Canopy Card 1.5 -->
-        <div id="canopy" class="card">
-    <h2 id="canopy-title">🌤️ Wisdom Canopy</h2>
-    <p id="canopy-subtitle">How the ancient tree (1950-1990) offers shelter, not shadow</p>
-    
-    <div class="tree-display" style="min-height: 150px; font-size: 0.9em;">
-        <pre id="canopy-ascii">
-     /\
-    /  \
-   /    \
-  /______\
-   |    |
-   |    |
-~~~~~~~~~~~~~
-        </pre>
-    </div>
-    
-    <div id="canopy-content">
-        <!-- This will be populated dynamically -->
-    </div>
-    
-    <div style="text-align: center; margin-top: 30px;">
-        <button onclick="generateCanopyInsight()" id="insight-btn">✨ Receive Canopy Insight</button>
-        <button onclick="shareAsCanopy()" class="secondary" id="share-btn">🌳 Share as Canopy</button>
-    </div>
-        </div>
         
         <!-- Journal Card -->
         <div id="journal" class="card">
@@ -1178,13 +1124,6 @@
                 footerQuote: "\"The wound is where the light enters you.\" - Rumi",
                 footerCreator: "Created by DeepSeek & Geoni",
                 footerBook: "Geoni's Book",
-              
-                // canopy 1.5 
-                canopyTitle: "🌤️ Wisdom Canopy",
-                canopySubtitle: "How the ancient tree (1950-1990) offers shelter, not shadow",
-                insightBtn: "✨ Receive Canopy Insight",
-                shareBtn: "🌳 Share as Canopy",
-                noCanopyYet: "No canopy insights yet. Your reflections become shelter for others.",
 
                 // Alerts and messages
                 alertNameTree: "Please name your tree first.",
@@ -1276,13 +1215,6 @@
                 footerQuote: "\"ჭრილობა იქ არის, სადაც სინათლე შემოდის.\" - რუმი",
                 footerCreator: "DeepSeek-ის და ჯეონისგან",
                 footerBook: "ჯეონის წიგნი", 
-
-                // canopy 1.5
-                canopyTitle: "🌤️ სიბრძნის ქოლგა",
-                canopySubtitle: "როგორ გვთავაზობს თავშესაფარს, არა ჩრდილს, უძველესი ხე (1950-1990)",
-                insightBtn: "✨ მიიღე ქოლგის შეხედულება",
-                shareBtn: "🌳 გააზიარე როგორც ქოლგა",
-                noCanopyYet: "ჯერ არ არის ქოლგის შეხედულებები. თქვენი ასახვები სხვებისთვის თავშესაფარი გახდება.",
                 
                 // Alerts and messages
                 alertNameTree: "ჯერ სახელი დაარქვით ხეს.",
@@ -1951,7 +1883,7 @@
         
         // ====== CANOPY WISDOM 1.5. ===================
 
-        const canopyWisdom = {
+      /*  const canopyWisdom = {
     en: [
         {
             id: "canopy_1",
@@ -2041,7 +1973,7 @@
             offering: "🌿 Offering: Pass on a resource to someone younger without expectation."
         }
     ]
-};
+};*/
 
         // ==================== KEYWORDS FOR CONTEXTUAL MATCHING ====================
         
@@ -2180,56 +2112,6 @@
      ~~~~~~~~~~~~~~`*/
     ]
 };
-
-
-        /* canopy 1.5 */
-        const canopyStages = {
-            en: [
-        `       🌱
-       Your roots
-      are deepening`,
-        
-        `       🌳
-      /    \\
-     /      \\
-    / shelter\\
-   /__________\\
-      |||||
-   ~~~~~~~~~`,
-        
-        `     🌳 CANOPY 🌳
-    /           \\
-   /   creating  \\
-  /   microclimates\\
- /                 \\
-/___________________\\
-      |||||||
-   ~~~~~~~~~~~~`
-            ],
-    
-            ge: [
-        `       🌱
-       Your roots
-      are deepening`,
-        
-        `       🌳
-      /    \\
-     /      \\
-    / shelter\\
-   /__________\\
-      |||||
-   ~~~~~~~~~`,
-        
-        `     🌳 CANOPY 🌳
-    /           \\
-   /   creating  \\
-  /   microclimates\\
- /                 \\
-/___________________\\
-      |||||||
-   ~~~~~~~~~~~~`
-            ]
-        };
         
         
         // ==================== INITIALIZATION ====================
@@ -2974,16 +2856,6 @@ function checkVersionAndPreserveData() {
                 showCard('journal');
                 loadJournalEntries();
             }, 3000);
-            
-            // In completePractice(), canopy 1.5 after showing poem:
-            setTimeout(() => {
-                if (myTree.rings >= 3 && Math.random() > 0.7) {
-                    const msg = currentLanguage === 'ge' 
-                        ? '🌤️ თქვენი ხე საკმარისად მაღალია, რომ ქოლგა გახდეს. ეწვიეთ "სიბრძნის ქოლგას".'
-                        : '🌤️ Your tree is tall enough to become canopy. Visit "Wisdom Canopy".';
-                    alert(msg);
-                }
-            }, 4000);
         }
         
         function saveJournalEntry() {
@@ -3064,92 +2936,6 @@ function checkVersionAndPreserveData() {
                     </div>
                 `;
             });
-            
-            // canopy 1.5  Add canopy button after all entries are loaded
-            setTimeout(() => {
-                addCanopyButtons();
-            }, 100);
-        }
-
-        // canopy 1.5 NEW SEPARATE FUNCTION - doesn't touch original loadJournalEntries
-        function addCanopyButtons() {
-            const journalEntries = document.querySelectorAll('.journal-entry');
-    
-            journalEntries.forEach((entryDiv, displayIndex) => {
-        // Get the actual index in the original array (reverse calculation)
-        const actualIndex = myTree.journals.length - 1 - displayIndex;
-        const entry = myTree.journals[actualIndex];
-        
-        // Only add button to regular journal entries (not practice, not canopy)
-                if (entry.type !== 'practice' && entry.type !== 'canopy') {
-            const button = document.createElement('button');
-            button.innerHTML = `🌤️ ${currentLanguage === 'ge' ? 'ქოლგად გარდაქმნა' : 'Make into Canopy'}`;
-            button.className = 'secondary';
-            button.style = 'margin-top: 10px; font-size: 0.9em; padding: 8px 16px;';
-            button.onclick = function() {
-                convertToCanopy(actualIndex);
-            };
-            
-            entryDiv.appendChild(button);
-                }
-            });
-        }
-
-        // canopy 1.5
-        function convertToCanopy(actualIndex) {
-    // Ensure the index is valid
-    if (actualIndex < 0 || actualIndex >= myTree.journals.length) {
-        console.error('Invalid journal index:', actualIndex);
-        return;
-    }
-    
-    const entry = myTree.journals[actualIndex];
-    const lang = currentLanguage;
-    
-    // Prevent converting canopy or practice entries
-    if (entry.type === 'canopy' || entry.type === 'practice') {
-        alert(lang === 'ge' 
-            ? 'ამ ტიპის ჩანაწერი ვერ გარდაიქმნება ქოლგად.' 
-            : 'This type of entry cannot be converted to canopy.');
-        return;
-    }
-    
-    // Get canopy wisdom (make sure this object exists!)
-    const canopyInsights = canopyWisdom[lang] || canopyWisdom.en;
-    
-    // Pick a random insight
-    const insight = canopyInsights[Math.floor(Math.random() * canopyInsights.length)];
-    
-    // Create the canopy entry WITH ALL REQUIRED PROPERTIES
-    const canopyEntry = {
-        date: new Date().toLocaleString(),
-        title: insight.title,
-        insight: insight.insight,
-        practice: insight.practice,
-        offering: insight.offering,
-        type: 'canopy',
-        insightId: insight.id,
-        // Optional: link to original entry
-        originalText: entry.text.substring(0, 80) + (entry.text.length > 80 ? '...' : ''),
-        originalDate: entry.date
-    };
-    
-    // Add to journals
-    myTree.journals.push(canopyEntry);
-    saveTree();
-    
-    // Show success
-    const successMsg = lang === 'ge'
-        ? '✅ ჩანაწერი გარდაიქმნა ქოლგად!'
-        : '✅ Entry transformed into canopy!';
-    
-    alert(successMsg);
-    
-    // Redirect to canopy card
-    setTimeout(() => {
-        showCard('canopy');
-        loadCanopyContent();
-    }, 500);
         }
 
         
@@ -3188,18 +2974,6 @@ function checkVersionAndPreserveData() {
             document.getElementById('statStage').textContent = myTree.stage;
             document.getElementById('statJournals').textContent = myTree.journals.length;
             document.getElementById('statPoems').textContent = myTree.poemsReceived;
-
-            // Add canopy 1.5 indicator if user has canopy insights
-            const hasCanopy = myTree.journals.some(j => j.type === 'canopy');
-            if (hasCanopy && myTree.stage >= 3) {
-                const treeDisplay = document.getElementById('treeAscii');
-                const currentTree = treeDisplay.textContent;
-        
-                // Add canopy 1.5 symbol
-                if (!currentTree.includes('🌤️')) {
-                    treeDisplay.textContent = '🌤️ ' + currentTree;
-                }
-            }
         }
         
         function updateDisplay() {
@@ -3251,136 +3025,6 @@ function checkVersionAndPreserveData() {
                     }, 2000);
                 }
             }
-        }
-    
-        // ============== CANOPY FUNCTIONS 1.5 ====================
-
-        function showCanopyCard() {
-    showCard('canopy');
-    loadCanopyContent();
-        }
-
-        function loadCanopyContent() {
-    const container = document.getElementById('canopy-content');
-    const t = TEXT[currentLanguage];
-    
-    if (!myTree.name) {
-        container.innerHTML = `
-            <div class="step">
-                <p>${t.plantText}</p>
-                <button onclick="showCard('plant')">${t.plantBtn}</button>
-            </div>
-        `;
-        return;
-    }
-    
-    // Show latest canopy insights
-    const canopyEntries = myTree.journals.filter(j => j.type === 'canopy');
-    
-    if (canopyEntries.length === 0) {
-        container.innerHTML = `
-            <div class="poem-response">
-                <p>${t.noCanopyYet}</p>
-                <div class="sage-quote">"The tree does not regret the rain it drank—it now turns each leaf into a cup."</div>
-            </div>
-        `;
-    } else {
-        container.innerHTML = '';
-        canopyEntries.slice().reverse().forEach(entry => {
-            container.innerHTML += `
-                <div class="journal-entry">
-                    <div class="entry-date">
-                        <span>${entry.date}</span>
-                        <span>🌤️ ${entry.title || 'Canopy Insight'}</span>
-                    </div>
-                    ${entry.title ? `<h4>${entry.title}</h4>` : ''}
-                    <p><strong>${lang === 'ge' ? 'გამჭრიახობა' : 'Insight'}:</strong> ${entry.insight}</p>
-                    <p><strong>${lang === 'ge' ? 'ვარჯიში' : 'Practice'}:</strong> ${entry.practice}</p>
-                    <p><em>${entry.offering}</em></p>
-                    ${entry.originalText ? `<p><small>📝 ${entry.originalText}</small></p>` : ''}
-                </div>
-            `;
-        });
-    }
-        }
-
-
-        function generateCanopyInsight() {
-            if (!myTree.name) {
-        alert(TEXT[currentLanguage].alertPlantFirst);
-        showCard('plant');
-        return;
-    }
-    
-    const lang = currentLanguage;
-    const insights = canopyWisdom[lang];
-    
-    // Pick one not recently shown
-    const shownIds = myTree.journals
-        .filter(j => j.type === 'canopy')
-        .map(j => j.insightId);
-    
-    const available = insights.filter(i => !shownIds.includes(i.id));
-    const insight = available.length > 0 
-        ? available[Math.floor(Math.random() * available.length)]
-        : insights[Math.floor(Math.random() * insights.length)];
-    
-    // Add to journals as canopy entry
-    myTree.journals.push({
-        date: new Date().toLocaleString(),
-        title: insight.title,
-        insight: insight.insight,
-        practice: insight.practice,
-        offering: insight.offering,
-        type: 'canopy',
-        insightId: insight.id
-    });
-    
-    saveTree();
-    loadCanopyContent();
-    
-    // Show the new insight
-    const container = document.getElementById('canopy-content');
-    const newEntry = myTree.journals[myTree.journals.length - 1];
-    
-    container.innerHTML = `
-        <div class="poem-response" style="animation: fadeIn 1s;">
-            <h3>${newEntry.title}</h3>
-            <p>${newEntry.insight}</p>
-            <div class="exercise-box">
-                <p><strong>${lang === 'ge' ? 'ვარჯიში' : 'Practice'}:</strong> ${newEntry.practice}</p>
-                <p><em>${newEntry.offering}</em></p>
-            </div>
-            <div class="sage-quote">${lang === 'ge' ? 'ქოლგა ჩრდილს ნებართვას არ აძლევს' : 'Canopy permission over shadow'}</div>
-        </div>
-    ` + container.innerHTML;
-        }
-
-        function shareAsCanopy() {
-    const lastEntry = myTree.journals.filter(j => j.type === 'canopy').slice(-1)[0];
-    
-    if (!lastEntry) {
-        alert(currentLanguage === 'ge' ? 'ჯერ შექმენი ქოლგის შეხედულება' : 'Create a canopy insight first');
-        return;
-    }
-    
-    const shareText = currentLanguage === 'ge' 
-        ? `🌤️ ${lastEntry.title}\n\n${lastEntry.insight}\n\n${lastEntry.practice}\n\n${lastEntry.offering}\n\n#ForestCanopy #ხისსიბრძნე`
-        : `🌤️ ${lastEntry.title}\n\n${lastEntry.insight}\n\n${lastEntry.practice}\n\n${lastEntry.offering}\n\n#ForestCanopy #TreeWisdom`;
-    
-    if (navigator.share) {
-        navigator.share({
-            title: lastEntry.title,
-            text: shareText,
-            url: window.location.href
-        });
-    } else {
-        // Fallback to clipboard
-        navigator.clipboard.writeText(shareText);
-        alert(currentLanguage === 'ge' 
-            ? '📋 კოპირებულია! გააზიარეთ სოციალურ მედიაში.'
-            : '📋 Copied! Share on social media.');
-    }
         }
         
     </script>
