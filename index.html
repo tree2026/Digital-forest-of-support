@@ -3173,9 +3173,8 @@ function checkVersionAndPreserveData() {
             `;
         } else { // 1.5 canopy end 
             // Show most recent first
-            myTree.journals.slice().reverse().forEach((entry, index) => {
-                const isPractice = entry.type === 'practice';
-                
+           // myTree.journals.slice().reverse().forEach((entry, index) => {
+               // const isPractice = entry.type === 'practice';
                 container.innerHTML += `
                     <div class="journal-entry">
                         <div class="entry-date">
@@ -3188,9 +3187,9 @@ function checkVersionAndPreserveData() {
                         <p>${entry.poem.replace(/\n/g, '<br>')}</p>
                         <div class="sage-quote">${entry.sage}</div>
                     </div>
-                `;
-            } // 1.5 canopy end , the } was added for canopy
-            });
+                `;  
+        } // 1.5 canopy end , the } was added for canopy      
+    });
         }
 
         //===== 1.5 canopy ====
