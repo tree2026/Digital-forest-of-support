@@ -3190,6 +3190,10 @@ function checkVersionAndPreserveData() {
             document.getElementById('statStage').textContent = myTree.stage;
             document.getElementById('statJournals').textContent = myTree.journals.length;
             document.getElementById('statPoems').textContent = myTree.poemsReceived;
+
+            // === 1.5 canopy ====
+            // Add canopy button update
+            updateCanopyButton();
         }
         
         function updateDisplay() {
