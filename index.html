@@ -3542,6 +3542,247 @@ window.addEventListener('beforeunload', () => {
         });
            }
        }
+
+
+      //===== 1.5 canopy ====
+       // ==================== CANOPY WISDOM SYSTEM ====================
+
+// Track unlocked canopy insights
+function getUnlockedCanopyInsights() {
+    if (!myTree.canopyInsights) {
+        myTree.canopyInsights = {
+            unlocked: [], // array of insight IDs that are unlocked
+            lastViewed: null
+        };
+    }
+    return myTree.canopyInsights;
+}
+
+// Calculate which insights should be unlocked based on rings
+function calculateUnlockedInsights() {
+    const rings = myTree.rings || 0;
+    const insights = getUnlockedCanopyInsights();
+    
+    // Clear and recalculate based on current rings
+    insights.unlocked = [];
+    
+    // Unlock insights progressively every 5 rings starting at 21
+    const totalInsights = 6;
+    for (let i = 1; i <= totalInsights; i++) {
+        const requiredRings = 21 + ((i - 1) * 5);
+        if (rings >= requiredRings) {
+            insights.unlocked.push(`canopy_${i}`);
+        }
+    }
+    
+    return insights;
+}
+
+// Show canopy button if eligible
+function updateCanopyButton() {
+    const container = document.getElementById('canopyButtonContainer');
+    const progressText = document.getElementById('canopyProgressText');
+    
+    if (!myTree.name || myTree.rings < 21) {
+        container.style.display = 'none';
+        return;
+    }
+    
+    // Calculate unlocked insights
+    const insights = calculateUnlockedInsights();
+    const unlockedCount = insights.unlocked.length;
+    const totalInsights = 6;
+    
+    // Show button and progress
+    container.style.display = 'block';
+    progressText.textContent = `Canopy ${unlockedCount}/${totalInsights} • ${myTree.rings} rings`;
+    
+    // Update button text if all unlocked
+    const button = document.getElementById('becomeCanopyBtn');
+    if (unlockedCount === totalInsights) {
+        button.innerHTML = '🌤️ Elder Canopy';
+    } else {
+        button.innerHTML = '🌤️ Become Canopy';
+    }
+}
+
+// Show a canopy insight
+function showCanopyInsight() {
+    if (!myTree.name || myTree.rings < 21) {
+        alert(currentLanguage === 'ge' 
+            ? '🌳 გთხოვთ, ჯერ 21 რგოლამდე გაიზარდოთ.' 
+            : '🌳 Please grow to 21 rings first.');
+        return;
+    }
+    
+    const insights = calculateUnlockedInsights();
+    const unlockedIds = insights.unlocked;
+    
+    if (unlockedIds.length === 0) {
+        alert(currentLanguage === 'ge' 
+            ? '🌤️ ჯერ არ გაქვთ განხილული ქოლგის შეხედულებები.' 
+            : '🌤️ No canopy insights unlocked yet.');
+        return;
+    }
+    
+    // Get the latest unlocked insight (or cycle through)
+    const lang = currentLanguage;
+    const canopyData = canopyWisdom[lang] || canopyWisdom.en;
+    
+    // Find insight to show (prefer unviewed, then cycle)
+    let insightToShow = null;
+    let insightId = null;
+    
+    // Try to find an unlocked insight not yet saved in journal
+    for (const id of unlockedIds) {
+        const alreadySaved = myTree.journals.some(j => 
+            j.type === 'canopy' && j.insightId === id
+        );
+        
+        if (!alreadySaved) {
+            insightId = id;
+            insightToShow = canopyData.find(i => i.id === id);
+            break;
+        }
+    }
+    
+    // If all are already saved, show the most recent one
+    if (!insightToShow) {
+        insightId = unlockedIds[unlockedIds.length - 1];
+        insightToShow = canopyData.find(i => i.id === insightId);
+    }
+    
+    if (!insightToShow) {
+        console.error('No canopy insight found for ID:', insightId);
+        return;
+    }
+    
+    // Save to journal if not already saved
+    const alreadyInJournal = myTree.journals.some(j => 
+        j.type === 'canopy' && j.insightId === insightId
+    );
+    
+    if (!alreadyInJournal) {
+        myTree.journals.push({
+            date: new Date().toLocaleString(),
+            title: insightToShow.title,
+            text: insightToShow.insight,
+            poem: insightToShow.practice,
+            sage: insightToShow.offering,
+            type: 'canopy',
+            insightId: insightId,
+            category: 'canopy_wisdom'
+        });
+        
+        myTree.poemsReceived = (myTree.poemsReceived || 0) + 1;
+        saveTree();
+        
+        // Update forest display
+        updateForestCard();
+    }
+    
+    // Update insights tracking
+    insights.lastViewed = insightId;
+    saveTree();
+    
+    // Show modal
+    showCanopyModal(insightToShow, unlockedIds.length);
+}
+
+// Display the canopy modal
+function showCanopyModal(insight, unlockedCount) {
+    const modal = document.getElementById('canopyModal');
+    const title = document.getElementById('canopyTitle');
+    const text = document.getElementById('canopyText');
+    const progress = document.getElementById('canopyProgress');
+    
+    // Set content
+    title.textContent = insight.title;
+    text.textContent = insight.insight;
+    progress.textContent = currentLanguage === 'ge' 
+        ? `ქოლგა ${unlockedCount}/6` 
+        : `Canopy ${unlockedCount}/6`;
+    
+    // Store current insight for sharing
+    modal.dataset.currentInsight = JSON.stringify(insight);
+    
+    // Show modal
+    modal.style.display = 'flex';
+    
+    // Update button text
+    const shareBtn = document.getElementById('shareCanopyBtn');
+    shareBtn.innerHTML = currentLanguage === 'ge' 
+        ? '🌤️ გააზიარე ეს სიბრძნე' 
+        : '🌤️ Share This Wisdom';
+}
+
+// Close canopy modal
+function closeCanopyModal() {
+    document.getElementById('canopyModal').style.display = 'none';
+}
+
+// Share canopy insight
+function shareCanopyInsight() {
+    const modal = document.getElementById('canopyModal');
+    const insight = JSON.parse(modal.dataset.currentInsight || '{}');
+    
+    if (!insight.title || !insight.insight) {
+        alert(currentLanguage === 'ge' 
+            ? '🌤️ გაზიარების შეცდომა.' 
+            : '🌤️ Sharing error.');
+        return;
+    }
+    
+    // Create share text with hashtags
+    const shareText = `🌤️ ${insight.title}\n\n"${insight.insight}"\n\n#ForestofSupport #HealLikeATree #ForestCanopy`;
+    
+    // Try Web Share API first
+    if (navigator.share) {
+        navigator.share({
+            title: insight.title,
+            text: shareText,
+            url: window.location.href
+        }).then(() => {
+            console.log('Canopy insight shared successfully');
+        }).catch(err => {
+            console.log('Web Share failed, falling back to clipboard:', err);
+            fallbackShare(shareText);
+        });
+    } else {
+        // Fallback to clipboard
+        fallbackShare(shareText);
+    }
+}
+
+// Fallback sharing method
+function fallbackShare(shareText) {
+    navigator.clipboard.writeText(shareText).then(() => {
+        alert(currentLanguage === 'ge' 
+            ? '📋 კოპირებულია! გააზიარეთ სოციალურ მედიაში.' 
+            : '📋 Copied! Share on social media.');
+    }).catch(err => {
+        // Ultimate fallback
+        const textArea = document.createElement('textarea');
+        textArea.value = shareText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        alert(currentLanguage === 'ge' 
+            ? '📋 სიბრძნე კოპირებულია!' 
+            : '📋 Wisdom copied!');
+    });
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('canopyModal');
+    if (event.target === modal) {
+        closeCanopyModal();
+    }
+});
+
        
    </script>
 
