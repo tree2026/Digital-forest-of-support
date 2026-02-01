@@ -3096,26 +3096,60 @@ function checkVersionAndPreserveData() {
         }
 
         // canopy 1.5
-        function convertToCanopy(journalIndex) {
-    const entry = myTree.journals[myTree.journals.length - 1 - journalIndex];
-    const insight = canopyWisdom[currentLanguage][0]; // Or use AI to generate
+        function convertToCanopy(actualIndex) {
+    // Ensure the index is valid
+    if (actualIndex < 0 || actualIndex >= myTree.journals.length) {
+        console.error('Invalid journal index:', actualIndex);
+        return;
+    }
     
-    // Transform personal journal into canopy wisdom
-    myTree.journals.push({
+    const entry = myTree.journals[actualIndex];
+    const lang = currentLanguage;
+    
+    // Prevent converting canopy or practice entries
+    if (entry.type === 'canopy' || entry.type === 'practice') {
+        alert(lang === 'ge' 
+            ? 'ამ ტიპის ჩანაწერი ვერ გარდაიქმნება ქოლგად.' 
+            : 'This type of entry cannot be converted to canopy.');
+        return;
+    }
+    
+    // Get canopy wisdom (make sure this object exists!)
+    const canopyInsights = canopyWisdom[lang] || canopyWisdom.en;
+    
+    // Pick a random insight
+    const insight = canopyInsights[Math.floor(Math.random() * canopyInsights.length)];
+    
+    // Create the canopy entry WITH ALL REQUIRED PROPERTIES
+    const canopyEntry = {
         date: new Date().toLocaleString(),
-        title: currentLanguage === 'ge' ? 'ჩემი გამოცდილებიდან' : 'From My Experience',
-        insight: `${entry.text.substring(0, 100)}...`,
-        practice: currentLanguage === 'ge' 
-            ? 'რას გულისხმობდა ეს ჩემთვის? როგორ შეიძლება სხვისთვის თავშესაფარი გახდეს?'
-            : 'What did this mean for me? How could it become shelter for others?',
-        offering: '🌿 ' + (currentLanguage === 'ge' ? 'გაზიარე როგორც ამბავი, არა როგორც გაკვეთილი.' : 'Share as story, not as lesson.'),
+        title: insight.title,
+        insight: insight.insight,
+        practice: insight.practice,
+        offering: insight.offering,
         type: 'canopy',
-        originalEntry: entry.date
-    });
+        insightId: insight.id,
+        // Optional: link to original entry
+        originalText: entry.text.substring(0, 80) + (entry.text.length > 80 ? '...' : ''),
+        originalDate: entry.date
+    };
     
+    // Add to journals
+    myTree.journals.push(canopyEntry);
     saveTree();
-    showCard('canopy');
-    loadCanopyContent();
+    
+    // Show success
+    const successMsg = lang === 'ge'
+        ? '✅ ჩანაწერი გარდაიქმნა ქოლგად!'
+        : '✅ Entry transformed into canopy!';
+    
+    alert(successMsg);
+    
+    // Redirect to canopy card
+    setTimeout(() => {
+        showCard('canopy');
+        loadCanopyContent();
+    }, 500);
         }
 
         
@@ -3257,12 +3291,13 @@ function checkVersionAndPreserveData() {
                 <div class="journal-entry">
                     <div class="entry-date">
                         <span>${entry.date}</span>
-                        <span>🌤️ ${entry.category}</span>
+                        <span>🌤️ ${entry.title || 'Canopy Insight'}</span>
                     </div>
-                    <h4>${entry.title}</h4>
-                    <p><strong>Insight:</strong> ${entry.insight}</p>
-                    <p><strong>Practice:</strong> ${entry.practice}</p>
+                    ${entry.title ? `<h4>${entry.title}</h4>` : ''}
+                    <p><strong>${lang === 'ge' ? 'გამჭრიახობა' : 'Insight'}:</strong> ${entry.insight}</p>
+                    <p><strong>${lang === 'ge' ? 'ვარჯიში' : 'Practice'}:</strong> ${entry.practice}</p>
                     <p><em>${entry.offering}</em></p>
+                    ${entry.originalText ? `<p><small>📝 ${entry.originalText}</small></p>` : ''}
                 </div>
             `;
         });
