@@ -3201,6 +3201,15 @@ function checkVersionAndPreserveData() {
         }
         
         function saveTree() {
+            //===== 1.5 canopy ===
+            // Ensure canopy insights structure exists
+            if (!myTree.canopyInsights) {
+                myTree.canopyInsights = {
+            unlocked: [],
+            lastViewed: null
+                };
+            }
+            
             localStorage.setItem('forestTree', JSON.stringify(myTree));
         }
 
