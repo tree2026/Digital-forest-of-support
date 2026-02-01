@@ -3142,7 +3142,36 @@ function checkVersionAndPreserveData() {
                 `;
                 return;
             }
-            
+
+            //==== 1.5 canopy ====
+    // ... your existing code until the entry display ...
+    
+    myTree.journals.slice().reverse().forEach((entry, index) => {
+        const isPractice = entry.type === 'practice';
+        const isCanopy = entry.type === 'canopy';
+        
+        // Special styling for canopy entries
+        if (isCanopy) {
+            container.innerHTML += `
+                <div class="journal-entry" style="border-left: 5px solid var(--canopy-border);">
+                    <div class="entry-date">
+                        <span>${entry.date}</span>
+                        <span>🌤️ ${currentLanguage === 'en' ? 'Canopy Wisdom' : 'ქოლგის სიბრძნე'}</span>
+                    </div>
+                    <h4 style="color: var(--canopy-title);">${entry.title}</h4>
+                    <p>${entry.text}</p>
+                    <button onclick="shareSpecificCanopy('${entry.insightId}')" 
+                            class="secondary" 
+                            style="margin-top: 10px; background: var(--canopy-button);">
+                        🌤️ ${currentLanguage === 'ge' ? 'გააზიარე' : 'Share'}
+                    </button>
+                </div>
+                <div class="poem-response" style="border-left-color: var(--canopy-border);">
+                    <p>${entry.poem.replace(/\n/g, '<br>')}</p>
+                    <div class="sage-quote">${entry.sage}</div>
+                </div>
+            `;
+        } else { // 1.5 canopy end 
             // Show most recent first
             myTree.journals.slice().reverse().forEach((entry, index) => {
                 const isPractice = entry.type === 'practice';
@@ -3160,8 +3189,34 @@ function checkVersionAndPreserveData() {
                         <div class="sage-quote">${entry.sage}</div>
                     </div>
                 `;
+            } // 1.5 canopy end , the } was added for canopy
             });
         }
+
+        //===== 1.5 canopy ====
+        // Helper to share specific canopy insight from journal
+function shareSpecificCanopy(insightId) {
+    const lang = currentLanguage;
+    const canopyData = canopyWisdom[lang] || canopyWisdom.en;
+    const insight = canopyData.find(i => i.id === insightId);
+    
+    if (insight) {
+        const shareText = `🌤️ ${insight.title}\n\n"${insight.insight}"\n\n#ForestofSupport #HealLikeATree #ForestCanopy`;
+        
+        if (navigator.share) {
+            navigator.share({
+                title: insight.title,
+                text: shareText,
+                url: window.location.href
+            });
+        } else {
+            navigator.clipboard.writeText(shareText);
+            alert(currentLanguage === 'ge' 
+                ? '📋 კოპირებულია!' 
+                : '📋 Copied!');
+        }
+    }
+} // 1.5 canopy end 
 
         
         function clearJournal() {
