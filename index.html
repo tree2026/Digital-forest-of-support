@@ -3065,16 +3065,35 @@ function checkVersionAndPreserveData() {
                 `;
             });
             
-            // In loadJournalEntries(), canopy 1.5 add to each entry:
-            if (entry.type !== 'canopy') {
-                journalHTML += `
-        <button onclick="convertToCanopy(${index})" class="secondary" style="margin-top: 10px; font-size: 0.9em;">
-            🌤️ ${currentLanguage === 'ge' ? 'ქოლგად გარდაქმნა' : 'Make into Canopy'}
-        </button>
-    `;
-            }
+            // canopy 1.5  Add canopy button after all entries are loaded
+            setTimeout(() => {
+                addCanopyButtons();
+            }, 100);
         }
 
+        // canopy 1.5 NEW SEPARATE FUNCTION - doesn't touch original loadJournalEntries
+        function addCanopyButtons() {
+            const journalEntries = document.querySelectorAll('.journal-entry');
+    
+            journalEntries.forEach((entryDiv, displayIndex) => {
+        // Get the actual index in the original array (reverse calculation)
+        const actualIndex = myTree.journals.length - 1 - displayIndex;
+        const entry = myTree.journals[actualIndex];
+        
+        // Only add button to regular journal entries (not practice, not canopy)
+                if (entry.type !== 'practice' && entry.type !== 'canopy') {
+            const button = document.createElement('button');
+            button.innerHTML = `🌤️ ${currentLanguage === 'ge' ? 'ქოლგად გარდაქმნა' : 'Make into Canopy'}`;
+            button.className = 'secondary';
+            button.style = 'margin-top: 10px; font-size: 0.9em; padding: 8px 16px;';
+            button.onclick = function() {
+                convertToCanopy(actualIndex);
+            };
+            
+            entryDiv.appendChild(button);
+                }
+            });
+        }
 
         // canopy 1.5
         function convertToCanopy(journalIndex) {
