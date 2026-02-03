@@ -1194,9 +1194,9 @@
                 // Add to TEXT.en object:
                 canopyTitle: "🌤️ Wisdom Canopy",
                 canopySubtitle: "How the ancient tree (1950-1990) offers shelter, not shadow",
-                insightBtn: "✨ Receive Canopy Insight",
-                shareBtn: "🌳 Share as Canopy",
-                noCanopyYet: "No canopy insights yet. Your reflections become shelter for others.",
+               // insightBtn: "✨ Receive Canopy Insight",
+              //  shareBtn: "🌳 Share as Canopy",
+              //  noCanopyYet: "No canopy insights yet. Your reflections become shelter for others.",
                 
                 // Journal card
                 journalTitle: "📖 Your Tree Journal",
@@ -1294,9 +1294,9 @@
                 // Add to TEXT.ge object:
                 canopyTitle: "🌤️ სიბრძნის ქოლგა",
                 canopySubtitle: "როგორც გვთავაზობს თავშესაფარს, არა ჩრდილს, უძველესი ხე (1950-1990)",
-                insightBtn: "✨ მიიღე ქოლგის შეხედულება",
-                shareBtn: "🌳 გააზიარე როგორც ქოლგა",
-                noCanopyYet: "ჯერ არ არის ქოლგის შეხედულებები. თქვენი ასახვები სხვებისთვის თავშესაფარი გახდება.",
+               // insightBtn: "✨ მიიღე ქოლგის შეხედულება",
+                //shareBtn: "🌳 გააზიარე როგორც ქოლგა",
+                //noCanopyYet: "ჯერ არ არის ქოლგის შეხედულებები. თქვენი ასახვები სხვებისთვის თავშესაფარი გახდება.",
                 
                 // Journal card
                 journalTitle: "📖 თქვენი ხის დღიური",
@@ -3222,6 +3222,7 @@ function resetCanopyPractice() {
     // Show most recent first
     myTree.journals.slice().reverse().forEach((entry, index) => {
        if (entry.type === 'canopy') {
+    // CANOPY ENTRY - Show only user response
     container.innerHTML += `
         <div class="journal-entry">
             <div class="entry-date">
