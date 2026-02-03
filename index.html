@@ -3156,8 +3156,67 @@ function fallbackShare(text) {
                 // journalEntries.firstChild.scrollIntoView({ behavior: 'smooth' });
             }
         }
+
+
+        // ====== 1.5 canopy
         
         function loadJournalEntries() {
+    const container = document.getElementById('journalEntries');
+    const t = TEXT[currentLanguage];
+    container.innerHTML = "";
+    
+    if (myTree.journals.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 30px; color: #666; font-style: italic;">
+                ${t.noEntries}
+            </div>
+        `;
+        return;
+    }
+    
+    // Show most recent first
+    myTree.journals.slice().reverse().forEach((entry, index) => {
+        if (entry.type === 'canopy') {
+            // CANOPY ENTRY
+            container.innerHTML += `
+                <div class="journal-entry">
+                    <div class="entry-date">
+                        <span>${entry.date}</span>
+                        <span>🌤️ ${currentLanguage === 'ge' ? 'ქოლგის შეხედულება' : 'Canopy Insight'}</span>
+                    </div>
+                    <h4>${entry.title}</h4>
+                    <p><strong>${currentLanguage === 'ge' ? 'შეხედულება' : 'Insight'}:</strong> ${entry.insight}</p>
+                    <p><strong>${currentLanguage === 'ge' ? 'ჩემი პასუხი' : 'My Response'}:</strong> ${entry.userResponse}</p>
+                    <p><em>${entry.offering}</em></p>
+                </div>
+            `;
+        } else {
+            // REGULAR JOURNAL OR PRACTICE ENTRY
+            const isPractice = entry.type === 'practice';
+            
+            container.innerHTML += `
+                <div class="journal-entry">
+                    <div class="entry-date">
+                        <span>${entry.date}</span>
+                        <span>${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}</span>
+                    </div>
+                    <p>${entry.text}</p>
+                </div>
+            `;
+            
+            if (entry.poem) {
+                container.innerHTML += `
+                    <div class="poem-response">
+                        <p>${entry.poem.replace(/\n/g, '<br>')}</p>
+                        <div class="sage-quote">${entry.sage}</div>
+                    </div>
+                `;
+            }
+        }
+    });
+        } // 1.5 canopy
+        
+       /* function loadJournalEntries() {
             const container = document.getElementById('journalEntries');
             const t = TEXT[currentLanguage];
             container.innerHTML = "";
@@ -3188,7 +3247,7 @@ function fallbackShare(text) {
                     </div>
                 `;        
             });
-        }
+        }*/
 
         function clearJournal() {
             document.getElementById('newJournalEntry').value = "";
