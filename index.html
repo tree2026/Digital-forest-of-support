@@ -1014,13 +1014,12 @@
         </div>
 
         <!-- 1.5 canopy Wisdom Canopy Card -->
-
-        <div id="canopy" class="card">
+<div id="canopy" class="card">
     <h2 id="canopy-title">🌤️ Wisdom Canopy</h2>
     <p id="canopy-subtitle">How the ancient tree (1950-1990) offers shelter, not shadow</p>
     
     <div id="canopyStatus" style="text-align: center; padding: 20px; font-style: italic;">
-        ${currentLanguage === 'ge' ? 'აირჩიეთ ქოლგის შეხედულება პრაქტიკის დასაწყებად' : 'Select a canopy insight to begin practice'}
+        Select a canopy insight to begin practice
     </div>
     
     <!-- Step 1: Choose Canopy Insight -->
@@ -1029,7 +1028,7 @@
         <p id="canopy-step1-text">Select one canopy insight to reflect on:</p>
         <div id="canopyButtons"></div>
         <div style="text-align: center; margin-top: 20px;">
-            <button onclick="canopyNextStep()" id="canopyNextBtn1" disabled>${currentLanguage === 'ge' ? 'შემდეგი →' : 'Next →'}</button>
+            <button onclick="canopyNextStep()" id="nextBtn1" disabled>Next →</button>
         </div>
     </div>
     
@@ -1040,8 +1039,8 @@
             <!-- Insight and practice will load here -->
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <button onclick="canopyPrevStep()" id="canopyPrevBtn">${currentLanguage === 'ge' ? '← წინა' : '← Previous'}</button>
-            <button onclick="canopyNextStep()" id="canopyNextBtn2">${currentLanguage === 'ge' ? 'შემდეგი →' : 'Next →'}</button>
+            <button onclick="canopyPrevStep()" id="prev-btn">← Previous</button>
+            <button onclick="canopyNextStep()" id="next-btn2">Next →</button>
         </div>
     </div>
     
@@ -1049,10 +1048,10 @@
     <div id="canopyStep3" class="step" style="display: none;">
         <h3 id="canopy-step3-title">3. Write Your Offering</h3>
         <p id="canopy-step3-text">Reflect on the practice. What will you offer?</p>
-        <textarea id="canopyJournal" placeholder="${currentLanguage === 'ge' ? 'დაწერე შენი პასუხი აქ...' : 'Write your response here...'}"></textarea>
+        <textarea id="canopyJournal" placeholder="Write your response here..."></textarea>
         <div style="text-align: center;">
-            <button onclick="canopyPrevStep()" id="canopyPrevBtn2">${currentLanguage === 'ge' ? '← წინა' : '← Previous'}</button>
-            <button onclick="completeCanopyPractice()" id="canopyCompleteBtn">${currentLanguage === 'ge' ? 'დაასრულეთ ვარჯიში' : 'Complete Practice'}</button>
+            <button onclick="canopyPrevStep()" id="prev-btn2">← Previous</button>
+            <button onclick="completeCanopyPractice()" id="complete-btn">Complete Practice</button>
         </div>
     </div>
     
@@ -1064,8 +1063,8 @@
         </div>
         
         <div style="text-align: center; margin-top: 30px;">
-            <button onclick="showCard('journal')" id="canopyViewJournalBtn">${currentLanguage === 'ge' ? 'იხილეთ დღიურში →' : 'View in Journal →'}</button>
-            <button onclick="resetCanopyPractice()" class="secondary">${currentLanguage === 'ge' ? '🔄 ახალი ვარჯიში' : '🔄 New Practice'}</button>
+            <button onclick="showCard('journal')" id="view-journal-btn">View in Journal →</button>
+            <button onclick="resetCanopyPractice()" class="secondary">🔄 New Practice</button>
         </div>
     </div>
 </div>
