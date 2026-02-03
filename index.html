@@ -1068,14 +1068,6 @@
             <button onclick="resetCanopyPractice()" class="secondary">${currentLanguage === 'ge' ? '🔄 ახალი ვარჯიში' : '🔄 New Practice'}</button>
         </div>
     </div>
-    
-    <!-- Canopy Insights Archive -->
-    <div id="canopyArchive" style="margin-top: 40px;">
-        <h3>${currentLanguage === 'ge' ? 'ქოლგის არქივი' : 'Canopy Archive'}</h3>
-        <div id="canopyArchiveContent">
-            <!-- Previous canopy responses will appear here -->
-        </div>
-    </div>
 </div>
 
         
@@ -2997,16 +2989,13 @@ function showCanopyCard() {
 function initCanopyPractice() {
     const t = TEXT[currentLanguage];
     const status = document.getElementById('canopyStatus');
-    const archive = document.getElementById('canopyArchive');
     
     if (!myTree.name) {
         status.innerHTML = `🌱 <strong>${t.practiceStatus}</strong> ${t.plantBtn}`;
-        archive.style.display = 'none';
         return;
     }
     
     status.style.display = 'none';
-    archive.style.display = 'block';
     
     // Reset to step 1
     canopyCurrentStep = 1;
@@ -3034,9 +3023,6 @@ function initCanopyPractice() {
             </div>
         `;
     });
-    
-    // Load canopy archive
-    loadCanopyArchive();
 }
 
 function selectCanopyInsight(id) {
@@ -3141,44 +3127,10 @@ function completeCanopyPractice() {
         currentLanguage === 'ge' 
             ? '"ქოლგა ჩრდილს ნებართვას არ აძლევს"'
             : '"Canopy permission over shadow"';
-    
-    // Update archive
-    loadCanopyArchive();
 }
 
 function resetCanopyPractice() {
     initCanopyPractice();
-}
-
-function loadCanopyArchive() {
-    const container = document.getElementById('canopyArchiveContent');
-    const canopyEntries = myTree.journals.filter(j => j.type === 'canopy');
-    
-    if (canopyEntries.length === 0) {
-        container.innerHTML = `
-            <div class="poem-response">
-                <p>${currentLanguage === 'ge' ? 'ჯერ არ არის ქოლგის პასუხები.' : 'No canopy responses yet.'}</p>
-                <div class="sage-quote">${currentLanguage === 'ge' ? 'შენი პირველი პასუხი აქ გამოჩნდება' : 'Your first response will appear here'}</div>
-            </div>
-        `;
-        return;
-    }
-    
-    container.innerHTML = '';
-    // Show most recent first
-    canopyEntries.slice().reverse().forEach(entry => {
-        const insight = canopyWisdom[currentLanguage].find(i => i.id === entry.insightId);
-        container.innerHTML += `
-            <div class="journal-entry" style="margin-bottom: 15px;">
-                <div class="entry-date">
-                    <span>${entry.date}</span>
-                    <span>🌤️ ${entry.principle || entry.title}</span>
-                </div>
-                <p><strong>${currentLanguage === 'ge' ? 'ჩემი პასუხი' : 'My Response'}:</strong> ${entry.text}</p>
-                <p><em>${entry.offering}</em></p>
-            </div>
-        `;
-    });
 }
 // 1.5 canopy functions end 
 
