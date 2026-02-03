@@ -963,6 +963,7 @@
                 
                 <div style="text-align: center; margin-top: 30px;">
                     <button onclick="showCard('practice')" id="start-practice-btn">Start Daily Practice</button>
+                    <!-- ===1.5 canopy --><button onclick="showCanopyCard()" id="become-canopy-btn" style="display: none;">🌤️ Become Canopy</button>
                 </div>
             </div>
         </div>
@@ -989,6 +990,24 @@
                 </div>
             </div>
         </div>
+
+        <!-- 1.5 canopy Wisdom Canopy Card -->
+<div id="canopy" class="card">
+    <h2 id="canopy-title">🌤️ Wisdom Canopy</h2>
+    <p id="canopy-subtitle">How the ancient tree (1950-1990) offers shelter, not shadow</p>
+    
+    <div class="tree-display" style="margin: 25px 0; min-height: 100px;">
+        <div id="canopy-content">
+            <!-- Canopy insights will appear here -->
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 30px;">
+        <button onclick="generateCanopyInsight()" id="insight-btn">✨ Receive Canopy Insight</button>
+        <button onclick="shareAsCanopy()" id="share-btn" style="display: none;">🌳 Share as Canopy</button>
+        <button onclick="showCard('forest')" class="secondary">← Back to Forest</button>
+    </div>
+</div>
    
        <!-- Replace your current footer -->
 <footer>
