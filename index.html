@@ -2430,18 +2430,29 @@
     // ==== 1.5 canopy :
     safeUpdate('canopy-title', 'textContent', t.canopyTitle);
     safeUpdate('canopy-subtitle', 'textContent', t.canopySubtitle);
-    safeUpdate('insight-btn', 'textContent', t.insightBtn);
-    safeUpdate('share-btn', 'textContent', t.shareBtn); // 1.5 canopy end 
     
-    // 1.5  Canopy text updates
+    // Update canopy step titles and text
     safeUpdate('canopy-step1-title', 'textContent', currentLanguage === 'ge' ? '1. აირჩიეთ დღევანდელი ქოლგის სიბრძნე' : '1. Choose Today\'s Canopy Wisdom');
     safeUpdate('canopy-step1-text', 'textContent', currentLanguage === 'ge' ? 'აირჩიეთ ერთი ქოლგის შეხედულება, რომელზეც დაფიქრდეთ:' : 'Select one canopy insight to reflect on:');
     safeUpdate('canopy-step2-title', 'textContent', currentLanguage === 'ge' ? '2. შეხედულების პრაქტიკა' : '2. Practice Insight');
     safeUpdate('canopy-step3-title', 'textContent', currentLanguage === 'ge' ? '3. დაწერეთ თქვენი შეთავაზება' : '3. Write Your Offering');
     safeUpdate('canopy-step3-text', 'textContent', currentLanguage === 'ge' ? 'დაფიქრდით ვარჯიშზე. რას შესთავაზებთ?' : 'Reflect on the practice. What will you offer?');
     safeUpdate('canopyJournal', 'placeholder', currentLanguage === 'ge' ? 'დაწერეთ თქვენი პასუხი აქ...' : 'Write your response here...');
-    safeUpdate('canopyCompleteBtn', 'textContent', currentLanguage === 'ge' ? 'დაასრულეთ ვარჯიში' : 'Complete Practice');
-    safeUpdate('canopyViewJournalBtn', 'textContent', currentLanguage === 'ge' ? 'იხილეთ დღიურში →' : 'View in Journal →');       
+    
+    // Update canopy status message
+    const statusElement = document.getElementById('canopyStatus');
+    if (statusElement) {
+        statusElement.textContent = currentLanguage === 'ge' 
+            ? 'აირჩიეთ ქოლგის შეხედულება პრაქტიკის დასაწყებად' 
+            : 'Select a canopy insight to begin practice';
+    }
+    
+    // Update the "New Practice" button in canopy result
+    const canopyNewPracticeBtn = document.querySelector('#canopyResult button.secondary');
+    if (canopyNewPracticeBtn) {
+        canopyNewPracticeBtn.textContent = currentLanguage === 'ge' ? '🔄 ახალი ვარჯიში' : '🔄 New Practice';
+    }
+    // ==== 1.5 canopy end  ==== 
     
     // Update tree display if no tree
     if (!myTree.name) {
