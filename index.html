@@ -2360,7 +2360,14 @@
     safeUpdate('install-text', 'textContent', t.installBtn);
     safeUpdate('footer-creator', 'textContent', t.footerCreator);
     safeUpdate('footer-book', 'textContent', t.footerBook);
+
     
+    // ==== 1.5 canopy :
+    safeUpdate('canopy-title', 'textContent', t.canopyTitle);
+    safeUpdate('canopy-subtitle', 'textContent', t.canopySubtitle);
+    safeUpdate('insight-btn', 'textContent', t.insightBtn);
+    safeUpdate('share-btn', 'textContent', t.shareBtn); // 1.5 canopy end 
+            
     // Update tree display if no tree
     if (!myTree.name) {
         safeUpdate('treeNameDisplay', 'textContent', t.noTree);
