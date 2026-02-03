@@ -3238,21 +3238,20 @@ function loadCanopyArchive() {
     
     // Show most recent first
     myTree.journals.slice().reverse().forEach((entry, index) => {
-        if (entry.type === 'canopy') {
-            // CANOPY ENTRY
-            container.innerHTML += `
-                <div class="journal-entry">
-                    <div class="entry-date">
-                        <span>${entry.date}</span>
-                        <span>🌤️ ${currentLanguage === 'ge' ? 'ქოლგის შეხედულება' : 'Canopy Insight'}</span>
-                    </div>
-                    <h4>${entry.title}</h4>
-                    <p><strong>${currentLanguage === 'ge' ? 'შეხედულება' : 'Insight'}:</strong> ${entry.insight}</p>
-                    <p><strong>${currentLanguage === 'ge' ? 'ჩემი პასუხი' : 'My Response'}:</strong> ${entry.userResponse}</p>
-                    <p><em>${entry.offering}</em></p>
-                </div>
-            `;
-        } else {
+       if (entry.type === 'canopy') {
+    container.innerHTML += `
+        <div class="journal-entry">
+            <div class="entry-date">
+                <span>${entry.date}</span>
+                <span>🌤️ ${entry.principle || entry.title}</span>
+            </div>
+            <p>${entry.text}</p>
+            <p style="font-style: italic; margin-top: 10px; color: var(--text-secondary);">
+                ${entry.offering || ''}
+            </p>
+        </div>
+    `;
+       } else {
             // REGULAR JOURNAL OR PRACTICE ENTRY
             const isPractice = entry.type === 'practice';
             
