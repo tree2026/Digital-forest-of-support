@@ -2441,7 +2441,17 @@
     safeUpdate('canopy-subtitle', 'textContent', t.canopySubtitle);
     safeUpdate('insight-btn', 'textContent', t.insightBtn);
     safeUpdate('share-btn', 'textContent', t.shareBtn); // 1.5 canopy end 
-            
+    
+    // 1.5  Canopy text updates
+    safeUpdate('canopy-step1-title', 'textContent', currentLanguage === 'ge' ? '1. აირჩიეთ დღევანდელი ქოლგის სიბრძნე' : '1. Choose Today\'s Canopy Wisdom');
+    safeUpdate('canopy-step1-text', 'textContent', currentLanguage === 'ge' ? 'აირჩიეთ ერთი ქოლგის შეხედულება, რომელზეც დაფიქრდეთ:' : 'Select one canopy insight to reflect on:');
+    safeUpdate('canopy-step2-title', 'textContent', currentLanguage === 'ge' ? '2. შეხედულების პრაქტიკა' : '2. Practice Insight');
+    safeUpdate('canopy-step3-title', 'textContent', currentLanguage === 'ge' ? '3. დაწერეთ თქვენი შეთავაზება' : '3. Write Your Offering');
+    safeUpdate('canopy-step3-text', 'textContent', currentLanguage === 'ge' ? 'დაფიქრდით ვარჯიშზე. რას შესთავაზებთ?' : 'Reflect on the practice. What will you offer?');
+    safeUpdate('canopyJournal', 'placeholder', currentLanguage === 'ge' ? 'დაწერეთ თქვენი პასუხი აქ...' : 'Write your response here...');
+    safeUpdate('canopyCompleteBtn', 'textContent', currentLanguage === 'ge' ? 'დაასრულეთ ვარჯიში' : 'Complete Practice');
+    safeUpdate('canopyViewJournalBtn', 'textContent', currentLanguage === 'ge' ? 'იხილეთ დღიურში →' : 'View in Journal →');       
+    
     // Update tree display if no tree
     if (!myTree.name) {
         safeUpdate('treeNameDisplay', 'textContent', t.noTree);
