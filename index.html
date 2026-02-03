@@ -1014,22 +1014,71 @@
         </div>
 
         <!-- 1.5 canopy Wisdom Canopy Card -->
-<div id="canopy" class="card">
+
+        <div id="canopy" class="card">
     <h2 id="canopy-title">🌤️ Wisdom Canopy</h2>
     <p id="canopy-subtitle">How the ancient tree (1950-1990) offers shelter, not shadow</p>
     
-    <div class="tree-display" style="margin: 25px 0; min-height: 100px;">
-        <div id="canopy-content">
-            <!-- Canopy insights will appear here -->
+    <div id="canopyStatus" style="text-align: center; padding: 20px; font-style: italic;">
+        ${currentLanguage === 'ge' ? 'აირჩიეთ ქოლგის შეხედულება პრაქტიკის დასაწყებად' : 'Select a canopy insight to begin practice'}
+    </div>
+    
+    <!-- Step 1: Choose Canopy Insight -->
+    <div id="canopyStep1" class="step" style="display: none;">
+        <h3 id="canopy-step1-title">1. Choose Today's Canopy Wisdom</h3>
+        <p id="canopy-step1-text">Select one canopy insight to reflect on:</p>
+        <div id="canopyButtons"></div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="canopyNextStep()" id="canopyNextBtn1" disabled>${currentLanguage === 'ge' ? 'შემდეგი →' : 'Next →'}</button>
         </div>
     </div>
     
-    <div style="text-align: center; margin-top: 30px;">
-        <button onclick="generateCanopyInsight()" id="insight-btn">✨ Receive Canopy Insight</button>
-        <button onclick="shareAsCanopy()" id="share-btn" style="display: none;">🌳 Share as Canopy</button>
-        <button onclick="showCard('forest')" class="secondary">← Back to Forest</button>
+    <!-- Step 2: Practice Insight -->
+    <div id="canopyStep2" class="step" style="display: none;">
+        <h3 id="canopy-step2-title">2. Practice Insight</h3>
+        <div id="canopyExerciseContent" class="exercise-box">
+            <!-- Insight and practice will load here -->
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="canopyPrevStep()" id="canopyPrevBtn">${currentLanguage === 'ge' ? '← წინა' : '← Previous'}</button>
+            <button onclick="canopyNextStep()" id="canopyNextBtn2">${currentLanguage === 'ge' ? 'შემდეგი →' : 'Next →'}</button>
+        </div>
+    </div>
+    
+    <!-- Step 3: Write Offering Response -->
+    <div id="canopyStep3" class="step" style="display: none;">
+        <h3 id="canopy-step3-title">3. Write Your Offering</h3>
+        <p id="canopy-step3-text">Reflect on the practice. What will you offer?</p>
+        <textarea id="canopyJournal" placeholder="${currentLanguage === 'ge' ? 'დაწერე შენი პასუხი აქ...' : 'Write your response here...'}"></textarea>
+        <div style="text-align: center;">
+            <button onclick="canopyPrevStep()" id="canopyPrevBtn2">${currentLanguage === 'ge' ? '← წინა' : '← Previous'}</button>
+            <button onclick="completeCanopyPractice()" id="canopyCompleteBtn">${currentLanguage === 'ge' ? 'დაასრულეთ ვარჯიში' : 'Complete Practice'}</button>
+        </div>
+    </div>
+    
+    <!-- Canopy Practice Result -->
+    <div id="canopyResult" style="display: none;">
+        <div class="poem-response">
+            <p id="canopyResultMessage"></p>
+            <div class="sage-quote" id="canopySageQuote"></div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button onclick="showCard('journal')" id="canopyViewJournalBtn">${currentLanguage === 'ge' ? 'იხილეთ დღიურში →' : 'View in Journal →'}</button>
+            <button onclick="resetCanopyPractice()" class="secondary">${currentLanguage === 'ge' ? '🔄 ახალი ვარჯიში' : '🔄 New Practice'}</button>
+        </div>
+    </div>
+    
+    <!-- Canopy Insights Archive -->
+    <div id="canopyArchive" style="margin-top: 40px;">
+        <h3>${currentLanguage === 'ge' ? 'ქოლგის არქივი' : 'Canopy Archive'}</h3>
+        <div id="canopyArchiveContent">
+            <!-- Previous canopy responses will appear here -->
+        </div>
     </div>
 </div>
+
+        
    
        <!-- Replace your current footer -->
 <footer>
@@ -1093,6 +1142,9 @@
         
         let currentStep = 1;
         let selectedPrinciple = null;
+        // 1.5 canopy 
+        let canopyCurrentStep = 1;
+        let selectedCanopyInsight = null;
         
         // ==================== BILINGUAL CONTENT ====================
         
