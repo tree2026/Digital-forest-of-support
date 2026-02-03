@@ -1013,7 +1013,7 @@
             </div>
         </div>
 
-        <!-- 1.5 canopy Wisdom Canopy Card -->
+        <!-- 1.5  Canopy Card -->
 <div id="canopy" class="card">
     <h2 id="canopy-title">🌤️ Wisdom Canopy</h2>
     <p id="canopy-subtitle">How the ancient tree (1950-1990) offers shelter, not shadow</p>
@@ -1028,7 +1028,7 @@
         <p id="canopy-step1-text">Select one canopy insight to reflect on:</p>
         <div id="canopyButtons"></div>
         <div style="text-align: center; margin-top: 20px;">
-            <button onclick="canopyNextStep()" id="nextBtn1" disabled>Next →</button>
+            <button onclick="canopyNextStep()" id="canopyNextBtn1" disabled>Next →</button>
         </div>
     </div>
     
@@ -1039,8 +1039,8 @@
             <!-- Insight and practice will load here -->
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <button onclick="canopyPrevStep()" id="prev-btn">← Previous</button>
-            <button onclick="canopyNextStep()" id="next-btn2">Next →</button>
+            <button onclick="canopyPrevStep()" id="canopyPrevBtn">← Previous</button>
+            <button onclick="canopyNextStep()" id="canopyNextBtn2">Next →</button>
         </div>
     </div>
     
@@ -1050,8 +1050,8 @@
         <p id="canopy-step3-text">Reflect on the practice. What will you offer?</p>
         <textarea id="canopyJournal" placeholder="Write your response here..."></textarea>
         <div style="text-align: center;">
-            <button onclick="canopyPrevStep()" id="prev-btn2">← Previous</button>
-            <button onclick="completeCanopyPractice()" id="complete-btn">Complete Practice</button>
+            <button onclick="canopyPrevStep()" id="canopyPrevBtn2">← Previous</button>
+            <button onclick="completeCanopyPractice()" id="canopyCompleteBtn">Complete Practice</button>
         </div>
     </div>
     
@@ -1063,12 +1063,11 @@
         </div>
         
         <div style="text-align: center; margin-top: 30px;">
-            <button onclick="showCard('journal')" id="view-journal-btn">View in Journal →</button>
+            <button onclick="showCard('journal')" id="canopyViewJournalBtn">View in Journal →</button>
             <button onclick="resetCanopyPractice()" class="secondary">🔄 New Practice</button>
         </div>
     </div>
 </div>
-
         
    
        <!-- Replace your current footer -->
@@ -3021,6 +3020,9 @@ function initCanopyPractice() {
     document.getElementById('canopyStep1').style.display = 'block';
     document.getElementById('canopyJournal').value = "";
     
+    // DISABLE the Next button initially
+    document.getElementById('canopyNextBtn1').disabled = true;
+    
     // Load canopy insight buttons
     const container = document.getElementById('canopyButtons');
     container.innerHTML = '';
@@ -3119,7 +3121,7 @@ function completeCanopyPractice() {
         principle: insight.title
     });
     
-    // Update stats (optional)
+    // Update stats
     myTree.poemsReceived++;
     
     saveTree();
