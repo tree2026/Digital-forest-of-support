@@ -3125,6 +3125,17 @@ function shareAsCanopy() {
             document.getElementById('statStage').textContent = myTree.stage;
             document.getElementById('statJournals').textContent = myTree.journals.length;
             document.getElementById('statPoems').textContent = myTree.poemsReceived;
+
+            // 1.5 canopy ADD THIS AT THE END OF THE FUNCTION:
+            // Show/hide canopy button based on rings
+    const canopyBtn = document.getElementById('become-canopy-btn');
+    if (canopyBtn) {
+        if (myTree.rings >= 21 && myTree.name) {
+            canopyBtn.style.display = 'inline-block';
+        } else {
+            canopyBtn.style.display = 'none';
+        }
+    } // 1.5 canopy end 
         }
         
         function updateDisplay() {
