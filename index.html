@@ -525,62 +525,30 @@
     /*border-top: 1px dashed var(--card-border);*/
 }
 
-/* Simple leaf shape using background */
+/* Simple leaf-shaped share button */
 .small-share-btn {
     background: var(--button-secondary);
     color: white;
     border: none;
-    padding: 4px 12px 4px 18px; /* Extra left padding for leaf shape */
+    padding: 4px 12px;
+    border-radius: 0 50% 50% 0; /* Creates leaf/teardrop shape */
     font-size: 0.8em;
     cursor: pointer;
     transition: all 0.2s;
     opacity: 0.8;
-    position: relative;
-    border-radius: 2px 12px 12px 2px;
-    
-    /* Add leaf tip on left side */
-    margin-left: 10px;
-}
-
-/* Create leaf point on left side */
-.small-share-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -8px;
-    width: 0;
-    height: 0;
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-right: 8px solid var(--button-secondary);
-    transform: translateY(-50%);
+    transform: rotate(5deg); /* Natural leaf tilt */
+    padding-left: 16px; /* Extra space on left side */
 }
 
 .small-share-btn:hover {
     opacity: 1;
     background: var(--button-hover);
-    transform: translateY(-1px);
-}
-
-.small-share-btn:hover::before {
-    border-right-color: var(--button-hover);
+    transform: translateY(-1px) rotate(5deg);
 }
 
 /* Dark mode */
 [data-theme="dark"] .small-share-btn {
     background: var(--button-bg);
-}
-
-[data-theme="dark"] .small-share-btn::before {
-    border-right-color: var(--button-bg);
-}
-
-[data-theme="dark"] .small-share-btn:hover {
-    background: var(--button-hover);
-}
-
-[data-theme="dark"] .small-share-btn:hover::before {
-    border-right-color: var(--button-hover);
 }
         
 
