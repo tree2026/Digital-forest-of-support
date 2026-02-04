@@ -3088,7 +3088,7 @@ function canopyNextStep() {
         const insight = insights.find(i => i.id === selectedCanopyInsight);
         document.getElementById('canopyExerciseContent').innerHTML = `
             <h4>${insight.title}</h4>
-            <p><strong>${currentLanguage === 'ge' ? 'შეხედულება' : 'Insight'}:</strong> ${insight.insight}</p>
+            <p>${insight.insight}</p>
             <p><strong>${currentLanguage === 'ge' ? 'ვარჯიში' : 'Practice'}:</strong> ${insight.practice}</p>
             <p><em>${insight.offering}</em></p>
         `;
