@@ -3343,9 +3343,9 @@ function showJournalAndScrollToNewest() {
                     <p style="font-style: italic; margin-top: 10px; color: var(--text-secondary);">
                         ${entry.offering || ''}
                     </p>
-                    <div class="entry-footer">
+                   <!-- <div class="entry-footer">
                         <button onclick="shareEntry(${originalIndex})" class="small-share-btn" title="Share">↗️</button>
-                    </div>
+                    </div>-->
                 </div>
             `;
         } else {
@@ -3360,9 +3360,9 @@ function showJournalAndScrollToNewest() {
                         <span>${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}</span>
                     </div>
                     <p>${entry.text}</p>
-                    <div class="entry-footer">
+                  <!--  <div class="entry-footer">
                         <button onclick="shareEntry(${originalIndex})" class="small-share-btn" title="Share">↗️</button>
-                    </div>
+                    </div>-->
                 </div>
             `;
             
@@ -3371,9 +3371,9 @@ function showJournalAndScrollToNewest() {
                     <div class="poem-response">
                         <p>${entry.poem.replace(/\n/g, '<br>')}</p>
                         <div class="sage-quote">${entry.sage}</div>
-                        <div class="entry-footer">
+                     <!--   <div class="entry-footer">
                             <button onclick="shareEntry(${originalIndex}, true)" class="small-share-btn" title="Share Poem">↗️</button>
-                        </div>
+                        </div>-->
                     </div>
                 `;
             }
