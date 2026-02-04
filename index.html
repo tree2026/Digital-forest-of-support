@@ -3453,13 +3453,13 @@ function shareEntry(entryIndex, sharePoemOnly = false) {
     
     if (sharePoemOnly && entry.poem) {
         // Share only the poem
-        shareText = `${entry.poem}\n\n${entry.sage || ''}\n\n#ForestOfSupport #HealingPoetry`;
+        shareText = `${entry.poem}\n\n${entry.sage || ''}\n\n#ForestOfSupport #HealLikeATree`;
     } else if (entry.type === 'canopy') {
         // Share canopy entry
         shareText = `🌤️ ${entry.principle || entry.title}\n\n${entry.text}\n\n${entry.offering || ''}\n\n#ForestOfSupport #CanopyWisdom`;
     } else if (entry.poem) {
         // Share journal entry with poem
-        shareText = `${entry.text}\n\n${entry.poem}\n\n${entry.sage || ''}\n\n#ForestOfSupport #HealingPoetry`;
+        shareText = `${entry.text}\n\n${entry.poem}\n\n${entry.sage || ''}\n\n#ForestOfSupport #HealLikeATree`;
     } else {
         // Share regular journal entry
         shareText = `${entry.text}\n\n#ForestOfSupport #TreeJournal`;
