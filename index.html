@@ -3048,7 +3048,8 @@ function initCanopyPractice() {
         container.innerHTML += `
             <div class="principle-badge" onclick="selectCanopyInsight('${insight.id}')" id="canopy-${insight.id}">
                 <strong>🌤️ ${insight.title}</strong><br>
-                <small>${insight.practice.substring(0, 80)}...</small>
+                <small>${insight.practice.split(/[.!?]/)[0].trim()}</small>
+                <!--<small>${insight.practice.substring(0, 80)}...</small>-->
             </div>
         `;
     });
