@@ -3160,16 +3160,13 @@ function resetCanopyPractice() {
 function showJournalAndScrollToNewest() {
     showCard('journal');
     
-    // Wait a bit for journal entries to load, then scroll to newest
+    // Simple: Just scroll the journal card to top
     setTimeout(() => {
-        const journalEntries = document.getElementById('journalEntries');
-        if (journalEntries && journalEntries.firstChild) {
-            journalEntries.firstChild.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    }, 500);
+        window.scrollTo({
+            top: document.getElementById('journal').offsetTop,
+            behavior: 'smooth'
+        });
+    }, 100);
 }
 // 1.5 canopy functions end 
 
