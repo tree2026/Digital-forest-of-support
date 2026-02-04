@@ -3349,6 +3349,68 @@ function showJournalAndScrollToNewest() {
             // CANOPY ENTRY - Show only user response
             container.innerHTML += `
                 <div class="journal-entry">
+                    <button onclick="shareEntry(${originalIndex})" class="tiny-share-btn" title="Share">↗</button>
+                    <div class="entry-date">
+                        <span>${entry.date.split(',')[0]}</span>
+                        <span>🌤️ ${entry.principle || entry.title}</span>
+                    </div>
+                    <p>${entry.text}</p>
+                    <p style="font-style: italic; margin-top: 10px; color: var(--text-secondary);">
+                        ${entry.offering || ''}
+                    </p>
+                </div>
+            `;
+        } else {
+            // REGULAR JOURNAL OR PRACTICE ENTRY
+            const isPractice = entry.type === 'practice';
+            
+            container.innerHTML += `
+                <div class="journal-entry">
+                    <button onclick="shareEntry(${originalIndex})" class="tiny-share-btn" title="Share">↗</button>
+                    <div class="entry-date">
+                        <span>${entry.date.split(',')[0]}</span>
+                        <span>${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}</span>
+                    </div>
+                    <p>${entry.text}</p>
+                </div>
+            `;
+            
+            if (entry.poem) {
+                container.innerHTML += `
+                    <div class="poem-response">
+                        <button onclick="shareEntry(${originalIndex}, true)" class="tiny-share-btn" title="Share Poem">↗</button>
+                        <p>${entry.poem.replace(/\n/g, '<br>')}</p>
+                        <div class="sage-quote">${entry.sage}</div>
+                    </div>
+                `;
+            }
+        }
+    });
+        }
+
+     /*   function loadJournalEntries() {
+    const container = document.getElementById('journalEntries');
+    const t = TEXT[currentLanguage];
+    container.innerHTML = "";
+    
+    if (myTree.journals.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 30px; color: #666; font-style: italic;">
+                ${t.noEntries}
+            </div>
+        `;
+        return;
+    }
+    
+    // Show most recent first
+    myTree.journals.slice().reverse().forEach((entry, index) => {
+        // Calculate the original index (not reversed)
+        const originalIndex = myTree.journals.length - 1 - index;
+        
+        if (entry.type === 'canopy') {
+            // CANOPY ENTRY - Show only user response
+            container.innerHTML += `
+                <div class="journal-entry">
                     <div class="entry-date">
                         <span>${entry.date.split(',')[0]}</span>
                         <span>🌤️ ${entry.principle || entry.title}
@@ -3389,7 +3451,7 @@ function showJournalAndScrollToNewest() {
             }
         }
     });
-        }
+        }*/
 
 function shareEntry(entryIndex, sharePoemOnly = false) {
     const entry = myTree.journals[entryIndex];
