@@ -525,44 +525,35 @@
     /*border-top: 1px dashed var(--card-border);*/
 }
 
-/* Realistic single leaf share button */
+/* Simple leaf shape using background */
 .small-share-btn {
     background: var(--button-secondary);
     color: white;
     border: none;
-    padding: 4px 16px;
+    padding: 4px 12px 4px 18px; /* Extra left padding for leaf shape */
     font-size: 0.8em;
     cursor: pointer;
     transition: all 0.2s;
     opacity: 0.8;
     position: relative;
+    border-radius: 2px 12px 12px 2px;
     
-    /* Create leaf shape with clip-path */
-    clip-path: polygon(
-        0% 20%,    /* Leaf tip at left */
-        20% 0%,    /* Top curve */
-        80% 0%,    /* Top curve */
-        100% 20%,  /* Right tip */
-        80% 100%,  /* Bottom right curve */
-        20% 100%,  /* Bottom left curve */
-        0% 80%     /* Left curve back to tip */
-    );
-    
-    /* Add leaf stem with ::before */
-    margin-left: 8px; /* Space for stem */
+    /* Add leaf tip on left side */
+    margin-left: 10px;
 }
 
-/* Create the leaf stem (like 🌿) */
+/* Create leaf point on left side */
 .small-share-btn::before {
     content: '';
     position: absolute;
     top: 50%;
-    left: -6px;
-    width: 6px;
-    height: 20px;
-    background: var(--button-secondary);
-    border-radius: 3px;
-    transform: translateY(-50%) rotate(-15deg); /* Curved stem */
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 8px solid var(--button-secondary);
+    transform: translateY(-50%);
 }
 
 .small-share-btn:hover {
@@ -572,7 +563,7 @@
 }
 
 .small-share-btn:hover::before {
-    background: var(--button-hover);
+    border-right-color: var(--button-hover);
 }
 
 /* Dark mode */
@@ -581,7 +572,7 @@
 }
 
 [data-theme="dark"] .small-share-btn::before {
-    background: var(--button-bg);
+    border-right-color: var(--button-bg);
 }
 
 [data-theme="dark"] .small-share-btn:hover {
@@ -589,7 +580,7 @@
 }
 
 [data-theme="dark"] .small-share-btn:hover::before {
-    background: var(--button-hover);
+    border-right-color: var(--button-hover);
 }
         
 
