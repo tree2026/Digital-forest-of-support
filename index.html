@@ -516,8 +516,33 @@
     background: linear-gradient(to right, #8a5a2d, #a67c52);
     box-shadow: 0 6px 0 #724115;
 }
+
+.tiny-share-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.7em;
+    cursor: pointer;
+    padding: 2px;
+    opacity: 0.5;
+    transition: all 0.2s;
+    z-index: 1;
+}
+
+.tiny-share-btn:hover {
+    opacity: 1;
+    color: var(--button-bg);
+    transform: scale(1.2);
+}
+
+.journal-entry, .poem-response {
+    position: relative; /* Needed for absolute positioning */
+}
 /* Small share button */
-.small-share-btn {
+/*.small-share-btn {
     background: transparent;
     border: none;
     color: var(--text-secondary);
@@ -538,11 +563,11 @@
     transform: scale(1.1);
 }
 
-/* Poem share button positioning */
+/* Poem share button positioning 
 .sage-quote .small-share-btn {
     margin-left: 10px;
     font-size: 0.9em;
-}
+}*/
 
 /* Remove time from date */
 .entry-date span:first-child {
