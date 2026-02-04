@@ -1050,7 +1050,7 @@
         <h3 id="canopy-step3-title">3. Write Your Offering</h3>
         <p id="canopy-step3-text">Reflect on the practice. What will you offer?</p>
         <textarea id="canopyJournal" placeholder="Write your response here..."></textarea>
-    <div id="canopyOfferingDisplay" style="text-align: center; margin: 20px 0; font-style: italic; color: var(--text-secondary);">
+    <div id="canopyOfferingDisplay" style="font-style: italic; color: var(--text-secondary);">
     </div>
         <div style="text-align: center;">
             <button onclick="canopyPrevStep()" id="canopyPrevBtn2">← Previous</button>
@@ -3100,7 +3100,7 @@ function canopyNextStep() {
         const insights = canopyWisdom[currentLanguage];
         const insight = insights.find(i => i.id === selectedCanopyInsight);
         document.getElementById('canopyOfferingDisplay').innerHTML = `
-            <p><strong>${currentLanguage === 'ge' ? 'შეთავაზება' : 'Offering'}:</strong> ${insight.offering}</p>
+            <p>${insight.offering}</p>
         `;
     }
 }
