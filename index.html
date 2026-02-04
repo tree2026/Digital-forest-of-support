@@ -1063,8 +1063,9 @@
         </div>
         
         <div style="text-align: center; margin-top: 30px;">
-            <button onclick="showCard('journal')" id="canopyViewJournalBtn">View in Journal →</button>
-            <button onclick="resetCanopyPractice()" class="secondary">🔄 New Practice</button>
+            <button onclick="showJournalAndScrollToNewest()" id="canopyViewJournalBtn">View in Journal</button>
+           <!-- <button onclick="showCard('journal')" id="canopyViewJournalBtn">View in Journal →</button>-->
+            <button onclick="resetCanopyPractice()" class="secondary">New Practice</button>
         </div>
     </div>
 </div>
@@ -3154,6 +3155,21 @@ function completeCanopyPractice() {
 
 function resetCanopyPractice() {
     initCanopyPractice();
+}
+        
+function showJournalAndScrollToNewest() {
+    showCard('journal');
+    
+    // Wait a bit for journal entries to load, then scroll to newest
+    setTimeout(() => {
+        const journalEntries = document.getElementById('journalEntries');
+        if (journalEntries && journalEntries.firstChild) {
+            journalEntries.firstChild.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }, 500);
 }
 // 1.5 canopy functions end 
 
