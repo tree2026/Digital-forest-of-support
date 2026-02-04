@@ -2412,7 +2412,9 @@
     safeUpdate('stat-stage-label', 'textContent', t.statStageLabel);
     safeUpdate('stat-journals-label', 'textContent', t.statJournalsLabel);
     safeUpdate('stat-poems-label', 'textContent', t.statPoemsLabel);
-    
+    // 1.5 canopy 
+    safeUpdate('become-canopy-btn', 'textContent', t.becomeCanopyBtn);
+            
     // Update journal card
     safeUpdate('journal-title', 'textContent', t.journalTitle);
     safeUpdate('journal-subtitle', 'textContent', t.journalSubtitle);
@@ -2438,11 +2440,11 @@ safeUpdate('canopy-title', 'textContent', t.canopyTitle);
 safeUpdate('canopy-subtitle', 'textContent', t.canopySubtitle);
 
 // Update canopy step titles and text
-safeUpdate('canopy-step1-title', 'textContent', currentLanguage === 'ge' ? '1. აირჩიეთ დღევანდელი ქოლგის სიბრძნე' : '1. Choose Today\'s Canopy Wisdom');
-safeUpdate('canopy-step1-text', 'textContent', currentLanguage === 'ge' ? 'აირჩიეთ ერთი ქოლგის შეხედულება, რომელზეც დაფიქრდეთ:' : 'Select one canopy insight to reflect on:');
-safeUpdate('canopy-step2-title', 'textContent', currentLanguage === 'ge' ? '2. შეხედულების პრაქტიკა' : '2. Practice Insight');
-safeUpdate('canopy-step3-title', 'textContent', currentLanguage === 'ge' ? '3. დაწერეთ თქვენი შეთავაზება' : '3. Write Your Offering');
-safeUpdate('canopy-step3-text', 'textContent', currentLanguage === 'ge' ? 'დაფიქრდით ვარჯიშზე. რას შესთავაზებთ?' : 'Reflect on the practice. What will you offer?');
+safeUpdate('canopy-step1-title', 'textContent', currentLanguage === 'ge' ? '1. აირჩიეთ დღევანდელი საჩრდილობელი' : '1. Choose Today\'s Canopy Wisdom');
+safeUpdate('canopy-step1-text', 'textContent', currentLanguage === 'ge' ? 'აირჩიეთ ერთი შეხედულება, რომელზეც დაფიქრდებით:' : 'Select one canopy insight to reflect on:');
+safeUpdate('canopy-step2-title', 'textContent', currentLanguage === 'ge' ? '2. შეხედულების სავარჯიშო' : '2. Practice Insight');
+safeUpdate('canopy-step3-title', 'textContent', currentLanguage === 'ge' ? '3. დაწერეთ თქვენი წვლილი' : '3. Write Your Offering');
+safeUpdate('canopy-step3-text', 'textContent', currentLanguage === 'ge' ? 'დაფიქრდით ვარჯიშზე. რა იქნება თქვენი წვლილი?' : 'Reflect on the practice. What will you offer?');
 safeUpdate('canopyJournal', 'placeholder', currentLanguage === 'ge' ? 'დაწერეთ თქვენი პასუხი აქ...' : 'Write your response here...');
 
 // Update canopy buttons
@@ -2451,20 +2453,20 @@ safeUpdate('canopyPrevBtn', 'textContent', t.prevBtn);
 safeUpdate('canopyNextBtn2', 'textContent', t.nextBtn);
 safeUpdate('canopyPrevBtn2', 'textContent', t.prevBtn);
 safeUpdate('canopyCompleteBtn', 'textContent', t.canopyCompleteBtn);
-safeUpdate('canopyViewJournalBtn', 'textContent', t.viewJournalBtn || 'View in Journal →');
+safeUpdate('canopyViewJournalBtn', 'textContent', t.viewJournalBtn || 'View in Journal');
 
 // Update canopy status message
 const statusElement = document.getElementById('canopyStatus');
 if (statusElement) {
     statusElement.textContent = currentLanguage === 'ge' 
-        ? 'აირჩიეთ ქოლგის შეხედულება პრაქტიკის დასაწყებად' 
+        ? 'აირჩიეთ საჩრდილობლის შეხედულება' 
         : 'Select a canopy insight to begin practice';
 }
 
 // Update the "New Practice" button in canopy result
 const canopyNewPracticeBtn = document.querySelector('#canopyResult button.secondary');
 if (canopyNewPracticeBtn) {
-    canopyNewPracticeBtn.textContent = currentLanguage === 'ge' ? '🔄 ახალი ვარჯიში' : '🔄 New Practice';
+    canopyNewPracticeBtn.textContent = currentLanguage === 'ge' ? 'ახალი ვარჯიში' : 'New Practice';
 }
     // ==== 1.5 canopy end  ==== 
     
