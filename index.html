@@ -516,7 +516,39 @@
     background: linear-gradient(to right, #8a5a2d, #a67c52);
     box-shadow: 0 6px 0 #724115;
 }
+/* Small share button */
+.small-share-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.8em;
+    cursor: pointer;
+    padding: 2px 6px;
+    margin-left: 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    vertical-align: middle;
+    opacity: 0.7;
+}
 
+.small-share-btn:hover {
+    opacity: 1;
+    background: var(--button-secondary);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Poem share button positioning */
+.sage-quote .small-share-btn {
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+/* Remove time from date */
+.entry-date span:first-child {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
         
     /* ============== DARK MODE - COLOR CHANGE ONLY ================= */
 
@@ -3268,8 +3300,115 @@ function showJournalAndScrollToNewest() {
 
 
         // ====== 1.5 canopy
-        
+
         function loadJournalEntries() {
+    const container = document.getElementById('journalEntries');
+    const t = TEXT[currentLanguage];
+    container.innerHTML = "";
+    
+    if (myTree.journals.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 30px; color: #666; font-style: italic;">
+                ${t.noEntries}
+            </div>
+        `;
+        return;
+    }
+    
+    // Show most recent first
+    myTree.journals.slice().reverse().forEach((entry, index) => {
+        // Calculate the original index (not reversed)
+        const originalIndex = myTree.journals.length - 1 - index;
+        
+        if (entry.type === 'canopy') {
+            // CANOPY ENTRY - Show only user response
+            container.innerHTML += `
+                <div class="journal-entry">
+                    <div class="entry-date">
+                        <span>${entry.date.split(',')[0]}</span>
+                        <span>🌤️ ${entry.principle || entry.title}
+                            <button onclick="shareEntry(${originalIndex})" class="small-share-btn" title="Share">↗️</button>
+                        </span>
+                    </div>
+                    <p>${entry.text}</p>
+                    <p style="font-style: italic; margin-top: 10px; color: var(--text-secondary);">
+                        ${entry.offering || ''}
+                    </p>
+                </div>
+            `;
+        } else {
+            // REGULAR JOURNAL OR PRACTICE ENTRY
+            const isPractice = entry.type === 'practice';
+            
+            container.innerHTML += `
+                <div class="journal-entry">
+                    <div class="entry-date">
+                        <span>${entry.date.split(',')[0]}</span>
+                        <span>${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}
+                            <button onclick="shareEntry(${originalIndex})" class="small-share-btn" title="Share">↗️</button>
+                        </span>
+                    </div>
+                    <p>${entry.text}</p>
+                </div>
+            `;
+            
+            if (entry.poem) {
+                container.innerHTML += `
+                    <div class="poem-response">
+                        <p>${entry.poem.replace(/\n/g, '<br>')}</p>
+                        <div class="sage-quote">${entry.sage}
+                            <button onclick="shareEntry(${originalIndex}, true)" class="small-share-btn" title="Share Poem">↗️</button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+    });
+        }
+
+function shareEntry(entryIndex, sharePoemOnly = false) {
+    const entry = myTree.journals[entryIndex];
+    if (!entry) return;
+    
+    let shareText = '';
+    
+    if (sharePoemOnly && entry.poem) {
+        // Share only the poem
+        shareText = `${entry.poem}\n\n${entry.sage || ''}\n\n#ForestOfSupport #HealingPoetry`;
+    } else if (entry.type === 'canopy') {
+        // Share canopy entry
+        shareText = `🌤️ ${entry.principle || entry.title}\n\n${entry.text}\n\n${entry.offering || ''}\n\n#ForestOfSupport #CanopyWisdom`;
+    } else if (entry.poem) {
+        // Share journal entry with poem
+        shareText = `${entry.text}\n\n${entry.poem}\n\n${entry.sage || ''}\n\n#ForestOfSupport #HealingPoetry`;
+    } else {
+        // Share regular journal entry
+        shareText = `${entry.text}\n\n#ForestOfSupport #TreeJournal`;
+    }
+    
+    // Try Web Share API
+    if (navigator.share) {
+        navigator.share({
+            title: 'Forest of Support',
+            text: shareText,
+            url: window.location.href
+        }).catch(err => {
+            console.log('Share cancelled:', err);
+            copyToClipboard(shareText);
+        });
+    } else {
+        copyToClipboard(shareText);
+    }
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
+    alert(currentLanguage === 'ge' 
+        ? '📋 კოპირებულია!'
+        : '📋 Copied!');
+}
+        
+      /*  function loadJournalEntries() {
     const container = document.getElementById('journalEntries');
     const t = TEXT[currentLanguage];
     container.innerHTML = "";
@@ -3323,7 +3462,8 @@ function showJournalAndScrollToNewest() {
             }
         }
     });
-        } // 1.5 canopy
+        }*/
+            // 1.5 canopy
         
        /* function loadJournalEntries() {
             const container = document.getElementById('journalEntries');
