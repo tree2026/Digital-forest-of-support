@@ -525,7 +525,49 @@
     /*border-top: 1px dashed var(--card-border);*/
 }
 
-/* Small share button */
+/* Leaf-shaped share button */
+.small-share-btn {
+    background: var(--button-secondary);
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 0 12px 12px 12px; /* Creates a leaf-like base shape */
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.8;
+    position: relative;
+    transform: rotate(-2deg); /* Slight leaf tilt */
+}
+
+/* Add leaf tip with pseudo-element */
+.small-share-btn::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid var(--button-secondary);
+}
+
+.small-share-btn:hover {
+    opacity: 1;
+    background: var(--button-hover);
+    transform: translateY(-1px) rotate(-2deg);
+}
+
+/* Dark mode - update the leaf tip color too */
+[data-theme="dark"] .small-share-btn {
+    background: var(--button-bg);
+}
+
+[data-theme="dark"] .small-share-btn::before {
+    border-bottom-color: var(--button-bg);
+}
+/* Small share button 
 .small-share-btn {
     background: var(--button-secondary);
     color: white;
@@ -542,12 +584,12 @@
     opacity: 1;
     background: var(--button-hover);
     transform: translateY(-1px);
-}
+}*/
 
-/* Dark mode */
+/* Dark mode 
 [data-theme="dark"] .small-share-btn {
     background: var(--button-bg);
-}
+}*/
 
 /* Poem share button */
 .poem-response .entry-footer {
