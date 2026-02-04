@@ -3336,7 +3336,8 @@ function showJournalAndScrollToNewest() {
                 <div class="journal-entry">
                     <div class="entry-date">
                         <span>${entry.date}</span>
-                        <span style="text-align: right;">🌤️ ${entry.principle || entry.title}</span>
+                        <span style="margin-left: auto;">🌤️ ${entry.principle || entry.title}</span>
+                        <!--<span style="text-align: right;">🌤️ ${entry.principle || entry.title}</span>-->
                         <!-- <span>🌤️ ${entry.principle || entry.title}</span> -->
                     </div>
                     <p>${entry.text}</p>
@@ -3356,7 +3357,8 @@ function showJournalAndScrollToNewest() {
                 <div class="journal-entry">
                     <div class="entry-date">
                         <span>${entry.date}</span>
-                        <span style="${isPractice ? 'text-align: right;' : ''}">${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}</span>
+                        <span style="${isPractice ? 'margin-left: auto;' : ''}">${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}</span>
+                        <!--<span style="${isPractice ? 'text-align: right;' : ''}">${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}</span>-->
                        <!-- <span>${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}</span> -->
                     </div>
                     <p>${entry.text}</p>
