@@ -525,22 +525,62 @@
     /*border-top: 1px dashed var(--card-border);*/
 }
 
-/* Alternative: More organic leaf shape */
+/* Arrow/leaf shape - simplest approach */
+.small-share-btn {
+    background: var(--button-secondary);
+    color: white;
+    border: none;
+    padding: 3px 10px 3px 14px; /* Extra left padding for leaf stem */
+    border-radius: 0 8px 8px 0; /* Right side rounded, left side flat */
+    font-size: 0.75em;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.8;
+    transform: skewX(-5deg); /* Creates subtle leaf tilt */
+    position: relative;
+    margin-left: 3px; /* Space for visual stem */
+}
+
+/* Create stem with box-shadow instead of pseudo-element */
+.small-share-btn {
+    box-shadow: -3px 0 0 0 var(--button-secondary) inset;
+}
+
+.small-share-btn:hover {
+    opacity: 1;
+    background: var(--button-hover);
+    transform: skewX(-5deg) translateY(-1px);
+    box-shadow: -3px 0 0 0 var(--button-hover) inset;
+}
+
+/* Dark mode */
+[data-theme="dark"] .small-share-btn {
+    background: var(--button-bg);
+    box-shadow: -3px 0 0 0 var(--button-bg) inset;
+}
+
+[data-theme="dark"] .small-share-btn:hover {
+    background: var(--button-hover);
+    box-shadow: -3px 0 0 0 var(--button-hover) inset;
+}
+        
+
+/* Alternative: More organic leaf shape 
 .small-share-btn {
     background: var(--button-secondary);
     color: white;
     border: none;
     padding: 4px 12px 6px 12px;
-    border-radius: 50% 0 50% 50%; /* Creates a teardrop/leaf shape */
+    border-radius: 50% 0 50% 50%;
     font-size: 0.8em;
     cursor: pointer;
     transition: all 0.2s;
     opacity: 0.8;
     position: relative;
-    transform: rotate(-5deg); /* Natural leaf angle */
-}
+    transform: rotate(-5deg);
+}*/
 
-/* Add subtle leaf vein with gradient */
+/* Add subtle leaf vein with gradient 
 .small-share-btn:hover {
     opacity: 1;
     background: linear-gradient(
@@ -549,9 +589,9 @@
         var(--button-secondary) 100%
     );
     transform: translateY(-1px) rotate(-5deg);
-}
+}*/
 
-/* Dark mode */
+/* Dark mode 
 [data-theme="dark"] .small-share-btn {
     background: var(--button-bg);
 }
@@ -562,7 +602,7 @@
         var(--button-hover) 0%,
         var(--button-bg) 100%
     );
-}
+}  alternative leaf share button end*/
         
 /* Small share button 
 .small-share-btn {
