@@ -525,24 +525,43 @@
     /*border-top: 1px dashed var(--card-border);*/
 }
 
+/* Alternative: More organic leaf shape */
 .small-share-btn {
     background: var(--button-secondary);
     color: white;
     border: none;
-    padding: 4px 12px;
-    /* Leaf shape using only border-radius */
-    border-radius: 0 50% 50% 50%; /* Top-left corner stays square for leaf tip */
+    padding: 4px 12px 6px 12px;
+    border-radius: 50% 0 50% 50%; /* Creates a teardrop/leaf shape */
     font-size: 0.8em;
     cursor: pointer;
     transition: all 0.2s;
     opacity: 0.8;
-    transform: rotate(45deg); /* Rotates to look like a diamond/leaf */
+    position: relative;
+    transform: rotate(-5deg); /* Natural leaf angle */
 }
 
+/* Add subtle leaf vein with gradient */
 .small-share-btn:hover {
     opacity: 1;
-    background: var(--button-hover);
-    transform: translateY(-1px) rotate(45deg);
+    background: linear-gradient(
+        to bottom right,
+        var(--button-hover) 0%,
+        var(--button-secondary) 100%
+    );
+    transform: translateY(-1px) rotate(-5deg);
+}
+
+/* Dark mode */
+[data-theme="dark"] .small-share-btn {
+    background: var(--button-bg);
+}
+
+[data-theme="dark"] .small-share-btn:hover {
+    background: linear-gradient(
+        to bottom right,
+        var(--button-hover) 0%,
+        var(--button-bg) 100%
+    );
 }
         
 /* Small share button 
@@ -564,10 +583,10 @@
     transform: translateY(-1px);
 }*/
 
-/* Dark mode */
+/* Dark mode 
 [data-theme="dark"] .small-share-btn {
     background: var(--button-bg);
-}
+}*/
 
 /* Poem share button */
 .poem-response .entry-footer {
