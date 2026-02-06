@@ -2576,14 +2576,7 @@ const canopyNewPracticeBtn = document.querySelector('#canopyResult button.second
 if (canopyNewPracticeBtn) {
     canopyNewPracticeBtn.textContent = currentLanguage === 'ge' ? 'ახალი ვარჯიში' : 'New Practice';
 }
-    const canopyCard = document.getElementById('canopy-card');
-    if (canopyCard && canopyCard.style.display !== 'none') {
-        initCanopyPractice();
-        if (canopyCurrentStep > 1 && selectedCanopyInsight) {
-            canopyNextStep();
-            canopyPrevStep(); 
-        }
-    }
+    
     // ==== 1.5 canopy end  ==== 
     
     // Update tree display if no tree
