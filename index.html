@@ -1279,13 +1279,22 @@
                 //≈=== 1.5 canopy 
                 // Add to TEXT.en object:
                 canopyTitle: "🌤️ Wisdom Canopy",
-                canopySubtitle: "How the ancient tree offers shelter, not shadow",
+                //canopySubtitle: "How the ancient tree offers shelter, not shadow",
                 canopyCompleteBtn: "Complete Practice",
                 becomeCanopyBtn: "🌤️ Become Canopy",
                // insightBtn: "✨ Receive Canopy Insight",
               //  shareBtn: "🌳 Share as Canopy",
               //  noCanopyYet: "No canopy insights yet. Your reflections become shelter for others.",
-                
+               // canopyTitle: "Canopy Wisdom",
+                canopySubtitle: "Share your insights with others",
+                canopyStep1Title: "1. Choose Today's Canopy Wisdom",
+                canopyStep1Text: "Select one canopy insight to reflect on:",
+                canopyStep2Title: "2. Practice Insight", 
+                canopyStep3Title: "3. Write Your Offering",
+                canopyStep3Text: "Reflect on the practice. What will you offer?",
+                canopyJournalPlaceholder: "Write your response here...",
+                canopyCompleteBtn: "Complete Practice",
+
                 // Journal card
                 journalTitle: "📖 Your Tree Journal",
                 journalSubtitle: "Each entry receives a contextual poem that responds to your words.",
@@ -1381,13 +1390,24 @@
                 // ==== 1.5 canopy
                 // Add to TEXT.ge object:
                 canopyTitle: "🌤️ საჩრდილობელი",
-                canopySubtitle: "ხე გვთავაზობს თავშესაფარს, მხოლოს ჩრდილს კი არა",
+             //   canopySubtitle: "ხე გვთავაზობს თავშესაფარს, მხოლოს ჩრდილს კი არა",
                 canopyCompleteBtn: "დაასრულეთ ვარჯიში",
                 becomeCanopyBtn: "🌤️ საჩრდილობელი",
                 // insightBtn: "✨ მიიღე ქოლგის შეხედულება",
                 //shareBtn: "🌳 გააზიარე როგორც ქოლგა",
                 //noCanopyYet: "ჯერ არ არის ქოლგის შეხედულებები. თქვენი ასახვები სხვებისთვის თავშესაფარი გახდება.",
-                
+
+     //   canopyTitle: "საჩრდილის სიბრძნე",
+        canopySubtitle: "გააზიარეთ თქვენი შეხედულება სხვებთან",
+        canopyStep1Title: "1. დღევანდელი საჩრდილობელი",
+        canopyStep1Text: "აირჩიეთ ერთი შეხედულება, რომელზეც დაფიქრდებით:",
+        canopyStep2Title: "2. შეხედულების სავარჯიშო",
+        canopyStep3Title: "3. შესაწირი წერილი",
+        canopyStep3Text: "დაფიქრდით ვარჯიშზე. რა იქნება თქვენი წვლილი?",
+        canopyJournalPlaceholder: "დაწერეთ თქვენი პასუხი აქ...",
+        canopyCompleteBtn: "დაასრულეთ ვარჯიში",
+
+        
                 // Journal card
                 journalTitle: "📖 თქვენი ხის დღიური",
                 journalSubtitle: "თითოეულ ჩანაწერს მოჰყვება შესაბამისი ლექსი, რომელიც თქვენს სიტყვებს და ვარჯიშებს ეხმაურება.",
@@ -2522,14 +2542,20 @@
 // Update canopy card titles
 safeUpdate('canopy-title', 'textContent', t.canopyTitle);
 safeUpdate('canopy-subtitle', 'textContent', t.canopySubtitle);
+safeUpdate('canopy-step1-title', 'textContent', t.canopyStep1Title);
+safeUpdate('canopy-step1-text', 'textContent', t.canopyStep1Text);
+safeUpdate('canopy-step2-title', 'textContent', t.canopyStep2Title);
+safeUpdate('canopy-step3-title', 'textContent', t.canopyStep3Title);
+safeUpdate('canopy-step3-text', 'textContent', t.canopyStep3Text);
+safeUpdate('canopyJournal', 'placeholder', t.canopyJournalPlaceholder);
 
 // Update canopy step titles and text
-safeUpdate('canopy-step1-title', 'textContent', currentLanguage === 'ge' ? '1. დღევანდელი საჩრდილობელი' : '1. Choose Today\'s Canopy Wisdom');
+/*safeUpdate('canopy-step1-title', 'textContent', currentLanguage === 'ge' ? '1. დღევანდელი საჩრდილობელი' : '1. Choose Today\'s Canopy Wisdom');
 safeUpdate('canopy-step1-text', 'textContent', currentLanguage === 'ge' ? 'აირჩიეთ ერთი შეხედულება, რომელზეც დაფიქრდებით:' : 'Select one canopy insight to reflect on:');
 safeUpdate('canopy-step2-title', 'textContent', currentLanguage === 'ge' ? '2. შეხედულების სავარჯიშო' : '2. Practice Insight');
 safeUpdate('canopy-step3-title', 'textContent', currentLanguage === 'ge' ? '3. შესაწირი წერილი' : '3. Write Your Offering');
 safeUpdate('canopy-step3-text', 'textContent', currentLanguage === 'ge' ? 'დაფიქრდით ვარჯიშზე. რა იქნება თქვენი წვლილი?' : 'Reflect on the practice. What will you offer?');
-safeUpdate('canopyJournal', 'placeholder', currentLanguage === 'ge' ? 'დაწერეთ თქვენი პასუხი აქ...' : 'Write your response here...');
+safeUpdate('canopyJournal', 'placeholder', currentLanguage === 'ge' ? 'დაწერეთ თქვენი პასუხი აქ...' : 'Write your response here...');*/
 
 // Update canopy buttons
 safeUpdate('canopyNextBtn1', 'textContent', t.nextBtn);
