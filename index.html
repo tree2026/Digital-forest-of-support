@@ -1279,21 +1279,20 @@
                 //≈=== 1.5 canopy 
                 // Add to TEXT.en object:
                 canopyTitle: "🌤️ Wisdom Canopy",
-                //canopySubtitle: "How the ancient tree offers shelter, not shadow",
+                canopySubtitle: "How the ancient tree offers shelter, not shadow",
                 canopyCompleteBtn: "Complete Practice",
                 becomeCanopyBtn: "🌤️ Become Canopy",
                // insightBtn: "✨ Receive Canopy Insight",
               //  shareBtn: "🌳 Share as Canopy",
               //  noCanopyYet: "No canopy insights yet. Your reflections become shelter for others.",
                // canopyTitle: "Canopy Wisdom",
-                canopySubtitle: "Share your insights with others",
+             //   canopySubtitle: "Share your insights with others",
                 canopyStep1Title: "1. Choose Today's Canopy Wisdom",
                 canopyStep1Text: "Select one canopy insight to reflect on:",
                 canopyStep2Title: "2. Practice Insight", 
                 canopyStep3Title: "3. Write Your Offering",
                 canopyStep3Text: "Reflect on the practice. What will you offer?",
                 canopyJournalPlaceholder: "Write your response here...",
-                canopyCompleteBtn: "Complete Practice",
 
                 // Journal card
                 journalTitle: "📖 Your Tree Journal",
@@ -1390,7 +1389,7 @@
                 // ==== 1.5 canopy
                 // Add to TEXT.ge object:
                 canopyTitle: "🌤️ საჩრდილობელი",
-             //   canopySubtitle: "ხე გვთავაზობს თავშესაფარს, მხოლოს ჩრდილს კი არა",
+                canopySubtitle: "ხე გვთავაზობს თავშესაფარს, მხოლოს ჩრდილს კი არა",
                 canopyCompleteBtn: "დაასრულეთ ვარჯიში",
                 becomeCanopyBtn: "🌤️ საჩრდილობელი",
                 // insightBtn: "✨ მიიღე ქოლგის შეხედულება",
@@ -1398,14 +1397,13 @@
                 //noCanopyYet: "ჯერ არ არის ქოლგის შეხედულებები. თქვენი ასახვები სხვებისთვის თავშესაფარი გახდება.",
 
      //   canopyTitle: "საჩრდილის სიბრძნე",
-        canopySubtitle: "გააზიარეთ თქვენი შეხედულება სხვებთან",
+      //  canopySubtitle: "გააზიარეთ თქვენი შეხედულება სხვებთან",
         canopyStep1Title: "1. დღევანდელი საჩრდილობელი",
         canopyStep1Text: "აირჩიეთ ერთი შეხედულება, რომელზეც დაფიქრდებით:",
         canopyStep2Title: "2. შეხედულების სავარჯიშო",
         canopyStep3Title: "3. შესაწირი წერილი",
         canopyStep3Text: "დაფიქრდით ვარჯიშზე. რა იქნება თქვენი წვლილი?",
         canopyJournalPlaceholder: "დაწერეთ თქვენი პასუხი აქ...",
-        canopyCompleteBtn: "დაასრულეთ ვარჯიში",
 
         
                 // Journal card
@@ -2578,6 +2576,14 @@ const canopyNewPracticeBtn = document.querySelector('#canopyResult button.second
 if (canopyNewPracticeBtn) {
     canopyNewPracticeBtn.textContent = currentLanguage === 'ge' ? 'ახალი ვარჯიში' : 'New Practice';
 }
+    const canopyCard = document.getElementById('canopy-card');
+    if (canopyCard && canopyCard.style.display !== 'none') {
+        initCanopyPractice();
+        if (canopyCurrentStep > 1 && selectedCanopyInsight) {
+            canopyNextStep();
+            canopyPrevStep(); 
+        }
+    }
     // ==== 1.5 canopy end  ==== 
     
     // Update tree display if no tree
