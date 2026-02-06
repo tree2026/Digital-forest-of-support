@@ -2548,12 +2548,12 @@ safeUpdate('canopy-step3-text', 'textContent', t.canopyStep3Text);
 safeUpdate('canopyJournal', 'placeholder', t.canopyJournalPlaceholder);
 
 // Update canopy step titles and text
-/*safeUpdate('canopy-step1-title', 'textContent', currentLanguage === 'ge' ? '1. დღევანდელი საჩრდილობელი' : '1. Choose Today\'s Canopy Wisdom');
+safeUpdate('canopy-step1-title', 'textContent', currentLanguage === 'ge' ? '1. დღევანდელი საჩრდილობელი' : '1. Choose Today\'s Canopy Wisdom');
 safeUpdate('canopy-step1-text', 'textContent', currentLanguage === 'ge' ? 'აირჩიეთ ერთი შეხედულება, რომელზეც დაფიქრდებით:' : 'Select one canopy insight to reflect on:');
 safeUpdate('canopy-step2-title', 'textContent', currentLanguage === 'ge' ? '2. შეხედულების სავარჯიშო' : '2. Practice Insight');
 safeUpdate('canopy-step3-title', 'textContent', currentLanguage === 'ge' ? '3. შესაწირი წერილი' : '3. Write Your Offering');
 safeUpdate('canopy-step3-text', 'textContent', currentLanguage === 'ge' ? 'დაფიქრდით ვარჯიშზე. რა იქნება თქვენი წვლილი?' : 'Reflect on the practice. What will you offer?');
-safeUpdate('canopyJournal', 'placeholder', currentLanguage === 'ge' ? 'დაწერეთ თქვენი პასუხი აქ...' : 'Write your response here...');*/
+safeUpdate('canopyJournal', 'placeholder', currentLanguage === 'ge' ? 'დაწერეთ თქვენი პასუხი აქ...' : 'Write your response here...');
 
 // Update canopy buttons
 safeUpdate('canopyNextBtn1', 'textContent', t.nextBtn);
@@ -2575,38 +2575,6 @@ if (statusElement) {
 const canopyNewPracticeBtn = document.querySelector('#canopyResult button.secondary');
 if (canopyNewPracticeBtn) {
     canopyNewPracticeBtn.textContent = currentLanguage === 'ge' ? 'ახალი ვარჯიში' : 'New Practice';
-}
-
-//Update canopy buttons content ========
-// Only if canopy card is currently visible
-const canopyCard = document.getElementById('canopy-card');
-if (canopyCard && canopyCard.style.display !== 'none') {
-    const insights = canopyWisdom[currentLanguage];
-    const buttonsContainer = document.getElementById('canopyButtons');
-    
-    if (buttonsContainer) {
-        // Store current selection
-        const currentSelected = selectedCanopyInsight;
-        
-        // Update buttons with new language
-        buttonsContainer.innerHTML = '';
-        insights.forEach(insight => {
-            buttonsContainer.innerHTML += `
-                <div class="principle-badge" onclick="selectCanopyInsight('${insight.id}')" id="canopy-${insight.id}">
-                    <strong>🌤️ ${insight.title}</strong><br>
-                    <small>${insight.practice.split(/[.!?]/)[0].trim()}</small>
-                </div>
-            `;
-        });
-        
-        // Re-select if something was selected before
-        if (currentSelected) {
-            const selectedElement = document.getElementById(`canopy-${currentSelected}`);
-            if (selectedElement) {
-                selectedElement.classList.add('selected');
-            }
-        }
-    }
 }
     // ==== 1.5 canopy end  ==== 
     
