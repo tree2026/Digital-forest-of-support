@@ -2576,7 +2576,38 @@ const canopyNewPracticeBtn = document.querySelector('#canopyResult button.second
 if (canopyNewPracticeBtn) {
     canopyNewPracticeBtn.textContent = currentLanguage === 'ge' ? 'ახალი ვარჯიში' : 'New Practice';
 }
+
+//Update canopy buttons content ========
+// Only if canopy card is currently visible
+const canopyCard = document.getElementById('canopy-card');
+if (canopyCard && canopyCard.style.display !== 'none') {
+    const insights = canopyWisdom[currentLanguage];
+    const buttonsContainer = document.getElementById('canopyButtons');
     
+    if (buttonsContainer) {
+        // Store current selection
+        const currentSelected = selectedCanopyInsight;
+        
+        // Update buttons with new language
+        buttonsContainer.innerHTML = '';
+        insights.forEach(insight => {
+            buttonsContainer.innerHTML += `
+                <div class="principle-badge" onclick="selectCanopyInsight('${insight.id}')" id="canopy-${insight.id}">
+                    <strong>🌤️ ${insight.title}</strong><br>
+                    <small>${insight.practice.split(/[.!?]/)[0].trim()}</small>
+                </div>
+            `;
+        });
+        
+        // Re-select if something was selected before
+        if (currentSelected) {
+            const selectedElement = document.getElementById(`canopy-${currentSelected}`);
+            if (selectedElement) {
+                selectedElement.classList.add('selected');
+            }
+        }
+    }
+}
     // ==== 1.5 canopy end  ==== 
     
     // Update tree display if no tree
