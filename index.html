@@ -4015,6 +4015,40 @@ function showUpdateNotification() {
     }, 1500);
 }
 
+// ========== 1.6 PERIODIC UPDATE CHECKS ================
+// Add this AFTER your existing unified update handler code
+
+if ('serviceWorker' in navigator) {
+    // Function to check for updates
+    function checkForUpdates() {
+        if (!navigator.onLine) return;
+        
+        navigator.serviceWorker.ready.then(registration => {
+            registration.update();
+            
+            // Check if update is already waiting
+            if (registration.waiting) {
+                showUpdateNotification();
+            }
+        }).catch(err => {
+            console.log('Update check failed:', err);
+        });
+    }
+    
+    // Check when app becomes visible/refocused
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+            setTimeout(checkForUpdates, 1000); // Small delay
+        }
+    });
+    
+    // Check every 12 hours (instead of 24)
+    setInterval(checkForUpdates, 12 * 60 * 60 * 1000);
+    
+    // Initial check after 5 seconds
+    setTimeout(checkForUpdates, 5000);
+}
+
 // Clear update flag on new session
 window.addEventListener('beforeunload', () => {
     sessionStorage.removeItem('updateNotificationShown');
