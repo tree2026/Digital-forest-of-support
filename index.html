@@ -1185,6 +1185,9 @@
         
     </div>
 
+    <!-- 1.6 -->
+    <script src="poems-data.js?v=1.0"></script>
+    
     <script>
         // Forest of Support - Bilingual v1.2
         // 144 poems in both English and Georgian
@@ -1194,7 +1197,11 @@
         const VERSION_KEY = 'forestAppVersion';
         const LANG_KEY = 'forestLanguage';
 
-       
+       // 1.6 
+        // Replace the removed objects with these references:
+        const poeticWisdom = window.POETIC_WISDOM_EXPORT;
+        const canopyWisdom = window.CANOPY_WISDOM_EXPORT;
+        
         // Language state
         let currentLanguage = 'en'; // 'en' or 'ge'
         
@@ -1700,7 +1707,7 @@
         // ==================== BILINGUAL POEMS ====================
         // Full 144 poems in both languages would be implemented similarly
         
-        const poeticWisdom = {
+      /*  const poeticWisdom = {
     en: {
         // Category 1: Rooting (12 poems) for grounding, stability, foundation
         rooting: [
@@ -2182,7 +2189,7 @@
             offering: "🌿 წვლილი: გადაეცი რესურსი ვინმე უმცროსს ყოველგვარი მოლოდინის გარეშე."
         }
     ]
-};
+};*/
         
 
         // ==================== KEYWORDS FOR CONTEXTUAL MATCHING ====================
