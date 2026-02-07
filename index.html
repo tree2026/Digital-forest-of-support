@@ -2441,6 +2441,12 @@
             if (document.getElementById('practiceContent').style.display !== 'none') {
                 updatePracticeCard();
             }
+    
+            // 1.5 canopy
+            // If canopy card is active, reload its wisdom buttons
+    if (document.getElementById('canopy')?.classList.contains('active')) {
+        initCanopyPractice(); 
+    }
         }
 
 
