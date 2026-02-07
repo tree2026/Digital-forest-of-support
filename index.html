@@ -610,10 +610,13 @@
 [data-theme="dark"] .tree-display svg {
     color: var(--tree-ascii-color);
 }
-
+[data-theme="dark"] .tree-display svg text {
+    fill: currentColor;
+}
 [data-theme="dark"] .tree-display svg circle,
 [data-theme="dark"] .tree-display svg rect,
-[data-theme="dark"] .tree-display svg path {
+[data-theme="dark"] .tree-display svg path,
+[data-theme="dark"] .tree-display svg ellipse {
     fill: currentColor;
     opacity: 0.9;
 }/* 1.6 tree end */
@@ -2362,6 +2365,62 @@ function drawTreeSVG(stageIndex, elementId) {
     
     const stages = [
         // Stage 1: Seed
+        `<circle cx="50" cy="50" r="10" fill="var(--button-bg)" opacity="0.8"/>
+         <circle cx="50" cy="45" r="6" fill="var(--button-secondary)" opacity="0.9"/>
+         <text x="50" y="70" text-anchor="middle" font-size="8" fill="currentColor">
+            ${currentLanguage === 'ge' ? 'თესლი' : 'Seed'}
+         </text>`,
+        
+        // Stage 2: Sprout
+        `<rect x="48" y="60" width="4" height="15" fill="var(--button-bg)" opacity="0.9"/>
+         <path d="M50,60 Q40,40 35,30 Q50,25 65,30 Q60,40 50,60" fill="var(--button-secondary)" opacity="0.8"/>
+         <circle cx="50" cy="75" r="8" fill="var(--principle-bg)" opacity="0.7"/>`,
+        
+        // Stage 3: Young Tree
+        `<rect x="47" y="70" width="6" height="25" fill="var(--button-bg)"/>
+         <circle cx="50" cy="55" r="12" fill="var(--button-secondary)" opacity="0.9"/>
+         <circle cx="40" cy="60" r="10" fill="var(--principle-bg)" opacity="0.8"/>
+         <circle cx="60" cy="60" r="10" fill="var(--principle-bg)" opacity="0.8"/>
+         <circle cx="50" cy="45" r="8" fill="var(--button-secondary)" opacity="0.7"/>`,
+        
+        // Stage 4: Mature Tree  
+        `<rect x="45" y="80" width="10" height="35" fill="var(--button-bg)"/>
+         <ellipse cx="50" cy="55" rx="18" ry="22" fill="var(--button-secondary)" opacity="0.9"/>
+         <ellipse cx="35" cy="65" rx="12" ry="10" fill="var(--principle-bg)" opacity="0.8"/>
+         <ellipse cx="65" cy="65" rx="12" ry="10" fill="var(--principle-bg)" opacity="0.8"/>
+         <ellipse cx="50" cy="40" rx="10" ry="14" fill="var(--button-secondary)" opacity="0.7"/>`,
+        
+        // Stage 5: Wisdom Tree
+        `<path d="M46,115 L54,115 L56,75 L44,75 Z" fill="var(--button-bg)" opacity="0.9"/>
+         <circle cx="50" cy="50" r="22" fill="var(--button-secondary)" opacity="0.8"/>
+         <circle cx="50" cy="45" r="18" fill="var(--principle-bg)" opacity="0.9"/>
+         <circle cx="50" cy="35" r="14" fill="var(--button-secondary)" opacity="0.7"/>
+         <circle cx="50" cy="85" r="5" fill="var(--text-secondary)" opacity="0.8">
+            <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite"/>
+         </circle>`
+    ];
+    
+    // Clear and draw
+    svg.innerHTML = stages[Math.min(stageIndex, stages.length - 1)];
+}
+        function updateSeedPreview() {
+    const seedSvg = document.getElementById('seedSvg');
+    if (seedSvg) {
+        seedSvg.innerHTML = `
+            <circle cx="50" cy="50" r="12" fill="var(--button-bg)" opacity="0.8"/>
+            <circle cx="50" cy="45" r="7" fill="var(--button-secondary)" opacity="0.9"/>
+            <text x="50" y="75" text-anchor="middle" font-size="10" fill="currentColor">
+                ${currentLanguage === 'ge' ? 'თესლი' : 'Seedling'}
+            </text>
+        `;
+    }
+        }
+/*function drawTreeSVG(stageIndex, elementId) {
+    const svg = document.getElementById(elementId);
+    if (!svg) return;
+    
+    const stages = [
+        // Stage 1: Seed
         `<circle cx="50" cy="50" r="10" fill="#8B4513"/>
          <circle cx="50" cy="45" r="6" fill="#90EE90"/>
          <text x="50" y="70" text-anchor="middle" font-size="8" fill="currentColor">
@@ -2411,7 +2470,7 @@ function drawTreeSVG(stageIndex, elementId) {
             </text>
         `;
     }
-        }  // 1.6 tree end
+        }  */ // 1.6 tree end
 
         
         // ==================== INITIALIZATION ====================
