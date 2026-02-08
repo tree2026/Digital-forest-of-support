@@ -599,26 +599,6 @@
     color: var(--text-secondary);
     font-size: 0.9em;
 }
-        /* 1.6 tree svg 
-    .tree-display svg {
-    max-width: 100%;
-    height: auto;
-    color: var(--text-primary); 
-}
-
-[data-theme="dark"] .tree-display svg {
-    color: var(--tree-ascii-color);
-}
-[data-theme="dark"] .tree-display svg text {
-    fill: currentColor;
-}
-[data-theme="dark"] .tree-display svg circle,
-[data-theme="dark"] .tree-display svg rect,
-[data-theme="dark"] .tree-display svg path,
-[data-theme="dark"] .tree-display svg ellipse {
-    fill: currentColor;
-    opacity: 0.9;
-} 1.6 tree end */
         
     /* ============== DARK MODE - COLOR CHANGE ONLY ================= */
 
@@ -684,7 +664,7 @@
 [data-theme="dark"] .principle-badge:hover {
     background: var(--principle-bg);
     border-left-color: var(--principle-border);
-    transform: translateX(5px); /* ADD BACK slight movement */
+    transform: translateX(5px); 
     position: relative; /* Keep for eclipse effect */
 }
 
@@ -1203,7 +1183,7 @@
         
     </div>
 
-    <!-- 1.6 -->
+    <!-- poems data 1.0 -->
     <script src="poems-data.js?v=1.0"></script>
     
     <script>
@@ -1215,7 +1195,6 @@
         const VERSION_KEY = 'forestAppVersion';
         const LANG_KEY = 'forestLanguage';
 
-       // 1.6 
         // Replace the removed objects with these references:
         const poeticWisdom = window.POETIC_WISDOM_EXPORT;
         const canopyWisdom = window.CANOPY_WISDOM_EXPORT;
@@ -1302,7 +1281,6 @@
                 statPoemsLabel: "Poems Received",
 
                 //≈=== 1.5 canopy 
-                // Add to TEXT.en object:
                 canopyTitle: "🌤️ Wisdom Canopy",
                 canopySubtitle: "How the ancient tree offers shelter, not shadow",
                 canopyCompleteBtn: "Complete Practice",
@@ -1405,9 +1383,7 @@
                 statJournalsLabel: "დღიურის ჩანაწერი",
                 statPoemsLabel: "მიღებული ლექსი",
 
-
                 // ==== 1.5 canopy
-                // Add to TEXT.ge object:
                 canopyTitle: "🌤️ საჩრდილობელი",
                 canopySubtitle: "ბებერი ხე თავშესაფარს გვთავაზობს, მხოლოდ ჩრდილს კი არა",
                 canopyCompleteBtn: "დაასრულეთ ვარჯიში",
@@ -1419,7 +1395,6 @@
                 canopyStep3Text: "დაფიქრდით ვარჯიშზე. რა იქნება თქვენი წვლილი?",
                 canopyJournalPlaceholder: "დაწერეთ თქვენი პასუხი აქ...",
 
-        
                 // Journal card
                 journalTitle: "📖 თქვენი ხის დღიური",
                 journalSubtitle: "თითოეულ ჩანაწერს მოჰყვება შესაბამისი ლექსი, რომელიც თქვენს სიტყვებს და ვარჯიშებს ეხმაურება.",
@@ -1849,121 +1824,6 @@
     ]
 };
         
-    // 1.6 tree. SVG Tree Generator (5 stages matching your current ASCII)
-/*function drawTreeSVG(stageIndex, elementId) {
-    const svg = document.getElementById(elementId);
-    if (!svg) return;
-    
-    const stages = [
-        // Stage 1: Seed
-        `<circle cx="50" cy="50" r="10" fill="var(--button-bg)" opacity="0.8"/>
-         <circle cx="50" cy="45" r="6" fill="var(--button-secondary)" opacity="0.9"/>
-         <text x="50" y="70" text-anchor="middle" font-size="8" fill="currentColor">
-            ${currentLanguage === 'ge' ? 'თესლი' : 'Seed'}
-         </text>`,
-        
-        // Stage 2: Sprout
-        `<rect x="48" y="60" width="4" height="15" fill="var(--button-bg)" opacity="0.9"/>
-         <path d="M50,60 Q40,40 35,30 Q50,25 65,30 Q60,40 50,60" fill="var(--button-secondary)" opacity="0.8"/>
-         <circle cx="50" cy="75" r="8" fill="var(--principle-bg)" opacity="0.7"/>`,
-        
-        // Stage 3: Young Tree
-        `<rect x="47" y="70" width="6" height="25" fill="var(--button-bg)"/>
-         <circle cx="50" cy="55" r="12" fill="var(--button-secondary)" opacity="0.9"/>
-         <circle cx="40" cy="60" r="10" fill="var(--principle-bg)" opacity="0.8"/>
-         <circle cx="60" cy="60" r="10" fill="var(--principle-bg)" opacity="0.8"/>
-         <circle cx="50" cy="45" r="8" fill="var(--button-secondary)" opacity="0.7"/>`,
-        
-        // Stage 4: Mature Tree  
-        `<rect x="45" y="80" width="10" height="35" fill="var(--button-bg)"/>
-         <ellipse cx="50" cy="55" rx="18" ry="22" fill="var(--button-secondary)" opacity="0.9"/>
-         <ellipse cx="35" cy="65" rx="12" ry="10" fill="var(--principle-bg)" opacity="0.8"/>
-         <ellipse cx="65" cy="65" rx="12" ry="10" fill="var(--principle-bg)" opacity="0.8"/>
-         <ellipse cx="50" cy="40" rx="10" ry="14" fill="var(--button-secondary)" opacity="0.7"/>`,
-        
-        // Stage 5: Wisdom Tree
-        `<path d="M46,115 L54,115 L56,75 L44,75 Z" fill="var(--button-bg)" opacity="0.9"/>
-         <circle cx="50" cy="50" r="22" fill="var(--button-secondary)" opacity="0.8"/>
-         <circle cx="50" cy="45" r="18" fill="var(--principle-bg)" opacity="0.9"/>
-         <circle cx="50" cy="35" r="14" fill="var(--button-secondary)" opacity="0.7"/>
-         <circle cx="50" cy="85" r="5" fill="var(--text-secondary)" opacity="0.8">
-            <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite"/>
-         </circle>`
-    ];
-    
-    // Clear and draw
-    svg.innerHTML = stages[Math.min(stageIndex, stages.length - 1)];
-}
-        function updateSeedPreview() {
-    const seedSvg = document.getElementById('seedSvg');
-    if (seedSvg) {
-        seedSvg.innerHTML = `
-            <circle cx="50" cy="50" r="12" fill="var(--button-bg)" opacity="0.8"/>
-            <circle cx="50" cy="45" r="7" fill="var(--button-secondary)" opacity="0.9"/>
-            <text x="50" y="75" text-anchor="middle" font-size="10" fill="currentColor">
-                ${currentLanguage === 'ge' ? 'თესლი' : 'Seedling'}
-            </text>
-        `;
-    }
-        }*/
-/*function drawTreeSVG(stageIndex, elementId) {
-    const svg = document.getElementById(elementId);
-    if (!svg) return;
-    
-    const stages = [
-        // Stage 1: Seed
-        `<circle cx="50" cy="50" r="10" fill="#8B4513"/>
-         <circle cx="50" cy="45" r="6" fill="#90EE90"/>
-         <text x="50" y="70" text-anchor="middle" font-size="8" fill="currentColor">
-            ${currentLanguage === 'ge' ? 'თესლი' : 'Seed'}
-         </text>`,
-        
-        // Stage 2: Sprout
-        `<rect x="48" y="60" width="4" height="15" fill="#8B4513"/>
-         <path d="M50,60 Q40,40 35,30 Q50,25 65,30 Q60,40 50,60" fill="#2E8B57"/>
-         <circle cx="50" cy="75" r="8" fill="#556B2F"/>`,
-        
-        // Stage 3: Young Tree
-        `<rect x="47" y="70" width="6" height="25" fill="#8B4513"/>
-         <circle cx="50" cy="55" r="12" fill="#2E8B57"/>
-         <circle cx="40" cy="60" r="10" fill="#3CB371"/>
-         <circle cx="60" cy="60" r="10" fill="#3CB371"/>
-         <circle cx="50" cy="45" r="8" fill="#90EE90"/>`,
-        
-        // Stage 4: Mature Tree  
-        `<rect x="45" y="80" width="10" height="35" fill="#8B4513"/>
-         <ellipse cx="50" cy="55" rx="18" ry="22" fill="#2E8B57"/>
-         <ellipse cx="35" cy="65" rx="12" ry="10" fill="#3CB371"/>
-         <ellipse cx="65" cy="65" rx="12" ry="10" fill="#3CB371"/>
-         <ellipse cx="50" cy="40" rx="10" ry="14" fill="#90EE90"/>`,
-        
-        // Stage 5: Wisdom Tree
-        `<path d="M46,115 L54,115 L56,75 L44,75 Z" fill="#654321"/>
-         <circle cx="50" cy="50" r="22" fill="#2F4F2F"/>
-         <circle cx="50" cy="45" r="18" fill="#3CB371"/>
-         <circle cx="50" cy="35" r="14" fill="#90EE90"/>
-         <circle cx="50" cy="85" r="5" fill="#D2691E" opacity="0.8">
-            <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite"/>
-         </circle>`
-    ];
-    
-    // Clear and draw
-    svg.innerHTML = stages[Math.min(stageIndex, stages.length - 1)];
-}
-        function updateSeedPreview() {
-    const seedSvg = document.getElementById('seedSvg');
-    if (seedSvg) {
-        seedSvg.innerHTML = `
-            <circle cx="50" cy="50" r="12" fill="#8B4513"/>
-            <circle cx="50" cy="45" r="7" fill="#90EE90"/>
-            <text x="50" y="75" text-anchor="middle" font-size="10" fill="currentColor">
-                ${currentLanguage === 'ge' ? 'თესლი' : 'Seedling'}
-            </text>
-        `;
-    }
-        }  */ // 1.6 tree end
-
-        
         // ==================== INITIALIZATION ====================
         
   document.addEventListener('DOMContentLoaded', function() {
@@ -2181,7 +2041,6 @@
     safeUpdate('footer-creator', 'textContent', t.footerCreator);
     safeUpdate('footer-book', 'textContent', t.footerBook);
 
-    
     // ==== 1.5 canopy :
 // Update canopy card titles
 safeUpdate('canopy-title', 'textContent', t.canopyTitle);
@@ -2192,14 +2051,6 @@ safeUpdate('canopy-step2-title', 'textContent', t.canopyStep2Title);
 safeUpdate('canopy-step3-title', 'textContent', t.canopyStep3Title);
 safeUpdate('canopy-step3-text', 'textContent', t.canopyStep3Text);
 safeUpdate('canopyJournal', 'placeholder', t.canopyJournalPlaceholder);
-
-// Update canopy step titles and text
-/*safeUpdate('canopy-step1-title', 'textContent', currentLanguage === 'ge' ? '1. დღევანდელი საჩრდილობელი' : '1. Choose Today\'s Canopy Wisdom');
-safeUpdate('canopy-step1-text', 'textContent', currentLanguage === 'ge' ? 'აირჩიეთ ერთი შეხედულება, რომელზეც დაფიქრდებით:' : 'Select one canopy insight to reflect on:');
-safeUpdate('canopy-step2-title', 'textContent', currentLanguage === 'ge' ? '2. შეხედულების სავარჯიშო' : '2. Practice Insight');
-safeUpdate('canopy-step3-title', 'textContent', currentLanguage === 'ge' ? '3. შესაწირი წერილი' : '3. Write Your Offering');
-safeUpdate('canopy-step3-text', 'textContent', currentLanguage === 'ge' ? 'დაფიქრდით ვარჯიშზე. რა იქნება თქვენი წვლილი?' : 'Reflect on the practice. What will you offer?');
-safeUpdate('canopyJournal', 'placeholder', currentLanguage === 'ge' ? 'დაწერეთ თქვენი პასუხი აქ...' : 'Write your response here...');*/
 
 // Update canopy buttons
 safeUpdate('canopyNextBtn1', 'textContent', t.nextBtn);
@@ -3091,70 +2942,6 @@ function showJournalAndScrollToNewest() {
         }
     });
        }
-   /* function loadJournalEntries() {
-    const container = document.getElementById('journalEntries');
-    const t = TEXT[currentLanguage];
-    container.innerHTML = "";
-    
-    if (myTree.journals.length === 0) {
-        container.innerHTML = `
-            <div style="text-align: center; padding: 30px; color: #666; font-style: italic;">
-                ${t.noEntries}
-            </div>
-        `;
-        return;
-    }
-    
-    // Show most recent first
-    myTree.journals.slice().reverse().forEach((entry, index) => {
-        // Calculate the original index (not reversed)
-        const originalIndex = myTree.journals.length - 1 - index;
-        
-        if (entry.type === 'canopy') {
-            // CANOPY ENTRY - Show only user response
-            container.innerHTML += `
-                <div class="journal-entry">
-                    <div class="entry-date">
-                        <span>${entry.date.split(',')[0]}</span>
-                        <span>🌤️ ${entry.principle || entry.title}
-                            <button onclick="shareEntry(${originalIndex})" class="small-share-btn" title="Share">↗️</button>
-                        </span>
-                    </div>
-                    <p>${entry.text}</p>
-                    <p style="font-style: italic; margin-top: 10px; color: var(--text-secondary);">
-                        ${entry.offering || ''}
-                    </p>
-                </div>
-            `;
-        } else {
-            // REGULAR JOURNAL OR PRACTICE ENTRY
-            const isPractice = entry.type === 'practice';
-            
-            container.innerHTML += `
-                <div class="journal-entry">
-                    <div class="entry-date">
-                        <span>${entry.date.split(',')[0]}</span>
-                        <span>${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}
-                            <button onclick="shareEntry(${originalIndex})" class="small-share-btn" title="Share">↗️</button>
-                        </span>
-                    </div>
-                    <p>${entry.text}</p>
-                </div>
-            `;
-            
-            if (entry.poem) {
-                container.innerHTML += `
-                    <div class="poem-response">
-                        <p>${entry.poem.replace(/\n/g, '<br>')}</p>
-                        <div class="sage-quote">${entry.sage}
-                            <button onclick="shareEntry(${originalIndex}, true)" class="small-share-btn" title="Share Poem">↗️</button>
-                        </div>
-                    </div>
-                `;
-            }
-        }
-    });
-    }*/
 
 function shareEntry(entryIndex, sharePoemOnly = false) {
     const entry = myTree.journals[entryIndex];
@@ -3197,96 +2984,6 @@ function copyToClipboard(text) {
         ? '📋 კოპირებულია!'
         : '📋 Copied!');
 }
-        
-      /*  function loadJournalEntries() {
-    const container = document.getElementById('journalEntries');
-    const t = TEXT[currentLanguage];
-    container.innerHTML = "";
-    
-    if (myTree.journals.length === 0) {
-        container.innerHTML = `
-            <div style="text-align: center; padding: 30px; color: #666; font-style: italic;">
-                ${t.noEntries}
-            </div>
-        `;
-        return;
-    }
-    
-    // Show most recent first
-    myTree.journals.slice().reverse().forEach((entry, index) => {
-       if (entry.type === 'canopy') {
-    // CANOPY ENTRY - Show only user response
-    container.innerHTML += `
-        <div class="journal-entry">
-            <div class="entry-date">
-                <span>${entry.date}</span>
-                <span>🌤️ ${entry.principle || entry.title}</span>
-            </div>
-            <p>${entry.text}</p>
-            <p style="font-style: italic; margin-top: 10px; color: var(--text-secondary);">
-                ${entry.offering || ''}
-            </p>
-        </div>
-    `;
-       } else {
-            // REGULAR JOURNAL OR PRACTICE ENTRY
-            const isPractice = entry.type === 'practice';
-            
-            container.innerHTML += `
-                <div class="journal-entry">
-                    <div class="entry-date">
-                        <span>${entry.date}</span>
-                        <span>${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}</span>
-                    </div>
-                    <p>${entry.text}</p>
-                </div>
-            `;
-            
-            if (entry.poem) {
-                container.innerHTML += `
-                    <div class="poem-response">
-                        <p>${entry.poem.replace(/\n/g, '<br>')}</p>
-                        <div class="sage-quote">${entry.sage}</div>
-                    </div>
-                `;
-            }
-        }
-    });
-        }*/
-            // 1.5 canopy
-        
-       /* function loadJournalEntries() {
-            const container = document.getElementById('journalEntries');
-            const t = TEXT[currentLanguage];
-            container.innerHTML = "";
-            
-            if (myTree.journals.length === 0) {
-                container.innerHTML = `
-                    <div style="text-align: center; padding: 30px; color: #666; font-style: italic;">
-                        ${t.noEntries}
-                    </div>
-                `;
-                return;
-            }
-
-            // Show most recent first
-            myTree.journals.slice().reverse().forEach((entry, index) => {
-                const isPractice = entry.type === 'practice';
-                container.innerHTML += `
-                    <div class="journal-entry">
-                        <div class="entry-date">
-                            <span>${entry.date}</span>
-                            <span>${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}</span>
-                        </div>
-                        <p>${entry.text}</p>
-                    </div>
-                    <div class="poem-response">
-                        <p>${entry.poem.replace(/\n/g, '<br>')}</p>
-                        <div class="sage-quote">${entry.sage}</div>
-                    </div>
-                `;        
-            });
-        }*/
 
         function clearJournal() {
             document.getElementById('newJournalEntry').value = "";
@@ -3308,10 +3005,6 @@ function copyToClipboard(text) {
             const stageIndex = Math.min(myTree.stage - 1, treeStages[currentLanguage].length - 1);
             document.getElementById('treeAscii').textContent = treeStages[currentLanguage][stageIndex];
             
-            /* // Show appropriate tree stage
-            const stageIndex = Math.min(myTree.stage - 1, treeStages.length - 1);
-            document.getElementById('treeAscii').textContent = treeStages[stageIndex];*/
-            
             // Update progress ring
             const progressPercent = (myTree.stage / 5) * 100;
             document.querySelector('.progress-ring').style.background = 
@@ -3324,7 +3017,6 @@ function copyToClipboard(text) {
             document.getElementById('statJournals').textContent = myTree.journals.length;
             document.getElementById('statPoems').textContent = myTree.poemsReceived;
             
-            // 1.5 canopy ADD THIS AT THE END OF THE FUNCTION:
             // Show/hide canopy button based on rings
     const canopyBtn = document.getElementById('become-canopy-btn');
     if (canopyBtn) {
@@ -3333,40 +3025,8 @@ function copyToClipboard(text) {
         } else {
             canopyBtn.style.display = 'none';
         }
-    } // 1.5 canopy end 
-        }
-        
-   /* function updateForestCard() {
-    const t = TEXT[currentLanguage];
-    
-    if (!myTree.name) {
-        document.getElementById('treeNameDisplay').textContent = t.noTree;
-        document.getElementById('treeSvg').innerHTML = 
-            `<text x="50" y="60" text-anchor="middle" font-size="10" fill="currentColor">
-                ${t.plantToBegin}
-            </text>`;
-        document.getElementById('progressText').textContent = "0/5";
-        return;
     }
-    
-    document.getElementById('treeNameDisplay').textContent = myTree.name;
-    
-    // Draw SVG tree (stage 0-4, since myTree.stage is 1-5)
-    drawTreeSVG(myTree.stage - 1, 'treeSvg');
-    
-    // Update progress ring (keep your existing code)
-    const progressPercent = (myTree.stage / 5) * 100;
-    document.querySelector('.progress-ring').style.background = 
-        `conic-gradient(#4a7c3f 0% ${progressPercent}%, #e8f5e8 ${progressPercent}% 100%)`;
-    document.getElementById('progressText').textContent = `${myTree.stage}/5`;
-    
-    // Update stats (keep your existing code)
-    document.getElementById('statRings').textContent = myTree.rings;
-    document.getElementById('statStage').textContent = myTree.stage;
-    document.getElementById('statJournals').textContent = myTree.journals.length;
-    document.getElementById('statPoems').textContent = myTree.poemsReceived;*/
-
-            
+        }
         
         function updateDisplay() {
             updateForestCard();
@@ -3687,8 +3347,7 @@ function showUpdateNotification() {
     }, 1500);
 }
 
-// ========== 1.6 PERIODIC UPDATE CHECKS ================
-// Add this AFTER your existing unified update handler code
+// ========== PERIODIC UPDATE CHECKS offline ================
 
 if ('serviceWorker' in navigator) {
     // Function to check for updates
