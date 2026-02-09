@@ -3063,7 +3063,7 @@ function copyToClipboard(text) {
                         sessionStorage.setItem('suppressServiceWorkerUpdate', 'true');
                         const t = TEXT[currentLanguage];
                         const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'share button and canopy' : 'გაზიარების ღილაკი, საჩრდილობელი'}\n\n${t.updatePreserved}`;
-                        alert (updateMsg);
+                        alert(updateMsg);
                        /* if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
                             showCard('welcome');
                             document.getElementById('welcome').innerHTML += `
