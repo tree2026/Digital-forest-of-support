@@ -2947,13 +2947,13 @@ function copyToClipboard(text) {
         // 1.6 clear button
         function clearAllData() {
             const t = TEXT[currentLanguage];
-            // Create custom confirmation dialog
+            const treeNameDisplay = myTree.name || (currentLanguage === 'ge' ? "ხე არ არის დარგული" : "No tree");
             const confirmed = confirm(
                 `⚠️ ${t.clearDataConfirm}\n\n` +
-                `• Tree: ${myTree.name || "No tree"}\n` +
-                `• Growth Rings: ${myTree.rings}\n` +
-                `• Journal Entries: ${myTree.journals.length}\n` +
-                `• Poems Received: ${myTree.poemsReceived}`
+                `${currentLanguage === 'ge' ? '• ხე:' : '• Tree:'} ${treeNameDisplay}\n` +
+                `${currentLanguage === 'ge' ? '• ზრდის რგოლები:' : '• Growth Rings:'} ${myTree.rings}\n` +
+                `${currentLanguage === 'ge' ? '• დღიურის ჩანაწერები:' : '• Journal Entries:'} ${myTree.journals.length}\n` +
+                `${currentLanguage === 'ge' ? '• მიღებული ლექსები:' : '• Poems Received:'} ${myTree.poemsReceived}`
             );
     
             if (confirmed) {
@@ -2974,6 +2974,7 @@ function copyToClipboard(text) {
                     }
                 };
                 saveTree();
+                updateDisplay();
                 updateForestCard();
                 loadJournalEntries();
                 alert(currentLanguage === 'ge' 
