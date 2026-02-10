@@ -2901,6 +2901,12 @@ function copyToClipboard(text) {
                 document.getElementById('statStage').textContent = "1";
                 document.getElementById('statJournals').textContent = "0";
                 document.getElementById('statPoems').textContent = "0";
+                // Hide clear button
+                const clearBtn = document.getElementById('clear-data-btn');
+                if (clearBtn) clearBtn.style.display = 'none';
+                // Hide canopy button 
+                const canopyBtn = document.getElementById('become-canopy-btn');
+                if (canopyBtn) canopyBtn.style.display = 'none';
                 // 1.6 end 
                 return;
             }
