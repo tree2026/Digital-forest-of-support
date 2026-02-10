@@ -2929,7 +2929,7 @@ function copyToClipboard(text) {
                         if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
                             showCard('welcome');
                             document.getElementById('welcome').innerHTML += `
-                                <div class="step" style="background: #f0f7f0; margin-top: 20px;">
+                                <div class="step" style="background: #bfe2a9<!--#f0f7f0-->; margin-top: 20px;">
                                     <h3>${t.updateTitle.replace('{version}', APP_VERSION)}</h3>
                                    <!-- <p>${t.updateNewPoem}</p>-->
                                     <ul style="padding-left: 20px; margin: 10px 0;">
