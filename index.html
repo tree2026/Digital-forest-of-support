@@ -2895,6 +2895,13 @@ function copyToClipboard(text) {
                 document.getElementById('treeNameDisplay').textContent = t.noTree;
                 document.getElementById('treeAscii').textContent = t.plantToBegin;
                 document.getElementById('progressText').textContent = "0/5";
+                // 1.6. ======
+                // Update stats to show 0 when no tree
+                document.getElementById('statRings').textContent = "0";
+                document.getElementById('statStage').textContent = "1";
+                document.getElementById('statJournals').textContent = "0";
+                document.getElementById('statPoems').textContent = "0";
+                // 1.6 end 
                 return;
             }
             
