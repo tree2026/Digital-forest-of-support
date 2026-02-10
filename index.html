@@ -65,7 +65,7 @@
     /* === COLOR VARIABLES ONLY === */
     --bg-gradient-start: #132212;
     --bg-gradient-end: #0d1a0d;
-    --text-primary: #c0e2aa/*#c2e1ae*/;
+    --text-primary: #c0e2aa/*#c2e1ae #bfe2a9*/;
     --text-secondary: #819a6e;
     --text-tertiary: #405f34;
     --text-quaternary: #badba5;
@@ -448,10 +448,9 @@
         gap: 5px/*10px*/;
         margin: 10px 0;
     }
-    
+
     /* Music toggle button */
     .music-toggle {
-   /* display: inline-block !important;*/
     visibility: visible !important;
     opacity: 1 !important;
     cursor: pointer !important;
@@ -494,19 +493,54 @@
     70% { box-shadow: 0 0 0 10px rgba(74, 124, 63, 0); }
     100% { box-shadow: 0 0 0 0 rgba(74, 124, 63, 0); }
     }
-
-        /* ===== 1.5  Canopy button styling */
-#become-canopy-btn {
+    
+    /* Canopy button  */
+    #become-canopy-btn {
     background: linear-gradient(to right, #8a5a2d, #a67c52);
     box-shadow: 0 4px 0 #724115;
-}
-
-#become-canopy-btn:hover {
+    }
+    
+    #become-canopy-btn:hover {
     background: linear-gradient(to right, #724115, #8a5a2d);
     box-shadow: 0 6px 0 #5a3410;
-}
+    }
 
-/* Dark mode canopy button */
+    /* Entry footer - bottom right corner */
+    .entry-footer {
+    text-align: right;
+    margin-top: 2px;
+    padding-top: 1px;
+    }
+    /* Small share button */
+    .small-share-btn {
+    background: var(--button-secondary);
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.8;
+    }
+    
+    .small-share-btn:hover {
+    opacity: 1;
+    background: var(--button-hover);
+    transform: translateY(-1px);
+    }
+    /* Poem share button */
+    .poem-response .entry-footer {
+    margin-top: 2px;
+    }
+    /* Remove time from date */
+    .entry-date span:first-child {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    }
+    /* ==================== DARK MODE - COLOR CHANGE ONLY ==================== */
+
+    /* === APPLY COLORS TO EXISTING STRUCTURE === */
 [data-theme="dark"] #become-canopy-btn {
     background: linear-gradient(to right, #a67c52, #c9a87c);
     box-shadow: 0 4px 0 #8a5a2d;
@@ -517,93 +551,10 @@
     box-shadow: 0 6px 0 #724115;
 }
         
-/* Entry footer - bottom right corner */
-.entry-footer {
-    text-align: right;
-    margin-top: 2px;
-    padding-top: 1px;
-    /*border-top: 1px dashed var(--card-border);*/
-}
-        
-
-/* Alternative: More organic leaf shape 
-.small-share-btn {
-    background: var(--button-secondary);
-    color: white;
-    border: none;
-    padding: 4px 12px 6px 12px;
-    border-radius: 50% 0 50% 50%;
-    font-size: 0.8em;
-    cursor: pointer;
-    transition: all 0.2s;
-    opacity: 0.8;
-    position: relative;
-    transform: rotate(-5deg);
-}*/
-
-/* Add subtle leaf vein with gradient 
-.small-share-btn:hover {
-    opacity: 1;
-    background: linear-gradient(
-        to bottom right,
-        var(--button-hover) 0%,
-        var(--button-secondary) 100%
-    );
-    transform: translateY(-1px) rotate(-5deg);
-}*/
-
-/* Dark mode 
 [data-theme="dark"] .small-share-btn {
     background: var(--button-bg);
 }
-
-[data-theme="dark"] .small-share-btn:hover {
-    background: linear-gradient(
-        to bottom right,
-        var(--button-hover) 0%,
-        var(--button-bg) 100%
-    );
-}  alternative leaf share button end*/
         
-/* Small share button */
-.small-share-btn {
-    background: var(--button-secondary);
-    color: white;
-    border: none;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 0.8em;
-    cursor: pointer;
-    transition: all 0.2s;
-    opacity: 0.8;
-}
-
-.small-share-btn:hover {
-    opacity: 1;
-    background: var(--button-hover);
-    transform: translateY(-1px);
-}
-
-/* Dark mode */
-[data-theme="dark"] .small-share-btn {
-    background: var(--button-bg);
-}
-
-/* Poem share button */
-.poem-response .entry-footer {
-    margin-top: 2px;
-}
-
-/* Remove time from date */
-.entry-date span:first-child {
-    color: var(--text-secondary);
-    font-size: 0.9em;
-}
-        
-    /* ============== DARK MODE - COLOR CHANGE ONLY ================= */
-
-    /* === APPLY COLORS TO EXISTING STRUCTURE === */
-
 [data-theme="dark"] .music-toggle {
     border-color: var(--text-primary);
     color: var(--text-primary);
@@ -664,7 +615,7 @@
 [data-theme="dark"] .principle-badge:hover {
     background: var(--principle-bg);
     border-left-color: var(--principle-border);
-    transform: translateX(5px); 
+    transform: translateX(5px); /* ADD BACK slight movement */
     position: relative; /* Keep for eclipse effect */
 }
 
@@ -853,78 +804,28 @@
             align-items: center;
         }
     }
-    
+        
     </style>
     
 </head>
 <body> 
     <div class="container">
-        
-        <!--<header style="text-align: center;">  <!--next to title
-    <div style="display: inline-flex; align-items: flex-end/*center*/; gap: 5px;">
-        <h1 id="app-title" style="margin: 0;">
-            🌳 <span id="title-text">Forest of Support</span>
-        </h1>
-        <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds" 
-                style="flex-shrink: 0;">
-            🎵
-        </button>
-    </div>
-        </header>-->
-
-        
         <header> <!--bottom of title -->
-    <h1 id="app-title">
+            <h1 id="app-title">
         🌳 <span id="title-text">Forest of Support</span>
-    </h1>
-    <div style="position: relative; text-align: center;">
-        <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds">
+            </h1>
+            <div style="position: relative; text-align: center;">
+                <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds">
             🎵
-        </button>
-    </div>
-        </header>
-
-        
-       <!-- <header style="text-align: center;"> 
-    <div style="display: flex; justify-content: center; align-items: center; gap: 2px;">
-        <h1 id="app-title" style="margin: 0; white-space: nowrap;">
-            🌳 <span id="title-text">Forest of Support</span>
-        </h1>
-        <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds">
-            🎵
-        </button>
-    </div>
-    
-    <p class="tagline" id="app-tagline">A digital sanctuary with contextual poetic wisdom</p>
-    <p id="app-subtitle">Your journal receives personalized healing poems</p>
-        </header> -->
-      
-      
-       <!-- <header style="text-align: center;">  // on bottom of title
-    <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <h1 id="app-title" style="margin: 0;">
-            🌳 <span id="title-text">Forest of Support</span>
-        </h1>
-        <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds" 
-                style="flex-shrink: 0;">
-            🎵
-        </button>
-    </div>
-        </header> -->
-    
-        <!--<header> // on top of title
-        <div style="position: relative; text-align: center;">
-        <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds" 
-                style="position: absolute; left: 10px/*20px*/; top: 50%; transform: translateY(-50%);">
-            🎵
-        </button>
-        <h1 id="app-title">
-            🌳 <span id="title-text">Forest of Support</span>
-        </h1>
+                </button>
             </div>
+        </header>
+        
+        <!--<header>
+            <h1 id="app-title">🌳 Forest of Support</h1>
             <p class="tagline" id="app-tagline">A digital sanctuary with contextual poetic wisdom</p>
             <p id="app-subtitle">Your journal receives personalized healing poems</p>
-           </header>-->
+        </header>-->
          
             
         <!-- Navigation -->
@@ -962,9 +863,11 @@
             <input type="text" id="treeName" placeholder="Enter your tree's name..." 
                    style="width: 100%; padding: 15px; margin: 20px 0; font-size: 1.2em; border: 2px solid #b8d8a8; border-radius: 10px; text-align: center;">
             
+          
             <div class="tree-display" id="seedPreview">
                 <pre style="font-size: 1.3em; line-height: 1.4; text-align: center;"></pre>
             </div>
+           
             
             <div style="text-align: center;">
                 <button onclick="plantTree()" id="plant-btn">🌱 Plant My Tree</button>
@@ -1033,7 +936,7 @@
                 <div class="tree-name-display" id="treeNameDisplay">
                     No tree planted yet
                 </div>
-
+                
                 <div class="tree-display" id="mainTreeDisplay">
                     <pre id="treeAscii" style="font-size: 1.0em; line-height: 1.3;">Plant a tree to begin your journey</pre>
                 </div>
@@ -1065,12 +968,10 @@
                 
                 <div style="text-align: center; margin-top: 30px;">
                     <button onclick="showCard('practice')" id="start-practice-btn">Start Daily Practice</button>
-                    <!-- ===1.5 canopy <button onclick="showCanopyCard()" id="become-canopy-btn" style="display: none;">🌤️ Become Canopy</button>-->
-                    <!-- 1.5 canopy--><button onclick="showCanopyCard()" id="become-canopy-btn" style="display: none;"></button>
+                    <button onclick="showCanopyCard()" id="become-canopy-btn" style="display: none;"></button>
                 </div>
             </div>
         </div>
-        
         
         <!-- Journal Card -->
         <div id="journal" class="card">
@@ -1093,8 +994,8 @@
                 </div>
             </div>
         </div>
-
-        <!-- 1.5  Canopy Card -->
+        
+        <!-- Canopy Card -->
 <div id="canopy" class="card">
     <h2 id="canopy-title">🌤️ Wisdom Canopy</h2>
     <p id="canopy-subtitle">How the ancient tree offers shelter, not shadow</p>
@@ -1117,7 +1018,6 @@
     <div id="canopyStep2" class="step" style="display: none;">
         <h3 id="canopy-step2-title">2. Practice Insight</h3>
         <div id="canopyExerciseContent" class="exercise-box">
-            <!-- Insight and practice will load here -->
         </div>
         <div style="text-align: center; margin-top: 20px;">
             <button onclick="canopyPrevStep()" id="canopyPrevBtn">← Previous</button>
@@ -1147,12 +1047,10 @@
         
         <div style="text-align: center; margin-top: 30px;">
             <button onclick="showJournalAndScrollToNewest()" id="canopyViewJournalBtn">View in Journal</button>
-           <!-- <button onclick="showCard('journal')" id="canopyViewJournalBtn">View in Journal →</button>-->
             <button onclick="resetCanopyPractice()" class="secondary">New Practice</button>
         </div>
     </div>
 </div>
-        
    
        <!-- Replace your current footer -->
 <footer>
@@ -1164,7 +1062,7 @@
         <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">🌙</button>
     </div>
     
-    <p id="footer-version">🌿 Forest of Support v1.4 • Digital Healing Sanctuary</p>
+    <p id="footer-version">🌿 Forest of Support v1.5 • Digital Healing Sanctuary</p>
     <p id="footer-creator">Created by DeepSeek & Geoni</p>
     <p id="footer-data">Your data stays in your browser • Share with #ForestOfSupport #HealLikeATree</p>
     <p>
@@ -1180,7 +1078,6 @@
            📱 <span id="install-text">Install App</span>
         </button>
 </footer> 
-        
     </div>
 
     <!-- poems data 1.0 -->
@@ -1194,7 +1091,7 @@
         const APP_VERSION = '1.5';
         const VERSION_KEY = 'forestAppVersion';
         const LANG_KEY = 'forestLanguage';
-
+        
         // Replace the removed objects with these references:
         const poeticWisdom = window.POETIC_WISDOM_EXPORT;
         const canopyWisdom = window.CANOPY_WISDOM_EXPORT;
@@ -1222,7 +1119,6 @@
         
         let currentStep = 1;
         let selectedPrinciple = null;
-        //  canopy 
         let canopyCurrentStep = 1;
         let selectedCanopyInsight = null;
         
@@ -1279,8 +1175,8 @@
                 statStageLabel: "Tree Stage",
                 statJournalsLabel: "Journal Entries",
                 statPoemsLabel: "Poems Received",
-
-                // canopy 
+                
+                // Canopy 
                 canopyTitle: "🌤️ Wisdom Canopy",
                 canopySubtitle: "How the ancient tree offers shelter, not shadow",
                 canopyCompleteBtn: "Complete Practice",
@@ -1291,7 +1187,7 @@
                 canopyStep3Title: "3. Write Your Offering",
                 canopyStep3Text: "Reflect on the practice. What will you offer?",
                 canopyJournalPlaceholder: "Write your response here...",
-
+                
                 // Journal card
                 journalTitle: "📖 Your Tree Journal",
                 journalSubtitle: "Each entry receives a contextual poem that responds to your words.",
@@ -1310,7 +1206,7 @@
                 footerQuote: "\"The wound is where the light enters you.\" - Rumi",
                 footerCreator: "Created by DeepSeek & Geoni",
                 footerBook: "Geoni's Book",
-
+                
                 // Alerts and messages
                 alertNameTree: "Please name your tree first.",
                 alertTreePlanted: "🌳 {name} has been planted!",
@@ -1328,7 +1224,7 @@
                 // Update message
                 updateTitle: "📋 Update v{version}",
                 // updateNewPoem: "<strong>New Poem System:</strong>",
-                // updateList: "<li>Poems won't repeat until you've seen all in a category</li><li>Better matching to your journal words</li><li>Tracks which poems you've received</li><li>Prioritizes poems related to your latest practice</li>",
+                updateList: "<li>Share button added in journal</li><li>Canopy button added in MyForest after 21 rings</li>",
                 updatePreserved: "Your existing journal entries and tree progress are preserved."
             },
             
@@ -1382,8 +1278,8 @@
                 statStageLabel: "ხის სტადია",
                 statJournalsLabel: "დღიურის ჩანაწერი",
                 statPoemsLabel: "მიღებული ლექსი",
-
-                //  canopy
+                
+                // Canopy
                 canopyTitle: "🌤️ საჩრდილობელი",
                 canopySubtitle: "ბებერი ხე თავშესაფარს გვთავაზობს, მხოლოდ ჩრდილს კი არა",
                 canopyCompleteBtn: "დაასრულეთ ვარჯიში",
@@ -1394,7 +1290,7 @@
                 canopyStep3Title: "3. შესაწირი წერილი",
                 canopyStep3Text: "დაფიქრდით ვარჯიშზე. რა იქნება თქვენი წვლილი?",
                 canopyJournalPlaceholder: "დაწერეთ თქვენი პასუხი აქ...",
-
+                
                 // Journal card
                 journalTitle: "📖 თქვენი ხის დღიური",
                 journalSubtitle: "თითოეულ ჩანაწერს მოჰყვება შესაბამისი ლექსი, რომელიც თქვენს სიტყვებს და ვარჯიშებს ეხმაურება.",
@@ -1430,8 +1326,8 @@
                 
                 // Update message
                 updateTitle: "📋 განახლება v{version}",
-              //  updateNewPoem: "<strong>ახალი პოემის სისტემა:</strong>",
-             //   updateList: "<li>ლექსები არ განმეორდება სანამ ყველას არ ნახავთ კატეგორიაში</li><li> უკეთესი შესაბამისობა თქვენს დღიურის სიტყვებთან</li><li>აკონტროლებს რომელი პოემები მიიღეთ</li><li>პრიორიტეტს ანიჭებს პოემებს, რომლებიც დაკავშირებულია თქვენს ბოლო პრაქტიკასთან</li>",
+               // updateNewPoem: "<strong>ახალი პოემის სისტემა:</strong>",
+                updateList: "<li>დაემატა გაზიარების ღილაკი დღიურში</li><li>დაემატა საჩრდილობელი 21 რგოლიდან ჩემს ტყეში</li>",
                 updatePreserved: "თქვენი არსებული დღიურის ჩანაწერები და ხის პროგრესი შენარჩუნებულია."
             }
         };
@@ -1685,8 +1581,8 @@
                 }
             ]
         };
-
-        // ================ KEYWORDS FOR CONTEXTUAL MATCHING ================
+        
+        // ==================== KEYWORDS FOR CONTEXTUAL MATCHING ====================
         
         const categoryKeywords = {
             en: {
@@ -1772,7 +1668,7 @@
 /_________________________\\
         ||||||||
      ~~~~~~~~~~~~~~`*/
-   ],
+    ],
     
     ge: [
         `🌱
@@ -1928,25 +1824,20 @@
                 document.body.classList.remove('georgian-lang');
             }
             
-            // Update UI
             updateUI();
             
-            // Update principles display
             loadPrinciples();
             
-            // Update seed preview
             updateSeedPreview();
             
             // Update practice card if needed
             if (document.getElementById('practiceContent').style.display !== 'none') {
                 updatePracticeCard();
             }
-    
-            // 1.5 canopy
             // If canopy card is active, reload its wisdom buttons
-    if (document.getElementById('canopy')?.classList.contains('active')) {
-        initCanopyPractice(); 
-    }
+            if (document.getElementById('canopy')?.classList.contains('active')) {
+                initCanopyPractice(); 
+            }
         }
 
 
@@ -2020,7 +1911,6 @@
     safeUpdate('stat-stage-label', 'textContent', t.statStageLabel);
     safeUpdate('stat-journals-label', 'textContent', t.statJournalsLabel);
     safeUpdate('stat-poems-label', 'textContent', t.statPoemsLabel);
-    // canopy 
     safeUpdate('become-canopy-btn', 'textContent', t.becomeCanopyBtn);
             
     // Update journal card
@@ -2040,41 +1930,39 @@
     safeUpdate('install-text', 'textContent', t.installBtn);
     safeUpdate('footer-creator', 'textContent', t.footerCreator);
     safeUpdate('footer-book', 'textContent', t.footerBook);
+            
+    // Update canopy card titles
+    safeUpdate('canopy-title', 'textContent', t.canopyTitle);
+    safeUpdate('canopy-subtitle', 'textContent', t.canopySubtitle);
+    safeUpdate('canopy-step1-title', 'textContent', t.canopyStep1Title);
+    safeUpdate('canopy-step1-text', 'textContent', t.canopyStep1Text);
+    safeUpdate('canopy-step2-title', 'textContent', t.canopyStep2Title);
+    safeUpdate('canopy-step3-title', 'textContent', t.canopyStep3Title);
+    safeUpdate('canopy-step3-text', 'textContent', t.canopyStep3Text);
+    safeUpdate('canopyJournal', 'placeholder', t.canopyJournalPlaceholder);
 
-    // canopy :
-// Update canopy card titles
-safeUpdate('canopy-title', 'textContent', t.canopyTitle);
-safeUpdate('canopy-subtitle', 'textContent', t.canopySubtitle);
-safeUpdate('canopy-step1-title', 'textContent', t.canopyStep1Title);
-safeUpdate('canopy-step1-text', 'textContent', t.canopyStep1Text);
-safeUpdate('canopy-step2-title', 'textContent', t.canopyStep2Title);
-safeUpdate('canopy-step3-title', 'textContent', t.canopyStep3Title);
-safeUpdate('canopy-step3-text', 'textContent', t.canopyStep3Text);
-safeUpdate('canopyJournal', 'placeholder', t.canopyJournalPlaceholder);
+    // Update canopy buttons
+    safeUpdate('canopyNextBtn1', 'textContent', t.nextBtn);
+    safeUpdate('canopyPrevBtn', 'textContent', t.prevBtn);
+    safeUpdate('canopyNextBtn2', 'textContent', t.nextBtn);
+    safeUpdate('canopyPrevBtn2', 'textContent', t.prevBtn);
+    safeUpdate('canopyCompleteBtn', 'textContent', t.canopyCompleteBtn);
+    safeUpdate('canopyViewJournalBtn', 'textContent', t.viewJournalBtn || 'View in Journal');
 
-// Update canopy buttons
-safeUpdate('canopyNextBtn1', 'textContent', t.nextBtn);
-safeUpdate('canopyPrevBtn', 'textContent', t.prevBtn);
-safeUpdate('canopyNextBtn2', 'textContent', t.nextBtn);
-safeUpdate('canopyPrevBtn2', 'textContent', t.prevBtn);
-safeUpdate('canopyCompleteBtn', 'textContent', t.canopyCompleteBtn);
-safeUpdate('canopyViewJournalBtn', 'textContent', t.viewJournalBtn || 'View in Journal');
-
-// Update canopy status message
-const statusElement = document.getElementById('canopyStatus');
-if (statusElement) {
-    statusElement.textContent = currentLanguage === 'ge' 
+    // Update canopy status message
+    const statusElement = document.getElementById('canopyStatus');
+    if (statusElement) {
+        statusElement.textContent = currentLanguage === 'ge' 
         ? 'აირჩიეთ საჩრდილობლის შეხედულება' 
         : 'Select a canopy insight to begin practice';
-}
+    }
 
-// Update the "New Practice" button in canopy result
-const canopyNewPracticeBtn = document.querySelector('#canopyResult button.secondary');
-if (canopyNewPracticeBtn) {
-    canopyNewPracticeBtn.textContent = currentLanguage === 'ge' ? 'ახალი ვარჯიში' : 'New Practice';
-}
-    // ==== 1.5 canopy end  ==== 
-    
+    // Update the "New Practice" button in canopy result
+    const canopyNewPracticeBtn = document.querySelector('#canopyResult button.secondary');
+    if (canopyNewPracticeBtn) {
+        canopyNewPracticeBtn.textContent = currentLanguage === 'ge' ? 'ახალი ვარჯიში' : 'New Practice';
+    }
+            
     // Update tree display if no tree
     if (!myTree.name) {
         safeUpdate('treeNameDisplay', 'textContent', t.noTree);
@@ -2097,8 +1985,8 @@ if (canopyNewPracticeBtn) {
       intention`,
         
                 ge: `       🌱
-     ნერგი
-  შთანერგვით
+    ნერგი
+   შთანერგვით
     ირგვება`
             };
     
@@ -2125,7 +2013,7 @@ if (canopyNewPracticeBtn) {
         }
         
         // ==================== CORE APP FUNCTIONS ====================
-
+        
   function showCard(cardId) {
     console.log("showCard called:", cardId);
     
@@ -2679,14 +2567,11 @@ function canopyNextStep() {
         alert(t.alertSelectPrinciple);
         return;
     }
-    
     // Hide current step
     document.getElementById(`canopyStep${canopyCurrentStep}`).style.display = 'none';
-    
     // Show next step
     canopyCurrentStep++;
     document.getElementById(`canopyStep${canopyCurrentStep}`).style.display = 'block';
-    
     // Load insight and practice if going to step 2
     if (canopyCurrentStep === 2 && selectedCanopyInsight) {
         const insights = canopyWisdom[currentLanguage];
@@ -2740,7 +2625,7 @@ function completeCanopyPractice() {
     const insights = canopyWisdom[currentLanguage];
     const insight = insights.find(i => i.id === selectedCanopyInsight);
     
-    // Save to journals - ONLY user's response (not the insight)
+    // Save to journals - ONLY user's response
     myTree.journals.push({
         date: new Date().toLocaleString(),
         text: responseText,
@@ -2750,9 +2635,6 @@ function completeCanopyPractice() {
         insightId: insight.id,
         principle: insight.title
     });
-    
-    // Update stats
-  //  myTree.poemsReceived++;
     
     saveTree();
     
@@ -2775,7 +2657,7 @@ function resetCanopyPractice() {
     initCanopyPractice();
 }
 
-/*function showJournalAndScrollToNewest() {
+function showJournalAndScrollToNewest() {
     showCard('journal');
     
     // Wait for journal to load, then scroll to top (newest entries are at top)
@@ -2808,20 +2690,7 @@ function resetCanopyPractice() {
             }
         }
     }, 300);
- }   */   
-function showJournalAndScrollToNewest() {
-    showCard('journal');
-    
-    // Simple: Just scroll the journal card to top
-    setTimeout(() => {
-        window.scrollTo({
-            top: document.getElementById('journal').offsetTop,
-            behavior: 'smooth'
-        });
-    }, 100);
-}
-// canopy functions end 
-
+ }      
         
         function saveJournalEntry() {
             const t = TEXT[currentLanguage];
@@ -2869,9 +2738,7 @@ function showJournalAndScrollToNewest() {
             }
         }
 
-
-        //  canopy
-       function loadJournalEntries() {
+    function loadJournalEntries() {
     const container = document.getElementById('journalEntries');
     const t = TEXT[currentLanguage];
     container.innerHTML = "";
@@ -2895,10 +2762,8 @@ function showJournalAndScrollToNewest() {
             container.innerHTML += `
                 <div class="journal-entry">
                     <div class="entry-date">
-                       <!-- <span>${entry.date}</span>-->
                         <span>${entry.date.split(',')[0]}</span>
                         <span style="text-align: right;">🌤️ ${entry.principle || entry.title}</span>
-                      <!--  <span>🌤️ ${entry.principle || entry.title}</span>-->
                     </div>
                     <p>${entry.text}</p>
                     <!--<p style="font-style: italic; margin-top: 10px; color: var(--text-secondary);">
@@ -2916,10 +2781,8 @@ function showJournalAndScrollToNewest() {
             container.innerHTML += `
                 <div class="journal-entry">
                     <div class="entry-date">
-                        <!-- <span>${entry.date}</span>-->
                         <span>${entry.date.split(',')[0]}</span>
                         <span style="${isPractice ? 'text-align: right;' : ''}">${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}</span>
-                       <!-- <span>${isPractice ? '📿 ' + entry.principle : '📖 ' + (currentLanguage === 'en' ? 'Journal' : 'დღიური')}</span>-->
                     </div>
                     <p>${entry.text}</p>
                     <div class="entry-footer">
@@ -2941,7 +2804,7 @@ function showJournalAndScrollToNewest() {
             }
         }
     });
-       }
+    }
 
 function shareEntry(entryIndex, sharePoemOnly = false) {
     const entry = myTree.journals[entryIndex];
@@ -2984,7 +2847,7 @@ function copyToClipboard(text) {
         ? '📋 კოპირებულია!'
         : '📋 Copied!');
 }
-
+        
         function clearJournal() {
             document.getElementById('newJournalEntry').value = "";
         }
@@ -3016,16 +2879,16 @@ function copyToClipboard(text) {
             document.getElementById('statStage').textContent = myTree.stage;
             document.getElementById('statJournals').textContent = myTree.journals.length;
             document.getElementById('statPoems').textContent = myTree.poemsReceived;
-            
+
             // Show/hide canopy button based on rings
-    const canopyBtn = document.getElementById('become-canopy-btn');
-    if (canopyBtn) {
-        if (myTree.rings >= 21 && myTree.name) {
-            canopyBtn.style.display = 'inline-block';
-        } else {
-            canopyBtn.style.display = 'none';
-        }
-    }
+            const canopyBtn = document.getElementById('become-canopy-btn');
+            if (canopyBtn) {
+                if (myTree.rings >= 21 && myTree.name) {
+                    canopyBtn.style.display = 'inline-block';
+                } else {
+                    canopyBtn.style.display = 'none';
+                }
+            } 
         }
         
         function updateDisplay() {
@@ -3060,67 +2923,36 @@ function copyToClipboard(text) {
                 if (savedVersion) {
                     setTimeout(() => {
                         // TEMPORARILY disable service worker notifications
-                        sessionStorage.setItem('suppressServiceWorkerUpdate', 'true');
+                        // sessionStorage.setItem('suppressServiceWorkerUpdate', 'true');
                         const t = TEXT[currentLanguage];
-                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'share button and canopy' : 'გაზიარების ღილაკი, საჩრდილობელი'}\n\n${t.updatePreserved}`;
-                        alert(updateMsg);
-                       /* if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
+                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Share button & Canopy' : 'გაზიარების ღილაკი და საჩრდილობელი'}`;
+                        if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
                             showCard('welcome');
                             document.getElementById('welcome').innerHTML += `
                                 <div class="step" style="background: #f0f7f0; margin-top: 20px;">
                                     <h3>${t.updateTitle.replace('{version}', APP_VERSION)}</h3>
-                                    <p>${t.updateNewPoem}</p>
+                                   <!-- <p>${t.updateNewPoem}</p>-->
                                     <ul style="padding-left: 20px; margin: 10px 0;">
                                         ${t.updateList}
                                     </ul>
                                     <p>${t.updatePreserved}</p>
                                 </div>
                             `;
-                        }*/
-                         // Re-enable after 10 seconds
-                        setTimeout(() => {
+                        }
+                        // alert(updateMsg); \n\n${t.updatePreserved}
+                        // Re-enable after 10 seconds
+                        /*setTimeout(() => {
                             sessionStorage.removeItem('suppressServiceWorkerUpdate');
-                        }, 10000);
+                        }, 10000);*/
                     }, 2000);
                 }
             }
         }
-        
     </script>
-
-
-<!-- <script>
-// 2. Add this JavaScript
-let forestAudio = null;
-let isPlaying = false;
-
-document.getElementById('music-toggle').addEventListener('click', function() {
-    if (!forestAudio) {
-        forestAudio = new Audio('https://files.catbox.moe/dgid57.mp3');
-        forestAudio.loop = true;
-        forestAudio.volume = 0.3;
-    }
-    
-    if (isPlaying) {
-        forestAudio.pause();
-        this.innerHTML = '🎵';
-        this.style.background = 'transparent';
-    } else {
-        forestAudio.play().catch(e => {
-            alert('Click "Allow" if browser asks for audio permission');
-        });
-        this.innerHTML = '🔊';
-        this.style.background = '#4a7c3f';
-        this.style.color = 'white';
-    }
-    isPlaying = !isPlaying;
-});
-</script>-->
-    
     
     <script>
 
-// ==================== AMBIENT SOUND PLAYER ====================
+        // ==================== AMBIENT SOUND PLAYER ====================
  
     const audioManager = {
     audio: null,
@@ -3132,11 +2964,11 @@ document.getElementById('music-toggle').addEventListener('click', function() {
         // 'https://files.catbox.moe/n75sd5.mp3' cleared
         // 'https://files.catbox.moe/fw3nxk.mp3' ++volume
         // 'https://files.catbox.moe/dgid57.mp3' old
-        // 'https://cdn.jsdelivr.net/gh/tree2026/Digital-forest-of-support/birdsong.mp3'
+        // 'https://cdn.jsdelivr.net/gh/tree2026/Forest-of-support/birdsong.mp3'
         // 'https://cdn.pixabay.com/download/audio/2022/03/15/audio_45a3a2c8a9.mp3?filename=forest-with-small-birds-wind-rain-13223.mp3'
         // 'https://assets.mixkit.co/sfx/download/mixkit-forest-birds-1575.mp3'
-        // 'https://tree2026.github.io/Digital-forest-of-support/birdsong.mp3'
-        // 'https://raw.githubusercontent.com/tree2026/Digital-forest-of-support/main/birdsong.mp3'
+        // 'https://tree2026.github.io/Forest-of-support/birdsong.mp3'
+        // 'https://raw.githubusercontent.com/tree2026/Forest-of-support/main/birdsong.mp3'
         // birds: 'audio/forest-birdsong.mp3'
     },
     
@@ -3251,7 +3083,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => audioManager.init(), 500);
 }); 
 
-
         
     // ==================== PWA SERVICE WORKER REGISTRATION ====================
     if ('serviceWorker' in navigator) {
@@ -3317,9 +3148,9 @@ if ('serviceWorker' in navigator) {
 // Unified update notification function
 function showUpdateNotification() {
     // Check if suppressed
-    if (sessionStorage.getItem('suppressServiceWorkerUpdate')) {
+    /*if (sessionStorage.getItem('suppressServiceWorkerUpdate')) {
         return;
-    }
+    }*/
     // Prevent multiple notifications
     if (sessionStorage.getItem('updateNotificationShown')) {
         return;
@@ -3358,10 +3189,9 @@ function showUpdateNotification() {
     }, 1500);
 }
 
-// ========== PERIODIC UPDATE CHECKS offline ================
+// ========== PERIODIC UPDATE CHECKS offline
 
 if ('serviceWorker' in navigator) {
-    // Function to check for updates
     function checkForUpdates() {
         if (!navigator.onLine) return;
         
@@ -3380,17 +3210,14 @@ if ('serviceWorker' in navigator) {
     // Check when app becomes visible/refocused
     document.addEventListener('visibilitychange', () => {
         if (!document.hidden) {
-            setTimeout(checkForUpdates, 1000); // Small delay
+            setTimeout(checkForUpdates, 1000); 
         }
     });
     
-    // Check every 12 hours (instead of 24)
     setInterval(checkForUpdates, 12 * 60 * 60 * 1000);
-    
-    // Initial check after 5 seconds
     setTimeout(checkForUpdates, 5000);
 }
-
+       
 // Clear update flag on new session
 window.addEventListener('beforeunload', () => {
     sessionStorage.removeItem('updateNotificationShown');
@@ -3425,5 +3252,5 @@ window.addEventListener('beforeunload', () => {
        
    </script>
 
-</body>
-</html>
+</body> 
+            </html>
