@@ -538,6 +538,29 @@
     color: var(--text-secondary);
     font-size: 0.9em;
     }
+        /* 1.6 Clear data button */
+#clear-data-btn {
+    background: var(--button-secondary) !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 50px !important;
+    font-size: 0.9em !important;
+    margin-top: 15px !important;
+    opacity: 0.8 !important;
+}
+
+#clear-data-btn:hover {
+    background: var(--button-hover) !important;
+    opacity: 1 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Dark mode */
+[data-theme="dark"] #clear-data-btn {
+    background: var(--button-bg) !important;
+} /* 1.6 clear button end */
+        
     /* ==================== DARK MODE - COLOR CHANGE ONLY ==================== */
 
     /* === APPLY COLORS TO EXISTING STRUCTURE === */
@@ -969,6 +992,10 @@
                 <div style="text-align: center; margin-top: 30px;">
                     <button onclick="showCard('practice')" id="start-practice-btn">Start Daily Practice</button>
                     <button onclick="showCanopyCard()" id="become-canopy-btn" style="display: none;"></button>
+                    <button onclick="clearAllData()" class="secondary" id="clear-data-btn" 
+                        style="margin-top: 15px; background: var(--button-secondary);">
+                        🗑️ Clear All Data
+                    </button>
                 </div>
             </div>
         </div>
@@ -1175,6 +1202,10 @@
                 statStageLabel: "Tree Stage",
                 statJournalsLabel: "Journal Entries",
                 statPoemsLabel: "Poems Received",
+                clearDataBtn: "Clear All Data",
+                clearDataConfirm: "Clear all tree progress and journal entries? This cannot be undone. You can plant a new tree afterward.",
+                clearDataConfirmBtn: "Yes, Clear Everything",
+                clearDataCancel: "Cancel",
                 
                 // Canopy 
                 canopyTitle: "🌤️ Wisdom Canopy",
@@ -1278,6 +1309,10 @@
                 statStageLabel: "ხის სტადია",
                 statJournalsLabel: "დღიურის ჩანაწერი",
                 statPoemsLabel: "მიღებული ლექსი",
+                clearDataBtn: "🗑️ ყველაფრის გასუფთავება",
+                clearDataConfirm: "წავშალოთ ხის პროგრესი და დღიურის ჩანაწერები? ეს შეუქცევადია. შემდეგ შეგიძლიათ ახალი ხე დარგოთ.",
+                clearDataConfirmBtn: "დიახ, გავასუფთავო",
+                clearDataCancel: "გაუქმება",
                 
                 // Canopy
                 canopyTitle: "🌤️ საჩრდილობელი",
@@ -1912,6 +1947,7 @@
     safeUpdate('stat-journals-label', 'textContent', t.statJournalsLabel);
     safeUpdate('stat-poems-label', 'textContent', t.statPoemsLabel);
     safeUpdate('become-canopy-btn', 'textContent', t.becomeCanopyBtn);
+    safeUpdate('clear-data-btn', 'textContent', t.clearDataBtn);
             
     // Update journal card
     safeUpdate('journal-title', 'textContent', t.journalTitle);
@@ -2889,6 +2925,15 @@ function copyToClipboard(text) {
                     canopyBtn.style.display = 'none';
                 }
             } 
+            // Add this after canopy button hide/show logic:
+            const clearBtn = document.getElementById('clear-data-btn');
+            if (clearBtn) {
+                if (myTree.name) {
+                    clearBtn.style.display = 'inline-block';
+                } else {
+                    clearBtn.style.display = 'none';
+                }
+            }
         }
         
         function updateDisplay() {
@@ -2899,6 +2944,46 @@ function copyToClipboard(text) {
             localStorage.setItem('forestTree', JSON.stringify(myTree));
         }
 
+        // 1.6 clear button
+        function clearAllData() {
+            const t = TEXT[currentLanguage];
+            // Create custom confirmation dialog
+            const confirmed = confirm(
+                `⚠️ ${t.clearDataConfirm}\n\n` +
+                `• Tree: ${myTree.name || "No tree"}\n` +
+                `• Growth Rings: ${myTree.rings}\n` +
+                `• Journal Entries: ${myTree.journals.length}\n` +
+                `• Poems Received: ${myTree.poemsReceived}`
+            );
+    
+            if (confirmed) {
+                myTree = {
+                    name: "",
+                    plantedDate: "",
+                    rings: 0,
+                    stage: 1,
+                    journals: [],
+                    practices: [],
+                    poemsReceived: 0,
+                    lastPracticePrinciple: null,
+                    poemUsage: {},
+                    shownPoemsByCategory: {
+                        rooting: [], bark: [], rings: [], release: [], reaching: [],
+                        network: [], bending: [], shape: [], seasons: [], wholeness: [],
+                        patience: [], presence: []
+                    }
+                };
+                saveTree();
+                updateForestCard();
+                loadJournalEntries();
+                alert(currentLanguage === 'ge' 
+                      ? '✅ მონაცემები გასუფთავდა! შეგიძლიათ ახალი ხე დარგოთ.'
+                      : '✅ Data cleared! You can plant a new tree.'
+                     );
+                // Go to plant tree card
+                showCard('plant');
+            }
+        } // 1.6 end
         
         function checkAppVersion() {
             const savedVersion = localStorage.getItem(VERSION_KEY);
