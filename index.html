@@ -539,42 +539,37 @@
     font-size: 0.9em;
     }
 
-        /* Arrow in Triangle */
+        /* Triangle Clear Button */
 #clear-data-btn {
     background: var(--button-secondary) !important;
     color: white !important;
     border: none !important;
-    padding: 15px 25px !important;
-    border-radius: 10px !important;
-    font-size: 1em !important;
+    padding: 12px 0 !important; /* Less horizontal padding */
+    border-radius: 0 0 10px 10px !important; /* Only round bottom corners */
+    font-size: 0.9em !important;
     margin-top: 15px !important;
     opacity: 0.8 !important;
+    width: 120px !important; /* Fixed width */
     position: relative !important;
-    overflow: hidden !important;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%) !important; /* Triangle shape */
+    height: 60px !important; /* Triangle height */
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    padding-bottom: 15px !important; /* Push text down */
 }
 
-/* Triangle overlay */
-#clear-data-btn::before {
-    content: '' !important;
-    position: absolute !important;
-    top: -10px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 0 !important;
-    height: 0 !important;
-    border-left: 15px solid transparent !important;
-    border-right: 15px solid transparent !important;
-    border-bottom: 15px solid rgba(0,0,0,0.2) !important;
+#clear-data-btn:hover {
+    background: var(--button-hover) !important;
+    opacity: 1 !important;
+    transform: translateY(-2px) !important;
 }
 
-#clear-data-btn:hover::before {
-    border-bottom-color: rgba(0,0,0,0.3) !important;
+/* Dark mode */
+[data-theme="dark"] #clear-data-btn {
+    background: var(--button-bg) !important;
 }
 
-/* Dark mode triangle */
-[data-theme="dark"] #clear-data-btn::before {
-    border-bottom-color: rgba(255,255,255,0.2) !important;
-}
         /* 1.6 Clear data button */
 /*#clear-data-btn {
     background: var(--button-secondary) !important;
