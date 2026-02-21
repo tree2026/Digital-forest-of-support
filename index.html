@@ -2997,60 +2997,6 @@ function copyToClipboard(text) {
                 showCard('plant');
             }
         } // 1.6 end
-        
-        function checkAppVersion() {
-            const savedVersion = localStorage.getItem(VERSION_KEY);
-            
-            if (savedVersion !== APP_VERSION) {
-                console.log(`🌳 Updating from v${savedVersion || '1.0'} to v${APP_VERSION}`);
-                
-                // Ensure new properties exist
-                myTree.lastPracticePrinciple = myTree.lastPracticePrinciple || null;
-                myTree.poemUsage = myTree.poemUsage || {};
-                myTree.shownPoemsByCategory = myTree.shownPoemsByCategory || {
-                    rooting: [], bark: [], rings: [], release: [], reaching: [],
-                    network: [], bending: [], shape: [], seasons: [], wholeness: [],
-                    patience: [], presence: []
-                };
-                
-                // Save new version
-                localStorage.setItem(VERSION_KEY, APP_VERSION);
-                saveTree();
-                
-                // Show update message if not first install
-                if (savedVersion) {
-                    setTimeout(() => {
-                        // MARK that version update was shown
-                        sessionStorage.setItem('versionUpdateShown', 'true');
-                        // TEMPORARILY disable service worker notifications
-                       // sessionStorage.setItem('suppressServiceWorkerUpdate', 'true');
-                        const t = TEXT[currentLanguage];
-                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Share button & Canopy' : 'გაზიარების ღილაკი და საჩრდილობელი'}\n\n${t.updatePreserved}`;
-                       /* if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
-                            showCard('welcome');
-                            document.getElementById('welcome').innerHTML += `
-                                <div class="step" style="background: #bfe2a9<!--#f0f7f0-->; margin-top: 20px;">
-                                    <h3>${t.updateTitle.replace('{version}', APP_VERSION)}</h3>
-                                   <!-- <p>${t.updateNewPoem}</p>-->
-                                    <ul style="padding-left: 20px; margin: 10px 0;">
-                                        ${t.updateList}
-                                    </ul>
-                                    <p>${t.updatePreserved}</p>
-                                </div>
-                            `;
-                        }*/
-                        alert(updateMsg); // \n\n${t.updatePreserved}
-                        // Re-enable after 10 seconds
-                        //setTimeout(() => {
-                            //sessionStorage.removeItem('suppressServiceWorkerUpdate');
-                        //}, 10000);
-                    }, 2000);
-                }
-            }
-        }
-    </script>
-    
-    <script>
 
         // ==================== AMBIENT SOUND PLAYER ====================
  
@@ -3182,7 +3128,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize audio manager after a delay
     setTimeout(() => audioManager.init(), 500);
 }); 
+    </script>
+    
 
+    <script>
         
     // ==================== PWA SERVICE WORKER REGISTRATION ====================
     if ('serviceWorker' in navigator) {
@@ -3202,9 +3151,57 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
         });
     }
-    </script>
     
-   <script> 
+       function checkAppVersion() {
+            const savedVersion = localStorage.getItem(VERSION_KEY);
+            
+            if (savedVersion !== APP_VERSION) {
+                console.log(`🌳 Updating from v${savedVersion || '1.0'} to v${APP_VERSION}`);
+                
+                // Ensure new properties exist
+                myTree.lastPracticePrinciple = myTree.lastPracticePrinciple || null;
+                myTree.poemUsage = myTree.poemUsage || {};
+                myTree.shownPoemsByCategory = myTree.shownPoemsByCategory || {
+                    rooting: [], bark: [], rings: [], release: [], reaching: [],
+                    network: [], bending: [], shape: [], seasons: [], wholeness: [],
+                    patience: [], presence: []
+                };
+                
+                // Save new version
+                localStorage.setItem(VERSION_KEY, APP_VERSION);
+                saveTree();
+                
+                // Show update message if not first install
+                if (savedVersion) {
+                    setTimeout(() => {
+                        // MARK that version update was shown
+                        sessionStorage.setItem('versionUpdateShown', 'true');
+                        // TEMPORARILY disable service worker notifications
+                       // sessionStorage.setItem('suppressServiceWorkerUpdate', 'true');
+                        const t = TEXT[currentLanguage];
+                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Share button & Canopy' : 'გაზიარების ღილაკი და საჩრდილობელი'}\n\n${t.updatePreserved}`;
+                       /* if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
+                            showCard('welcome');
+                            document.getElementById('welcome').innerHTML += `
+                                <div class="step" style="background: #bfe2a9<!--#f0f7f0-->; margin-top: 20px;">
+                                    <h3>${t.updateTitle.replace('{version}', APP_VERSION)}</h3>
+                                   <!-- <p>${t.updateNewPoem}</p>-->
+                                    <ul style="padding-left: 20px; margin: 10px 0;">
+                                        ${t.updateList}
+                                    </ul>
+                                    <p>${t.updatePreserved}</p>
+                                </div>
+                            `;
+                        }*/
+                        alert(updateMsg); // \n\n${t.updatePreserved}
+                        // Re-enable after 10 seconds
+                        //setTimeout(() => {
+                            //sessionStorage.removeItem('suppressServiceWorkerUpdate');
+                        //}, 10000);
+                    }, 2000);
+                }
+            }
+       }
    // ==================== UNIFIED UPDATE HANDLER ====================
 // Listen for service worker updates
 if ('serviceWorker' in navigator) {
