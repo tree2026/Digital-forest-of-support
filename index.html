@@ -3161,6 +3161,7 @@ function checkAppVersion() {
                 const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Share button & Canopy' : 'გაზიარების ღილაკი და საჩრდილობელი'}\n\n${t.updatePreserved}`;
                 alert(updateMsg);
                 //localStorage.setItem(`updateShown_${APP_VERSION}`, 'true');
+                sessionStorage.setItem('versionUpdateShown', 'true');
             }, 2000);
         }
     }
@@ -3227,7 +3228,12 @@ if ('serviceWorker' in navigator) {
 // SIMPLE UPDATE NOTIFICATION
 function showSimpleUpdateNotification() {
     // Prevent multiple notifications at same time
-    if (sessionStorage.getItem('updateNotificationShown')) return;
+    //if (sessionStorage.getItem('updateNotificationShown')) return;
+    // Check BOTH flags
+    if (sessionStorage.getItem('updateNotificationShown') || 
+        sessionStorage.getItem('versionUpdateShown')) {
+        return;
+    }
     
     const msg = currentLanguage === 'ge'
         ? '🔄 ახალი ვერსია ხელმისაწვდომია. განაახლებთ?'
