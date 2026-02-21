@@ -3020,11 +3020,13 @@ function copyToClipboard(text) {
                 // Show update message if not first install
                 if (savedVersion) {
                     setTimeout(() => {
+                        // MARK that version update was shown
+                        sessionStorage.setItem('versionUpdateShown', 'true');
                         // TEMPORARILY disable service worker notifications
-                        sessionStorage.setItem('suppressServiceWorkerUpdate', 'true');
+                       // sessionStorage.setItem('suppressServiceWorkerUpdate', 'true');
                         const t = TEXT[currentLanguage];
-                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Share button & Canopy' : 'გაზიარების ღილაკი და საჩრდილობელი'}`;
-                        if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
+                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Share button & Canopy' : 'გაზიარების ღილაკი და საჩრდილობელი'}\n\n${t.updatePreserved}`;
+                       /* if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
                             showCard('welcome');
                             document.getElementById('welcome').innerHTML += `
                                 <div class="step" style="background: #bfe2a9<!--#f0f7f0-->; margin-top: 20px;">
@@ -3036,12 +3038,12 @@ function copyToClipboard(text) {
                                     <p>${t.updatePreserved}</p>
                                 </div>
                             `;
-                        }
-                        // alert(updateMsg); \n\n${t.updatePreserved}
+                        }*/
+                        alert(updateMsg); // \n\n${t.updatePreserved}
                         // Re-enable after 10 seconds
-                        setTimeout(() => {
-                            sessionStorage.removeItem('suppressServiceWorkerUpdate');
-                        }, 10000);
+                        //setTimeout(() => {
+                            //sessionStorage.removeItem('suppressServiceWorkerUpdate');
+                        //}, 10000);
                     }, 2000);
                 }
             }
@@ -3243,8 +3245,52 @@ if ('serviceWorker' in navigator) {
     }, 60 * 60 * 1000); // Check every hour
 }
 
-// Unified update notification function
+// 1.7 Unified update notification function
 function showUpdateNotification() {
+    // Prevent multiple notifications - ADD APP VERSION CHECK
+    if (sessionStorage.getItem('updateNotificationShown') || 
+        sessionStorage.getItem('versionUpdateShown')) {
+        return;
+    }
+    
+    const lang = currentLanguage === 'ge' ? 'ge' : 'en';
+    const messages = {
+        ge: {
+            title: '🔄 ახალი ვერსია ხელმისაწვდომია',
+            message: 'განაახლებთ მხარდაჭერის ტყეს უახლესი ვერსიის მისაღებად?',
+            update: 'განახლება',
+            later: 'მოგვიანებით'
+        },
+        en: {
+            title: '🔄 New Version Available',
+            message: 'Update Forest of Support to get the latest version?',
+            update: 'Update',
+            later: 'Later'
+        }
+    };
+    
+    const msg = messages[lang];
+    
+    // Show after short delay
+    setTimeout(() => {
+        if (confirm(msg.title + '\n\n' + msg.message)) {
+            sessionStorage.setItem('updateNotificationShown', 'true');
+            sessionStorage.setItem('versionUpdateShown', 'true'); // ADD THIS
+            window.location.reload();
+        } else {
+            sessionStorage.setItem('updateNotificationShown', 'true');
+            sessionStorage.setItem('versionUpdateShown', 'true'); // ADD THIS
+            // Clear after 1 hour
+            setTimeout(() => {
+                sessionStorage.removeItem('updateNotificationShown');
+                sessionStorage.removeItem('versionUpdateShown');
+            }, 60 * 60 * 1000);
+        }
+    }, 1500);
+}  // 1.7end
+       
+// Unified update notification function
+/*function showUpdateNotification() {
     // Check if suppressed
     if (sessionStorage.getItem('suppressServiceWorkerUpdate')) {
         return;
@@ -3285,7 +3331,7 @@ function showUpdateNotification() {
             }, 60 * 60 * 1000);
         }
     }, 1500);
-}
+}*/
 
 // ========== PERIODIC UPDATE CHECKS offline
 
