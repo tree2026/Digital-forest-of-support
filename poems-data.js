@@ -84,7 +84,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "reaching_9", poem: "The tree reaches in patient grace\nNot frantic, not in anxious haste\nYour aspirations find their place\nWhen inner peace you have embraced.", sage: "Adopt the pace of nature: her secret is patience. - Emerson" },
             { id: "reaching_10", poem: "Some reaches bend, some reaches break\nSome find the light they seek to know\nYour aspirations for your sake\nWill help your inner being grow.", sage: "The journey of a thousand miles begins with one step. - Lao Tzu" },
             { id: "reaching_11", poem: "The tree reaches not to compete\nBut to fulfill its nature's call\nYour aspirations make complete\nThe purpose that includes it all.", sage: "He who has a why to live can bear almost any how. - Nietzsche" },
-            { id: "reaching_12", poem: "The river does not ask the sea\nTo justify its endless call\nIt simply flows, and willingly\nFinds home in what receives its all.", sage: "The Love that moves the sun and the other stars. - Dante" }
+            { id: "reaching_12", poem: "The river does not ask the sea\nTo justify its endless call\nIt simply flows, and willingly\nFinds home in what receives its all.", sage: "The Love that moves the sun and the stars. - Dante" }
         ],
         
         // Category 6: Network (12 poems) for connection, community, support
@@ -164,7 +164,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "wholeness_8", poem: "What once was wound becomes now strength\nIn wood that grew around the hurt\nYour wholeness will go any length\nTo heal what life may disconcert.", sage: "The soul always knows what to do to heal itself. The challenge is to silence the mind. - Caroline Myss" },
             { id: "wholeness_9", poem: "The tree does not reject its past\nBut builds upon what came before\nYour wholeness will hold fast\nTo all you are and so much more.", sage: "Healing is not about moving on or getting over it. It's about learning to make peace with our pain. - Vironika Tugaleva" },
             { id: "wholeness_10", poem: "Each aspect has its role to play\nIn making up the living whole\nYour wholeness finds its way\nTo integrate the self and soul.", sage: "The privilege of a lifetime is being who you are. - Joseph Campbell" },
-            { id: "wholeness_11", poem: "The tree stands whole in sun and rain\nAccepting all that comes its way\nYour wholeness will sustain\nYou through both night and day.", sage: "You are enough. A thousand times enough. - Unknown" }
+            { id: "wholeness_11", poem: "The tree stands whole in sun and rain\nAccepting all that comes its way\nYour wholeness will sustain\nYou through both night and day.", sage: "You are enough. A thousand times enough. - Unknown" },
+            { id: "wholeness_12", poem: "What was divided now is one\nThe scattered fragments find their place\nThe journey ends where it begun\nAnd time dissolves in endless grace.", sage: "I became what I loved, and in that becoming, I found myself. - Ibn Arabi" },
+            { id: "wholeness_13", poem: "The wound that split the world in two\nReveals the seam where wholeness grows\nFor only broken hearts break through\nTo love that nothing can oppose.", sage: "To see heaven in the mud of the earth - that is the knight's true quest. - Rustaveli" }
         ],
         
         // Category 11: Patience (12 poems) for waiting, timing, slow growth
@@ -267,7 +269,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "release_9", poem: "ტოტი თოვლის სიმძიმეს დაიყრის\nდა ფიფქთან შესახვედრად თავს გაიშლის;\nშენც გაუშვი სიმძიმე და ბედი შეგეცვლება\nისე, რასაც გონება ვერასდროს გაითვლის.", sage: "ზოგი ჩვენგანი ფიქრობს, რომ მოჭიდება გვაძლიერებს, მაგრამ ზოგჯერ ამას გაშვება აკეთებს. - ჰერმან ჰესე" },
             { id: "release_10", poem: "ხე ყოველი ფოთლის წასვლას\nბუნების დიდი გეგმის ნაწილად ისახებს;\nერთი დასასრული შეიძლება შენთვის\nრაიმე სიახლის დასაწყისი გახდეს.", sage: "ყოველი ახალი დასაწყისი სხვა რაიმე დაწყებულის დასასრულიდან მოდის. - სენეკა" },
             { id: "release_11", poem: "ტყეში დაცვენილ ფოთოლში\nახალი თესლი სახლს იპოვის,\nგაუშვი შენც და შეაღე სიბრძნის კარი,\nსახლს გულში იპოვი.", sage: "ცვლილების საიდუმლო იმაშია, რომ მთელი ენერგია მიმართო არა ძველთან საბრძოლველად, არამედ ახლის ასაშენებლად. - სოკრატე" },
-            { id: "release_12", poem: "Release the fist that grips so tight\nAround what never could be kept\nAnd in the opening comes light\nTo warm the places where you wept.", sage: "Love is not comfort, but a fire that consumes. - Rustaveli" }
+            { id: "release_12", poem: "გაშალე მუშტი, ასე მაგრად რიმ იჭერს\nიმას, რაც ხელში არასდროს გაჩერდა,\nგახსნისას სინათლე მოდის და\nათბობს იმ ადგილებს, ცრემლით რომ დასველდა.", sage: "Love is not comfort, but a fire that consumes. - Rustaveli" }
         ],
         
         // Category 5: Reaching (12 poems in Georgian)
@@ -284,7 +286,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "reaching_9", poem: "ხე ტოტს იწვდენს მოთმინებით,\nღელვას, შფოთს, სიჩქარეს მასთან ვერ ნახავ;\nსურვილი, მისწრაფება თავის ადგილს პოვნის,\nროდესაც შინაგან მშვიდობას დანახავ.", sage: "ბუნების ტემპი აითვისე: მისი საიდუმლო მოთმინებაშია. - ემერსონი" },
             { id: "reaching_10", poem: "ზოგი მიღწევა იღუნება, ზოგი მიღწევა ირღვევა,\nზოგი პოულობს სინათლეს, რომლის ცოდნაც სურს\nშენი ლტოლვა-მისწრაფება დაგეხმარება\nგაიზარდო იქამდე, რაც გსურს.", sage: "ათას კილომეტრიანი მოგზაურობა ერთი ნაბიჯით იწყება. - ლაო ძი" },
             { id: "reaching_11", poem: "ხე შეჯიბრისთვის კი არ ემზადება,\nზრდა მას ბუნების ძახილად ეცხადება,\nმისწრაფება მიზნის ძახილით გამოდის,\nრომ შეასრულოს სულს რაც ენატრება.", sage: "ვისაც განსაზღვრული აქვს თუ რატომ ცხოვრობს, თითქმის ყველანაირ ცხოვრებას უმკლავდება (ან ვისაც ესმის რატომ იცხოვროს, ესმის როგორ იცხოვროს). - ნიცშე" },
-            { id: "reaching_12", poem: "The river does not ask the sea\nTo justify its endless call\nIt simply flows, and willingly\nFinds home in what receives its all.", sage: "The Love that moves the sun and the other stars. - Dante" }
+            { id: "reaching_12", poem: "მდინარე ზღვას არ სთხოვს\nდაუსაბუთოს რას პირდება,\nუბრალოდ მიედინება და პოულობს\nსახლს მიმღებში, რაც ზღვად ვლინდება.", sage: "სიყვარულია, მზესა და ვარსკვლავებს რომ ამოძრავებს. - დანტე" }
         ],
 
         // Category 6: Network (12 poems in Georgian)
@@ -364,7 +366,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "wholeness_8", poem: "რაც ერთ დროს ჭრილობა იყო, ახლა ხდება ძალა\nხეში, რომელიც ტკივილის გარშემო გაიზარდა,\nმთლიანის მუხტი ყველა გზაზე წავა,\nრომ განგიკურნოს ის, რაც ცხოვრებამ დააავადა.", sage: "სულმა ყოველთვის იცის რა უნდა გააკეთოს განკურნებისთვის. მთავარია გონება დაამშვიდო. - კაროლინ მისი" },
             { id: "wholeness_9", poem: "ხე თავის წარსულს არ უარყოფს,\nრაც მანამდე მოხდა, იმაზე ამყარებს აწმყოს;\nთუ მთლიანი ხარ, მტკიცედ დაიჭერ\nყველაფერს, რაც ხარ; მეტსაც, მომავალმაც რომ ნახოს.", sage: "განკურნება არ ნიშნავს გაიარო ან გადალახო. ეს ნიშნავს შევურიგდეთ ტკივილს. - ვირონიკა ტუგალევა" },
             { id: "wholeness_10", poem: "ყოველი ასპექტი თავის როლს თამაშობს\nცოცხალი მთლიანობის შექმნაში,\nასპექტთა გაერთიანება დაგეხმარება\nსაკუთარი თავის და სულის გამთლიანებაში.", sage: "სიცოცხლის უპირატესობა არის იყო ის, ვინც ხარ. - ჯოზეფ კემპბელი" },
-            { id: "wholeness_11", poem: "ყველაფერს იღებს, რაც გზად ხვდება,\nხე მთლიანი დგას წვიმასა და მზეში;\nსიმრთელე შეგინარჩუნებს\nარსებას ღამესა და დღეში.", sage: "საკმარისი ხარ. ათასჯერ საკმარისი. - უცნობი ავტორი" }
+            { id: "wholeness_11", poem: "ყველაფერს იღებს, რაც გზად ხვდება,\nხე მთლიანი დგას წვიმასა და მზეში;\nსიმრთელე შეგინარჩუნებს\nარსებას ღამესა და დღეში.", sage: "საკმარისი ხარ. ათასჯერ საკმარისი. - უცნობი ავტორი" },
+            { id: "wholeness_12", poem: "რაც გაყოფილა, ახლა ერთია,\nგაფანტულა და კვლავ (ღმ)ერთია,\nმოგზაურობა მთავრდება იქ, სადაც იწყება,\nდაუსრულებელ მადლში დრო იშლება.", sage: "მე ის გავხდი, რაც მიყვარდა და ასე ვიპოვე საკუთარი თავი. - იბნ არაბი" },
+            { id: "wholeness_13", poem: "ჭრილობა, რომელმაც სამყარო ორად გაყო,\nავლენს იმ ნაკერს, სადაც მთლიანობა იზრდება,\nმხოლოდ გატეხილი გულების ხვედრია\nსიყვარული, რომელსაც ვერაფერი დაუპირისპირდება.", sage: "To see heaven in the mud of the earth - that is the knight's true quest. - Rustaveli" }
         ],
 
         // Category 11: Patience (12 poems in Georgian)
