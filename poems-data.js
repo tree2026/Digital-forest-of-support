@@ -66,7 +66,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "release_8", poem: "Release is not a loss but change\nA transformation of the form\nWhat falls away will rearrange\nInto what different will be born.", sage: "Nothing in nature blooms all year. Be patient with yourself. - Karen Salmansohn" },
             { id: "release_9", poem: "When branches free themselves of weight\nThey rise to meet the coming snow\nYour letting go can change your fate\nIn ways you cannot hope to know.", sage: "Some of us think holding on makes us strong, but sometimes it is letting go. - Hermann Hesse" },
             { id: "release_10", poem: "The tree accepts each leaf's departure\nAs part of nature's greater plan\nYour endings can become the rapture\nOf starting once again.", sage: "Every new beginning comes from some other beginning's end. - Seneca" },
-            { id: "release_11", poem: "What falls becomes the forest floor\nWhere new seeds find their place to start\nYour letting go can open door\nTo wisdom growing in your heart.", sage: "The secret of change is to focus all of your energy not on fighting the old, but on building the new. - Socrates" }
+            { id: "release_11", poem: "What falls becomes the forest floor\nWhere new seeds find their place to start\nYour letting go can open door\nTo wisdom growing in your heart.", sage: "The secret of change is to focus all of your energy not on fighting the old, but on building the new. - Socrates" },
+            { id: "release_12", poem: "Release the fist that grips so tight\nAround what never could be kept\nAnd in the opening comes light\nTo warm the places where you wept.", sage: "Love is not comfort, but a fire that consumes. - Rustaveli" }
         ],
         
         // Category 5: Reaching (12 poems) for goals, light, aspiration
@@ -82,7 +83,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "reaching_8", poem: "Reaching upward from the dark\nThe seedling seeks what gives it life\nYour aspirations light the spark\nThat helps you through the darkest strife.", sage: "Hope is being able to see that there is light despite all of the darkness. - Desmond Tutu" },
             { id: "reaching_9", poem: "The tree reaches in patient grace\nNot frantic, not in anxious haste\nYour aspirations find their place\nWhen inner peace you have embraced.", sage: "Adopt the pace of nature: her secret is patience. - Emerson" },
             { id: "reaching_10", poem: "Some reaches bend, some reaches break\nSome find the light they seek to know\nYour aspirations for your sake\nWill help your inner being grow.", sage: "The journey of a thousand miles begins with one step. - Lao Tzu" },
-            { id: "reaching_11", poem: "The tree reaches not to compete\nBut to fulfill its nature's call\nYour aspirations make complete\nThe purpose that includes it all.", sage: "He who has a why to live can bear almost any how. - Nietzsche" }
+            { id: "reaching_11", poem: "The tree reaches not to compete\nBut to fulfill its nature's call\nYour aspirations make complete\nThe purpose that includes it all.", sage: "He who has a why to live can bear almost any how. - Nietzsche" },
+            { id: "reaching_12", poem: "The river does not ask the sea\nTo justify its endless call\nIt simply flows, and willingly\nFinds home in what receives its all.", sage: "The Love that moves the sun and the other stars. - Dante" }
         ],
         
         // Category 6: Network (12 poems) for connection, community, support
@@ -247,8 +249,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rings_9", poem: "ერთნაირი რგოლები არა აქვს ორ ხეს,\nთითოეული თავის თავგადასავალს წერს;\nშენი ამბავი არასდროს გაფერმკრთალდება,\nკალამი ზღაპარს მუდამ ახლად წერს.", sage: "სხვების ამბებით ნუ დაკმაყოფილდები. შენი საკუთარი მოთხრობა გაშალე. - რუმი" },
             { id: "rings_10", poem: "მხოლოდ საზომი როდია ხის რკალი,\nარამედ სულის ჩანაწერია ცოცხალი;\nშენი ყოველი გრძნობა, ყოველი წამი\nგეხმარება, რომ გახდე მთლიანი.", sage: "შენ წვეთი არ ხარ ოკეანეში. შენ მთელი ოკეანე ხარ წვეთში. - რუმი" },
             { id: "rings_11", poem: "რა შორს წასულხარ საწყისი ნერგიდან!\nგადათვალე სათითაოდ რგოლები!\nყოველმა წელმა დაგაახლოვა სიბრძნესთან,\nგული ბრძენია. გონებას ნუ ემონები.", sage: "მნიშვნელოვანია, თუ რამდენად სწრაფად აკეთებ იმას, რასაც სული მიგითითებს. - რუმი" },
-            { id: "rings_12", poem: "The lantern held before your feet\nReveals but one step at a time\nYet walking makes the path complete\nAnd brings you to the heights you climb.", sage: "The One in you who knows is the One who has always known. - Ibn Arabi" },
-            { id: "rings_13", poem: "მძინარენი ვეჭიდებით ჩრდილებს,\nგონება მათ 'ნამდვილად' ამხილებს,\nსანამ სინათლე ნისლს არ გაჭრის\nდა გრძნობას გულში არ ჩაჭრის.", sage: "ჩვენი ცხოვრების მოგზაურობის შუაგულში, ბნელ ტყეში აღმოვჩნდი. - დანტე." }
+            { id: "rings_12", poem: "ფარნის სინათლე გზას ნაბიჯ-ნაბიჯ ავლენს,\nივლი და თანდათან გზას ნათელს დაჰფენ,\nსიარულით ბედისწერას ნელნელა აჩენ,\nსიმაღლის მისაღწევად სიარული გმართებს.", sage: "შენში არის ის, ვინც იცის, ვინც ყოველთვის იცოდა. - იბნ არაბი." },
+            { id: "rings_13", poem: "მძინარენი ვეჭიდებით ჩრდილებს,\nგონება მათ 'ნამდვილად' იღებს,\nსანამ სინათლე ნისლს არ გაჭრის\nდა გრძნობას გულში არ ჩაჭრის.", sage: "ჩვენი ცხოვრების მოგზაურობის შუაგულში, ბნელ ტყეში აღმოვჩნდი. - დანტე." }
         ],
         
         // Category 4: Release (12 poems in Georgian)
