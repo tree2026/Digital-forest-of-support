@@ -14,7 +14,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rooting_8", poem: "The tallest redwood starts as small\nAs any seedling on the floor\nYour growth responds to nature's call\nWhen rooted in your deepest core.", sage: "You were born with wings, why prefer to crawl through life? - Rumi" },
             { id: "rooting_9", poem: "In winter, when the world seems dead\nThe roots are working out of sight\nPreparing for what lies ahead\nIn spring's returning, gentle light.", sage: "Where there is ruin, there is hope for a treasure. - Rumi" },
             { id: "rooting_10", poem: "The maple doesn't force its sap\nTo rise before the thawing time\nIt trusts in seasons' gentle map\nAnd doesn't make a frantic climb.", sage: "The art of knowing is knowing what to ignore. - Rumi" },
-            { id: "rooting_11", poem: "When lost in thought's persistent maze\nReturn to breath, to solid ground\nThe root of peace in present days\nIs where true healing can be found.", sage: "Peace comes from within. Do not seek it without. - Buddha" }
+            { id: "rooting_11", poem: "When lost in thought's persistent maze\nReturn to breath, to solid ground\nThe root of peace in present days\nIs where true healing can be found.", sage: "Peace comes from within. Do not seek it without. - Buddha" },
+            { id: "rooting_12", poem: "When mind becomes a frantic bird\nThat beats against its cage of care\nBe still and know the silent Word\nThat waits beyond thought's noisy flare.", sage: "The tongue is very small, and yet what vast oceans it can stir! - Rustaveli" },
+            { id: "rooting_13", poem: "The branch that bends but does not break\nHas roots that drink from hidden deep\nSo let the storm of feeling shake\nThe surface, while the soul learns peace.", sage: "Peace is the language of the soul's homeland. - Ibn Arabi" }
         ],
         
         // Category 2: Bark (12 poems) for boundaries, protection, self-care
@@ -208,7 +210,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rooting_8", poem: "ყველაზე მაღალი სეკვოიაც პატარა იყო,\nყოველმა ნერგმა სიცოცხლე ასე დაიწყო;\nშენი ზრდა ბუნების ძახილს პასუხობს,\nღრმად ფესვგადგმულმა სიმაღლე აიწყო.", sage: "ფრთებით დაიბადე, ხოხვას რად ამჯობინებ? - რუმი" },
             { id: "rooting_9", poem: "ზამთარში, როცა სიცოცხლე სიკვდილში დამალულა,\nფესვები მუშაობენ ხედვისგან მალულად,\nემზადებიან იმისთვის, რაც აღმოცენდება\nგაზაფხულის დაბრუნებისას გაცხადულად.", sage: "სადაც ნანგრევია, იქ საგანძურის იმედია. - რუმი" },
             { id: "rooting_10", poem: "ნეკერჩხალი არ აძალებს თავის ნერგს\nყინულის გადნობამდე ამოსვლას,\nდროის სვლის გეგმას ენდობა იგი\nდა გააფთრებული არ ცდილობს აცოცვას.", sage: "ცოდნის ხელოვნებაა იცოდე თუ რა უგულებელჰყო. - რუმი" },
-            { id: "rooting_11", poem: "როს მიეცე უკიდეგანო აზრების ლაბირინთს,\nდაუბრუნდი სუნთქვას, მყარ საფუძველს, ბირთვს;\nსიმშვიდის ფესვთან დღესდღეისობით\nნამდვილი გაკურნების ხმა ისმის.", sage: "მშვიდობა შიგნიდან მოდის. ნუ ეძებ გარეთ. - ბუდა" }
+            { id: "rooting_11", poem: "როს მიეცე უკიდეგანო აზრების ლაბირინთს,\nდაუბრუნდი სუნთქვას, მყარ საფუძველს, ბირთვს;\nსიმშვიდის ფესვთან დღესდღეისობით\nნამდვილი განკურნების ხმა ისმის.", sage: "მშვიდობა შიგნიდან მოდის. ნუ ეძებ გარეთ. - ბუდა" },
+            { id: "rooting_12", poem: "როცა გონება გააფთრებულ ჩიტად იქცევა,\nრომელიც ზრუნვის გალიას სცილდება,\nდამშვიდდი და შეიცან ჩუმი სიტყვა,\nხმაურიანი ფიქრის მიღმა რომ გამოვლინდება.", sage: "The tongue is very small, and yet what vast oceans it can stir! - Rustaveli" },
+            { id: "rooting_13", poem: "ტოტს, რომელიც იხრება, მაგრამ არ იმტვრევა,\nისეთი ფესვები აქვს სიღრმისკენ რომ იწვდება;\nდაე გრძნობების ქარიშხალმა არყიოს ზედაპირი,\nსანამ სული მშვიდობის სწავლაში იწრთვნება.", sage: "მშვიდობა სულის სამშობლოს ენაა. - იბნ არაბი" }
         ],
         
         // Category 2: Bark (12 poems in Georgian)
