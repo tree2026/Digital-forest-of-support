@@ -120,7 +120,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "bending_9", poem: "In hurricane, the palm trees lean\nAlmost horizontal to the ground\nYour flexibility is seen\nWhen new solutions can be found.", sage: "Adaptability is not imitation. It means power of resistance and assimilation. - Gandhi" },
             { id: "bending_10", poem: "The branch that bends will not be broken\nBy winter's ice or summer's storm\nYour flexibility has spoken\nIn keeping you both safe and warm.", sage: "It's not the strongest of the species that survives, nor the most intelligent. It is the one most adaptable to change. - Charles Darwin" },
             { id: "bending_11", poem: "To bend requires both strength and grace\nA willingness to not stand still\nYour flexibility finds place\nIn learning to adapt your will.", sage: "The measure of intelligence is the ability to change. - Einstein" },
-            { id: "bending_12", poem: "The river does not ask the sea\nTo justify its endless call\nIt simply flows, and willingly\nFinds home in what receives its all.", sage: "The Love that moves the sun and the stars. - Dante" }
+            { id: "bending_12", poem: "The river does not ask the sea\nTo justify its endless call\nIt simply flows, and willingly\nFinds home in what receives its all.", sage: "The Love that moves the sun and the stars. - Dante" },
+            { id: "bending_13", poem: "What would you hold that time will take?\nWhat would you keep that must depart?\nThe heart that breaks for love's own sake\nBecomes the door to love's own heart.", sage: "In surrender, you are more yourself than in any battle. - Ibn Arabi" }
         ],
         
         // Category 8: Shape (12 poems) for authenticity, uniqueness, being
@@ -293,7 +294,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "reaching_10", poem: "ზოგი მიღწევა იღუნება, ზოგი მიღწევა ირღვევა,\nზოგი პოულობს სინათლეს, რომლის ცოდნაც სურს\nშენი ლტოლვა-მისწრაფება დაგეხმარება\nგაიზარდო იქამდე, რაც გსურს.", sage: "ათას კილომეტრიანი მოგზაურობა ერთი ნაბიჯით იწყება. - ლაო ძი" },
             { id: "reaching_11", poem: "ხე შეჯიბრისთვის კი არ ემზადება,\nზრდა მას ბუნების ძახილად ეცხადება,\nმისწრაფება მიზნის ძახილით გამოდის,\nრომ შეასრულოს სულს რაც ენატრება.", sage: "ვისაც განსაზღვრული აქვს თუ რატომ ცხოვრობს, თითქმის ყველანაირ ცხოვრებას უმკლავდება (ან ვისაც ესმის რატომ იცხოვროს, ესმის როგორ იცხოვროს). - ნიცშე" },
             { id: "reaching_12", poem: "გათენებას ვერ აიძულებ\nდა ვერც ღამე ჩაიხსნება,\nმაგრამ ფხიზლად იყავი და ნახავ,\nხილვის ფარდები როგორ აიხსნება.", sage: "გათენება არ ითხოვს მოსვლის ნებართვას. - იბნ არაბი" },
-            { id: "reaching_13", poem: "ერთი ციცქნა ალი ანათებს ოთახს,\nსიბნელეს რომ მოეცვა უთვალავი წელი,\nდაე, ამ სიმართლემ გააქროს სიბნელე\nდა გააშროს ნადენი ცრემლი.", sage: "A little spark of glory may become a great fire. - Rustaveli" }
+            { id: "reaching_13", poem: "ციცქნა ალი ანათებს ოთახს,\nსიბნელეს რომ მოეცვა უთვალავი წელი,\nდაე, ამ სიმართლემ გააქროს სიბნელე\nდა გააშროს ნადენი ცრემლი.", sage: "A little spark of glory may become a great fire. - Rustaveli" }
         ],
 
         // Category 6: Network (12 poems in Georgian)
@@ -326,7 +327,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "bending_9", poem: "ქარბორბალაში პალმის ხეები\nჰორიზონტალურად განერთხა მიწას;\nროცა ახლებურად გადაწყვეტს,\nმაშინ დაიკვეხნის კაცი მოქნილობას მისას.", sage: "მორგება მიბაძვა არ არის. ეს ნიშნავს წინააღმდეგობის და შეთვისების უნარს. - განდი" },
             { id: "bending_10", poem: "ტოტი რომელიც იღუნება,\nარც სიცივეში, არც ქარიშხალში არ ტყდება;\nმოქნილობის წყალობით\nუსაფრთხოდ ყოფნა და სითბო შეგენახება.", sage: "უძლიერესი სახეობა კი არ გადარჩება, ან ყველაზე ჭკვიანი. არამედ ის, ვინც ყველაზე მეტად მოერგება ცვლილებას. - ჩარლზ დარვინი" },
             { id: "bending_11", poem: "დახრა მოითხოვს ძალას და მოხდენილობას,\nმზადყოფნას, რომ არ იდგე უძრავად;\nროცა ნების მორგებას ისწავლი,\nმოქნილობა აღარ მოგეჩვენება მუქარად.", sage: "ინტელექტის საზომი არის შეცვლის უნარი. - აინშტაინი" },
-            { id: "bending_12", poem: "მდინარე ზღვას არ სთხოვს\nდაუსაბუთოს რას პირდება,\nუბრალოდ მიედინება და პოულობს\nსახლს მიმღებში, რაც ზღვად ვლინდება.", sage: "სიყვარულია, მზესა და ვარსკვლავებს რომ ამოძრავებს. - დანტე" }
+            { id: "bending_12", poem: "მდინარე ზღვას არ სთხოვს\nდაუსაბუთოს რას პირდება,\nუბრალოდ მიედინება და პოულობს\nსახლს მიმღებში, რაც ზღვად ვლინდება.", sage: "სიყვარულია, მზესა და ვარსკვლავებს რომ ამოძრავებს. - დანტე" },
+            { id: "bending_13", poem: "What would you hold that time will take?\nWhat would you keep that must depart?\nThe heart that breaks for love's own sake\nBecomes the door to love's own heart.", sage: "In surrender, you are more yourself than in any battle. - Ibn Arabi" }
         ],
 
         // Category 8: Shape (12 poems in Georgian)
