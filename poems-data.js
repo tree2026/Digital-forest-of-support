@@ -48,7 +48,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rings_8", poem: "The center rings are childhood's mark\nWhen growth was fast and unconstrained\nThe outer rings show in the dark\nWhat wisdom from experience gained.", sage: "The real journey is the one that occurs within. - Ibn Arabi" },
             { id: "rings_9", poem: "No two trees have the selfsame rings\nEach life writes its unique tale\nYour own experience now brings\nA story that will never pale.", sage: "Don't be satisfied with stories, how things have gone with others. Unfold your own myth. - Rumi" },
             { id: "rings_10", poem: "The rings are not just measurement\nBut living record of a soul\nYour every moment, every sentiment\nContributes to the growing whole.", sage: "You are not a drop in the ocean. You are the entire ocean in a drop. - Rumi" },
-            { id: "rings_11", poem: "Count backward through the rings to see\nHow far you've come from seedling start\nEach year has brought you closer to\nThe wisdom growing in your heart.", sage: "What matters is how quickly you do what your soul directs. - Rumi" }
+            { id: "rings_11", poem: "Count backward through the rings to see\nHow far you've come from seedling start\nEach year has brought you closer to\nThe wisdom growing in your heart.", sage: "What matters is how quickly you do what your soul directs. - Rumi" },
+            { id: "rings_12", poem: "The lantern held before your feet\nReveals but one step at a time\nYet walking makes the path complete\nAnd brings you to the heights you climb.", sage: "The One in you who knows is the One who has always known. - Ibn Arabi" },
+            { id: "rings_13", poem: "Asleep within the dream of days\nWe grasp at shadows, call them real\nUntil a light cuts through the haze\nAnd teaches wounded hearts to feel.", sage: "In the middle of the journey of our life, I found myself within a dark wood. - Dante" }
         ],
         
         // Category 4: Release (12 poems) for letting go, autumn, endings
@@ -244,7 +246,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rings_8", poem: "შიდა რგოლები, ბავშვობის ნიშანი,\nშეუზღუდავი, სწრაფი ზრდა;\nგარე რგოლები, ბნელში სვლის მიზანი:\nგამოცდილებამ რა სიბრძნე მოგცა.", sage: "ნამდვილი მოგზაურობაა, რაც შიგნით ხდება. - იბნ არაბი" },
             { id: "rings_9", poem: "ერთნაირი რგოლები არა აქვს ორ ხეს,\nთითოეული თავის თავგადასავალს წერს;\nშენი ამბავი არასდროს გაფერმკრთალდება,\nკალამი ზღაპარს მუდამ ახლად წერს.", sage: "სხვების ამბებით ნუ დაკმაყოფილდები. შენი საკუთარი მოთხრობა გაშალე. - რუმი" },
             { id: "rings_10", poem: "მხოლოდ საზომი როდია ხის რკალი,\nარამედ სულის ჩანაწერია ცოცხალი;\nშენი ყოველი გრძნობა, ყოველი წამი\nგეხმარება, რომ გახდე მთლიანი.", sage: "შენ წვეთი არ ხარ ოკეანეში. შენ მთელი ოკეანე ხარ წვეთში. - რუმი" },
-            { id: "rings_11", poem: "რა შორს წასულხარ საწყისი ნერგიდან!\nგადათვალე სათითაოდ რგოლები!\nყოველმა წელმა დაგაახლოვა სიბრძნესთან,\nგული ბრძენია. გონებას ნუ ემონები.", sage: "მნიშვნელოვანია, თუ რამდენად სწრაფად აკეთებ იმას, რასაც სული მიგითითებს. - რუმი" }
+            { id: "rings_11", poem: "რა შორს წასულხარ საწყისი ნერგიდან!\nგადათვალე სათითაოდ რგოლები!\nყოველმა წელმა დაგაახლოვა სიბრძნესთან,\nგული ბრძენია. გონებას ნუ ემონები.", sage: "მნიშვნელოვანია, თუ რამდენად სწრაფად აკეთებ იმას, რასაც სული მიგითითებს. - რუმი" },
+            { id: "rings_12", poem: "The lantern held before your feet\nReveals but one step at a time\nYet walking makes the path complete\nAnd brings you to the heights you climb.", sage: "The One in you who knows is the One who has always known. - Ibn Arabi" },
+            { id: "rings_13", poem: "მძინარენი ვეჭიდებით ჩრდილებს,\nგონება მათ 'ნამდვილად' ამხილებს,\nსანამ სინათლე ნისლს არ გაჭრის\nდა გრძნობას გულში არ ჩაჭრის.", sage: "ჩვენი ცხოვრების მოგზაურობის შუაგულში, ბნელ ტყეში აღმოვჩნდი. - დანტე." }
         ],
         
         // Category 4: Release (12 poems in Georgian)
