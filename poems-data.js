@@ -16,7 +16,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rooting_10", poem: "The maple doesn't force its sap\nTo rise before the thawing time\nIt trusts in seasons' gentle map\nAnd doesn't make a frantic climb.", sage: "The art of knowing is knowing what to ignore. - Rumi" },
             { id: "rooting_11", poem: "When lost in thought's persistent maze\nReturn to breath, to solid ground\nThe root of peace in present days\nIs where true healing can be found.", sage: "Peace comes from within. Do not seek it without. - Buddha" },
             { id: "rooting_12", poem: "When mind becomes a frantic bird\nThat beats against its cage of care\nBe still and know the silent Word\nThat waits beyond thought's noisy flare.", sage: "The tongue is very small, and yet what vast oceans it can stir! - Rustaveli" },
-            { id: "rooting_13", poem: "The branch that bends but does not break\nHas roots that drink from hidden deep\nSo let the storm of feeling shake\nThe surface, while the soul learns peace.", sage: "Peace is the language of the soul's homeland. - Ibn Arabi" }
+            { id: "rooting_13", poem: "The branch that bends but does not break\nHas roots that drink from hidden deep\nSo let the storm of feeling shake\nThe surface, while the soul learns peace.", sage: "Peace is the language of the soul's homeland. - Ibn Arabi" },
+            { id: "rooting_14", poem: "The tree that stands through winter's rage\nDoes not complain or beg for spring\nIt sinks its roots on wisdom's page\nAnd waits for what the seasons bring.", sage: "Patience is not passive waiting, but active endurance. - Rustaveli" },
+            { id: "rooting_15", poem: "Beneath the noise of urgent things\nThere lies a silence vast and deep\nWhere consciousness unfurls its wings\nAnd finds the peace it needs to keep.", sage: "In Your light, I learn how to love. In Your beauty, how to make poems. - Dante" }
         ],
         
         // Category 2: Bark (12 poems) for boundaries, protection, self-care
@@ -218,7 +220,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rooting_10", poem: "ნეკერჩხალი არ აძალებს თავის ნერგს\nყინულის გადნობამდე ამოსვლას,\nდროის სვლის გეგმას ენდობა იგი\nდა გააფთრებული არ ცდილობს აცოცვას.", sage: "ცოდნის ხელოვნებაა იცოდე თუ რა უგულებელჰყო. - რუმი" },
             { id: "rooting_11", poem: "როს მიეცე უკიდეგანო აზრების ლაბირინთს,\nდაუბრუნდი სუნთქვას, მყარ საფუძველს, ბირთვს;\nსიმშვიდის ფესვთან დღესდღეისობით\nნამდვილი განკურნების ხმა ისმის.", sage: "მშვიდობა შიგნიდან მოდის. ნუ ეძებ გარეთ. - ბუდა" },
             { id: "rooting_12", poem: "როცა გონება გააფთრებულ ჩიტად იქცევა,\nრომელიც ზრუნვის გალიას სცილდება,\nდამშვიდდი და შეიცან ჩუმი სიტყვა,\nხმაურიანი ფიქრის მიღმა რომ გამოვლინდება.", sage: "The tongue is very small, and yet what vast oceans it can stir! - Rustaveli" },
-            { id: "rooting_13", poem: "ტოტს, რომელიც იხრება, მაგრამ არ იმტვრევა,\nისეთი ფესვები აქვს სიღრმისკენ რომ იწვდება;\nდაე გრძნობების ქარიშხალმა არყიოს ზედაპირი,\nსანამ სული მშვიდობის სწავლაში იწრთვნება.", sage: "მშვიდობა სულის სამშობლოს ენაა. - იბნ არაბი" }
+            { id: "rooting_13", poem: "ტოტს, რომელიც იხრება, მაგრამ არ იმტვრევა,\nისეთი ფესვები აქვს სიღრმისკენ რომ იწვდება;\nდაე გრძნობების ქარიშხალმა არყიოს ზედაპირი,\nსანამ სული მშვიდობის სწავლაში იწრთვნება.", sage: "მშვიდობა სულის სამშობლოს ენაა. - იბნ არაბი" },
+            { id: "rooting_14", poem: "ხე ზამთრის მძვინვარებას უძლებს,\nარ შევედრის ამინდს, არ წუწუნებს,\nფესვებს უმადლის სიბრძნის ფურცელს\nდა ელის, ახალ სეზონს რა ბედი უდევს.", sage: "Patience is not passive waiting, but active endurance. - Rustaveli" },
+            { id: "rooting_15", poem: "სასწრაფო საქმეთა ხმაურქვეშ\nდიდი ღრმა სიჩუმე ძევს,\nიქ ცნობიერება ფრთებს შლის\nდა პოულობს საჭირო სიმშვიდეს.", sage: "შენს შუქში ვსწავლობ სიყვარულს. შენს სილამაზეში - ლექსების წერას. - დანტე" }
         ],
         
         // Category 2: Bark (12 poems in Georgian)
