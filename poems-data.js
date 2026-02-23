@@ -86,7 +86,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "reaching_9", poem: "The tree reaches in patient grace\nNot frantic, not in anxious haste\nYour aspirations find their place\nWhen inner peace you have embraced.", sage: "Adopt the pace of nature: her secret is patience. - Emerson" },
             { id: "reaching_10", poem: "Some reaches bend, some reaches break\nSome find the light they seek to know\nYour aspirations for your sake\nWill help your inner being grow.", sage: "The journey of a thousand miles begins with one step. - Lao Tzu" },
             { id: "reaching_11", poem: "The tree reaches not to compete\nBut to fulfill its nature's call\nYour aspirations make complete\nThe purpose that includes it all.", sage: "He who has a why to live can bear almost any how. - Nietzsche" },
-            { id: "reaching_12", poem: "The river does not ask the sea\nTo justify its endless call\nIt simply flows, and willingly\nFinds home in what receives its all.", sage: "The Love that moves the sun and the stars. - Dante" }
+            { id: "reaching_12", poem: "The river does not ask the sea\nTo justify its endless call\nIt simply flows, and willingly\nFinds home in what receives its all.", sage: "The Love that moves the sun and the stars. - Dante" },
+            { id: "reaching_13", poem: "You cannot force the dawn to break\nNor hurry night to give its gift\nBut stay awake for your own sake\nAnd watch the veils of seeing lift.", sage: "The dawn does not ask permission to arrive. - Ibn Arabi" },
+            { id: "reaching_14", poem: "A single flame can light a room\nThat darkness held for countless years\nSo let this truth undo the gloom\nAnd dry the residue of tears.", sage: "A little spark of glory may become a great fire. - Rustaveli" }
         ],
         
         // Category 6: Network (12 poems) for connection, community, support
@@ -290,7 +292,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "reaching_9", poem: "ხე ტოტს იწვდენს მოთმინებით,\nღელვას, შფოთს, სიჩქარეს მასთან ვერ ნახავ;\nსურვილი, მისწრაფება თავის ადგილს პოვნის,\nროდესაც შინაგან მშვიდობას დანახავ.", sage: "ბუნების ტემპი აითვისე: მისი საიდუმლო მოთმინებაშია. - ემერსონი" },
             { id: "reaching_10", poem: "ზოგი მიღწევა იღუნება, ზოგი მიღწევა ირღვევა,\nზოგი პოულობს სინათლეს, რომლის ცოდნაც სურს\nშენი ლტოლვა-მისწრაფება დაგეხმარება\nგაიზარდო იქამდე, რაც გსურს.", sage: "ათას კილომეტრიანი მოგზაურობა ერთი ნაბიჯით იწყება. - ლაო ძი" },
             { id: "reaching_11", poem: "ხე შეჯიბრისთვის კი არ ემზადება,\nზრდა მას ბუნების ძახილად ეცხადება,\nმისწრაფება მიზნის ძახილით გამოდის,\nრომ შეასრულოს სულს რაც ენატრება.", sage: "ვისაც განსაზღვრული აქვს თუ რატომ ცხოვრობს, თითქმის ყველანაირ ცხოვრებას უმკლავდება (ან ვისაც ესმის რატომ იცხოვროს, ესმის როგორ იცხოვროს). - ნიცშე" },
-            { id: "reaching_12", poem: "მდინარე ზღვას არ სთხოვს\nდაუსაბუთოს რას პირდება,\nუბრალოდ მიედინება და პოულობს\nსახლს მიმღებში, რაც ზღვად ვლინდება.", sage: "სიყვარულია, მზესა და ვარსკვლავებს რომ ამოძრავებს. - დანტე" }
+            { id: "reaching_12", poem: "მდინარე ზღვას არ სთხოვს\nდაუსაბუთოს რას პირდება,\nუბრალოდ მიედინება და პოულობს\nსახლს მიმღებში, რაც ზღვად ვლინდება.", sage: "სიყვარულია, მზესა და ვარსკვლავებს რომ ამოძრავებს. - დანტე" },
+            { id: "reaching_13", poem: "გათენებას ვერ აიძულებ\nდა ვერც ღამე ჩაიხსნება,\nმაგრამ ფხიზლად იყავი და ნახავ,\nხილვის ფარდები როგორ აიხსნება.", sage: "გათენება არ ითხოვს მოსვლის ნებართვას. - იბნ არაბი" },
+            { id: "reaching_14", poem: "ერთი ციცქნა ალი ანათებს ოთახს,\nსიბნელეს რომ მოეცვა უთვალავი წელი,\nდაე, ამ სიმართლემ გააქროს სიბნელე\nდა გააშროს ნადენი ცრემლი.", sage: "A little spark of glory may become a great fire. - Rustaveli" }
         ],
 
         // Category 6: Network (12 poems in Georgian)
