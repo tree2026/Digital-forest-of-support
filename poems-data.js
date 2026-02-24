@@ -205,7 +205,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "presence_8", poem: "No anticipation, no regret\nJust being in the here and now\nThe tree has learned its alphabet\nIn presence, and it shows you how.", sage: "Feelings come and go like clouds in a windy sky. Conscious breathing is my anchor. - Thich Nhat Hanh" },
             { id: "presence_9", poem: "The tree stands present through all change\nThrough seasons' turning, day and night\nYour presence helps your spirit range\nIn what feels true and feels just right.", sage: "The present moment is the only moment where life exists. - Jon Kabat-Zinn" },
             { id: "presence_10", poem: "In presence, there is only this\nThis breath, this light, this ground, this sky\nThe tree has learned the perfect bliss\nOf being present, by and by.", sage: "Life is available only in the present moment. - Thich Nhat Hanh" },
-            { id: "presence_11", poem: "The tree does not miss being elsewhere\nBut stands complete in its own place\nYour presence is the answered prayer\nThat brings you fully into grace.", sage: "Wherever you are, be there totally. - Eckhart Tolle" }
+            { id: "presence_11", poem: "The tree does not miss being elsewhere\nBut stands complete in its own place\nYour presence is the answered prayer\nThat brings you fully into grace.", sage: "Wherever you are, be there totally. - Eckhart Tolle" },
+            { id: "presence_12", poem: "The pond reflects the perfect moon\nWhen not a single ripple moves\nSo silence is the sacred boon\nThat clarifies what spirit proves.", sage: "Be silent, that the heart may speak. - Ibn Arabi" },
+            { id: "presence_13", poem: "Between the thoughts, between the breaths\nA gap of infinite repose\nWhere dwell the one who never death\nAnd knows the peace the silence knows.", sage: "In the stillness, the stars sang of love. - Dante" }
         ]
     },
     
@@ -414,7 +416,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "presence_8", poem: "არა მოლოდინი, არა სინანული,\nუბრალოდ ყოფნა აქ და ახლა;\nხემ ისწავლა აწმყოს ანბანი\nდა გიჩვენებს როგორ იყო აქ და ახლა.", sage: "გრძნობები მოდის და მიდის, როგორც ღრუბლები - ქარიან ცაში. ცნობიერი სუნთქვა არის ჩემი ღუზა. - ტიჩ ნჰატ ჰანჰი" },
             { id: "presence_9", poem: "ხე დგას აწმყოში ყველა ცვლილების გასწვრივ,\nსეზონებს, დღესა და ღამეს განვლის,\nშენი ყოფნის შეგრძნება სულს ეხმარება, რომ\nდაალაგოს სწორი და მართალი შეგრძნების გასწვრივ.", sage: "აწმყო დრო ერთადერთი დროა, სადაც სიცოცხლე არსებობს. - ჯონ კაბატ-ზინი" },
             { id: "presence_10", poem: "ყოფნისას, არსებობს მხოლოდ ეს,\nეს სუნთქვა, ეს შუქი, ეს მიწა, ეს ცა,\nხემ ისწავლა სრული ნეტარება\nაწმყოში ყოფნის, თანდათანობა.", sage: "სიცოცხლე ხელმისაწვდომია მხოლოდ ახლანდელ მომენტში. - ტიჩ ნჰატ ჰანჰი" },
-            { id: "presence_11", poem: "ხე სხვაგან ყოფნას არ მოინატრებს,\nთავის ადგილზე დგას და იქიდან არ დგება,\nმოხდენილობას მოგიმადლებს\nშენი ყოფნა. ასრულებული ლოცვაა.", sage: "სადაც არ უნდა იყო, იყავი იქ მთლიანად. - ექჰარტ ტოლე" }
+            { id: "presence_11", poem: "ხე სხვაგან ყოფნას არ მოინატრებს,\nთავის ადგილზე დგას და იქიდან არ დგება,\nმოხდენილობას მოგიმადლებს\nშენი ყოფნა. ასრულებული ლოცვაა.", sage: "სადაც არ უნდა იყო, იყავი იქ მთლიანად. - ექჰარტ ტოლე" },
+            { id: "presence_12", poem: "როცა არცერთი ტალღა მოძრაობს,\nტბა მთვარეს უნაკლოდ ირეკლავს,\nსიჩუმე წმინდა წყალობაა,\nიგი განმარტავს სულის მტკიცებას.", sage: "გაჩუმდი, რომ გულმა ილაპარაკოს. - იბნ არაბი" },
+            { id: "presence_13", poem: "ფიქრებსა და სუნთქვას შორის\nუსასრულო უფსკრული ძევს,\nიქ ცხოვრობს ის, ვინც არასდროს კვდება,\nვინც იცის სიჩუმის სიმშვიდე.", sage: "სიწყნარეში ვარსკვლავები სიყვარულზე მღეროდნენ. - დანტე" }
         ]
     }
 };
