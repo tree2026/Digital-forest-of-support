@@ -191,7 +191,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "patience_8", poem: "The tree does not watch its own growth\nBut simply lives from day to day\nYour patience is the living oath\nThat shows you're on your way.", sage: "How poor are they that have not patience! What wound did ever heal but by degrees? - Shakespeare" },
             { id: "patience_9", poem: "Slow growth makes for stronger wood\nWith rings that tell of seasons passed\nYour patience will be understood\nWhen you have built to last.", sage: "Have patience. All things are difficult before they become easy. - Saadi" },
             { id: "patience_10", poem: "The bonsai master waits for years\nTo shape the tiny, living art\nYour patience through both joys and tears\nWill play its destined part.", sage: "Patience is the companion of wisdom. - Saint Augustine" },
-            { id: "patience_11", poem: "The tree knows seasons must unfold\nIn their appointed, patient turn\nYour patience makes your spirit bold\nAnd helps life's lessons learn.", sage: "Rivers know this: there is no hurry. We shall get there some day. - A.A. Milne" }
+            { id: "patience_11", poem: "The tree knows seasons must unfold\nIn their appointed, patient turn\nYour patience makes your spirit bold\nAnd helps life's lessons learn.", sage: "Rivers know this: there is no hurry. We shall get there some day. - A.A. Milne" },
+            { id: "patience_12", poem: "Do not demand the final word\nNor seek to capture what is free\nThe mystery must be inferred\nFrom every leaf on every tree.", sage: "Not every question demands an answer; some demand awe. - Ibn Arabi" }
         ],
         
         // Category 12: Presence (12 poems) for mindfulness, now, awareness
@@ -404,7 +405,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "patience_8", poem: "ხე არ უყურებს საკუთარ ზრდას,\nდღითი დღე ცხოვრობს, უბრალოდ დგას;\nმოთმინება ცოცხალი ფიცია,\nრომელიც გიჩვენებს, რომ ადგახარ გზას.", sage: "როგორი ღარიბები არიან ისინი, ვისაც მოთმინება არ აქვს! რომელი ჭრილობა შეხორცდება, თუ თანდათანობით არ მოხდა შეხორცება? - შექსპირი" },
             { id: "patience_9", poem: "ნელი ზრდით უფრო ძლიერი ხე იზრდება,\nწარსულ დროთა სპექტაკლი რგოლებით იდგმება,\nმოთმინება უფრო გასაგები იქნება,\nროცა შენი აშენებული დიდხანს იდგმება.", sage: "მოთმინება იქონიე. ყველაფერი რთულია, სანამ ადვილი გახდება. - სადი" },
             { id: "patience_10", poem: "ბონსაის ოსტატი წლების მანძილზე ელოდება,\nრომ ჩამოაყალიბოს პატარა ცოცხალი ხელოვნება,\nსიხარულისა და ცრემლის გასწვრივ მოთმინება\nთავის როლს თამაშობს, ისიც გელოდება.", sage: "მოთმინება სიბრძნის თანამგზავრია. - წმინდა ავგუსტინე" },
-            { id: "patience_11", poem: "ხემ იცის წელიწადის ყოველი დრო\nთავის ჯერზე მოვა, დანიშნულ დროს,\nმოთმინება სულს გაამამაცებს\nდა ეხმარება ცხოვრება ისწავლოს.", sage: "მდინარეებმა ეს იციან: საჩქარო არაფერია. ერთ დღეს მივაღწევთ იქამდე. - ა.ა. მილნი" }
+            { id: "patience_11", poem: "ხემ იცის წელიწადის ყოველი დრო\nთავის ჯერზე მოვა, დანიშნულ დროს,\nმოთმინება სულს გაამამაცებს\nდა ეხმარება ცხოვრება ისწავლოს.", sage: "მდინარეებმა ეს იციან: საჩქარო არაფერია. ერთ დღეს მივაღწევთ იქამდე. - ა.ა. მილნი" },
+            { id: "patience_12", poem: "ნუ მოითხოვ ბოლო სიტყვას,\nნუ ელი სიბრძნეს კაცთა მოდგმიდან,\nსაიდუმლო უნდა გამოიტანო\nხის ყოველი ფოთლიდან.", sage: "ყველა კითხვა პასუხს კი არ მოითხოვს; ზოგი მოწიწებას მოითხოვს. - იბნ არაბი" }
         ],
 
         // Category 12: Presence (12 poems in Georgian)
