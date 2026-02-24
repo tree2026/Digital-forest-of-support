@@ -69,7 +69,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "release_9", poem: "When branches free themselves of weight\nThey rise to meet the coming snow\nYour letting go can change your fate\nIn ways you cannot hope to know.", sage: "Some of us think holding on makes us strong, but sometimes it is letting go. - Hermann Hesse" },
             { id: "release_10", poem: "The tree accepts each leaf's departure\nAs part of nature's greater plan\nYour endings can become the rapture\nOf starting once again.", sage: "Every new beginning comes from some other beginning's end. - Seneca" },
             { id: "release_11", poem: "What falls becomes the forest floor\nWhere new seeds find their place to start\nYour letting go can open door\nTo wisdom growing in your heart.", sage: "The secret of change is to focus all of your energy not on fighting the old, but on building the new. - Socrates" },
-            { id: "release_12", poem: "Release the fist that grips so tight\nAround what never could be kept\nAnd in the opening comes light\nTo warm the places where you wept.", sage: "Love is not comfort, but a fire that consumes. - Rustaveli" }
+            { id: "release_12", poem: "Release the fist that grips so tight\nAround what never could be kept\nAnd in the opening comes light\nTo warm the places where you wept.", sage: "Love is not comfort, but a fire that consumes. - Rustaveli" },
+            { id: "release_13", poem: "The wound is where the light gets in\nThe crack is how the music enters\nThe healing does not come from skin\nBut from the love that always ventures.", sage: "Love is the physician of all ills. - Rustaveli" }
         ],
         
         // Category 5: Reaching (12 poems) for goals, light, aspiration
@@ -280,7 +281,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "release_9", poem: "ტოტი თოვლის სიმძიმეს დაიყრის\nდა ფიფქთან შესახვედრად თავს გაიშლის;\nშენც გაუშვი სიმძიმე და ბედი შეგეცვლება\nისე, რასაც გონება ვერასდროს გაითვლის.", sage: "ზოგი ჩვენგანი ფიქრობს, რომ მოჭიდება გვაძლიერებს, მაგრამ ზოგჯერ ამას გაშვება აკეთებს. - ჰერმან ჰესე" },
             { id: "release_10", poem: "ხე ყოველი ფოთლის წასვლას\nბუნების დიდი გეგმის ნაწილად ისახებს;\nერთი დასასრული შეიძლება შენთვის\nრაიმე სიახლის დასაწყისი გახდეს.", sage: "ყოველი ახალი დასაწყისი სხვა რაიმე დაწყებულის დასასრულიდან მოდის. - სენეკა" },
             { id: "release_11", poem: "ტყეში დაცვენილ ფოთოლში\nახალი თესლი სახლს იპოვის,\nგაუშვი შენც და შეაღე სიბრძნის კარი,\nსახლს გულში იპოვი.", sage: "ცვლილების საიდუმლო იმაშია, რომ მთელი ენერგია მიმართო არა ძველთან საბრძოლველად, არამედ ახლის ასაშენებლად. - სოკრატე" },
-            { id: "release_12", poem: "გაშალე მუშტი, ასე მაგრად რიმ იჭერს\nიმას, რაც ხელში არასდროს გაჩერდა,\nგახსნისას სინათლე მოდის და\nათბობს იმ ადგილებს, ცრემლით რომ დასველდა.", sage: "Love is not comfort, but a fire that consumes. - Rustaveli" }
+            { id: "release_12", poem: "გაშალე მუშტი, ასე მაგრად რიმ იჭერს\nიმას, რაც ხელში არასდროს გაჩერდა,\nგახსნისას სინათლე მოდის და\nათბობს იმ ადგილებს, ცრემლით რომ დასველდა.", sage: "Love is not comfort, but a fire that consumes. - Rustaveli" },
+            { id: "release_13", poem: "ჭრილობიდან სინათლე აღწევს,\nბზარიდან მუსიკა ბანს აძლევს;\nგანკურნება არ მოდის თავიდან, მარტო წამლიდან,\nარამედ მაძიებელი სიყვარულიდან: იწყებს თავიდან.", sage: "Love is the physician of all ills. - Rustaveli" }
         ],
         
         // Category 5: Reaching (12 poems in Georgian)
