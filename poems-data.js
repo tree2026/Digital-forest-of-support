@@ -34,7 +34,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "bark_8", poem: "The bark does not completely seal\nThe tree from all external touch\nBut learns what interactions heal\nAnd which ones ask for far too much.", sage: "Compassion for others begins with kindness to ourselves. - Pema Chödrön" },
             { id: "bark_9", poem: "In forest fires, the thick bark saves\nThe living core from certain death\nYour boundaries are the gentle waves\nThat guard your precious inner breath.", sage: "Caring for myself is not self-indulgence, it is self-preservation. - Audre Lorde" },
             { id: "bark_10", poem: "The bark renews itself in time\nShedding what's old to make space new\nYour boundaries help you realign\nWith what is authentically you.", sage: "The only person you are destined to become is the person you decide to be. - Emerson" },
-            { id: "bark_11", poem: "A tree stands strong because its bark\nProtects the tender growth within\nYour boundaries light the vital spark\nThat guards where your true self begins.", sage: "He who knows himself knows his Lord. - Ibn Arabi" }
+            { id: "bark_11", poem: "A tree stands strong because its bark\nProtects the tender growth within\nYour boundaries light the vital spark\nThat guards where your true self begins.", sage: "He who knows himself knows his Lord. - Ibn Arabi" },
+            { id: "bark_12", poem: "The fool collects a thousand facts\nAnd calls himself a learned man\nThe wise one slowly, gently acts\nOn one small truth throughout life's span.", sage: "Knowledge without action is a tree without fruit. - Rustaveli" }
         ],
         
         // Category 3: Rings (12 poems) for growth, experience, time
@@ -246,7 +247,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "bark_8", poem: "ქერქი მთლიანად კი არ ახშობს\nგარესამყაროს ხისგან,\nარამედ ფილტრავს იმას რაც გკურნავს\nიმისგან, რაც მოითხოვს ძალზე ძვირსა.", sage: "თანაგრძნობა სხვების მიმართ იწყება სიკეთით საკუთარი თავის მიმართ. - პემა ჩოდრონი" },
             { id: "bark_9", poem: "ტყის ხანძარში გარდუვალი სიკვდილისგან\nსქელი ქერქი გადაარჩენს ცოცხალ ხეს,\nსაზღვრებიც ასე დაგიცავს,\nგადაარჩენს შინაგან სუნთქვას, მეს.", sage: "საკუთარ თავზე ზრუნვა თვითკმაყოფილება არ არის, ეს თვითგადარჩენაა. - აუდრე ლორდი" },
             { id: "bark_10", poem: "ქერქი თავის დროზე განახლდება,\nგაიცვენს ძველ სამოსს, ახალი ქურქი მზადდება;\nშენი საზღვრები კვლავ დაგაკავშირებს\nიმასთან, ვინც შენში გულწრფელად სახლდება.", sage: "ერთადერთი ადამიანი, რომლად გახდომაც გიწერია, ის არის, რომელსაც გადაწყვეტ რომ იყო. - ემერსონი" },
-            { id: "bark_11", poem: "ქერქის იმედით ხე ძლიერად წამოზიდულა,\nსაფარის შიგნით ნაზი სამყარო ხილულა;\nიცავს იმ სასიცოცხლო ნაპერწკლის ნათებას,\nსადაც შენი ნამდვილი მე გამონათდება.", sage: "ვინც იცნობს თავის თავს, იცნობს თავის უფალს. - იბნ არაბი" }
+            { id: "bark_11", poem: "ქერქის იმედით ხე ძლიერად წამოზიდულა,\nსაფარის შიგნით ნაზი სამყარო ხილულა;\nიცავს იმ სასიცოცხლო ნაპერწკლის ნათებას,\nსადაც შენი ნამდვილი მე გამონათდება.", sage: "ვინც იცნობს თავის თავს, იცნობს თავის უფალს. - იბნ არაბი" },
+            { id: "bark_12", poem: "სულელი ათას ფაქტს აგროვებს\nდა თავი განსწავლულ კაცს აგონებს,\nბრძენი ნელა მოქმედებს,\nყოველ პატარა ჭეშმარიტებაზე მოქმედებით აზროვნებს.", sage: "Knowledge without action is a tree without fruit. - Rustaveli" }
         ],
         
         // Category 3: Rings (12 poems in Georgian)
