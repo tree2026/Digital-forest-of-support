@@ -56,7 +56,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rings_11", poem: "Count backward through the rings to see\nHow far you've come from seedling start\nEach year has brought you closer to\nThe wisdom growing in your heart.", sage: "What matters is how quickly you do what your soul directs. - Rumi" },
             { id: "rings_12", poem: "The lantern held before your feet\nReveals but one step at a time\nYet walking makes the path complete\nAnd brings you to the heights you climb.", sage: "The One in you who knows is the One who has always known. - Ibn Arabi" },
             { id: "rings_13", poem: "Asleep within the dream of days\nWe grasp at shadows, call them real\nUntil a light cuts through the haze\nAnd teaches wounded hearts to feel.", sage: "In the middle of the journey of our life, I found myself within a dark wood. - Dante" },
-            { id: "rings_14", poem: "Love is not what you think it is\nNot sentiment nor passing flame\nIt is the force that holds the stars\nAnd calls each being by its name.", sage: "Love that moves the sun and other stars. - Dante" }
+            { id: "rings_14", poem: "Love is not what you think it is\nNot sentiment nor passing flame\nIt is the force that holds the stars\nAnd calls each being by its name.", sage: "Love that moves the sun and other stars. - Dante" },
+            { id: "rings_15", poem: "The narrow rings of famine years\nAnd wide rings of abundant rain\nAre written in the grain that bears\nThe story of what you contain.", sage: "Every moment, the soul is renewed, and in that renewal is its proof. - Ibn Arabi" },
+            { id: "rings_16", poem: "No ring is ever truly lost\nThough seasons change and years pass by\nEach one becomes the bridge across\nThe river of your living sky.", sage: "In His will is our peace, and every ring of time turns toward that center. - Dante" }
         ],
         
         // Category 4: Release (12 poems) for letting go, autumn, endings
@@ -273,7 +275,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rings_11", poem: "რა შორს წასულხარ საწყისი ნერგიდან!\nგადათვალე სათითაოდ რგოლები!\nყოველმა წელმა დაგაახლოვა სიბრძნესთან,\nგული ბრძენია. გონებას ნუ ემონები.", sage: "მნიშვნელოვანია, თუ რამდენად სწრაფად აკეთებ იმას, რასაც სული მიგითითებს. - რუმი" },
             { id: "rings_12", poem: "ფარნის სინათლე გზას ნაბიჯ-ნაბიჯ ავლენს,\nივლი და თანდათან გზას ნათელს დაჰფენ,\nსიარულით ბედისწერას ნელნელა აჩენ,\nსიმაღლის მისაღწევად სიარული გმართებს.", sage: "შენში არის ის, ვინც იცის, ვინც ყოველთვის იცოდა. - იბნ არაბი" },
             { id: "rings_13", poem: "მძინარენი ვეჭიდებით ჩრდილებს,\nგონება მათ 'ნამდვილად' იღებს,\nსანამ სინათლე ნისლს არ გაჭრის\nდა გრძნობას გულში არ ჩაჭრის.", sage: "ჩვენი ცხოვრების მოგზაურობის შუაგულში, ბნელ ტყეში აღმოვჩნდი. - დანტე" },
-            { id: "rings_14", poem: "სიყვარული ის არაა, რაც გგონია,\nარც გრძნობაა, არც წარმავალი ალი,\nეს ძალაა, ვარსკვლავს რომ ადგილს უბოძებს\nდა ყოველ არსებას თავის სახელს უწოდებს.", sage: "სიყვარული მზეს და ვარსკვლავებს ამოძრავებს. - დანტე" }
+            { id: "rings_14", poem: "სიყვარული ის არაა, რაც გგონია,\nარც გრძნობაა, არც წარმავალი ალი,\nეს ძალაა, ვარსკვლავს რომ ადგილს უბოძებს\nდა ყოველ არსებას თავის სახელს უწოდებს.", sage: "სიყვარული მზეს და ვარსკვლავებს ამოძრავებს. - დანტე" },
+            { id: "rings_15", poem: "შიმშილის წლების ვიწრო ზოლები,\nუხვწვიმიანი წლების ფართო რგოლები,\nასე დაწერილა ამბავი იმაზე,\nთუ შენს ბედს როგორ ესაუბრები.", sage: "ყოველ წამს სული ახლდება, და ამ განახლებაშია ამის დასტური. - იბნ არაბი" },
+            { id: "rings_16", poem: "არც ერთი რგოლი არასდროს იკარგება,\nთუმც სეზონები იცვლება, წლები გადის,\nთითოეული მათგანი ხიდად იქცევა,\nჩვენს ცოცხალ ცის ფერ მდინარეზე გადის.", sage: "მის ნებაში არის ჩვენი მშვიდობა და დროის ყოველი რგოლი ამ ცენტრისკენ იხრება. - დანტე" }
         ],
         
         // Category 4: Release (12 poems in Georgian)
