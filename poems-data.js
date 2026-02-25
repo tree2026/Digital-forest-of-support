@@ -152,7 +152,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "shape_8", poem: "Your shape may change with passing years\nAs rings are added to your core\nBut authenticity appears\nIn being what you're growing for.", sage: "The only person you should try to be better than is the person you were yesterday. - Anonymous" },
             { id: "shape_9", poem: "The tree accepts its crooked branch\nAs part of what makes it complete\nYour authentic self will stanch\nThe need for others to compete.", sage: "You were born an original. Don't die a copy. - John Mason" },
             { id: "shape_10", poem: "No forest asks for uniformity\nBut celebrates diversity\nYour authentic self's purity\nIs in your own fidelity.", sage: "Always be a first rate version of yourself and not a second rate version of someone else. - Judy Garland" },
-            { id: "shape_11", poem: "Your shape is what the world will see\nWhen you stand true to your own light\nAuthenticity will be\nThe source of your enduring might.", sage: "He who knows himself knows his Lord. - Ibn Arabi" }
+            { id: "shape_11", poem: "Your shape is what the world will see\nWhen you stand true to your own light\nAuthenticity will be\nThe source of your enduring might.", sage: "He who knows himself knows his Lord. - Ibn Arabi" },
+            { id: "shape_12", poem: "The crooked pine upon the cliff\nGrows beautiful in its own way\nYour shape, though twisted, is the if\nThat makes you irreplaceable today.", sage: "Every form you see has its archetype in the unseen world. You are that form. - Ibn Arabi" },
+            { id: "shape_13", poem: "Do not desire another's form\nThe birch, the oak, the weeping willow\nYour shape was weathered in the storm\nAnd now stands firm upon its pillow.", sage: "Within each soul, a unique star shines in the divine firmament. - Dante" }
         ],
         
         // Category 9: Seasons (12 poems) for cycles, change, rhythms
@@ -168,7 +170,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "seasons_8", poem: "Each season brings its needed gift\nIts teaching and its special grace\nYour cycles give your spirit lift\nTo find its proper time and place.", sage: "There is something infinitely healing in the repeated refrains of nature. - Rachel Carson" },
             { id: "seasons_9", poem: "Spring's hope, summer's full embrace\nAutumn's wisdom, winter's peace\nYour seasons find their proper place\nAs inner conflicts find release.", sage: "Nature does not hurry, yet everything is accomplished. - Lao Tzu" },
             { id: "seasons_10", poem: "The tree knows seasons come and go\nIn never-ending, patient round\nYour cycles help your spirit grow\nOn this, your sacred, hallowed ground.", sage: "The sun will rise and set regardless. What we choose to do with the light while it's here is up to us. - Alexandra Elle" },
-            { id: "seasons_11", poem: "In every season, trees find ways\nTo live according to the time\nYour cycles through the nights and days\nMake living such a sacred rhyme.", sage: "Life is about rhythm. We vibrate, our hearts are pumping blood. We are a rhythm machine, that's what we are. - Mickey Hart" }
+            { id: "seasons_11", poem: "In every season, trees find ways\nTo live according to the time\nYour cycles through the nights and days\nMake living such a sacred rhyme.", sage: "Life is about rhythm. We vibrate, our hearts are pumping blood. We are a rhythm machine, that's what we are. - Mickey Hart" },
+            { id: "seasons_12", poem: "The tree does not ask spring to stay\nNor begs the winter to depart\nIt knows the turning of the day\nIs written on the seasons' heart.", sage: "Time is a veil; beneath it, eternity breathes. - Ibn Arabi" },
+            { id: "seasons_13", poem: "Summer's pride and autumn's sigh\nWinter's sleep and spring's rebirth\nEach season teaches you to fly\nIn circles round the patient earth.", sage: "The seasons are God's alphabet, spelling the name of love. - Rustaveli" }
         ],
         
         // Category 10: Wholeness (12 poems) for healing, integration, completeness
@@ -379,7 +383,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "shape_8", poem: "ფორმა შეიძლება შეგიცვალოს წლების სვლამ,\nროგორც რგოლები ემატება ხის ტანს,\nთუმცა გულწრფელი სიმართლე ყოფილა\nრისთვისაც იზრდები, ბოლოს რაც ჩანს.", sage: "ერთადერთი ადამიანი, რომელთან შეჯიბრს უნდა ცდილობდე, ის არის, გუშინ რომ იყავი. - უცნობი ავტორი" },
             { id: "shape_9", poem: "ხე მოხრილ ტოტსაც თავისად თვლის,\nინახავს თავისთვის;\nგულწრფელობაში, ნამდვილის გვერდით\nიკარგება შეჯიბრის ხალისი.", sage: "დაიბადე ორიგინალი (დედანი). ნუ მოკვდები ასლი. - ჯონ მეისონი" },
             { id: "shape_10", poem: "ერთგვაროვნებას როდი ითხოვს ტყე,\nმრავალფეროვნებას ზეიმობს ყოველი ხე;\nდაიცავ გულწრფელ სიწმინდეს\nსაკუთარ თავს თუ უერთგულე.", sage: "ყოველთვის იყავი საკუთარი თავის პირველი ხარისხის განსახიერება და არა ვინმეს მეორე ხარისხოვანი განსახიერება. - ჯუდი გარლანდი" },
-            { id: "shape_11", poem: "ქვეყანა შენს ნამდვილ ფორმას ნახავს,\nროდესაც შენი სინათლის ერთგული დგახარ,\nგულწრფელობის წყალობით\nმუდამ გექნება ნამდვილი ძალა.", sage: "ვინც თავის თავი იცის, თავის უფალიც იცის. - იბნ არაბი" }
+            { id: "shape_11", poem: "ქვეყანა შენს ნამდვილ ფორმას ნახავს,\nროდესაც შენი სინათლის ერთგული დგახარ,\nგულწრფელობის წყალობით\nმუდამ გექნება ნამდვილი ძალა.", sage: "ვინც თავის თავი იცის, თავის უფალიც იცის. - იბნ არაბი" },
+            { id: "shape_12", poem: "კლდეზე დაგრეხილი ფიჭვი\nთავისებურად ლამაზად იზრდება,\nშენი ფორმა, მოხრილი რომც იყოს,\nშეუცვლელს გხდის. ასე იქნება.", sage: "ყველა ფორმას, რასაც ხედავ, თავის პირველსახე აქვს უხილავ სამყაროში. შენ ხარ ეს ფორმა. - იბნ არაბი"},
+            { id: "shape_13", poem: "ნუ ისურვებ სხვის ფორმას:\nარყი, მუხა, მტირალი ტირიფი;\nშენი ფორმა ქარიშხალში გაიწრთო,\nდა ახლა მყარად დგას, იღიმის.", sage: "თითოეულ სულში ღვთაებრივი ცის განუმეორებელი ვარსკვლავი ანათებს. - დანტე"}
         ],
 
         // Category 9: Seasons (12 poems in Georgian)
@@ -395,7 +401,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "seasons_8", poem: "წლის ყოველ დროს საჭირო რამ მოაქვს:\nგაკვეთილები და განსაკუთრებული მადლი;\nდროის ცვლილება სულს ეხმარება\nიპოვოს მისი ადგილი მიწა ადლი.", sage: "არის რაღაც უსასრულოდ გამაჯანსაღებელი ბუნების განმეორებულ მისამღერებში. - რეიჩელ კარსონი" },
             { id: "seasons_9", poem: "გაზაფხულის იმედი, ზაფხულის სრული მინდობა,\nშემოდგომის სიბრძნე, ზამთრის მშვიდობა,\nსეზონები თავის ადგილს პოულობს შენში,\nროცა შინაგანი ბრძოლა ადგილს უთმობს მშვიდობას.", sage: "ბუნება არ ჩქარობს, და ყველაფერი კი კეთდება. - ლაო ძი" },
             { id: "seasons_10", poem: "ხემ იცის სეზონი მოდის და მიდის,\nტრიალებს უსასრულო წრის ხაზზე;\nდროთა ცვლა გეხმარება სული გაზარდო\nამ შენს დალოცვილ მიწაზე.", sage: "მზე ამოვა და ჩავა ყველაფრის მიუხედავად. რას ვირჩევთ გავაკეთოთ სინათლით, სანამ აქ არის, ეს ჩვენზეა დამოკიდებული. - ალექსანდრა ელე" },
-            { id: "seasons_11", poem: "ყოველ სეზონზე ხე გზას მოძებნის,\nრომ იცხოვროს დროის შესაბამისად,\nდროის ცვლა ღამისა და დღის გავლით\nამ ცხოვრებას აქცევს წმინდა რითმად.", sage: "ცხოვრება რიტმია. ჩვენ ვვიბრირებთ, ჩვენი გული სისხლს ტუმბავს. ჩვენ ვართ რიტმული მანქანა, ესაა, რაცა ვართ. - მიკი ჰარტი" }
+            { id: "seasons_11", poem: "ყოველ სეზონზე ხე გზას მოძებნის,\nრომ იცხოვროს დროის შესაბამისად,\nდროის ცვლა ღამისა და დღის გავლით\nამ ცხოვრებას აქცევს წმინდა რითმად.", sage: "ცხოვრება რიტმია. ჩვენ ვვიბრირებთ, ჩვენი გული სისხლს ტუმბავს. ჩვენ ვართ რიტმული მანქანა, ესაა, რაცა ვართ. - მიკი ჰარტი" },
+            { id: "seasons_12", poem: "ხე გაზაფხულს დარჩენას არ სთხოვს,\nარც ზამთარს ევედრება წასვლას,\nმან იცის დღეების ცვლილება\nწელიწადის დროთა გულშია წერია მარად.", sage: "დრო ფარდაა; მის იქით მარადისობა სუნთქავს. - იბნ არაბი"},
+            { id: "seasons_13", poem: "ზაფხულის სიამაყე და შემოდგომის ოხვრა,\nზამთრის ძილი და გაზაფხულის კვლავ მოსვლა;\nყოველი სეზონი გასწავლის\nდედამიწის გარშემო როგორია ნავარდი.", sage: "The seasons are God's alphabet, spelling the name of love. - Rustaveli" }
         ],
 
         // Category 10: Wholeness (12 poems in Georgian)
