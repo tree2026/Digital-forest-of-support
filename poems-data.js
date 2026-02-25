@@ -210,7 +210,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "patience_9", poem: "Slow growth makes for stronger wood\nWith rings that tell of seasons passed\nYour patience will be understood\nWhen you have built to last.", sage: "Have patience. All things are difficult before they become easy. - Saadi" },
             { id: "patience_10", poem: "The bonsai master waits for years\nTo shape the tiny, living art\nYour patience through both joys and tears\nWill play its destined part.", sage: "Patience is the companion of wisdom. - Saint Augustine" },
             { id: "patience_11", poem: "The tree knows seasons must unfold\nIn their appointed, patient turn\nYour patience makes your spirit bold\nAnd helps life's lessons learn.", sage: "Rivers know this: there is no hurry. We shall get there some day. - A.A. Milne" },
-            { id: "patience_12", poem: "Do not demand the final word\nNor seek to capture what is free\nThe mystery must be inferred\nFrom every leaf on every tree.", sage: "Not every question demands an answer; some demand awe. - Ibn Arabi" }
+            { id: "patience_12", poem: "Do not demand the final word\nNor seek to capture what is free\nThe mystery must be inferred\nFrom every leaf on every tree.", sage: "Not every question demands an answer; some demand awe. - Ibn Arabi" },
+            { id: "patience_13", poem: "The seed does not demand the sun\nTo hurry with its warming rays\nIt knows its work is not yet done\nAnd trusts in slowly growing days.", sage: "Patience is not waiting; it is the art of hoping while hidden. - Ibn Arabi" },
+            { id: "patience_14", poem: "The oak that stands a thousand years\nWas patient through a thousand springs\nYour waiting holds the same spheres\nThat circle round all growing things.", sage: "The lover waits not because he must, but because love itself is the waiting. - Rustaveli" }
         ],
         
         // Category 12: Presence (12 poems) for mindfulness, now, awareness
@@ -228,7 +230,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "presence_10", poem: "In presence, there is only this\nThis breath, this light, this ground, this sky\nThe tree has learned the perfect bliss\nOf being present, by and by.", sage: "Life is available only in the present moment. - Thich Nhat Hanh" },
             { id: "presence_11", poem: "The tree does not miss being elsewhere\nBut stands complete in its own place\nYour presence is the answered prayer\nThat brings you fully into grace.", sage: "Wherever you are, be there totally. - Eckhart Tolle" },
             { id: "presence_12", poem: "The pond reflects the perfect moon\nWhen not a single ripple moves\nSo silence is the sacred boon\nThat clarifies what spirit proves.", sage: "Be silent, that the heart may speak. - Ibn Arabi" },
-            { id: "presence_13", poem: "Between the thoughts, between the breaths\nA gap of infinite repose\nWhere dwell the one who never death\nAnd knows the peace the silence knows.", sage: "In the stillness, the stars sang of love. - Dante" }
+            { id: "presence_13", poem: "Between the thoughts, between the breaths\nA gap of infinite repose\nWhere dwell the one who never death\nAnd knows the peace the silence knows.", sage: "In the stillness, the stars sang of love. - Dante" },
+            { id: "presence_14", poem: "This breath, this moment, this one leaf\nThat trembles in the present air\nContains all joy, contains all grief\nAnd holds you in its timeless care.", sage: "The present moment is the veil through which eternity gazes. - Ibn Arabi" },
+            { id: "presence_15", poem: "The past is ash, the future smoke\nBut here, now, burns the living flame\nPresence is the sacred cloak\nThat wraps you in your own true name.", sage: "The love that moves the sun and other stars is here, now, in this breath. - Dante" }
         ]
     },
     
@@ -442,7 +446,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "patience_9", poem: "ნელი ზრდით უფრო ძლიერი ხე იზრდება,\nწარსულ დროთა სპექტაკლი რგოლებით იდგმება,\nმოთმინება უფრო გასაგები იქნება,\nროცა შენი აშენებული დიდხანს იდგმება.", sage: "მოთმინება იქონიე. ყველაფერი რთულია, სანამ ადვილი გახდება. - სადი" },
             { id: "patience_10", poem: "ბონსაის ოსტატი წლების მანძილზე ელოდება,\nრომ ჩამოაყალიბოს პატარა ცოცხალი ხელოვნება,\nსიხარულისა და ცრემლის გასწვრივ მოთმინება\nთავის როლს თამაშობს, ისიც გელოდება.", sage: "მოთმინება სიბრძნის თანამგზავრია. - წმინდა ავგუსტინე" },
             { id: "patience_11", poem: "ხემ იცის წელიწადის ყოველი დრო\nთავის ჯერზე მოვა, დანიშნულ დროს,\nმოთმინება სულს გაამამაცებს\nდა ეხმარება ცხოვრება ისწავლოს.", sage: "მდინარეებმა ეს იციან: საჩქარო არაფერია. ერთ დღეს მივაღწევთ იქამდე. - ა.ა. მილნი" },
-            { id: "patience_12", poem: "ნუ მოითხოვ ბოლო სიტყვას,\nნუ ელი სიბრძნეს კაცთა მოდგმიდან,\nსაიდუმლო უნდა გამოიტანო\nხის ყოველი ფოთლიდან.", sage: "ყველა კითხვა პასუხს კი არ მოითხოვს; ზოგი მოწიწებას მოითხოვს. - იბნ არაბი" }
+            { id: "patience_12", poem: "ნუ მოითხოვ ბოლო სიტყვას,\nნუ ელი სიბრძნეს კაცთა მოდგმიდან,\nსაიდუმლო უნდა გამოიტანო\nხის ყოველი ფოთლიდან.", sage: "ყველა კითხვა პასუხს კი არ მოითხოვს; ზოგი მოწიწებას მოითხოვს. - იბნ არაბი" },
+            { id: "patience_13", poem: "თესლი არ ითხოვს, რომ მზემ\nდააჩქაროს თბილი სხივები,\nიცის, რომ მისი საქმე ჯერ არ დასრულებულა\nდა ენდობა ნელ სვლას მზარდი დღეების.", sage: "მოთმინება არ არის ლოდინი; ეს დაფარული იმედის ხელოვნებაა. - იბნ არაბი" },
+            { id: "patience_14", poem: "მუხამ, რომელიც ათასი წელი დგას,\nათასი გაზაფხული იცადა,\nშენი მოთმინებაც ასეა,\nრგოლებმა ხის ბირთვში ყოველ წელს იმატა.", sage: "The lover waits not because he must, but because love itself is the waiting. - Rustaveli" }
         ],
 
         // Category 12: Presence (12 poems in Georgian)
@@ -460,7 +466,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "presence_10", poem: "ყოფნისას, არსებობს მხოლოდ ეს,\nეს სუნთქვა, ეს შუქი, ეს მიწა, ეს ცა,\nხემ ისწავლა სრული ნეტარება\nაწმყოში ყოფნის, თანდათანობა.", sage: "სიცოცხლე ხელმისაწვდომია მხოლოდ ახლანდელ მომენტში. - ტიჩ ნჰატ ჰანჰი" },
             { id: "presence_11", poem: "ხე სხვაგან ყოფნას არ მოინატრებს,\nთავის ადგილზე დგას და იქიდან არ დგება,\nმოხდენილობას მოგიმადლებს\nშენი ყოფნა. ასრულებული ლოცვაა.", sage: "სადაც არ უნდა იყო, იყავი იქ მთლიანად. - ექჰარტ ტოლე" },
             { id: "presence_12", poem: "როცა არცერთი ტალღა მოძრაობს,\nტბა მთვარეს უნაკლოდ ირეკლავს,\nსიჩუმე წმინდა წყალობაა,\nიგი განმარტავს სულის მტკიცებას.", sage: "გაჩუმდი, რომ გულმა ილაპარაკოს. - იბნ არაბი" },
-            { id: "presence_13", poem: "ფიქრებსა და სუნთქვას შორის\nუსასრულო უფსკრული ძევს,\nიქ ცხოვრობს ის, ვინც არასდროს კვდება,\nვინც იცის სიჩუმის სიმშვიდე.", sage: "სიწყნარეში ვარსკვლავები სიყვარულზე მღეროდნენ. - დანტე" }
+            { id: "presence_13", poem: "ფიქრებსა და სუნთქვას შორის\nუსასრულო უფსკრული ძევს,\nიქ ცხოვრობს ის, ვინც არასდროს კვდება,\nვინც იცის სიჩუმის სიმშვიდე.", sage: "სიწყნარეში ვარსკვლავები სიყვარულზე მღეროდნენ. - დანტე" },
+            { id: "presence_14", poem: "ეს სუნთქვა, ეს წამი, ეს ერთი ფოთოლი,\nრომელიც ახლა ირხევა ქარში,\nშეიცავს ყველა სიხარულს და ყველა წყენას,\nრაც გიხუტებს მარადიულ მზრუნველობაში.", sage: "აწმყო წამი ჩადრია, რომლის იქიდან მარადისობა იმზირება. - იბნ არაბი" },
+            { id: "presence_15", poem: "წარსული ფერფლია, მომავალი კვამლი,\nმაგრამ აქ, ახლა, იწვის ცოცხალი ალი,\nახლა აქ ყოფნა წმინდა სამოსელია,\nშენი ნამდვილი სახელის ნამდვილი სახლი.", sage: "სიყვარული, რომელიც მზეს და ვარსკვლავებს ამოძრავებს, აქ, ახლა, ამ სუნთქვაშია. - დანტე" }
         ]
     }
 };
