@@ -96,7 +96,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "reaching_10", poem: "Some reaches bend, some reaches break\nSome find the light they seek to know\nYour aspirations for your sake\nWill help your inner being grow.", sage: "The journey of a thousand miles begins with one step. - Lao Tzu" },
             { id: "reaching_11", poem: "The tree reaches not to compete\nBut to fulfill its nature's call\nYour aspirations make complete\nThe purpose that includes it all.", sage: "He who has a why to live can bear almost any how. - Nietzsche" },
             { id: "reaching_12", poem: "You cannot force the dawn to break\nNor hurry night to give its gift\nBut stay awake for your own sake\nAnd watch the veils of seeing lift.", sage: "The dawn does not ask permission to arrive. - Ibn Arabi" },
-            { id: "reaching_13", poem: "A single flame can light a room\nThat darkness held for countless years\nSo let this truth undo the gloom\nAnd dry the residue of tears.", sage: "A little spark of glory may become a great fire. - Rustaveli" }
+            { id: "reaching_13", poem: "A single flame can light a room\nThat darkness held for countless years\nSo let this truth undo the gloom\nAnd dry the residue of tears.", sage: "A little spark of glory may become a great fire. - Rustaveli" },
+            { id: "reaching_14", poem: "The branch that reaches toward the light\nDoes not despise the shade below\nIt knows that darkness and the bright\nAre partners in the dance of grow.", sage: "The journey is not about reaching the sky, but about the reaching itself. - Ibn Arabi" },
+            { id: "reaching_15", poem: "Do not ask if you will reach the sun\nOr if your striving will succeed\nThe reaching is what makes you one\nWith every light-desiring seed.", sage: "From there we climbed, and saw the stars once more. - Dante" }
         ],
         
         // Category 6: Network (12 poems) for connection, community, support
@@ -317,7 +319,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "reaching_10", poem: "ზოგი მიღწევა იღუნება, ზოგი მიღწევა ირღვევა,\nზოგი პოულობს სინათლეს, რომლის ცოდნაც სურს\nშენი ლტოლვა-მისწრაფება დაგეხმარება\nგაიზარდო იქამდე, რაც გსურს.", sage: "ათას კილომეტრიანი მოგზაურობა ერთი ნაბიჯით იწყება. - ლაო ძი" },
             { id: "reaching_11", poem: "ხე შეჯიბრისთვის კი არ ემზადება,\nზრდა მას ბუნების ძახილად ეცხადება,\nმისწრაფება მიზნის ძახილით გამოდის,\nრომ შეასრულოს სულს რაც ენატრება.", sage: "ვისაც განსაზღვრული აქვს თუ რატომ ცხოვრობს, თითქმის ყველანაირ ცხოვრებას უმკლავდება (ან ვისაც ესმის რატომ იცხოვროს, ესმის როგორ იცხოვროს). - ნიცშე" },
             { id: "reaching_12", poem: "გათენებას ვერ აიძულებ\nდა ვერც ღამე ჩაიხსნება,\nმაგრამ ფხიზლად იყავი და ნახავ,\nხილვის ფარდები როგორ აიხსნება.", sage: "გათენება არ ითხოვს მოსვლის ნებართვას. - იბნ არაბი" },
-            { id: "reaching_13", poem: "ციცქნა ალი ანათებს ოთახს,\nსიბნელეს რომ მოეცვა უთვალავი წელი,\nდაე, ამ სიმართლემ გააქროს სიბნელე\nდა გააშროს ნადენი ცრემლი.", sage: "A little spark of glory may become a great fire. - Rustaveli" }
+            { id: "reaching_13", poem: "ციცქნა ალი ანათებს ოთახს,\nსიბნელეს რომ მოეცვა უთვალავი წელი,\nდაე, ამ სიმართლემ გააქროს სიბნელე\nდა გააშროს ნადენი ცრემლი.", sage: "A little spark of glory may become a great fire. - Rustaveli" },
+            { id: "reaching_14", poem: "ტოტს, სინათლისკენ რომ იწვდება,\nარ სძულს ქვემოთ ჩრდილი რომ იზრდება,\nიცის, რომ სიბნელე და სინათლე\nერთად ცეკვავენ; ასე იქნება.", sage: "მოგზაურობა ცის მიღწევის ამბავს არ ყვება, არამედ საკუთარი თავის მიღწევის. - იბნ არაბი" },
+            { id: "reaching_15", poem: "ნუ იკითხავ, მიაღწევ თუ არა მზეს,\nან შენი სწრაფვა თუ მოიტანს წარმტაც ხვედრს,\nმიღწევაა ის, რაც გაერთიანებთ\nშენ და სინათლის მოყვარულ ყოველ თესლს.", sage: "...იქიდან ავცოცდით და კიდევ ერთხელ ვნახეთ ვარსკვლავები. - დანტე" }
         ],
 
         // Category 6: Network (12 poems in Georgian)
