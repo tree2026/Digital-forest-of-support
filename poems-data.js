@@ -117,7 +117,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "network_11", poem: "No root system stands alone\nAll drink from shared and common source\nYour network is the stepping stone\nTo stay upon your chosen course.", sage: "The heart that loves is always young. - Greek Proverb" },
             { id: "network_12", poem: "The wounded tree receives the gift\nOf nutrients from healthy roots\nYour network is the living lift\nThat bears you and your precious fruits.", sage: "The One who is alone creates the many, and the many return to the One. - Ibn Arabi" },
             { id: "network_13", poem: "Beneath the soil, a thousand hands\nEmbrace the roots of every tree\nYour network is where love expands\nAnd makes you more than you could be.", sage: "A true friend is revealed in times of hardship - a mirror to your soul. - Rustaveli" },
-            { id: "network_14", poem: "Love is not what you think it is\nNot sentiment nor passing flame\nIt is the force that holds the stars\nAnd calls each being by its name.", sage: "Love that moves the sun and the stars. - Dante" }
+            { id: "network_14", poem: "Love is not what you think it is\nNot sentiment nor passing flame\nIt is the force that holds the stars\nAnd calls each being by its name.", sage: "Love that moves the sun and the stars. - Dante" },
+            { id: "network_15", poem: "The forest speaks in roots below\nWhat cannot be said above the ground\nThe oldest tree helps seedlings grow\nThrough silent web where help is found.", sage: "No one is a stranger in the kingdom of love, for all hearts are connected beneath the surface. - Ibn Arabi" }
         ],
         
         // Category 7: Bending (12 poems) for flexibility, resilience, storms
@@ -155,7 +156,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "shape_10", poem: "No forest asks for uniformity\nBut celebrates diversity\nYour authentic self's purity\nIs in your own fidelity.", sage: "Always be a first rate version of yourself and not a second rate version of someone else. - Judy Garland" },
             { id: "shape_11", poem: "Your shape is what the world will see\nWhen you stand true to your own light\nAuthenticity will be\nThe source of your enduring might.", sage: "He who knows himself knows his Lord. - Ibn Arabi" },
             { id: "shape_12", poem: "The crooked pine upon the cliff\nGrows beautiful in its own way\nYour shape, though twisted, is the if\nThat makes you irreplaceable today.", sage: "Every form you see has its archetype in the unseen world. You are that form. - Ibn Arabi" },
-            { id: "shape_13", poem: "Do not desire another's form\nThe birch, the oak, the weeping willow\nYour shape was weathered in the storm\nAnd now stands firm upon its pillow.", sage: "Within each soul, a unique star shines in the divine firmament. - Dante" }
+            { id: "shape_13", poem: "Do not desire another's form\nThe birch, the oak, the weeping willow\nYour shape was weathered in the storm\nAnd now stands firm upon its pillow.", sage: "Within each soul, a unique star shines in the divine firmament. - Dante" },
+            { id: "shape_14", poem: "The twisted trunk that grows alone\nUpon the wind-swept mountain crest\nIs more itself than any clone\nThat grows in valleys of the blessed.", sage: "Your form is a letter in God's great book - without you, the page is incomplete. - Ibn Arabi" }
         ],
         
         // Category 9: Seasons (12 poems) for cycles, change, rhythms
@@ -173,7 +175,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "seasons_10", poem: "The tree knows seasons come and go\nIn never-ending, patient round\nYour cycles help your spirit grow\nOn this, your sacred, hallowed ground.", sage: "The sun will rise and set regardless. What we choose to do with the light while it's here is up to us. - Alexandra Elle" },
             { id: "seasons_11", poem: "In every season, trees find ways\nTo live according to the time\nYour cycles through the nights and days\nMake living such a sacred rhyme.", sage: "Life is about rhythm. We vibrate, our hearts are pumping blood. We are a rhythm machine, that's what we are. - Mickey Hart" },
             { id: "seasons_12", poem: "The tree does not ask spring to stay\nNor begs the winter to depart\nIt knows the turning of the day\nIs written on the seasons' heart.", sage: "Time is a veil; beneath it, eternity breathes. - Ibn Arabi" },
-            { id: "seasons_13", poem: "Summer's pride and autumn's sigh\nWinter's sleep and spring's rebirth\nEach season teaches you to fly\nIn circles round the patient earth.", sage: "The seasons are God's alphabet, spelling the name of love. - Rustaveli" }
+            { id: "seasons_13", poem: "Summer's pride and autumn's sigh\nWinter's sleep and spring's rebirth\nEach season teaches you to fly\nIn circles round the patient earth.", sage: "The seasons are God's alphabet, spelling the name of love. - Rustaveli" },
+            { id: "seasons_14", poem: "The rose that blooms in April's light\nRemembers not the March wind's chill\nYet carries winter through the night\nIn roots that wait, in stems grown still.", sage: "Every season is a door to eternity, and the wise one enters each without hesitation. - Dante" },
+            { id: "seasons_15", poem: "Not one season lasts forever\nNor should it, though we weep to see\nThe autumn leaf in wind's endeavor\nMake way for what is yet to be.", sage: "The wheel of time turns not to break us, but to show us a new face of the Beloved. - Rustaveli" }
         ],
         
         // Category 10: Wholeness (12 poems) for healing, integration, completeness
@@ -212,7 +216,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "patience_11", poem: "The tree knows seasons must unfold\nIn their appointed, patient turn\nYour patience makes your spirit bold\nAnd helps life's lessons learn.", sage: "Rivers know this: there is no hurry. We shall get there some day. - A.A. Milne" },
             { id: "patience_12", poem: "Do not demand the final word\nNor seek to capture what is free\nThe mystery must be inferred\nFrom every leaf on every tree.", sage: "Not every question demands an answer; some demand awe. - Ibn Arabi" },
             { id: "patience_13", poem: "The seed does not demand the sun\nTo hurry with its warming rays\nIt knows its work is not yet done\nAnd trusts in slowly growing days.", sage: "Patience is not waiting; it is the art of hoping while hidden. - Ibn Arabi" },
-            { id: "patience_14", poem: "The oak that stands a thousand years\nWas patient through a thousand springs\nYour waiting holds the same spheres\nThat circle round all growing things.", sage: "The lover waits not because he must, but because love itself is the waiting. - Rustaveli" }
+            { id: "patience_14", poem: "The oak that stands a thousand years\nWas patient through a thousand springs\nYour waiting holds the same spheres\nThat circle round all growing things.", sage: "The lover waits not because he must, but because love itself is the waiting. - Rustaveli" },
+            { id: "patience_15", poem: "The seed sleeps in the winter ground\nAnd dreams of what it does not know\nThe sun's return, the rain's soft sound\nWill wake it in its time, and slow.", sage: "Patience is not the absence of action, but the presence of trust while the unseen works. - Ibn Arabi" }
         ],
         
         // Category 12: Presence (12 poems) for mindfulness, now, awareness
@@ -353,7 +358,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "network_11", poem: "ფესვთა სისტემა მარტო არ დგას,\nზიარი, საერთო წყაროდან სვამს;\nკავშირთა ქსელია საფეხურთა სვლა,\nრომ შეინარჩუნო არჩეული გზა.", sage: "გული, რომელსაც უყვარს, ყოველთვის ახალგაზრდაა. - ბერძნული ანდაზა" },
             { id: "network_12", poem: "როგორც დაზიანებულ ხეს\nჯანსაღი ფესვები აწვდიან საკვებს,\nასე კაცთა ქსელი ცოცხალი ამწეა,\nკაცს და მის ნაყოფს რომ გაიტანს, გასწევს.", sage: "ის ერთი, ვინც მარტოა, მრავალს ქმნის და მრავალნი იმ ერთთან ბრუნდებიან. - იბნ არაბი" },
             { id: "network_13", poem: "ნიადაგის ქვეშ ყველა ხის ფესვი\nერთმანეთს ეხვევა ვით ათასი ხელი,\nსიყვარული ფართოვდება ხე(ლ)თა ქსელით\nდა გხდის იმაზე მეტს, ვიდრე შენ თავად ელი.", sage: "A true friend is revealed in times of hardship - a mirror to your soul. - Rustaveli" },
-            { id: "network_14", poem: "სიყვარული ის არაა, რაც გგონია,\nარც გრძნობაა, არც წარმავალი ალი,\nეს ძალაა, ვარსკვლავს რომ ადგილს უბოძებს\nდა ყოველ არსებას თავის სახელს უწოდებს.", sage: "სიყვარული მზეს და ვარსკვლავებს ამოძრავებს. - დანტე" }
+            { id: "network_14", poem: "სიყვარული ის არაა, რაც გგონია,\nარც გრძნობაა, არც წარმავალი ალი,\nეს ძალაა, ვარსკვლავს რომ ადგილს უბოძებს\nდა ყოველ არსებას თავის სახელს უწოდებს.", sage: "სიყვარული მზეს და ვარსკვლავებს ამოძრავებს. - დანტე" },
+            { id: "network_15", poem: "ტყე ქვევით ფესვებით იმას ილაპარაკებს,\nრაც მიწის ზემოთ არ შეიძლება ითქვას,\nძველი ხე ნერგების ზრდას უწყობს ხელს,\nასე ჩუმი ქსელი დიდ დახმარებად იქცა.", sage: "სიყვარულის სამეფოში არავინ არის უცხო, რადგან ყველა გული დაკავშირებულია ზედაპირის ქვეშ. - იბნ არაბი" }
         ],
 
         // Category 7: Bending (12 poems in Georgian)
@@ -391,7 +397,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "shape_10", poem: "ერთგვაროვნებას როდი ითხოვს ტყე,\nმრავალფეროვნებას ზეიმობს ყოველი ხე;\nდაიცავ გულწრფელ სიწმინდეს\nსაკუთარ თავს თუ უერთგულე.", sage: "ყოველთვის იყავი საკუთარი თავის პირველი ხარისხის განსახიერება და არა ვინმეს მეორე ხარისხოვანი განსახიერება. - ჯუდი გარლანდი" },
             { id: "shape_11", poem: "ქვეყანა შენს ნამდვილ ფორმას ნახავს,\nროდესაც შენი სინათლის ერთგული დგახარ,\nგულწრფელობის წყალობით\nმუდამ გექნება ნამდვილი ძალა.", sage: "ვინც თავის თავი იცის, თავის უფალიც იცის. - იბნ არაბი" },
             { id: "shape_12", poem: "კლდეზე დაგრეხილი ფიჭვი\nთავისებურად ლამაზად იზრდება,\nშენი ფორმა, მოხრილი რომც იყოს,\nშეუცვლელს გხდის. ასე იქნება.", sage: "ყველა ფორმას, რასაც ხედავ, თავის პირველსახე აქვს უხილავ სამყაროში. შენ ხარ ეს ფორმა. - იბნ არაბი" },
-            { id: "shape_13", poem: "ნუ ისურვებ სხვის ფორმას:\nარყი, მუხა, მტირალი ტირიფი;\nშენი ფორმა ქარიშხალში გაიწრთო,\nდა ახლა მყარად დგას, იღიმის.", sage: "თითოეულ სულში ღვთაებრივი ცის განუმეორებელი ვარსკვლავი ანათებს. - დანტე" }
+            { id: "shape_13", poem: "ნუ ისურვებ სხვის ფორმას:\nარყი, მუხა, მტირალი ტირიფი;\nშენი ფორმა ქარიშხალში გაიწრთო,\nდა ახლა მყარად დგას, იღიმის.", sage: "თითოეულ სულში ღვთაებრივი ცის განუმეორებელი ვარსკვლავი ანათებს. - დანტე" },
+            { id: "shape_14", poem: "დაგრეხილი ხე, მარტო რომ იზრდება\nქარიან ციცაბო ქარაფზე,\nუფრო თავისთავადია, ვიდრე ნებისმიერი სხვა,\nრომელიც იზრდება კურთხეულ ხეობის დაბალზე.", sage: "შენი ფორმა ღვთის წიგნში ერთი ასოა - შენს გარეშე გვერდი არასრულია. - იბნ არაბი" }
         ],
 
         // Category 9: Seasons (12 poems in Georgian)
@@ -409,7 +416,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "seasons_10", poem: "ხემ იცის სეზონი მოდის და მიდის,\nტრიალებს უსასრულო წრის ხაზზე;\nდროთა ცვლა გეხმარება სული გაზარდო\nამ შენს დალოცვილ მიწაზე.", sage: "მზე ამოვა და ჩავა ყველაფრის მიუხედავად. რას ვირჩევთ გავაკეთოთ სინათლით, სანამ აქ არის, ეს ჩვენზეა დამოკიდებული. - ალექსანდრა ელე" },
             { id: "seasons_11", poem: "ყოველ სეზონზე ხე გზას მოძებნის,\nრომ იცხოვროს დროის შესაბამისად,\nდროის ცვლა ღამისა და დღის გავლით\nამ ცხოვრებას აქცევს წმინდა რითმად.", sage: "ცხოვრება რიტმია. ჩვენ ვვიბრირებთ, ჩვენი გული სისხლს ტუმბავს. ჩვენ ვართ რიტმული მანქანა, ესაა, რაცა ვართ. - მიკი ჰარტი" },
             { id: "seasons_12", poem: "ხე გაზაფხულს დარჩენას არ სთხოვს,\nარც ზამთარს ევედრება წასვლას,\nმან იცის დღეების ცვლილება\nწელიწადის დროთა გულშია წერია მარად.", sage: "დრო ფარდაა; მის იქით მარადისობა სუნთქავს. - იბნ არაბი" },
-            { id: "seasons_13", poem: "ზაფხულის სიამაყე და შემოდგომის ოხვრა,\nზამთრის ძილი და გაზაფხულის კვლავ მოსვლა;\nყოველი სეზონი გასწავლის\nდედამიწის გარშემო როგორია ნავარდი.", sage: "The seasons are God's alphabet, spelling the name of love. - Rustaveli" }
+            { id: "seasons_13", poem: "ზაფხულის სიამაყე და შემოდგომის ოხვრა,\nზამთრის ძილი და გაზაფხულის კვლავ მოსვლა;\nყოველი სეზონი გასწავლის\nდედამიწის გარშემო როგორია ნავარდი.", sage: "The seasons are God's alphabet, spelling the name of love. - Rustaveli" },
+            { id: "seasons_14", poem: "მაისში მოყვავილე ვარდმა\nგანვლო მარტის ქარის სიცივე,\nზამთრის ყოველი ღამის დამსწრეა და\nმომლოდინე ფესვების სითბოში იღვიძებს.", sage: "ყოველი სეზონი მარადისობის კარია და ბრძენი უყოყმანოდ შედის თითოეულში. - დანტე" },
+            { id: "seasons_15", poem: "არც ერთი სეზონი გრძელდება სამუდამოდ,\nდა არც უნდა გაგრძელდეს,\nშემოდგომის ფოთოლი ქარს მიჰყვება,\nგზას უხსნის მას, რაც უნდა გაგრძელდეს.", sage: "The wheel of time turns not to break us, but to show us a new face of the Beloved. - Rustaveli" }
         ],
 
         // Category 10: Wholeness (12 poems in Georgian)
@@ -448,7 +457,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "patience_11", poem: "ხემ იცის წელიწადის ყოველი დრო\nთავის ჯერზე მოვა, დანიშნულ დროს,\nმოთმინება სულს გაამამაცებს\nდა ეხმარება ცხოვრება ისწავლოს.", sage: "მდინარეებმა ეს იციან: საჩქარო არაფერია. ერთ დღეს მივაღწევთ იქამდე. - ა.ა. მილნი" },
             { id: "patience_12", poem: "ნუ მოითხოვ ბოლო სიტყვას,\nნუ ელი სიბრძნეს კაცთა მოდგმიდან,\nსაიდუმლო უნდა გამოიტანო\nხის ყოველი ფოთლიდან.", sage: "ყველა კითხვა პასუხს კი არ მოითხოვს; ზოგი მოწიწებას მოითხოვს. - იბნ არაბი" },
             { id: "patience_13", poem: "თესლი არ ითხოვს, რომ მზემ\nდააჩქაროს თბილი სხივები,\nიცის, რომ მისი საქმე ჯერ არ დასრულებულა\nდა ენდობა ნელ სვლას მზარდი დღეების.", sage: "მოთმინება არ არის ლოდინი; ეს დაფარული იმედის ხელოვნებაა. - იბნ არაბი" },
-            { id: "patience_14", poem: "მუხამ, რომელიც ათასი წელი დგას,\nათასი გაზაფხული იცადა,\nშენი მოთმინებაც ასეა,\nრგოლებმა ხის ბირთვში ყოველ წელს იმატა.", sage: "The lover waits not because he must, but because love itself is the waiting. - Rustaveli" }
+            { id: "patience_14", poem: "მუხამ, რომელიც ათასი წელი დგას,\nათასი გაზაფხული იცადა,\nშენი მოთმინებაც ასეა,\nრგოლებმა ხის ბირთვში ყოველ წელს იმატა.", sage: "The lover waits not because he must, but because love itself is the waiting. - Rustaveli" },
+            { id: "patience_15", poem: "თესლს ზამთარში მიწაში სძინავს,\nოცნებობს უცნობზე, მისცემია სიზმრებს,\nმზის დაბრუნება და წვიმის რბილი ხმა\nთავის დროზე მას ნელა გააღვიძებს.", sage: "მოთმინება უმოქმედობა კი არ არის, არამედ ნდობის გამოვლენაა, სანამ უხილავი მოქმედებს. - იბნ არაბი" }
         ],
 
         // Category 12: Presence (12 poems in Georgian)
