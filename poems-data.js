@@ -57,9 +57,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rings_11", poem: "Count backward through the rings to see\nHow far you've come from seedling start\nEach year has brought you closer to\nThe wisdom growing in your heart.", sage: "What matters is how quickly you do what your soul directs. - Rumi" },
             { id: "rings_12", poem: "The lantern held before your feet\nReveals but one step at a time\nYet walking makes the path complete\nAnd brings you to the heights you climb.", sage: "The One in you who knows is the One who has always known. - Ibn Arabi" },
             { id: "rings_13", poem: "Asleep within the dream of days\nWe grasp at shadows, call them real\nUntil a light cuts through the haze\nAnd teaches wounded hearts to feel.", sage: "In the middle of the journey of our life, I found myself within a dark wood. - Dante" },
-            { id: "rings_14", poem: "Love is not what you think it is\nNot sentiment nor passing flame\nIt is the force that holds the stars\nAnd calls each being by its name.", sage: "Love that moves the sun and the stars. - Dante" },
-            { id: "rings_15", poem: "The narrow rings of famine years\nAnd wide rings of abundant rain\nAre written in the grain that bears\nThe story of what you contain.", sage: "Every moment, the soul is renewed, and in that renewal is its proof. - Ibn Arabi" },
-            { id: "rings_16", poem: "No ring is ever truly lost\nThough seasons change and years pass by\nEach one becomes the bridge across\nThe river of your living sky.", sage: "In His will is our peace, and every ring of time turns toward that center. - Dante" }
+            { id: "rings_14", poem: "The narrow rings of famine years\nAnd wide rings of abundant rain\nAre written in the grain that bears\nThe story of what you contain.", sage: "Every moment, the soul is renewed, and in that renewal is its proof. - Ibn Arabi" },
+            { id: "rings_15", poem: "No ring is ever truly lost\nThough seasons change and years pass by\nEach one becomes the bridge across\nThe river of your living sky.", sage: "In His will is our peace, and every ring of time turns toward that center. - Dante" }
         ],
         
         // Category 4: Release (12 poems) for letting go, autumn, endings
@@ -117,7 +116,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "network_10", poem: "The forest is a single being\nWith many trunks and countless leaves\nYour network, ever seeing, freeing\nIs what the heart of man believes.", sage: "We are like trees: we must create new leaves, in new directions, to grow. - Joyce Rachelle" },
             { id: "network_11", poem: "No root system stands alone\nAll drink from shared and common source\nYour network is the stepping stone\nTo stay upon your chosen course.", sage: "The heart that loves is always young. - Greek Proverb" },
             { id: "network_12", poem: "The wounded tree receives the gift\nOf nutrients from healthy roots\nYour network is the living lift\nThat bears you and your precious fruits.", sage: "The One who is alone creates the many, and the many return to the One. - Ibn Arabi" },
-            { id: "network_13", poem: "Beneath the soil, a thousand hands\nEmbrace the roots of every tree\nYour network is where love expands\nAnd makes you more than you could be.", sage: "A true friend is revealed in times of hardship - a mirror to your soul. - Rustaveli" }
+            { id: "network_13", poem: "Beneath the soil, a thousand hands\nEmbrace the roots of every tree\nYour network is where love expands\nAnd makes you more than you could be.", sage: "A true friend is revealed in times of hardship - a mirror to your soul. - Rustaveli" },
+            { id: "network_14", poem: "Love is not what you think it is\nNot sentiment nor passing flame\nIt is the force that holds the stars\nAnd calls each being by its name.", sage: "Love that moves the sun and the stars. - Dante" }
         ],
         
         // Category 7: Bending (12 poems) for flexibility, resilience, storms
@@ -293,9 +293,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rings_11", poem: "რა შორს წასულხარ საწყისი ნერგიდან!\nგადათვალე სათითაოდ რგოლები!\nყოველმა წელმა დაგაახლოვა სიბრძნესთან,\nგული ბრძენია. გონებას ნუ ემონები.", sage: "მნიშვნელოვანია, თუ რამდენად სწრაფად აკეთებ იმას, რასაც სული მიგითითებს. - რუმი" },
             { id: "rings_12", poem: "ფარნის სინათლე გზას ნაბიჯ-ნაბიჯ ავლენს,\nივლი და თანდათან გზას ნათელს დაჰფენ,\nსიარულით ბედისწერას ნელნელა აჩენ,\nსიმაღლის მისაღწევად სიარული გმართებს.", sage: "შენში არის ის, ვინც იცის, ვინც ყოველთვის იცოდა. - იბნ არაბი" },
             { id: "rings_13", poem: "მძინარენი ვეჭიდებით ჩრდილებს,\nგონება მათ 'ნამდვილად' იღებს,\nსანამ სინათლე ნისლს არ გაჭრის\nდა გრძნობას გულში არ ჩაჭრის.", sage: "ჩვენი ცხოვრების მოგზაურობის შუაგულში, ბნელ ტყეში აღმოვჩნდი. - დანტე" },
-            { id: "rings_14", poem: "სიყვარული ის არაა, რაც გგონია,\nარც გრძნობაა, არც წარმავალი ალი,\nეს ძალაა, ვარსკვლავს რომ ადგილს უბოძებს\nდა ყოველ არსებას თავის სახელს უწოდებს.", sage: "სიყვარული მზეს და ვარსკვლავებს ამოძრავებს. - დანტე" },
-            { id: "rings_15", poem: "შიმშილის წლების ვიწრო ზოლები,\nუხვწვიმიანი წლების ფართო რგოლები,\nასე დაწერილა ამბავი იმაზე,\nთუ შენს ბედს როგორ ესაუბრები.", sage: "ყოველ წამს სული ახლდება, და ამ განახლებაშია ამის დასტური. - იბნ არაბი" },
-            { id: "rings_16", poem: "არც ერთი რგოლი არასდროს იკარგება,\nთუმც სეზონები იცვლება, წლები გადის,\nთითოეული მათგანი ხიდად იქცევა,\nჩვენს ცოცხალ ცის ფერ მდინარეზე გადის.", sage: "მის ნებაში არის ჩვენი მშვიდობა და დროის ყოველი რგოლი ამ ცენტრისკენ იხრება. - დანტე" }
+            { id: "rings_14", poem: "შიმშილის წლების ვიწრო ზოლები,\nუხვწვიმიანი წლების ფართო რგოლები,\nასე დაწერილა ამბავი იმაზე,\nთუ შენს ბედს როგორ ესაუბრები.", sage: "ყოველ წამს სული ახლდება, და ამ განახლებაშია ამის დასტური. - იბნ არაბი" },
+            { id: "rings_15", poem: "არც ერთი რგოლი არასდროს იკარგება,\nთუმც სეზონები იცვლება, წლები გადის,\nთითოეული მათგანი ხიდად იქცევა,\nჩვენს ცოცხალ ცის ფერ მდინარეზე გადის.", sage: "მის ნებაში არის ჩვენი მშვიდობა და დროის ყოველი რგოლი ამ ცენტრისკენ იხრება. - დანტე" }
         ],
         
         // Category 4: Release (12 poems in Georgian)
@@ -353,7 +352,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "network_10", poem: "ტყე ერთ არსებად არსებობს, არს,\nუთვალავი ფოთლით და მრავალი ხით ჩანს;\nშენი ქსელი, ყოვლისმხედველი, არ ხუჭავს თვალს,\nრაკი თავისუფლებაა ის, რაც კაცის გულს სწამს.", sage: "ჩვენ ხეებივით ვართ: უნდა შევქმნათ ახალი ფოთლები, ახალი მიმართულებებით, რომ გავიზარდოთ. - ჯოის რაჩელი" },
             { id: "network_11", poem: "ფესვთა სისტემა მარტო არ დგას,\nზიარი, საერთო წყაროდან სვამს;\nკავშირთა ქსელია საფეხურთა სვლა,\nრომ შეინარჩუნო არჩეული გზა.", sage: "გული, რომელსაც უყვარს, ყოველთვის ახალგაზრდაა. - ბერძნული ანდაზა" },
             { id: "network_12", poem: "როგორც დაზიანებულ ხეს\nჯანსაღი ფესვები აწვდიან საკვებს,\nასე კაცთა ქსელი ცოცხალი ამწეა,\nკაცს და მის ნაყოფს რომ გაიტანს, გასწევს.", sage: "ის ერთი, ვინც მარტოა, მრავალს ქმნის და მრავალნი იმ ერთთან ბრუნდებიან. - იბნ არაბი" },
-            { id: "network_13", poem: "ნიადაგის ქვეშ ყველა ხის ფესვი\nერთმანეთს ეხვევა ვით ათასი ხელი,\nსიყვარული ფართოვდება ხე(ლ)თა ქსელით\nდა გხდის იმაზე მეტს, ვიდრე შენ თავად ელი.", sage: "A true friend is revealed in times of hardship - a mirror to your soul. - Rustaveli" }
+            { id: "network_13", poem: "ნიადაგის ქვეშ ყველა ხის ფესვი\nერთმანეთს ეხვევა ვით ათასი ხელი,\nსიყვარული ფართოვდება ხე(ლ)თა ქსელით\nდა გხდის იმაზე მეტს, ვიდრე შენ თავად ელი.", sage: "A true friend is revealed in times of hardship - a mirror to your soul. - Rustaveli" },
+            { id: "network_14", poem: "სიყვარული ის არაა, რაც გგონია,\nარც გრძნობაა, არც წარმავალი ალი,\nეს ძალაა, ვარსკვლავს რომ ადგილს უბოძებს\nდა ყოველ არსებას თავის სახელს უწოდებს.", sage: "სიყვარული მზეს და ვარსკვლავებს ამოძრავებს. - დანტე" }
         ],
 
         // Category 7: Bending (12 poems in Georgian)
