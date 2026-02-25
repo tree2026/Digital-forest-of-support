@@ -178,7 +178,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "seasons_12", poem: "The tree does not ask spring to stay\nNor begs the winter to depart\nIt knows the turning of the day\nIs written on the seasons' heart.", sage: "Time is a veil; beneath it, eternity breathes. - Ibn Arabi" },
             { id: "seasons_13", poem: "Summer's pride and autumn's sigh\nWinter's sleep and spring's rebirth\nEach season teaches you to fly\nIn circles round the patient earth.", sage: "The seasons are God's alphabet, spelling the name of love. - Rustaveli" },
             { id: "seasons_14", poem: "The rose that blooms in April's light\nRemembers not the March wind's chill\nYet carries winter through the night\nIn roots that wait, in stems grown still.", sage: "Every season is a door to eternity, and the wise one enters each without hesitation. - Dante" },
-            { id: "seasons_15", poem: "Not one season lasts forever\nNor should it, though we weep to see\nThe autumn leaf in wind's endeavor\nMake way for what is yet to be.", sage: "The wheel of time turns not to break us, but to show us a new face of the Beloved. - Rustaveli" }
+            { id: "seasons_15", poem: "Not one season lasts forever\nNor should it, though we weep to see\nThe autumn leaf in wind's endeavor\nMake way for what is yet to be.", sage: "When the rose's bloom has withered and grown dry, It falls away—another comes to grace the garden fair. - Rustaveli" }
         ],
         
         // Category 10: Wholeness (12 poems) for healing, integration, completeness
@@ -420,7 +420,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "seasons_12", poem: "ხე გაზაფხულს დარჩენას არ სთხოვს,\nარც ზამთარს ევედრება წასვლას,\nმან იცის დღეების ცვლილება\nწელიწადის დროთა გულშია წერია მარად.", sage: "დრო ფარდაა; მის იქით მარადისობა სუნთქავს. - იბნ არაბი" },
             { id: "seasons_13", poem: "ზაფხულის სიამაყე და შემოდგომის ოხვრა,\nზამთრის ძილი და გაზაფხულის კვლავ მოსვლა;\nყოველი სეზონი გასწავლის\nდედამიწის გარშემო როგორია ნავარდი.", sage: "The seasons are God's alphabet, spelling the name of love. - Rustaveli" },
             { id: "seasons_14", poem: "მაისში მოყვავილე ვარდმა\nგანვლო მარტის ქარის სიცივე,\nზამთრის ყოველი ღამის დამსწრეა და\nმომლოდინე ფესვების სითბოში იღვიძებს.", sage: "ყოველი სეზონი მარადისობის კარია და ბრძენი უყოყმანოდ შედის თითოეულში. - დანტე" },
-            { id: "seasons_15", poem: "არც ერთი სეზონი გრძელდება სამუდამოდ,\nდა არც უნდა გაგრძელდეს,\nშემოდგომის ფოთოლი ქარს მიჰყვება,\nგზას უხსნის მას, რაც უნდა გაგრძელდეს.", sage: "The wheel of time turns not to break us, but to show us a new face of the Beloved. - Rustaveli" }
+            { id: "seasons_15", poem: "არც ერთი სეზონი გრძელდება სამუდამოდ,\nდა არც უნდა გაგრძელდეს,\nშემოდგომის ფოთოლი ქარს მიჰყვება,\nგზას უხსნის მას, რაც უნდა გაგრძელდეს.", sage: "რა ვარდმან მისი ყვავილი გაახმოს, დაამჭნაროსა, იგი წახდების, სხვა მოვა ტურფასა საბაღნაროსა. - რუსთაველი" }
         ],
 
         // Category 10: Wholeness (12 poems in Georgian)
