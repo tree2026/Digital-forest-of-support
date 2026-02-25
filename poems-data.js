@@ -134,7 +134,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "bending_10", poem: "The branch that bends will not be broken\nBy winter's ice or summer's storm\nYour flexibility has spoken\nIn keeping you both safe and warm.", sage: "It's not the strongest of the species that survives, nor the most intelligent. It is the one most adaptable to change. - Charles Darwin" },
             { id: "bending_11", poem: "To bend requires both strength and grace\nA willingness to not stand still\nYour flexibility finds place\nIn learning to adapt your will.", sage: "The measure of intelligence is the ability to change. - Einstein" },
             { id: "bending_12", poem: "The river does not ask the sea\nTo justify its endless call\nIt simply flows, and willingly\nFinds home in what receives its all.", sage: "The Love that moves the sun and the stars. - Dante" },
-            { id: "bending_13", poem: "What would you hold that time will take?\nWhat would you keep that must depart?\nThe heart that breaks for love's own sake\nBecomes the door to love's own heart.", sage: "In surrender, you are more yourself than in any battle. - Ibn Arabi" }
+            { id: "bending_13", poem: "What would you hold that time will take?\nWhat would you keep that must depart?\nThe heart that breaks for love's own sake\nBecomes the door to love's own heart.", sage: "In surrender, you are more yourself than in any battle. - Ibn Arabi" },
+            { id: "bending_14", poem: "The reed that bends before the gale\nSurvives to see another spring\nThe oak that stiffens, proud and pale\nLies broken where it once was king.", sage: "In yielding, you become unbreakable. - Ibn Arabi" },
+            { id: "bending_15", poem: "To bend is not to be defeated\nBut to move with what must move\nYour resilience is seated\nIn wisdom that knows how to move.", sage: "The lover bends toward the beloved, and in that bending, finds their strength. - Rustaveli" }
         ],
         
         // Category 8: Shape (12 poems) for authenticity, uniqueness, being
@@ -359,7 +361,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "bending_10", poem: "ტოტი რომელიც იღუნება,\nარც სიცივეში, არც ქარიშხალში არ ტყდება;\nმოქნილობის წყალობით\nუსაფრთხოდ ყოფნა და სითბო შეგენახება.", sage: "უძლიერესი სახეობა კი არ გადარჩება, ან ყველაზე ჭკვიანი. არამედ ის, ვინც ყველაზე მეტად მოერგება ცვლილებას. - ჩარლზ დარვინი" },
             { id: "bending_11", poem: "დახრა მოითხოვს ძალას და მოხდენილობას,\nმზადყოფნას, რომ არ იდგე უძრავად;\nროცა ნების მორგებას ისწავლი,\nმოქნილობა აღარ მოგეჩვენება მუქარად.", sage: "ინტელექტის საზომი არის შეცვლის უნარი. - აინშტაინი" },
             { id: "bending_12", poem: "მდინარე ზღვას არ სთხოვს\nდაუსაბუთოს რას პირდება,\nუბრალოდ მიედინება და პოულობს\nსახლს მიმღებში, რაც ზღვად ვლინდება.", sage: "სიყვარულია, მზესა და ვარსკვლავებს რომ ამოძრავებს. - დანტე" },
-            { id: "bending_13", poem: "რას ინახავ, დრო მაინც რომ წაიღებს?\nრას ეჭიდები, რაც უნდა წავიდეს?\nგული, სიყვარულისთვის რომ გატყდა,\nდაე, სიყვარულის გულის კარად იქცეს.", sage: "დანებებით უფრო მეტად ხარ საკუთარი თავი, ვიდრე ნებისმიერ ბრძოლაში. - იბნ არაბი" }
+            { id: "bending_13", poem: "რას ინახავ, დრო მაინც რომ წაიღებს?\nრას ეჭიდები, რაც უნდა წავიდეს?\nგული, სიყვარულისთვის რომ გატყდა,\nდაე, სიყვარულის გულის კარად იქცეს.", sage: "დანებებით უფრო მეტად ხარ საკუთარი თავი, ვიდრე ნებისმიერ ბრძოლაში. - იბნ არაბი" },
+            { id: "bending_14", poem: "ლერწამი იხრება ქარიშხლის წინაშე,\nგადარჩება და კიდევ ერთ გაზაფხულს იხარებს,\nმუხა რომ მაგრობდა, ამაყად იმართებოდა,\nახლა გატეხილი ძევს იქ, სადაც ოდესღაც მეფობდა.", sage: "დათმობით ურღვევი ხდები. - იბნ არაბი" },
+            { id: "bending_15", poem: "მოხრა დამარცხებას არ ნიშნავს,\nარამედ დასტურს რომ იმოძრაოს,\nმდგრადი ბრძენია,\nთუ იცის როგორ იმოძრაოს.", sage: "The lover bends toward the beloved, and in that bending, finds their strength. - Rustaveli" }
         ],
 
         // Category 8: Shape (12 poems in Georgian)
