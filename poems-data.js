@@ -78,7 +78,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "release_12", poem: "Release the fist that grips so tight\nAround what never could be kept\nAnd in the opening comes light\nTo warm the places where you wept.", sage: "Grief has no purpose, unless joy awaits to overcome it. - Rustaveli" },
             { id: "release_13", poem: "The wound is where the light gets in\nThe crack is how the music enters\nThe healing does not come from skin\nBut from the love that always ventures.", sage: "Even the greatest healer, when he falls ill, must summon another doctor who understands the pulse. - Rustaveli" },
             { id: "release_14", poem: "The leaf that holds too long will freeze\nAnd bring the branch to winter's harm\nRelease is wisdom, not disease\nIt is the tree's unarming charm.", sage: "Let go of what you are, to become what you might be. - Ibn Arabi (inspired by Rumi's essence)" },
-            { id: "release_15", poem: "What falls becomes the forest floor\nWhere future seeds will find their bed\nRelease is not the closing door\nBut opening to what's ahead.", sage: "All that is gold does not glitter, but all that falls shall rise again in another form. - Rustaveli" }
+            { id: "release_15", poem: "What falls becomes the forest floor\nWhere future seeds will find their bed\nRelease is not the closing door\nBut opening to what's ahead.", sage: "No one has ever gathered roses without thorns. - Rustaveli" }
         ],
         
         // Category 5: Reaching (12 poems) for goals, light, aspiration
@@ -320,7 +320,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "release_12", poem: "გაშალე მუშტი, ასე მაგრად რიმ იჭერს\nიმას, რაც ხელში არასდროს გაჩერდა,\nგახსნისას სინათლე მოდის და\nათბობს იმ ადგილებს, ცრემლით რომ დასველდა.", sage: "ყოლა ჭირი არ ეგების, თუმცა ლხინმან არ დასძლია. - რუსთაველი" },
             { id: "release_13", poem: "ჭრილობიდან სინათლე აღწევს,\nბზარიდან მუსიკა ბანს აძლევს;\nგანკურნება არ მოდის თავიდან, მარტო წამლიდან,\nარამედ მაძიებელი სიყვარულიდან: იწყებს თავიდან.", sage: "რა აქიმი დასნეულდეს, რაზომ გინდა საქებარი, მან სხვა იხმოს მკურნალი და მაჯასისა შემტყობარი. - რუსთაველი" },
             { id: "release_14", poem: "თუ დიდხანს რჩება ტოტზე, ხეს ფოთოლი გაეყინება,\nხემ იცის ეს და ამიტომ არ ეჭიდება,\nხის შეუიარაღებელი ძალაა გაშვება,\nგათავისუფლება სიბრძნეა და არა დაავადება.", sage: "გაუშვი ის, რაც ხარ, რათა გახდე ის, რაც შეიძლება იყო. - იბნ არაბი, რუმი" },
-            { id: "release_15", poem: "რაც ცვივა, ტყის ნიადაგი ხდება,\nსადაც მომავალი თესლი იზრდება,\nგათავისუფლება კარის დახურვა არ არის,\nარამედ იმის გახსნა, რაც წინ გელოდება.", sage: "All that is gold does not glitter, but all that falls shall rise again in another form. - Rustaveli" }
+            { id: "release_15", poem: "რაც ცვივა, ტყის ნიადაგი ხდება,\nსადაც მომავალი თესლი იზრდება,\nგათავისუფლება კარის დახურვა არ არის,\nარამედ იმის გახსნა, რაც წინ გელოდება.", sage: "არ იცი, ვარდნი უეკლოდ არავის მოუკრებიან. - რუსთაველი" }
         ],
         
         // Category 5: Reaching (12 poems in Georgian)
