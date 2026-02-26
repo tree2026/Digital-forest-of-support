@@ -198,7 +198,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "wholeness_12", poem: "What was divided now is one\nThe scattered fragments find their place\nThe journey ends where it begun\nAnd time dissolves in endless grace.", sage: "I became what I loved, and in that becoming, I found myself. - Ibn Arabi" },
             { id: "wholeness_13", poem: "The wound that split the world in two\nReveals the seam where wholeness grows\nFor only broken hearts break through\nTo love that nothing can oppose.", sage: "Love lift us high - so bells ring. - Rustaveli" },
             { id: "wholeness_14", poem: "The pieces of a shattered vase\nRetain the memory of the whole\nAnd in the seeking of their place\nReveal the contour of the soul.", sage: "Every form you see has its archetype in the unseen world. - Ibn Arabi" },
-            { id: "wholeness_15", poem: "Above, below; within, without\nThe same one light in all things burns\nThe seeker's long and winding route\nEnds where the heart's own temple turns.", sage: "His beauty mirrors in a thousand faces - yet He is one. - Rustaveli" }
+            { id: "wholeness_15", poem: "Above, below; within, without\nThe same one light in all things burns\nThe seeker's long and winding route\nEnds where the heart's own temple turns.", sage: "In a moment, it turns one into a hundred, a hundred into one. - Rustaveli" }
         ],
         
         // Category 11: Patience (12 poems) for waiting, timing, slow growth
@@ -440,7 +440,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "wholeness_12", poem: "რაც გაყოფილა, ახლა ერთია,\nგაფანტულა და კვლავ (ღმ)ერთია,\nმოგზაურობა მთავრდება იქ, სადაც იწყება,\nდაუსრულებელ მადლში დრო იშლება.", sage: "მე ის გავხდი, რაც მიყვარდა და ასე ვიპოვე საკუთარი თავი. - იბნ არაბი" },
             { id: "wholeness_13", poem: "ჭრილობა, რომელმაც სამყარო ორად გაყო,\nავლენს იმ ნაკერს, სადაც მთლიანობა იზრდება,\nმხოლოდ გატეხილი გულების ხვედრია\nსიყვარული, რომელსაც ვერაფერი დაუპირისპირდება.", sage: "სიყვარული აღგვამაღლებს - ვით ეჟვანნი, ამას ჟღერენ. - რუსთაველი" },
             { id: "wholeness_14", poem: "დამსხვრეულ ნატეხებში\nმთლიანის ხსოვნა მუდამ ინახება\nდა მათი ადგილის ძიებაში\nსულის გარშემოწერილობა ისახება.", sage: "ყველა ფორმას, რომელსაც ხედავთ, თავისი საწყისი პირველსახე აქვს უხილავ სამყაროში. - იბნ არაბი" },
-            { id: "wholeness_15", poem: "ზემოთ, ქვემოთ, შიგნით, გარეთ,\nყველაფერში ერთი და იგივე შუქი ბრუნავს,\nმაძიებლის გრძელი დაკლაკნილი გზა\nიქ მთავრდება, სადაც გულის ტაძარი კურნავს.", sage: "His beauty mirrors in a thousand faces - yet He is one. - Rustaveli" }
+            { id: "wholeness_15", poem: "ზემოთ, ქვემოთ, შიგნით, გარეთ,\nყველაფერში ერთი და იგივე შუქი ბრუნავს,\nმაძიებლის გრძელი დაკლაკნილი გზა\nიქ მთავრდება, სადაც გულის ტაძარი კურნავს.", sage: "იგი გაჰხდის წამის-ყოფით ერთსა ასად, ასსა ერთად. - რუსთაველი" }
         ],
 
         // Category 11: Patience (12 poems in Georgian)
