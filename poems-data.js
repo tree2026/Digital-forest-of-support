@@ -217,7 +217,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "patience_11", poem: "The tree knows seasons must unfold\nIn their appointed, patient turn\nYour patience makes your spirit bold\nAnd helps life's lessons learn.", sage: "Rivers know this: there is no hurry. We shall get there some day. - A.A. Milne" },
             { id: "patience_12", poem: "Do not demand the final word\nNor seek to capture what is free\nThe mystery must be inferred\nFrom every leaf on every tree.", sage: "Not every question demands an answer; some demand awe. - Ibn Arabi" },
             { id: "patience_13", poem: "The seed does not demand the sun\nTo hurry with its warming rays\nIt knows its work is not yet done\nAnd trusts in slowly growing days.", sage: "Patience is not waiting; it is the art of hoping while hidden. - Ibn Arabi" },
-            { id: "patience_14", poem: "The oak that stands a thousand years\nWas patient through a thousand springs\nYour waiting holds the same spheres\nThat circle round all growing things.", sage: "The lover waits not because he must, but because love itself is the waiting. - Rustaveli" },
+            { id: "patience_14", poem: "The oak that stands a thousand years\nWas patient through a thousand springs\nYour waiting holds the same spheres\nThat circle round all growing things.", sage: "Quietness, even blamed, is better than haste, even praised. - Rustaveli" },
             { id: "patience_15", poem: "The seed sleeps in the winter ground\nAnd dreams of what it does not know\nThe sun's return, the rain's soft sound\nWill wake it in its time, and slow.", sage: "Patience is not the absence of action, but the presence of trust while the unseen works. - Ibn Arabi" }
         ],
         
@@ -459,7 +459,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "patience_11", poem: "ხემ იცის წელიწადის ყოველი დრო\nთავის ჯერზე მოვა, დანიშნულ დროს,\nმოთმინება სულს გაამამაცებს\nდა ეხმარება ცხოვრება ისწავლოს.", sage: "მდინარეებმა ეს იციან: საჩქარო არაფერია. ერთ დღეს მივაღწევთ იქამდე. - ა.ა. მილნი" },
             { id: "patience_12", poem: "ნუ მოითხოვ ბოლო სიტყვას,\nნუ ელი სიბრძნეს კაცთა მოდგმიდან,\nსაიდუმლო უნდა გამოიტანო\nხის ყოველი ფოთლიდან.", sage: "ყველა კითხვა პასუხს კი არ მოითხოვს; ზოგი მოწიწებას მოითხოვს. - იბნ არაბი" },
             { id: "patience_13", poem: "თესლი არ ითხოვს, რომ მზემ\nდააჩქაროს თბილი სხივები,\nიცის, რომ მისი საქმე ჯერ არ დასრულებულა\nდა ენდობა ნელ სვლას მზარდი დღეების.", sage: "მოთმინება არ არის ლოდინი; ეს დაფარული იმედის ხელოვნებაა. - იბნ არაბი" },
-            { id: "patience_14", poem: "მუხამ, რომელიც ათასი წელი დგას,\nათასი გაზაფხული იცადა,\nშენი მოთმინებაც ასეა,\nრგოლებმა ხის ბირთვში ყოველ წელს იმატა.", sage: "The lover waits not because he must, but because love itself is the waiting. - Rustaveli" },
+            { id: "patience_14", poem: "მუხამ, რომელიც ათასი წელი დგას,\nათასი გაზაფხული იცადა,\nშენი მოთმინებაც ასეა,\nრგოლებმა ხის ბირთვში ყოველ წელს იმატა.", sage: "თქმულა: სიწყნარე გმობილი სჯობს სიჩქარესა ქებულსა. - რუსთაველი" },
             { id: "patience_15", poem: "თესლს ზამთარში მიწაში სძინავს,\nოცნებობს უცნობზე, მისცემია სიზმრებს,\nმზის დაბრუნება და წვიმის რბილი ხმა\nთავის დროზე მას ნელა გააღვიძებს.", sage: "მოთმინება უმოქმედობა კი არ არის, არამედ ნდობის გამოვლენაა, სანამ უხილავი მოქმედებს. - იბნ არაბი" }
         ],
 
