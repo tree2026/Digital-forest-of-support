@@ -158,7 +158,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "shape_12", poem: "The crooked pine upon the cliff\nGrows beautiful in its own way\nYour shape, though twisted, is the if\nThat makes you irreplaceable today.", sage: "Every form you see has its archetype in the unseen world. You are that form. - Ibn Arabi" },
             { id: "shape_13", poem: "Do not desire another's form\nThe birch, the oak, the weeping willow\nYour shape was weathered in the storm\nAnd now stands firm upon its pillow.", sage: "Within each soul, a unique star shines in the divine firmament. - Dante" },
             { id: "shape_14", poem: "The twisted trunk that grows alone\nUpon the wind-swept mountain crest\nIs more itself than any clone\nThat grows in valleys of the blessed.", sage: "Your form is a letter in God's great book - without you, the page is incomplete. - Ibn Arabi" },
-            { id: "shape_15", poem: "The tree does not apologize\nFor growing sideways toward the light\nIt does not seek another's eyes\nTo validate its crooked height.", sage: "Do not measure your branch by another tree's shadow. You were made to cast your own. - Rustaveli" }
+            { id: "shape_15", poem: "The tree does not apologize\nFor growing sideways toward the light\nIt does not seek another's eyes\nTo validate its crooked height.", sage: "Whoever does not seek a friend is their own enemy. - Rustaveli" }
         ],
         
         // Category 9: Seasons (12 poems) for cycles, change, rhythms
@@ -400,7 +400,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "shape_12", poem: "კლდეზე დაგრეხილი ფიჭვი\nთავისებურად ლამაზად იზრდება,\nშენი ფორმა, მოხრილი რომც იყოს,\nშეუცვლელს გხდის. ასე იქნება.", sage: "ყველა ფორმას, რასაც ხედავ, თავის პირველსახე აქვს უხილავ სამყაროში. შენ ხარ ეს ფორმა. - იბნ არაბი" },
             { id: "shape_13", poem: "ნუ ისურვებ სხვის ფორმას:\nარყი, მუხა, მტირალი ტირიფი;\nშენი ფორმა ქარიშხალში გაიწრთო,\nდა ახლა მყარად დგას, იღიმის.", sage: "თითოეულ სულში ღვთაებრივი ცის განუმეორებელი ვარსკვლავი ანათებს. - დანტე" },
             { id: "shape_14", poem: "დაგრეხილი ხე, მარტო რომ იზრდება\nქარიან ციცაბო ქარაფზე,\nუფრო თავისთავადია, ვიდრე ნებისმიერი სხვა,\nრომელიც იზრდება კურთხეულ ხეობის დაბალზე.", sage: "შენი ფორმა ღვთის წიგნში ერთი ასოა - შენს გარეშე გვერდი არასრულია. - იბნ არაბი" },
-            { id: "shape_15", poem: "ხე არ ბოდიშობს\nსინათლისკენ რომ იზრდება გვერდულად,\nარ ეძებს სხვის თვალს\nმოღუნული სიმაღლის დასადასტურებლად.", sage: "Do not measure your branch by another tree's shadow. You were made to cast your own. - Rustaveli" }
+            { id: "shape_15", poem: "ხე არ ბოდიშობს\nსინათლისკენ რომ იზრდება გვერდულად,\nარ ეძებს სხვის თვალს\nმოღუნული სიმაღლის დასადასტურებლად.", sage: "ვინ მოყვარესა არ ეძებს, იგი თავისა მტერია. - რუსთაველი" }
         ],
 
         // Category 9: Seasons (12 poems in Georgian)
