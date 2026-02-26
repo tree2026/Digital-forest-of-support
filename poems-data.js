@@ -37,7 +37,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "bark_11", poem: "A tree stands strong because its bark\nProtects the tender growth within\nYour boundaries light the vital spark\nThat guards where your true self begins.", sage: "He who knows himself knows his Lord. - Ibn Arabi" },
             { id: "bark_12", poem: "The fool collects a thousand facts\nAnd calls himself a learned man\nThe wise one slowly, gently acts\nOn one small truth throughout life's span.", sage: "Better to act and settle things than live in doubt and misery. - Rustaveli" },
             { id: "bark_13", poem: "The bark knows when to close, when open\nWhen to receive, when to defend\nYour boundaries are the gentle token\nOf knowing where your being ends.", sage: "The lover's heart is a sanctuary - do not enter without reverence. - Ibn Arabi" },
-            { id: "bark_14", poem: "Not every hand may touch the wound\nNot every eye may see you weep\nThe sacred bark, the guarded ground\nIs where your soul its watch will keep.", sage: "A knight guards his heart as a fortress, for within it lies his honor. - Rustaveli" },
+            { id: "bark_14", poem: "Not every hand may touch the wound\nNot every eye may see you weep\nThe sacred bark, the guarded ground\nIs where your soul its watch will keep.", sage: "Heart, awareness, and mind depend upon each other. When the heart departs, they too depart and follow it. - Rustaveli" },
             { id: "bark_15", poem: "The scar is not a flaw in wood\nBut memory of what survived\nYour wholeness is not understood\nBy what was lost, but what's arrived.", sage: "The heart that breaks open becomes a vessel vast enough for God. - Ibn Arabi" }
         ],
         
@@ -279,7 +279,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "bark_11", poem: "ქერქის იმედით ხე ძლიერად წამოზიდულა,\nსაფარის შიგნით ნაზი სამყარო ხილულა;\nიცავს იმ სასიცოცხლო ნაპერწკლის ნათებას,\nსადაც შენი ნამდვილი მე გამონათდება.", sage: "ვინც იცნობს თავის თავს, იცნობს თავის უფალს. - იბნ არაბი" },
             { id: "bark_12", poem: "სულელი ათას ფაქტს აგროვებს\nდა თავი განსწავლულ კაცს აგონებს,\nბრძენი ნელა მოქმედებს,\nყოველ პატარა ჭეშმარიტებაზე მოქმედებით აზროვნებს.", sage: "კაცმან საქმე მოიგვაროს, ვეჭვ, ჭმუნვასა ესე სჯობდეს. - რუსთაველი" },
             { id: "bark_13", poem: "ქერქმა იცის როდის გააღოს, როდის დახუროს კარი,\nროდის მიიღოს, როდის დაიცვას თავი,\nშენი საზღვრები ნიშანია იმისა,\nთუ სად მთავრდება შენი არსების ზღვარი.", sage: "შეყვარებულის გული საკურთხეველია - ნუ შეხვალ იქ პატივისცემის გარეშე. - იბნ არაბი" },
-            { id: "bark_14", poem: "ყველა ხელი ნუ შეეხება ჭრილობას,\nყველა თვალი ნუ დაინახავს ცრემლს,\nხის ქერქი დაცული მიწაა,\nსადაც სულის მთავარი მეთვალყურე ძევს.", sage: "A knight guards his heart as a fortress, for within it lies his honor. - Rustaveli" },
+            { id: "bark_14", poem: "ყველა ხელი ნუ შეეხება ჭრილობას,\nყველა თვალი ნუ დაინახავს ცრემლს,\nხის ქერქი დაცული მიწაა,\nსადაც სულის მთავარი მეთვალყურე ძევს.", sage: "გული, ცნობა და გონება ერთმანერთზედა ჰკიდიან. რა გული წავა, იგინიც წავლენ და მისკენ მიდიან. - რუსთაველი" },
             { id: "bark_15", poem: "ნაწიბური ხის ნაკლი კი არა,\nმოგონებაა რომ გადარჩა;\nმთლიანობას გაიგებს იმით, რაც მოვიდა,\nარა იმით, რაც დაკარგა.", sage: "გული, რომელიც ტყდება და იხსნება, ღმერთის მისაღებ ჭურჭლად იქცევა. - იბნ არაბი" }
         ],
         
