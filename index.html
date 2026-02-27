@@ -2867,8 +2867,8 @@ function shareEntry(entryIndex, sharePoemOnly = false) {
     if (navigator.share) {
         navigator.share({
             title: 'Forest of Support',
-            text: shareText//,
-            //url: window.location.href
+            text: shareText,
+            url: window.location.href
         }).catch(err => {
             console.log('Share cancelled:', err);
             copyToClipboard(shareText);
@@ -2878,12 +2878,12 @@ function shareEntry(entryIndex, sharePoemOnly = false) {
     }
 }
 
-function copyToClipboard(text) {
+/*function copyToClipboard(text) {
     navigator.clipboard.writeText(text);
     alert(currentLanguage === 'ge' 
         ? '📋 კოპირებულია!'
         : '📋 Copied!');
-}
+}*/
         
         function clearJournal() {
             document.getElementById('newJournalEntry').value = "";
