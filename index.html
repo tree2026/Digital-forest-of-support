@@ -2867,8 +2867,8 @@ function shareEntry(entryIndex, sharePoemOnly = false) {
     if (navigator.share) {
         navigator.share({
             title: 'Forest of Support',
-            text: shareText,
-            url: window.location.href
+            text: shareText//,
+            //url: window.location.href
         }).catch(err => {
             console.log('Share cancelled:', err);
             copyToClipboard(shareText);
