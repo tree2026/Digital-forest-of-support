@@ -312,7 +312,22 @@
         border: 2px solid var(--step-border);
         transition: all 0.5s ease;
     }
+        
+    /* 1.9 Add to your CSS variables section */
+    .step {
+        transition: opacity 1.2s ease, transform 0.8s ease;
+    }
+
+    .step.fade-out {
+        opacity: 0; 
+        transform: translateY(10px);
+    }
     
+    .step.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    } /* 1.9 end  */
+        
     .stats-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -2242,8 +2257,46 @@ function checkVersionAndPreserveData() {
                 `;
             });
         }
+        // 1.9 smooth next button 
+    function selectPrinciple(id) {
+    selectedPrinciple = id;
+    
+    // Update UI
+    document.querySelectorAll('.principle-badge').forEach(badge => {
+        badge.classList.remove('selected');
+    });
+    document.getElementById(`principle-${id}`).classList.add('selected');
+    
+    // Enable next button
+    document.getElementById('nextBtn1').disabled = false;
+    
+    // 🌿 SLOW, PEACEFUL TRANSITION
+    setTimeout(() => {
+        const step1 = document.getElementById('step1');
+        step1.classList.add('fade-out');
         
-        function selectPrinciple(id) {
+        setTimeout(() => {
+            step1.style.display = 'none';
+            step1.classList.remove('fade-out');
+            
+            const step2 = document.getElementById('step2');
+            step2.style.display = 'block';
+            step2.classList.add('fade-in');
+            
+            // Load exercise
+            const principles = principlesData[currentLanguage];
+            const principle = principles.find(p => p.id === selectedPrinciple);
+            document.getElementById('exerciseContent').innerHTML = principle.exercise;
+            
+            // Remove fade-in class after animation completes
+            setTimeout(() => {
+                step2.classList.remove('fade-in');
+            }, 1200);
+        }, 1200); // Match CSS transition time
+    }, 400); // Brief pause before starting
+    }
+        
+        /*function selectPrinciple(id) {
             selectedPrinciple = id;
             
             // Update UI
@@ -2258,7 +2311,7 @@ function checkVersionAndPreserveData() {
             setTimeout(() => {
                 nextStep();
             }, 50); // 1.9 end
-        }
+        }*/
         
         function nextStep() {
             const t = TEXT[currentLanguage];
