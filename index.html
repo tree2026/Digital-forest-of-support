@@ -2871,19 +2871,19 @@ function shareEntry(entryIndex, sharePoemOnly = false) {
             url: window.location.href
         }).catch(err => {
             console.log('Share cancelled:', err);
-           // copyToClipboard(shareText);
+            copyToClipboard(shareText);
         });
-    } //else {
-        //copyToClipboard(shareText);
-    //}
+    } else {
+        copyToClipboard(shareText);
+    }
 }
 
-/*function copyToClipboard(text) {
+function copyToClipboard(text) {
     navigator.clipboard.writeText(text);
     alert(currentLanguage === 'ge' 
         ? '📋 კოპირებულია!'
         : '📋 Copied!');
-}*/
+}
         
         function clearJournal() {
             document.getElementById('newJournalEntry').value = "";
