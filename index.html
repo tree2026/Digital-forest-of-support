@@ -314,20 +314,20 @@
     }
         
     /* 1.9 Add to your CSS variables section */
-    .step {
+    /*.step {
         transition: opacity 1.2s ease, transform 0.8s ease;
     }
 
     .step.fade-out {
         opacity: 0; 
         transform: translateY(10px);
-        pointer-events: none;  /* ADD THIS LINE */
+        pointer-events: none;
     }
     
     .step.fade-in {
         opacity: 1;
         transform: translateY(0);
-    } /* 1.9 end  */
+    } *//* 1.9 end  */
         
     .stats-grid {
         display: grid;
@@ -2258,8 +2258,51 @@ function checkVersionAndPreserveData() {
                 `;
             });
         }
-        // 1.9 smooth next button 
+
+    // 1.9 transition
     function selectPrinciple(id) {
+    selectedPrinciple = id;
+    
+    // Update UI
+    document.querySelectorAll('.principle-badge').forEach(badge => {
+        badge.classList.remove('selected');
+    });
+    document.getElementById(`principle-${id}`).classList.add('selected');
+    
+    // Enable next button
+    document.getElementById('nextBtn1').disabled = false;
+    
+    // 🌿 MINDFUL TRANSITION: Brief pause, then fade out/in
+    setTimeout(() => {
+        // Fade out current step
+        document.getElementById('step1').style.transition = 'opacity 0.8s ease';
+        document.getElementById('step1').style.opacity = '0';
+        
+        // After fade out, go to next step and fade in
+        setTimeout(() => {
+            // Hide current step, show next
+            document.getElementById('step1').style.display = 'none';
+            document.getElementById('step2').style.display = 'block';
+            
+            // Reset opacity for next step
+            document.getElementById('step2').style.opacity = '0';
+            
+            // Fade in the next step
+            setTimeout(() => {
+                document.getElementById('step2').style.transition = 'opacity 0.8s ease';
+                document.getElementById('step2').style.opacity = '1';
+                
+                // Load exercise content
+                const principles = principlesData[currentLanguage];
+                const principle = principles.find(p => p.id === selectedPrinciple);
+                document.getElementById('exerciseContent').innerHTML = principle.exercise;
+            }, 50);
+        }, 800); // 800ms fade out
+    }, 300); // 300ms pause after selection
+    }
+        
+        // 1.9 smooth next button 
+   /* function selectPrinciple(id) {
     selectedPrinciple = id;
     
     // Update UI
@@ -2295,7 +2338,7 @@ function checkVersionAndPreserveData() {
             }, 1200);
         }, 1200); // Match CSS transition time
     }, 400); // Brief pause before starting
-    }
+    }*/
         
         /*function selectPrinciple(id) {
             selectedPrinciple = id;
