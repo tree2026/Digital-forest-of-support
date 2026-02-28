@@ -310,24 +310,23 @@
         background: var(--step-bg);
         border-radius: 15px;
         border: 2px solid var(--step-border);
-        transition: all 0.5s ease;
+        /*transition: all 0.5s ease;*//*1.9*/
     }
         
     /* 1.9 Add to your CSS variables section */
     /*.step {
         transition: opacity 1.2s ease, transform 0.8s ease;
-    }
-
+    }*/
     .step.fade-out {
         opacity: 0; 
         transform: translateY(10px);
-        pointer-events: none;
+        /*pointer-events: none;*/
     }
     
     .step.fade-in {
         opacity: 1;
         transform: translateY(0);
-    } *//* 1.9 end  */
+    } /* 1.9 end  */
         
     .stats-grid {
         display: grid;
@@ -2259,96 +2258,9 @@ function checkVersionAndPreserveData() {
             });
         }
 
-    // 1.9 transition option 2
-    function selectPrinciple(id) {
-    selectedPrinciple = id;
-    
-    // Update UI
-    document.querySelectorAll('.principle-badge').forEach(badge => {
-        badge.classList.remove('selected');
-    });
-    document.getElementById(`principle-${id}`).classList.add('selected');
-    
-    // Enable next button
-    document.getElementById('nextBtn1').disabled = false;
-    
-    // 🌿 BREATHING TRANSITION: Like an inhale (zoom in), then exhale (zoom out)
-    const step1 = document.getElementById('step1');
-    step1.style.transition = 'all 1s ease';
-    step1.style.transform = 'scale(1.02)';
-    step1.style.opacity = '0.8';
-    
-    setTimeout(() => {
-        // Complete the breath - zoom back to normal
-        step1.style.transform = 'scale(1)';
-        step1.style.opacity = '1';
-        
-        // Now transition to next step
-        setTimeout(() => {
-            step1.style.display = 'none';
-            const step2 = document.getElementById('step2');
-            step2.style.display = 'block';
-            
-            // Fade in the exercise
-            step2.style.opacity = '0';
-            step2.style.transition = 'opacity 1.5s ease';
-            
-            setTimeout(() => {
-                step2.style.opacity = '1';
-                
-                // Load exercise
-                const principles = principlesData[currentLanguage];
-                const principle = principles.find(p => p.id === selectedPrinciple);
-                document.getElementById('exerciseContent').innerHTML = principle.exercise;
-            }, 100);
-        }, 800);
-    }, 500);
-    }
-        
-    // 1.9 transition option 1
-    /*function selectPrinciple(id) {
-    selectedPrinciple = id;
-    
-    // Update UI
-    document.querySelectorAll('.principle-badge').forEach(badge => {
-        badge.classList.remove('selected');
-    });
-    document.getElementById(`principle-${id}`).classList.add('selected');
-    
-    // Enable next button
-    document.getElementById('nextBtn1').disabled = false;
-    
-    // 🌿 MINDFUL TRANSITION: Brief pause, then fade out/in
-    setTimeout(() => {
-        // Fade out current step
-        document.getElementById('step1').style.transition = 'opacity 0.8s ease';
-        document.getElementById('step1').style.opacity = '0';
-        
-        // After fade out, go to next step and fade in
-        setTimeout(() => {
-            // Hide current step, show next
-            document.getElementById('step1').style.display = 'none';
-            document.getElementById('step2').style.display = 'block';
-            
-            // Reset opacity for next step
-            document.getElementById('step2').style.opacity = '0';
-            
-            // Fade in the next step
-            setTimeout(() => {
-                document.getElementById('step2').style.transition = 'opacity 0.8s ease';
-                document.getElementById('step2').style.opacity = '1';
-                
-                // Load exercise content
-                const principles = principlesData[currentLanguage];
-                const principle = principles.find(p => p.id === selectedPrinciple);
-                document.getElementById('exerciseContent').innerHTML = principle.exercise;
-            }, 50);
-        }, 800); // 800ms fade out
-    }, 300); // 300ms pause after selection
-    }*/
         
         // 1.9 smooth next button option 3
-   /* function selectPrinciple(id) {
+    function selectPrinciple(id) {
     selectedPrinciple = id;
     
     // Update UI
@@ -2384,7 +2296,7 @@ function checkVersionAndPreserveData() {
             }, 1200);
         }, 1200); // Match CSS transition time
     }, 400); // Brief pause before starting
-    }*/
+    }
         
         /*function selectPrinciple(id) {
             selectedPrinciple = id;
