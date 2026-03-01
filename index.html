@@ -3080,7 +3080,7 @@ function showJournalAndScrollToNewest() {
                 let youtubeButton = '';
                 
                 // Look up the poem in poeticWisdom to see if it has youtube property
-                if (entry.poemId) {
+                /*if (entry.poemId) {
                     // Find the poem in our data
                     for (const [category, poems] of Object.entries(poeticWisdom[currentLanguage])) {
                         const foundPoem = poems.find(p => p.id === entry.poemId);
@@ -3095,7 +3095,27 @@ function showJournalAndScrollToNewest() {
                             break;
                         }
                     }
-                }//1.99999 end
+                }//1.99999 end*/
+
+// Look up the poem in poeticWisdom to see if it has youtube property
+if (entry.poemId) {
+    // Find the poem in our data
+    for (const [category, poems] of Object.entries(poeticWisdom[currentLanguage])) {
+        const foundPoem = poems.find(p => p.id === entry.poemId);
+        if (foundPoem && foundPoem.youtube) {
+            // ✨ SIMPLE FIX: Store data in attributes
+            youtubeButton = `
+                <button class="youtube-suggest-btn" 
+                        data-message="${foundPoem.youtube.message}"
+                        data-url="${foundPoem.youtube.url}"
+                        title="Suggested video">
+                    🔔
+                </button>
+            `;
+            break;
+        }
+    }
+}
                 container.innerHTML += `
                     <div class="poem-response">
                         <p>${entry.poem.replace(/\n/g, '<br>')}</p>
