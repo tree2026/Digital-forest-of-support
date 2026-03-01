@@ -2701,6 +2701,10 @@ function selectCanopyInsight(id) {
 
 function canopyNextStep() {
     const t = TEXT[currentLanguage];
+     // 1.9 If we're in step 1, our selectCanopyInsight already handles the transition
+    if (canopyCurrentStep === 1) {
+        return; // Do nothing - selectCanopyInsight already handles it
+    }// 1.9 end 
     
     if (canopyCurrentStep === 1 && !selectedCanopyInsight) {
         alert(t.alertSelectPrinciple);
