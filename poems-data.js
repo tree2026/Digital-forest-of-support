@@ -72,7 +72,9 @@ const POETIC_WISDOM_EXPORT = {
             { id: "release_6", poem: "What you release becomes the soil\nFor future growth yet unforeseen\nIn letting go of present toil\nYou make space for what might have been.", sage: "When I let go of what I am, I become what I might be. - Lao Tzu", 
              youtube: { message: "🎵 Here's Adamus insight how to integrate the light body ", url: "https://youtu.be/RtfifqHmjfs?si=-yyHo-fTlMS46QCd" }
             },
-            { id: "release_7", poem: "The tree does not clutch dying leaves\nNor beg the autumn to delay\nIt simply trusts what nature weaves\nAnd welcomes each returning day.", sage: "Trust the process. Your time is coming. Just do the work and the results will handle themselves. - Tony Gaskins" },
+            { id: "release_7", poem: "The tree does not clutch dying leaves\nNor beg the autumn to delay\nIt simply trusts what nature weaves\nAnd welcomes each returning day.", sage: "Trust the process. Your time is coming. Just do the work and the results will handle themselves. - Tony Gaskins",
+             youtube: { message: "🎵 Here's Adamus insight how to integrate the light body ", url: "https://youtu.be/RtfifqHmjfs?si=-yyHo-fTlMS46QCd" }
+            },
             { id: "release_8", poem: "Release is not a loss but change\nA transformation of the form\nWhat falls away will rearrange\nInto what different will be born.", sage: "Nothing in nature blooms all year. Be patient with yourself. - Karen Salmansohn" },
             { id: "release_9", poem: "When branches free themselves of weight\nThey rise to meet the coming snow\nYour letting go can change your fate\nIn ways you cannot hope to know.", sage: "Some of us think holding on makes us strong, but sometimes it is letting go. - Hermann Hesse" },
             { id: "release_10", poem: "The tree accepts each leaf's departure\nAs part of nature's greater plan\nYour endings can become the rapture\nOf starting once again.", sage: "Every new beginning comes from some other beginning's end. - Seneca" },
