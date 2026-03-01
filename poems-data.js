@@ -70,7 +70,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "release_4", poem: "In falling, leaves return to earth\nTo nourish what will later grow\nYour endings have their proper worth\nIn ways you may not ever know.", sage: "The wound is where the light enters you. - Rumi" },
             { id: "release_5", poem: "Bare branches against winter sky\nMake patterns beautiful and stark\nWhen you release, you learn to fly\nInto the freedom of the dark.", sage: "The moon stays bright when it doesn't avoid the night. - Rumi" },
             { id: "release_6", poem: "What you release becomes the soil\nFor future growth yet unforeseen\nIn letting go of present toil\nYou make space for what might have been.", sage: "When I let go of what I am, I become what I might be. - Lao Tzu", 
-             youtube: { message: "🎵 Here's Adamus insight how to integrate the light body ", url: "https://youtu.be/RtfifqHmjfs?si=-yyHo-fTlMS46QCd" }
+             youtube: { message: "Adamus talks how to integrate the light body ", url: "https://youtu.be/RtfifqHmjfs?si=-yyHo-fTlMS46QCd" }
             },
             { id: "release_7", poem: "The tree does not clutch dying leaves\nNor beg the autumn to delay\nIt simply trusts what nature weaves\nAnd welcomes each returning day.", sage: "Trust the process. Your time is coming. Just do the work and the results will handle themselves. - Tony Gaskins",
              youtube: { message: "🎵 Here's Adamus insight how to integrate the light body ", url: "https://youtu.be/RtfifqHmjfs?si=-yyHo-fTlMS46QCd" }
