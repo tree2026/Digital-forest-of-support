@@ -3341,7 +3341,15 @@ function showYoutubePopup(youtubeData) {
                 showCard('plant');
             }
         } // 1.6 end
-
+        
+// 1.99999Add event listener for all youtube buttons (put this at the very end of your script)
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('youtube-suggest-btn')) {
+        const message = e.target.getAttribute('data-message');
+        const url = e.target.getAttribute('data-url');
+        showYoutubePopup({message: message, url: url});
+    }
+});
         // ==================== AMBIENT SOUND PLAYER ====================
  
     const audioManager = {
