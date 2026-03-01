@@ -3059,9 +3059,11 @@ function showJournalAndScrollToNewest() {
                             break;
                         }*/
                         if (foundPoem && foundPoem.youtube) {
-                            // Simple test with fixed message to see if function works
+                            // Simple, direct approach
+                            const msg = foundPoem.youtube.message;
+                            const link = foundPoem.youtube.url;
                             youtubeButton = `
-                            <button onclick='showYoutubePopup({message: "Test message", url: "https://youtu.be/RtfifqHmjfs"})' 
+                            <button onclick='showYoutubePopup({message: "${msg}", url: "${link}"})' 
                             class="youtube-suggest-btn" 
                             title="Suggested video">
                             🔔
