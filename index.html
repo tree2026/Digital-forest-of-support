@@ -3048,26 +3048,13 @@ function showJournalAndScrollToNewest() {
                     // Find the poem in our data
                     for (const [category, poems] of Object.entries(poeticWisdom[currentLanguage])) {
                         const foundPoem = poems.find(p => p.id === entry.poemId);
-                       /* if (foundPoem && foundPoem.youtube) {
+                        if (foundPoem && foundPoem.youtube) {
                             youtubeButton = `
                                 <button onclick='showYoutubePopup(${JSON.stringify(foundPoem.youtube).replace(/'/g, "\\'")})' 
                                         class="youtube-suggest-btn" 
                                         title="Suggested video">
                                     🔔
                                 </button>
-                            `;
-                            break;
-                        }*/
-                        if (foundPoem && foundPoem.youtube) {
-                            // Simple, direct approach
-                            const msg = foundPoem.youtube.message;
-                            const link = foundPoem.youtube.url;
-                            youtubeButton = `
-                            <button onclick='showYoutubePopup({message: "${msg}", url: "${link}"})' 
-                            class="youtube-suggest-btn" 
-                            title="Suggested video">
-                            🔔
-                            </button>
                             `;
                             break;
                         }
