@@ -2654,6 +2654,37 @@ function selectCanopyInsight(id) {
     
     // Enable next button
     document.getElementById('canopyNextBtn1').disabled = false;
+    
+    // 1.9.🌿 GENTLE FADE for Canopy Step 1 → Step 2
+    setTimeout(() => {
+        const step1 = document.getElementById('canopyStep1');
+        step1.classList.add('canopy-step-fade-out');
+        
+        setTimeout(() => {
+            step1.style.display = 'none';
+            step1.classList.remove('canopy-step-fade-out');
+            
+            // Show next step
+            canopyCurrentStep = 2;
+            const step2 = document.getElementById('canopyStep2');
+            step2.style.display = 'block';
+            step2.classList.add('canopy-step-fade-in');
+            
+            // Load insight content
+            const insights = canopyWisdom[currentLanguage];
+            const insight = insights.find(i => i.id === selectedCanopyInsight);
+            document.getElementById('canopyExerciseContent').innerHTML = `
+                <h4>${insight.title}</h4>
+                <p>${insight.insight}</p>
+                <br>
+                <p><em><strong>${currentLanguage === 'ge' ? 'ვარჯიში' : 'Practice'}:</strong> ${insight.practice}</em></p>
+            `;
+            
+            setTimeout(() => {
+                step2.classList.remove('canopy-step-fade-in');
+            }, 1200);
+        }, 800);
+    }, 300);//1.9 end
 }
 
 function canopyNextStep() {
