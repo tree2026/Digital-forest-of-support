@@ -569,8 +569,8 @@
     }
 
         /* 1.999999.  YouTube suggestion button */
-    .youtube-suggest-btn {
-    background: #E67E22;  /* Light mode - terracotta */
+    /*.youtube-suggest-btn {
+    background: #E67E22;  
     color: white;
     border: none;
     padding: 4px 10px;
@@ -592,12 +592,40 @@
     }
 
     [data-theme="dark"] .youtube-suggest-btn {
-    background: #D35400;  /* Dark mode - deeper terracotta */
+    background: #D35400;
     }
     [data-theme="dark"] .youtube-suggest-btn:hover {
     background: #E67E22;
-    }
+    }*/
 
+    /* YouTube suggestion button - just a bell */
+.youtube-suggest-btn {
+    background: transparent;
+    border: none;            
+    padding: 0;            
+    margin-right: 8px;    
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #E67E22;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+    box-shadow: none;         
+}
+
+.youtube-suggest-btn:hover {
+    transform: scale(1.1);    
+    color: #D35400;          
+    background: transparent; 
+}
+
+[data-theme="dark"] .youtube-suggest-btn {
+    color: #D35400;           
+}
+
+[data-theme="dark"] .youtube-suggest-btn:hover {
+    color: #E67E22;           
+}
     /* Popup overlay */
     .youtube-popup-overlay {
     position: fixed;
