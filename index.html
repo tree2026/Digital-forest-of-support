@@ -3065,6 +3065,30 @@ function copyToClipboard(text) {
         ? '📋 კოპირებულია!'
         : '📋 Copied!');
 }
+
+        //1.999999 Show YouTube suggestion popup - SIMPLE version
+function showYoutubePopup(youtubeData) {
+    const t = TEXT[currentLanguage];
+    
+    const overlay = document.createElement('div');
+    overlay.className = 'youtube-popup-overlay';
+    
+    // Just the message with the link embedded
+    overlay.innerHTML = `
+        <div class="youtube-popup">
+            <p>${youtubeData.message} <a href="${youtubeData.url}" target="_blank" rel="noopener noreferrer">${youtubeData.url}</a></p>
+            <button onclick="this.closest('.youtube-popup-overlay').remove()" class="secondary">
+                ${currentLanguage === 'ge' ? 'დახურვა' : 'Close'}
+            </button>
+        </div>
+    `;
+    
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) overlay.remove();
+    });
+    
+    document.body.appendChild(overlay);
+}//1.999999  end 
         
         function clearJournal() {
             document.getElementById('newJournalEntry').value = "";
