@@ -640,8 +640,44 @@
     z-index: 1000;
     }
 
-    /* Simple popup with just the message containing a link */
     .youtube-popup {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 90%;
+    border: 2px solid var(--card-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.youtube-popup p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.youtube-popup a {
+    display: inline-block;
+    background: #E67E22;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.youtube-popup a:hover {
+    background: #D35400;
+}
+
+.youtube-popup button {
+    background: var(--button-secondary);
+    margin-top: 15px;
+}
+    /* Simple popup with just the message containing a link */
+   /* .youtube-popup {
     background: var(--card-bg);
     color: var(--text-primary);
     padding: 30px;
@@ -3119,8 +3155,38 @@ function copyToClipboard(text) {
         : '📋 Copied!');
 }
 
-        //1.999999 Show YouTube suggestion popup - SIMPLE version
+        // 1.999999. Show YouTube suggestion popup
 function showYoutubePopup(youtubeData) {
+    const t = TEXT[currentLanguage];
+    
+    // Create popup overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'youtube-popup-overlay';
+    
+    overlay.innerHTML = `
+        <div class="youtube-popup">
+            <p>${youtubeData.message}</p>
+            <a href="${youtubeData.url}" target="_blank" rel="noopener noreferrer">
+                🎬 ${currentLanguage === 'ge' ? 'ნახე YouTube-ზე' : 'Watch on YouTube'}
+            </a>
+            <br>
+            <button onclick="this.closest('.youtube-popup-overlay').remove()" class="secondary">
+                ${currentLanguage === 'ge' ? 'დახურვა' : 'Close'}
+            </button>
+        </div>
+    `;
+    
+    // Close when clicking outside
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.remove();
+        }
+    });
+    
+    document.body.appendChild(overlay);
+}
+        //1.999999 Show YouTube suggestion popup - SIMPLE version
+/*function showYoutubePopup(youtubeData) {
     const t = TEXT[currentLanguage];
     
     const overlay = document.createElement('div');
@@ -3141,7 +3207,7 @@ function showYoutubePopup(youtubeData) {
     });
     
     document.body.appendChild(overlay);
-}//1.999999  end 
+}//1.999999  end */
         
         function clearJournal() {
             document.getElementById('newJournalEntry').value = "";
