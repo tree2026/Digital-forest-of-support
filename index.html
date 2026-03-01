@@ -568,6 +568,79 @@
     font-size: 0.9em;
     }
 
+        /* 1.999999.  YouTube suggestion button */
+    .youtube-suggest-btn {
+    background: #E67E22;  /* Light mode - terracotta */
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.8;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    }
+
+    .youtube-suggest-btn:hover {
+    opacity: 1;
+    background: #D35400;
+    transform: translateY(-1px);
+    }
+
+    [data-theme="dark"] .youtube-suggest-btn {
+    background: #D35400;  /* Dark mode - deeper terracotta */
+    }
+    [data-theme="dark"] .youtube-suggest-btn:hover {
+    background: #E67E22;
+    }
+
+    /* Popup overlay */
+    .youtube-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    }
+
+    /* Simple popup with just the message containing a link */
+    .youtube-popup {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 90%;
+    border: 2px solid var(--card-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    line-height: 1.6;
+    }
+
+    .youtube-popup a {
+    color: #E67E22;
+    text-decoration: underline;
+    font-weight: bold;
+    }
+    
+    .youtube-popup a:hover {
+    color: #D35400;
+    }
+    
+    .youtube-popup button {
+    background: var(--button-secondary);
+    margin-top: 20px;
+    padding: 8px 20px;
+    }/*1.99999 end */
+        
         /* 1.6 Clear data button */
 #clear-data-btn {
     background: var(--button-secondary) !important;
