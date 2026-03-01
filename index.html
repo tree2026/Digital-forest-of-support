@@ -2656,6 +2656,7 @@ function checkVersionAndPreserveData() {
                 sage: poem.sage,
                 principle: principle.title,
                 type: 'practice',
+                poemId: poem.poemId  // 1.9999999. ADD THIS LINE
             });
             
             // Save
@@ -2939,6 +2940,7 @@ function showJournalAndScrollToNewest() {
                 sage: poem.sage,
                 principle: "Journal Entry",
                 type: 'journal',
+                poemId: poem.poemId  // 1.999999 ADD THIS LINE
             });
             
             saveTree();
