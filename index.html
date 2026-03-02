@@ -3169,7 +3169,7 @@ function shareEntry(entryIndex, sharePoemOnly = false) {
     }
 }
        //1.999999  
-function copyToClipboard(text) {
+/*function copyToClipboard(text) {
     // Create a temporary textarea
     const textarea = document.createElement('textarea');
     textarea.value = text;
@@ -3184,13 +3184,14 @@ function copyToClipboard(text) {
     
     document.body.removeChild(textarea);
     alert(currentLanguage === 'ge' ? '📋 კოპირებულია!' : '📋 Copied!');
-}// 1.999999 end
-/*function copyToClipboard(text) {
+}// 1.999999 end*/
+        
+function copyToClipboard(text) {
     navigator.clipboard.writeText(text);
     alert(currentLanguage === 'ge' 
         ? '📋 კოპირებულია!'
         : '📋 Copied!');
-}*/
+}
 
         // 1.999999. Show YouTube suggestion popup
 function showYoutubePopup(youtubeData) {
