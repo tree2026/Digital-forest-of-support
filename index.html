@@ -3161,9 +3161,17 @@ function shareEntry(entryIndex, sharePoemOnly = false) {
             text: shareText,
             url: window.location.href
         }).catch(err => {
-            console.log('Share cancelled:', err);
-            copyToClipboard(shareText);
+            // ✨ FIX: Only copy if error is NOT AbortError (user cancellation)
+            if (err.name !== 'AbortError' && err.name !== 'CancelError') {
+                console.log('Share failed:', err);
+                copyToClipboard(shareText);
+            } else {
+                console.log('Share cancelled by user');
+            }
         });
+            /*console.log('Share cancelled:', err);
+            copyToClipboard(shareText);
+        });*/
     } else {
         copyToClipboard(shareText);
     }
