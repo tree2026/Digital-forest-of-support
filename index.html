@@ -3161,14 +3161,14 @@ function shareEntry(entryIndex, sharePoemOnly = false) {
             text: shareText,
             url: window.location.href
         }).catch(err => {
-            // ✨ FIX: Only copy if error is NOT AbortError (user cancellation)
+            // 1.9999999 FIX: Only copy if error is NOT AbortError (user cancellation)
             if (err.name !== 'AbortError' && err.name !== 'CancelError') {
                 console.log('Share failed:', err);
                 copyToClipboard(shareText);
             } else {
                 console.log('Share cancelled by user');
             }
-        });
+        });//1.9 end
             /*console.log('Share cancelled:', err);
             copyToClipboard(shareText);
         });*/
