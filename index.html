@@ -3137,21 +3137,23 @@ if (entry.poemId) {
 function shareEntry(entryIndex, sharePoemOnly = false) {
     const entry = myTree.journals[entryIndex];
     if (!entry) return;
+    //1.⁹999999 share once not twice
+    const appLink = 'https://tree2026.github.io/Forest-of-support/forest05.html';// 1.9end
     
     let shareText = '';
     
     if (sharePoemOnly && entry.poem) {
         // Share only the poem
-        shareText = `${entry.poem}\n\n${entry.sage || ''}\n\n#ForestOfSupport #HealLikeATree`;
+        shareText = `${entry.poem}\n\n${entry.sage || ''}\n\n#ForestOfSupport #HealLikeATree\n${appLink}`;//1.9999 added applink after hashtag
     } else if (entry.type === 'canopy') {
         // Share canopy entry
-        shareText = `🌤️ ${entry.principle || entry.title}\n\n${entry.text}\n\n${entry.offering || ''}\n\n#ForestOfSupport #CanopyWisdom`;
+        shareText = `🌤️ ${entry.principle || entry.title}\n\n${entry.text}\n\n${entry.offering || ''}\n\n#ForestOfSupport #CanopyWisdom\n${appLink}`;
     } else if (entry.poem) {
         // Share journal entry with poem
-        shareText = `${entry.text}\n\n${entry.poem}\n\n${entry.sage || ''}\n\n#ForestOfSupport #HealLikeATree`;
+        shareText = `${entry.text}\n\n${entry.poem}\n\n${entry.sage || ''}\n\n#ForestOfSupport #HealLikeATree\n${appLink}`;
     } else {
         // Share regular journal entry
-        shareText = `${entry.text}\n\n#ForestOfSupport #TreeJournal`;
+        shareText = `${entry.text}\n\n#ForestOfSupport #TreeJournal\n${appLink}`;//1.9999 added applink
     }
     
     // Try Web Share API
@@ -3159,7 +3161,7 @@ function shareEntry(entryIndex, sharePoemOnly = false) {
         navigator.share({
             title: 'Forest of Support',
             text: shareText,
-            url: window.location.href
+            //url: window.location.href // 1.99999 removing url for not repeat twice
         }).catch(err => {
             // 1.9999999 FIX: Only copy if error is NOT AbortError (user cancellation)
             if (err.name !== 'AbortError' && err.name !== 'CancelError') {
