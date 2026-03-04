@@ -3377,8 +3377,123 @@ document.addEventListener('click', function(e) {
     }
 });
         // ==================== AMBIENT SOUND PLAYER ====================
- 
+
     const audioManager = {
+    audio: null,
+    isPlaying: false,
+    volume: 0.9,
+    audioFiles: [
+        'https://files.catbox.moe/fw3nxk.mp3',  
+        'https://files.catbox.moe/9k739z.mp3'      
+    ],
+    currentTrackIndex: 0,
+    
+    init() {
+        this.audio = new Audio(this.audioFiles[this.currentTrackIndex]);
+        this.audio.loop = false;
+        this.audio.volume = this.volume;
+        this.audio.preload = 'auto';
+        
+        this.audio.addEventListener('ended', () => {
+            this.playNextTrack();
+        });
+        
+        const savedPref = localStorage.getItem('forestAudioPref');
+        if (savedPref === 'playing') {
+            setTimeout(() => this.toggle(), 1000);
+        }
+        
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && this.isPlaying) {
+                this.pause();
+                this.shouldResume = true;
+            } else if (this.shouldResume) {
+                this.play();
+                this.shouldResume = false;
+            }
+        });
+    },
+    
+    playNextTrack() {
+        this.currentTrackIndex = (this.currentTrackIndex + 1) % this.audioFiles.length;
+        this.audio.src = this.audioFiles[this.currentTrackIndex];
+        this.audio.load();
+        
+        if (this.isPlaying) {
+            this.audio.play().catch(err => console.log('Play failed:', err));
+        }
+    },
+    
+    toggle() {
+        if (this.isPlaying) {
+            this.pause();
+        } else {
+            this.play();
+        }
+    },
+    
+    play() {
+        if (!this.audio) this.init();
+        
+        const playPromise = this.audio.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                this.isPlaying = true;
+                this.updateUI();
+                localStorage.setItem('forestAudioPref', 'playing');
+            }).catch(error => {
+                console.log('Audio play failed:', error);
+                if (error.name === 'NotAllowedError') {
+                    this.showPlayInstruction();
+                }
+            });
+        }
+    },
+    
+    pause() {
+        if (this.audio) {
+            this.audio.pause();
+            this.isPlaying = false;
+            this.updateUI();
+            localStorage.setItem('forestAudioPref', 'paused');
+        }
+    },
+    
+    updateUI() {
+        const button = document.getElementById('music-toggle');
+        if (button) {
+            if (this.isPlaying) {
+                button.classList.add('playing');
+                button.innerHTML = '🔊';
+                button.title = currentLanguage === 'ge' ? 'ხმის გამორთვა' : 'Mute ambient sounds';
+            } else {
+                button.classList.remove('playing');
+                button.innerHTML = '🎵';
+                button.title = currentLanguage === 'ge' ? 'ხმის ჩართვა' : 'Play ambient sounds';
+            }
+        }
+    },
+    
+    showPlayInstruction() {
+        if (!sessionStorage.getItem('audioInstructionShown')) {
+            const msg = currentLanguage === 'ge' 
+                ? 'ხმის ჩასართავად, დააწკაპუნეთ ხმის ღილაკზე 🌳\n(ბრაუზერი მოითხოვს ნებართვას)'
+                : 'To play sounds, click the music button 🌳\n(Browser requires your permission)';
+            
+            alert(msg);
+            sessionStorage.setItem('audioInstructionShown', 'true');
+        }
+    },
+    
+    setVolume(level) {
+        this.volume = Math.max(0, Math.min(1, level));
+        if (this.audio) {
+            this.audio.volume = this.volume;
+        }
+    }
+};
+   /* const audioManager = {
     audio: null,
     isPlaying: false,
     volume: 0.9, // 90% volume - subtle background
@@ -3505,7 +3620,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize audio manager after a delay
     setTimeout(() => audioManager.init(), 500);
-}); 
+}); */
     </script>
     
 
