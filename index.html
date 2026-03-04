@@ -2754,30 +2754,8 @@ function showYoutubePopup(youtubeData) {
     });
     
     document.body.appendChild(overlay);
-}
-        //1.999999 Show YouTube suggestion popup - SIMPLE version
-/*function showYoutubePopup(youtubeData) {
-    const t = TEXT[currentLanguage];
-    
-    const overlay = document.createElement('div');
-    overlay.className = 'youtube-popup-overlay';
-    
-    // Just the message with the link embedded
-    overlay.innerHTML = `
-        <div class="youtube-popup">
-            <p>${youtubeData.message} <a href="${youtubeData.url}" target="_blank" rel="noopener noreferrer">${youtubeData.url}</a></p>
-            <button onclick="this.closest('.youtube-popup-overlay').remove()" class="secondary">
-                ${currentLanguage === 'ge' ? 'დახურვა' : 'Close'}
-            </button>
-        </div>
-    `;
-    
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) overlay.remove();
-    });
-    
-    document.body.appendChild(overlay);
-}//1.999999  end */
+}// 1.9999 end
+
         
         function clearJournal() {
             document.getElementById('newJournalEntry').value = "";
@@ -2907,7 +2885,7 @@ document.addEventListener('click', function(e) {
     isPlaying: false,
     volume: 0.9, // 90% volume - subtle background
     audioFiles: {
-        birds: 'https://files.catbox.moe/mzd3xd.mp3'//1.⁹99999999990//'https://files.catbox.moe/fw3nxk.mp3'
+        birds: 'https://files.catbox.moe/jo9n6n.mp3'//'https://files.catbox.moe/mzd3xd.mp3'//1.⁹99999999990//'https://files.catbox.moe/fw3nxk.mp3'
         
         // 'https://files.catbox.moe/n75sd5.mp3' cleared
         // 'https://files.catbox.moe/fw3nxk.mp3' ++volume
