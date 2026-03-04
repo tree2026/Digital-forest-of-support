@@ -996,42 +996,39 @@
         }
     }
 
-        /* 1.9999999.  Scroll to top arrow */
-.scroll-top-arrow {
+        /* 1.9999999. Scroll to top arrow - ONLY for journal page */
+.journal-page .scroll-top-arrow {
     position: fixed;
     bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: var(--button-bg);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;           
+    height: 30px;
+    background: #888;      
     color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 18px; 
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 1000;
-    border: 2px solid var(--card-border);
+    border: none;
 }
 
-.scroll-top-arrow.visible {
-    opacity: 1;
+.journal-page .scroll-top-arrow.visible {
+    opacity: 0.7;           /* Slightly transparent */
     visibility: visible;
 }
 
-.scroll-top-arrow:hover {
-    background: var(--button-hover);
-    transform: scale(1.1);
-}
-
-[data-theme="dark"] .scroll-top-arrow {
-    background: var(--button-bg);
-    border-color: var(--card-border);
+.journal-page .scroll-top-arrow:hover {
+    opacity: 1;
+    background: #666;       /* Darker gray on hover */
+    transform: translateX(-50%) scale(1.1);
 }/*1.99999 end */
         
     </style>
@@ -1039,7 +1036,7 @@
 </head>
 <body> 
     <div class="container">
-        <!-- 1.999999 Scroll to top arrow -->
+        <!-- 1.99999 Scroll to top arrow -->
         <div class="scroll-top-arrow" id="scrollTopArrow" onclick="scrollToTop()">↑</div>
         <header> <!--bottom of title -->
             <h1 id="app-title">
