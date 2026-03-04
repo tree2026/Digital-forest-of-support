@@ -228,18 +228,11 @@
     100% { box-shadow: 0 0 0 0 rgba(74, 124, 63, 0); }
     }
     
-    /* Canopy button  */
-    #become-canopy-btn {
-    background: linear-gradient(to right, #8a5a2d, #a67c52);
-    box-shadow: 0 4px 0 #724115;
-    }
+    #become-canopy-btn { background: linear-gradient(to right, #8a5a2d, #a67c52); box-shadow: 0 4px 0 #724115; }
     
-    #become-canopy-btn:hover {
-    background: linear-gradient(to right, #724115, #8a5a2d);
-    box-shadow: 0 6px 0 #5a3410;
-    }
+    #become-canopy-btn:hover { background: linear-gradient(to right, #724115, #8a5a2d); box-shadow: 0 6px 0 #5a3410; }
 
-    /* 1.9 Add these for canopy steps */
+    /* 1.9999 Add these for canopy steps */
     .canopy-step-fade-out {
     opacity: 0; 
     transform: translateY(10px);
@@ -251,73 +244,20 @@
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.8s ease, transform 0.8s ease;
-    }/* 1.9 end */
+    }/* 1.9999 end */
         
-    /* Entry footer - bottom right corner */
-    .entry-footer {
-    text-align: right;
-    margin-top: 2px;
-    padding-top: 1px;
-    }
-    /* Small share button */
-    .small-share-btn {
-    background: var(--button-secondary);
-    color: white;
-    border: none;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 0.8em;
-    cursor: pointer;
-    transition: all 0.2s;
-    opacity: 0.8;
-    }
+    .entry-footer { text-align: right; margin-top: 2px; padding-top: 1px; }
     
-    .small-share-btn:hover {
-    opacity: 1;
-    background: var(--button-hover);
-    transform: translateY(-1px);
-    }
-    /* Poem share button */
-    .poem-response .entry-footer {
-    margin-top: 2px;
-    }
+    .small-share-btn { background: var(--button-secondary); color: white; border: none; padding: 4px 10px; border-radius: 12px;
+    font-size: 0.8em; cursor: pointer; transition: all 0.2s; opacity: 0.8; }
+    
+    .small-share-btn:hover { opacity: 1; background: var(--button-hover); transform: translateY(-1px); }
+
+    .poem-response .entry-footer { margin-top: 2px; }
     /* Remove time from date */
-    .entry-date span:first-child {
-    color: var(--text-secondary);
-    font-size: 0.9em;
-    }
+    .entry-date span:first-child { color: var(--text-secondary); font-size: 0.9em; }
 
-        /* 1.999999.  YouTube suggestion button */
-    /*.youtube-suggest-btn {
-    background: #E67E22;  
-    color: white;
-    border: none;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 0.8em;
-    cursor: pointer;
-    transition: all 0.2s;
-    opacity: 0.8;
-    margin-right: 5px;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    }
-
-    .youtube-suggest-btn:hover {
-    opacity: 1;
-    background: #D35400;
-    transform: translateY(-1px);
-    }
-
-    [data-theme="dark"] .youtube-suggest-btn {
-    background: #D35400;
-    }
-    [data-theme="dark"] .youtube-suggest-btn:hover {
-    background: #E67E22;
-    }*/
-
-    /* YouTube suggestion button - just a bell */
+    /*1.99999 YouTube suggestion button - just a bell */
 .youtube-suggest-btn {
     background: transparent !important;
     border: none !important;            
@@ -394,283 +334,107 @@
 .youtube-popup button {
     background: var(--button-secondary);
     margin-top: 15px;
-}
+}/*1.999999 end*/
 
-    /* Simple popup with just the message containing a link */
-   /* .youtube-popup {
-    background: var(--card-bg);
-    color: var(--text-primary);
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 400px;
-    width: 90%;
-    border: 2px solid var(--card-border);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    line-height: 1.6;
-    }
+#clear-data-btn { background: var(--button-secondary) !important; color: white !important; border: none !important;
+    padding: 10px 20px !important; border-radius: 50px !important; font-size: 0.9em !important; margin-top: 15px !important; opacity: 0.8 !important; }
 
-    .youtube-popup a {
-    color: #E67E22;
-    text-decoration: underline;
-    font-weight: bold;
-    }
-    
-    .youtube-popup a:hover {
-    color: #D35400;
-    }
-    
-    .youtube-popup button {
-    background: var(--button-secondary);
-    margin-top: 20px;
-    padding: 8px 20px;
-    }/*1.99999 end */
-        
-        /* 1.6 Clear data button */
-#clear-data-btn {
-    background: var(--button-secondary) !important;
-    color: white !important;
-    border: none !important;
-    padding: 10px 20px !important;
-    border-radius: 50px !important;
-    font-size: 0.9em !important;
-    margin-top: 15px !important;
-    opacity: 0.8 !important;
-}
+#clear-data-btn:hover { background: var(--button-hover) !important; opacity: 1 !important; transform: translateY(-2px) !important; }
 
-#clear-data-btn:hover {
-    background: var(--button-hover) !important;
-    opacity: 1 !important;
-    transform: translateY(-2px) !important;
-}
-
-/* Dark mode */
-[data-theme="dark"] #clear-data-btn {
-    background: var(--button-bg) !important;
-} /* 1.6 clear button end */
+[data-theme="dark"] #clear-data-btn { background: var(--button-bg) !important; }
         
     /* ==================== DARK MODE - COLOR CHANGE ONLY ==================== */
 
     /* === APPLY COLORS TO EXISTING STRUCTURE === */
-[data-theme="dark"] #become-canopy-btn {
-    background: linear-gradient(to right, #a67c52, #c9a87c);
-    box-shadow: 0 4px 0 #8a5a2d;
-}
+[data-theme="dark"] #become-canopy-btn { background: linear-gradient(to right, #a67c52, #c9a87c); box-shadow: 0 4px 0 #8a5a2d; }
 
-[data-theme="dark"] #become-canopy-btn:hover {
-    background: linear-gradient(to right, #8a5a2d, #a67c52);
-    box-shadow: 0 6px 0 #724115;
-}
+[data-theme="dark"] #become-canopy-btn:hover { background: linear-gradient(to right, #8a5a2d, #a67c52); box-shadow: 0 6px 0 #724115; }
         
-[data-theme="dark"] .small-share-btn {
-    background: var(--button-bg);
-}
+[data-theme="dark"] .small-share-btn { background: var(--button-bg); }
         
-[data-theme="dark"] .music-toggle {
-    border-color: var(--text-primary);
-    color: var(--text-primary);
-}
+[data-theme="dark"] .music-toggle { border-color: var(--text-primary); color: var(--text-primary); }
 
-[data-theme="dark"] .music-toggle:hover {
-    background: var(--button-bg);
-    color: var(--text-primary);
-}
+[data-theme="dark"] .music-toggle:hover { background: var(--button-bg); color: var(--text-primary); }
         
-/* Body background */
-[data-theme="dark"] body {
-    background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
-    color: var(--text-quaternary);
-}
+[data-theme="dark"] body { background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end)); color: var(--text-quaternary); }
 
-/* Headers */
-[data-theme="dark"] header {
-    background: var(--card-bg);
-    border-color: var(--card-border);
-}
+[data-theme="dark"] header { background: var(--card-bg); border-color: var(--card-border); }
 
-[data-theme="dark"] h1 {
-    color: var(--text-primary);
-}
+[data-theme="dark"] h1 { color: var(--text-primary); }
 
-[data-theme="dark"] .taglr(--text-secondary);
-}
+[data-theme="dark"] .taglr(--text-secondary); }
 
-/* Cards */
-[data-theme="dark"] .card {
-    background: var(--card-bg);
-}
+[data-theme="dark"] .card { background: var(--card-bg); }
 
-/* Buttons */
-[data-theme="dark"] button {
-    background: var(--button-bg);
-    box-shadow: 0 4px 0 var(--button-shadow);
-}
+[data-theme="dark"] button { background: var(--button-bg); box-shadow: 0 4px 0 var(--button-shadow); }
 
-[data-theme="dark"] button:hover {
-    background: var(--button-hover);
-    box-shadow: 0 6px 0 var(--button-shadow);
-    transform: none; /* ADDED: Prevent movement */
-}
+[data-theme="dark"] button:hover { background: var(--button-hover); box-shadow: 0 6px 0 var(--button-shadow); transform: none; }
 
-[data-theme="dark"] button.secondary {
-    background: var(--button-secondary);
-}
+[data-theme="dark"] button.secondary { background: var(--button-secondary); }
 
-/* Principle badges */
-[data-theme="dark"] .principle-badge {
-    background: var(--principle-bg);
-    border-left-color: var(--principle-border);
-    color: var(--text-quaternary);
-}
+[data-theme="dark"] .principle-badge { background: var(--principle-bg); border-left-color: var(--principle-border); color: var(--text-quaternary); }
 
-[data-theme="dark"] .principle-badge:hover {
-    background: var(--principle-bg);
-    border-left-color: var(--principle-border);
-    transform: translateX(5px); /* ADD BACK slight movement */
-    position: relative; /* Keep for eclipse effect */
-}
+[data-theme="dark"] .principle-badge:hover { background: var(--principle-bg); border-left-color: var(--principle-border); transform: translateX(5px); position: relative; }
 
-[data-theme="dark"] .principle-badge.selected {
-    background: var(--principle-selected);
-    border-left-color: var(--principle-border);
-}
+[data-theme="dark"] .principle-badge.selected { background: var(--principle-selected); border-left-color: var(--principle-border); }
 
 /* Eclipse effect - UPDATED to work with hover */
 [data-theme="dark"] .principle-badge:hover::before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: 5px;
-    width: 8px;
-    height: calc(100% - 10px);
-    background: rgba(41, 122, 31, 0.15);
-    border-radius: 2px;
-}
+    content: ''; position: absolute; left: -5px; top: 5px; width: 8px; height: calc(100% - 10px); background: rgba(41, 122, 31, 0.15); border-radius: 2px; }
 
-/* Tree display */
-[data-theme="dark"] .tree-display {
-    background: var(--tree-display-bg);
-    border-color: var(--card-border);
-}
+[data-theme="dark"] .tree-display { background: var(--tree-display-bg); border-color: var(--card-border); }
 
 [data-theme="dark"] #treeAscii,
-[data-theme="dark"] #seedPreview pre {
-    color: var(--tree-ascii-color);
-}
+[data-theme="dark"] #seedPreview pre { color: var(--tree-ascii-color); }
 
-/* Textareas */
-[data-theme="dark"] textarea {
-    background: var(--journal-bg);
-    color: var(--input-text);
-    border-color: var(--input-border);
-}
+[data-theme="dark"] textarea { background: var(--journal-bg); color: var(--input-text); border-color: var(--input-border); }
 
-[data-theme="dark"] textarea::placeholder {
-    color: var(--journal-placeholder);
-}
+[data-theme="dark"] textarea::placeholder { color: var(--journal-placeholder); }
 
-/* Input fields */
-[data-theme="dark"] input[type="text"] {
-    background: var(--input-bg);
-    color: var(--input-text);
-    border-color: var(--input-border);
-}
+[data-theme="dark"] input[type="text"] { background: var(--input-bg); color: var(--input-text); border-color: var(--input-border); }
 
-/* Input placeholder */
-[data-theme="dark"] input[type="text"]::placeholder {
-    color: var(--input-placeholder);
-}
+[data-theme="dark"] input[type="text"]::placeholder { color: var(--input-placeholder); }
 
-/* Exercise box */
-[data-theme="dark"] .exercise-box {
-    background: var(--exercise-outer);
-    border-color: var(--card-border);
-}
+[data-theme="dark"] .exercise-box { background: var(--exercise-outer); border-color: var(--card-border); }
 
-/* Poem response */
-[data-theme="dark"] .poem-response {
-    background: var(--poem-bg-start);
-    border-left-color: var(--poem-border);
-}
+[data-theme="dark"] .poem-response { background: var(--poem-bg-start); border-left-color: var(--poem-border); }
 
-[data-theme="dark"] .poem-response p {
-    color: var(--poem-text);
-}
+[data-theme="dark"] .poem-response p { color: var(--poem-text); }
 
-[data-theme="dark"] .sage-quote {
-    color: var(--sage-text);
-}
+[data-theme="dark"] .sage-quote { color: var(--sage-text); }
 
-/* Journal entries */
-[data-theme="dark"] .journal-entry {
-    background: var(--exercise-inner);
-    border-left-color: var(--principle-border);
-}
+[data-theme="dark"] .journal-entry { background: var(--exercise-inner); border-left-color: var(--principle-border); }
 
-[data-theme="dark"] .entry-date {
-    color: var(--journal-date);
-}
+[data-theme="dark"] .entry-date { color: var(--journal-date); }
 
-/* Stats boxes */
-[data-theme="dark"] .stat-box {
-    background: var(--stat-bg);
-    border-color: var(--stat-border);
-}
+[data-theme="dark"] .stat-box { background: var(--stat-bg); border-color: var(--stat-border); }
 
-[data-theme="dark"] .stat-box span {
-    color: var(--stat-value);
-}
+[data-theme="dark"] .stat-box span { color: var(--stat-value); }
 
-[data-theme="dark"] .stat-value {
-    color: var(--stat-value);
-}
+[data-theme="dark"] .stat-value { color: var(--stat-value); }
 
-/* Progress ring */
-[data-theme="dark"] .progress-ring {
-    background: conic-gradient(var(--button-bg) 0% 25%, var(--progress-ring-bg) 25% 100%) !important;
-}
+[data-theme="dark"] .progress-ring { background: conic-gradient(var(--button-bg) 0% 25%, var(--progress-ring-bg) 25% 100%) !important; }
 
-[data-theme="dark"] .progress-ring-inner {
-    background: var(--stat-bg);
-}
+[data-theme="dark"] .progress-ring-inner { background: var(--stat-bg); }
 
-[data-theme="dark"] #progressText {
-    color: var(--text-primary);
-}
+[data-theme="dark"] #progressText { color: var(--text-primary); }
 
-/* Step boxes */
-[data-theme="dark"] .step {
-    background: var(--exercise-outer);
-    border-color: var(--card-border);
-}
+[data-theme="dark"] .step { background: var(--exercise-outer); border-color: var(--card-border); }
 
-/* Footer */
-[data-theme="dark"] footer {
-    background: var(--footer-bg);
-}
+[data-theme="dark"] footer { background: var(--footer-bg); }
 
 [data-theme="dark"] #footer-version,
 [data-theme="dark"] #footer-data,
-[data-theme="dark"] #footer-quote {
-    color: var(--footer-text);
-}
+[data-theme="dark"] #footer-quote { color: var(--footer-text); }
 
 /* Double border focus effect */
 [data-theme="dark"] input[type="text"]:focus,
-[data-theme="dark"] textarea:focus {
-    outline: none;
-    border: 2px double;
-    border-color: #e29c21 #f1d3a0;
-}
+[data-theme="dark"] textarea:focus { outline: none; border: 2px double; border-color: #e29c21 #f1d3a0; }
 
-/* Specific journal card background */
-[data-theme="dark"] #journal.card {
-    background: var(--card-bg);
-}
+[data-theme="dark"] #journal.card { background: var(--card-bg); }
 
 /* Keep button color same on click */
-[data-theme="dark"] button:active {
-    background: var(--button-bg);
-}
+[data-theme="dark"] button:active { background: var(--button-bg); }
 
 /* Ensure no size changes - REMOVE or KEEP? Your choice */
 [data-theme="dark"] .exercise-box,
