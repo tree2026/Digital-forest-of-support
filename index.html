@@ -207,57 +207,20 @@
     .install-toggle { background: var(--button-secondary); color: white; border: none; padding: 6px 12px;
         border-radius: 50px; font-size: 0.85em; cursor: pointer; transition: all 0.3s ease; font-weight: bold; }
 
-    .install-toggle:hover {
-    background: var(--button-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    }
+    .install-toggle:hover { background: var(--button-hover); transform: translateY(-2px); box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); }
         
-    .theme-footer {
-        display: flex;
-        justify-content: center;
-        gap: 5px/*10px*/;
-        margin: 10px 0;
-    }
+    .theme-footer { display: flex; justify-content: center; gap: 5px/*10px*/; margin: 10px 0; }
 
-    /* Music toggle button */
-    .music-toggle {
-    visibility: visible !important;
-    opacity: 1 !important;
-    cursor: pointer !important;
-    position: relative !important;
-    z-index: 100 !important;
-    background: transparent;
-    border: 2px solid var(--button-bg);
-    color: var(--button-bg);
-    padding: 5px/*8px 12px*/;
-    border-radius: 50%;
-    font-size: 1.0em/*1.2em*/;
-    cursor: pointer;
-    /*margin-left: 5px;*/
-    margin-right: 10px;
-    transition: all 0.3s ease;
-    width: 35px/*45px*/;
-    height: 35px/*45px*/;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    /*top: -2px;*/
-    vertical-align: middle;
-    box-shadow: none !important; /* Remove button shadow */
-    }
+    .music-toggle { visibility: visible !important; opacity: 1 !important; cursor: pointer !important;
+    position: relative !important; z-index: 100 !important; background: transparent; border: 2px solid var(--button-bg);
+    color: var(--button-bg); padding: 5px; border-radius: 50%; font-size: 1.0em; cursor: pointer;/*margin-left: 5px;*/
+    margin-right: 10px; transition: all 0.3s ease; width: 35px/*45px*/; height: 35px/*45px*/; display: inline-flex;
+    align-items: center; justify-content: center;/*top: -2px;*/ vertical-align: middle;
+    box-shadow: none !important; }
 
-    .music-toggle:hover {
-    background: var(--button-bg);
-    color: white;
-    transform: scale(1.1);
-    }
+    .music-toggle:hover { background: var(--button-bg); color: white; transform: scale(1.1); }
 
-    .music-toggle.playing {
-    background: var(--button-bg) !important;
-    color: white !important;
-    animation: pulse 2s infinite !important;
-    }
+    .music-toggle.playing { background: var(--button-bg) !important; color: white !important; animation: pulse 2s infinite !important; }
 
     @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(74, 124, 63, 0.7); }
