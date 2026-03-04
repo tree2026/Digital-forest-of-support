@@ -1206,7 +1206,9 @@
         </div>
         
         <!-- Journal Card -->
-        <div id="journal" class="card">
+       <!-- <div id="journal" class="card">-->
+            <!-- 1.999999 Journal Card -->
+        <div id="journal" class="card" id="journal-page">
             <h2 id="journal-title">📖 Your Tree Journal</h2>
             <p id="journal-subtitle">Each entry receives a contextual poem that responds to your words.</p>
             
@@ -3544,7 +3546,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => audioManager.init(), 500);
 }); 
 
-        //1.999999 Scroll to top functionality
+        //1.999999  Scroll to top functionality
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -3552,11 +3554,18 @@ function scrollToTop() {
     });
 }
 
-// Show/hide scroll arrow based on scroll position
+// Show/hide scroll arrow only when on journal page
 window.addEventListener('scroll', function() {
-    const arrow = document.getElementById('scrollTopArrow');
-    if (window.scrollY > 300) {  // Show after scrolling 300px
-        arrow.classList.add('visible');
+    const journalCard = document.getElementById('journal');
+    const arrow = document.querySelector('.scroll-top-arrow');
+    
+    // Check if journal card is active/visible
+    if (journalCard && journalCard.classList.contains('active')) {
+        if (window.scrollY > 300) {
+            arrow.classList.add('visible');
+        } else {
+            arrow.classList.remove('visible');
+        }
     } else {
         arrow.classList.remove('visible');
     }
