@@ -3546,7 +3546,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => audioManager.init(), 500);
 }); 
 
-        //1.999999  Scroll to top functionality
+        //1.999999  Scroll to top functionalit
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -3557,16 +3557,18 @@ function scrollToTop() {
 // Show/hide scroll arrow only when on journal page
 window.addEventListener('scroll', function() {
     const journalCard = document.getElementById('journal');
-    const arrow = document.querySelector('.scroll-top-arrow');
+    const arrow = document.getElementById('scrollTopArrow');
     
-    // Check if journal card is active/visible
+    // Check if journal card has class 'active'
     if (journalCard && journalCard.classList.contains('active')) {
+        // Show arrow after scrolling 300px on journal page
         if (window.scrollY > 300) {
             arrow.classList.add('visible');
         } else {
             arrow.classList.remove('visible');
         }
     } else {
+        // Hide arrow on other pages
         arrow.classList.remove('visible');
     }
 });//1.99999 end
