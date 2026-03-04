@@ -3387,16 +3387,14 @@ document.addEventListener('click', function(e) {
         'https://files.catbox.moe/9k739z.mp3'      
     ],
     currentTrackIndex: 0,
+    shouldResume: false,  
     
     init() {
         this.audio = new Audio(this.audioFiles[this.currentTrackIndex]);
         this.audio.loop = false;
         this.audio.volume = this.volume;
         this.audio.preload = 'auto';
-        
-        this.audio.addEventListener('ended', () => {
-            this.playNextTrack();
-        });
+        this.setupEventListeners();
         
         const savedPref = localStorage.getItem('forestAudioPref');
         if (savedPref === 'playing') {
@@ -3414,10 +3412,17 @@ document.addEventListener('click', function(e) {
         });
     },
     
+    setupEventListeners() {
+        this.audio.addEventListener('ended', () => {
+            this.playNextTrack();
+        });
+    },
+    
     playNextTrack() {
         this.currentTrackIndex = (this.currentTrackIndex + 1) % this.audioFiles.length;
         this.audio.src = this.audioFiles[this.currentTrackIndex];
         this.audio.load();
+        this.setupEventListeners();
         
         if (this.isPlaying) {
             this.audio.play().catch(err => console.log('Play failed:', err));
