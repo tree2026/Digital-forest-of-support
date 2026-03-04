@@ -232,7 +232,7 @@
     
     #become-canopy-btn:hover { background: linear-gradient(to right, #724115, #8a5a2d); box-shadow: 0 6px 0 #5a3410; }
 
-    /* 1.9999 Add these for canopy steps */
+    /* 1.9999 after canopy btn. Add these for canopy steps */
     .canopy-step-fade-out {
     opacity: 0; 
     transform: translateY(10px);
@@ -257,7 +257,7 @@
     /* Remove time from date */
     .entry-date span:first-child { color: var(--text-secondary); font-size: 0.9em; }
 
-    /*1.99999 YouTube suggestion button - just a bell */
+    /*1.99999 before clear data btn. YouTube suggestion button - just a bell */
 .youtube-suggest-btn {
     background: transparent !important;
     border: none !important;            
@@ -479,7 +479,7 @@
         }
     }
 
-        /* 1.9999999. Scroll to top arrow - ONLY for journal page */
+        /* 1.9999999. before css </style. Scroll to top arrow - ONLY for journal page */
 .scroll-top-arrow {
     position: fixed;
     bottom: 30px;
@@ -523,7 +523,7 @@
 </head>
 <body> 
     <div class="container">
-        <!-- 1.99999 Scroll to top arrow -->
+        <!-- 1.99999 after dic class container.  Scroll to top arrow -->
         <div class="scroll-top-arrow" id="scrollTopArrow" onclick="scrollToTop()">↺</div>
         <header> <!--bottom of title -->
             <h1 id="app-title">
@@ -1985,7 +1985,7 @@ function checkVersionAndPreserveData() {
             
             // Enable next button
             document.getElementById('nextBtn1').disabled = false;
-            // 1.9 Auto-advance to next step
+            // 1.9 in selectPrincipal function before }. Auto-advance to next step
             setTimeout(() => {
                 nextStep();
             }, 500); // 1.9 end
@@ -2332,7 +2332,7 @@ function selectCanopyInsight(id) {
     // Enable next button
     document.getElementById('canopyNextBtn1').disabled = false;
     
-    // 1.9.🌿 GENTLE FADE for Canopy Step 1 → Step 2
+    // 1.9.🌿 select canopy insighr function before }. GENTLE FADE for Canopy Step 1 → Step 2
     setTimeout(() => {
         const step1 = document.getElementById('canopyStep1');
         step1.classList.add('canopy-step-fade-out');
@@ -2366,7 +2366,7 @@ function selectCanopyInsight(id) {
 
 function canopyNextStep() {
     const t = TEXT[currentLanguage];
-     // 1.9 If we're in step 1, our selectCanopyInsight already handles the transition
+     // 1.9 canopy nextdtep functuon after const t= .If we're in step 1, our selectCanopyInsight already handles the transition
     if (canopyCurrentStep === 1) {
         return; // Do nothing - selectCanopyInsight already handles it
     }// 1.9 end 
@@ -2529,7 +2529,7 @@ function showJournalAndScrollToNewest() {
                 sage: poem.sage,
                 principle: "Journal Entry",
                 type: 'journal',
-                poemId: poem.poemId  // 1.999999 ADD THIS LINE
+                poemId: poem.poemId  // 1.999999 savejournalentry after type=. ADD THIS LINE
             });
             
             saveTree();
@@ -2601,54 +2601,33 @@ function showJournalAndScrollToNewest() {
             `;
             
             if (entry.poem) {
-                //1.999999999 Check if this poem has a youtube link
+                //1.999999999 loadjournalentry after if(entry.poem){. Check if this poem has a youtube link
                 let youtubeButton = '';
-                
                 // Look up the poem in poeticWisdom to see if it has youtube property
-                /*if (entry.poemId) {
-                    // Find the poem in our data
+                if (entry.poemId) {
                     for (const [category, poems] of Object.entries(poeticWisdom[currentLanguage])) {
                         const foundPoem = poems.find(p => p.id === entry.poemId);
                         if (foundPoem && foundPoem.youtube) {
                             youtubeButton = `
-                                <button onclick='showYoutubePopup(${JSON.stringify(foundPoem.youtube).replace(/'/g, "\\'")})' 
-                                        class="youtube-suggest-btn" 
-                                        title="Suggested video">
-                                    🔔
-                                </button>
+                            <button class="youtube-suggest-btn" 
+                            data-message="${foundPoem.youtube.message}"
+                            data-url="${foundPoem.youtube.url}"
+                            title="Suggested video">
+                            🔔
+                            </button>
                             `;
                             break;
                         }
                     }
-                }//1.99999 end*/
-
-// Look up the poem in poeticWisdom to see if it has youtube property
-if (entry.poemId) {
-    // Find the poem in our data
-    for (const [category, poems] of Object.entries(poeticWisdom[currentLanguage])) {
-        const foundPoem = poems.find(p => p.id === entry.poemId);
-        if (foundPoem && foundPoem.youtube) {
-            // ✨ SIMPLE FIX: Store data in attributes
-            youtubeButton = `
-                <button class="youtube-suggest-btn" 
-                        data-message="${foundPoem.youtube.message}"
-                        data-url="${foundPoem.youtube.url}"
-                        title="Suggested video">
-                    🔔
-                </button>
-            `;
-            break;
-        }
-    }
-}
+                }
                 container.innerHTML += `
                     <div class="poem-response">
                         <p>${entry.poem.replace(/\n/g, '<br>')}</p>
                         <div class="sage-quote">${entry.sage}</div>
-                        <div class="entry-footer" style="display: flex; justify-content: space-between; align-items: center;"><!--1.9 from style-->
+                        <div class="entry-footer" style="display: flex; justify-content: space-between; align-items: center;"><!--1.9999 after sage quote.  from style-->
                             <div>
                                 ${youtubeButton}
-                            </div><!-- 1.9 end -->
+                            </div><!-- 1.99999 end -->
                             <button onclick="shareEntry(${originalIndex}, true)" class="small-share-btn" title="Share Poem">↗️</button>
                         </div>
                     </div>
@@ -2685,7 +2664,7 @@ function shareEntry(entryIndex, sharePoemOnly = false) {
             text: shareText,
             url: window.location.href
         }).catch(err => {
-            // 1.9999999 FIX: Only copy if error is NOT AbortError (user cancellation)
+            // 1.9999999 FIX: share entry function before {else{ . Only copy if error is NOT AbortError (user cancellation)
             if (err.name !== 'AbortError' && err.name !== 'CancelError') {
                 console.log('Share failed:', err);
                 copyToClipboard(shareText);
