@@ -995,12 +995,52 @@
             align-items: center;
         }
     }
+
+        /* 1.9999999.  Scroll to top arrow */
+.scroll-top-arrow {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--button-bg);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border: 2px solid var(--card-border);
+}
+
+.scroll-top-arrow.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-arrow:hover {
+    background: var(--button-hover);
+    transform: scale(1.1);
+}
+
+[data-theme="dark"] .scroll-top-arrow {
+    background: var(--button-bg);
+    border-color: var(--card-border);
+}/*1.99999 end */
         
     </style>
     
 </head>
 <body> 
     <div class="container">
+        <!-- 1.999999 Scroll to top arrow -->
+        <div class="scroll-top-arrow" id="scrollTopArrow" onclick="scrollToTop()">↑</div>
         <header> <!--bottom of title -->
             <h1 id="app-title">
         🌳 <span id="title-text">Forest of Support</span>
@@ -3506,6 +3546,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize audio manager after a delay
     setTimeout(() => audioManager.init(), 500);
 }); 
+
+        //1.999999 Scroll to top functionality
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Show/hide scroll arrow based on scroll position
+window.addEventListener('scroll', function() {
+    const arrow = document.getElementById('scrollTopArrow');
+    if (window.scrollY > 300) {  // Show after scrolling 300px
+        arrow.classList.add('visible');
+    } else {
+        arrow.classList.remove('visible');
+    }
+});//1.99999 end
+        
     </script>
     
 
