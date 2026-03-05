@@ -21,7 +21,8 @@ const POETIC_WISDOM_EXPORT = {
              youtube: { message: "🎵 Here's 1111Hz music from Echoes-of-pink, helps align your soul, body, and mind ", url: "https://youtu.be/fGdd74SKF98?si=JSXnS7oFLKiexhfT" } },
             { id: "rooting_13", poem: "The branch that bends but does not break\nHas roots that drink from hidden deep\nSo let the storm of feeling shake\nThe surface, while the soul learns peace.", sage: "Peace is the language of the soul's homeland. - Ibn Arabi" },
             { id: "rooting_14", poem: "The tree that stands through winter's rage\nDoes not complain or beg for spring\nIt sinks its roots on wisdom's page\nAnd waits for what the seasons bring.", sage: "An enemy cannot harm another as much as a man harms himself. - Rustaveli" },
-            { id: "rooting_15", poem: "Beneath the noise of urgent things\nThere lies a silence vast and deep\nWhere consciousness unfurls its wings\nAnd finds the peace it needs to keep.", sage: "In Your light, I learn how to love. In Your beauty, how to make poems. - Dante" }
+            { id: "rooting_15", poem: "Beneath the noise of urgent things\nThere lies a silence vast and deep\nWhere consciousness unfurls its wings\nAnd finds the peace it needs to keep.", sage: "In Your light, I learn how to love. In Your beauty, how to make poems. - Dante",
+             youtube: { message: "🎵 Here's merabh for consciousness with Adamus Saint-Germain ", url: "https://youtu.be/kAFjz6Or04E?si=lNNaA97HB-_SoztD" } }
         ],
         
         // Category 2: Bark (12 poems) for boundaries, protection, self-care
