@@ -3,7 +3,8 @@ const POETIC_WISDOM_EXPORT = {
     en: {
         // Category 1: Rooting (12 poems) for grounding, stability, foundation
         rooting: [
-            { id: "rooting_0", poem: "The earth holds you steady\nThrough every trembling leaf\nYour roots drink deep from silence\nFinding strength beyond grief.", sage: "Be like a tree. Let the dead leaves drop. - Rumi" },
+            { id: "rooting_0", poem: "The earth holds you steady\nThrough every trembling leaf\nYour roots drink deep from silence\nFinding strength beyond grief.", sage: "Be like a tree. Let the dead leaves drop. - Rumi",
+            youtube: { message: "📺 short film entitled 'Down To Earth,' that reveals the scientific phenomenon of how we can heal our bodies by doing the simplest thing that a person can do…standing barefoot on the earth ", url: "https://youtu.be/EcHEWH8Eh0Q?si=pqmF3vnCc46dVowb" } },
             { id: "rooting_1", poem: "When ground feels far beneath your feet\nAnd certainty has slipped away\nRemember roots in darkness meet\nThe nourishment of silent clay.", sage: "The ground's generosity takes in our compost and grows beauty. - Rumi",
              youtube: { message: "🎵 Music by Raimu - Meditative flow ", url: "https://youtu.be/kVbVuACR03c?si=afJET65V8mv9NiJg" } },
             { id: "rooting_2", poem: "Before you reach for heights unknown\nFirst anchor in the present ground\nA tree that's firmly, deeply grown\nWill not be easily unsound.", sage: "The way is not in the sky. The way is in the heart. - Buddha" },
