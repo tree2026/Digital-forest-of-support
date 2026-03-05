@@ -4,7 +4,8 @@ const POETIC_WISDOM_EXPORT = {
         // Category 1: Rooting (12 poems) for grounding, stability, foundation
         rooting: [
             { id: "rooting_0", poem: "The earth holds you steady\nThrough every trembling leaf\nYour roots drink deep from silence\nFinding strength beyond grief.", sage: "Be like a tree. Let the dead leaves drop. - Rumi" },
-            { id: "rooting_1", poem: "When ground feels far beneath your feet\nAnd certainty has slipped away\nRemember roots in darkness meet\nThe nourishment of silent clay.", sage: "The ground's generosity takes in our compost and grows beauty. - Rumi" },
+            { id: "rooting_1", poem: "When ground feels far beneath your feet\nAnd certainty has slipped away\nRemember roots in darkness meet\nThe nourishment of silent clay.", sage: "The ground's generosity takes in our compost and grows beauty. - Rumi",
+             youtube: { message: "🎵 Music by Raimu - Meditative flow ", url: "https://youtu.be/kVbVuACR03c?si=afJET65V8mv9NiJg" } },
             { id: "rooting_2", poem: "Before you reach for heights unknown\nFirst anchor in the present ground\nA tree that's firmly, deeply grown\nWill not be easily unsound.", sage: "The way is not in the sky. The way is in the heart. - Buddha" },
             { id: "rooting_3", poem: "In winter's sleep, the roots still grow\nThough surface world seems still and dead\nWhat happens deep, we cannot know\nUntil spring's green is widespread.", sage: "Patience is the key to joy. - Rumi" },
             { id: "rooting_4", poem: "When storm winds shake your highest bough\nThe deepest roots stay firm and true\nYou are the oak tree standing now\nNot the acorn that once grew.", sage: "Be empty of worrying. Think of who created thought. - Rumi" },
