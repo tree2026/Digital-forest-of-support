@@ -96,7 +96,8 @@ const POETIC_WISDOM_EXPORT = {
         // Category 5: Reaching (12 poems) for goals, light, aspiration
         reaching: [
             { id: "reaching_0", poem: "Even in deepest forest shade\nThe seedling knows to reach for light\nIt grows not straight, as plans are made\nBut follows inner, trusted sight.", sage: "What you seek is seeking you. - Rumi" },
-            { id: "reaching_1", poem: "The branch that reaches for the sun\nDoes not complain about the shade\nIt grows until the work is done\nIn patterns that cannot be swayed.", sage: "You were born with wings, why prefer to crawl through life? - Rumi" },
+            { id: "reaching_1", poem: "The branch that reaches for the sun\nDoes not complain about the shade\nIt grows until the work is done\nIn patterns that cannot be swayed.", sage: "You were born with wings, why prefer to crawl through life? - Rumi",
+             youtube: { message: "🎵 Call of Atlantis by Anders Holte ", url: "https://youtu.be/F4orGRjuRro?si=x7nL1TLHfDsmtVGQ" } },
             { id: "reaching_2", poem: "Not every reach finds open sky\nSome growth encounters other trees\nYet still the living branch will try\nTo find its way as it believes.", sage: "The only lasting beauty is the beauty of the heart. - Rumi" },
             { id: "reaching_3", poem: "The tree grows toward the light it needs\nNot toward some arbitrary height\nYour true aspirations are the seeds\nThat guide you toward your proper light.", sage: "Let yourself be silently drawn by the strange pull of what you really love. - Rumi" },
             { id: "reaching_4", poem: "When one direction meets a wall\nThe tree will find another way\nYour aspirations hear the call\nTo grow toward a brighter day.", sage: "When you want something, all the universe conspires in helping you to achieve it. - Paulo Coelho" },
