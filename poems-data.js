@@ -228,7 +228,9 @@ const POETIC_WISDOM_EXPORT = {
         // Category 12: Presence (12 poems) for mindfulness, now, awareness
         presence: [
             { id: "presence_0", poem: "The tree does not recall the past\nNor fret about what is to come\nIt stands in presence that will last\nWhile seasons beat their steady drum.", sage: "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment. - Buddha" },
-            { id: "presence_1", poem: "Right now, this breath, this patch of ground\nIs all the tree will ever need\nIn simple being, it is found\nFrom wanting and from worry freed.", sage: "When you do things from your soul, you feel a river moving in you, a joy. - Rumi" },
+            { id: "presence_1", poem: "Right now, this breath, this patch of ground\nIs all the tree will ever need\nIn simple being, it is found\nFrom wanting and from worry freed.", sage: "When you do things from your soul, you feel a river moving in you, a joy. - Rumi",
+             youtube: { message: "🎵 Here's Adamus insight how to create reality. Does the reality exist - it's just a perception ", url: "https://youtu.be/ArLgItkUSWQ?si=KO9Gu690zEjH6LAA" }
+            },
             { id: "presence_2", poem: "Not thinking of tomorrow's weather\nNor yesterday's forgotten storm\nThe tree is wholly here together\nWith life in its most basic form.", sage: "Be where you are; otherwise you will miss your life. - Buddha" },
             { id: "presence_3", poem: "The tree stands present in the now\nNot planning, not regretting, just\nExisting with its every bough\nIn what the moment says it must.", sage: "The present moment is filled with joy and happiness. If you are attentive, you will see it. - Thich Nhat Hanh" },
             { id: "presence_4", poem: "No thought of future acorn's fall\nNo memory of seedling start\nThe tree is present through it all\nWith stillness in its living heart.", sage: "Realize deeply that the present moment is all you ever have. - Eckhart Tolle" },
