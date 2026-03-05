@@ -27,7 +27,8 @@ const POETIC_WISDOM_EXPORT = {
         
         // Category 2: Bark (12 poems) for boundaries, protection, self-care
         bark: [
-            { id: "bark_0", poem: "The bark is not a wall of stone\nBut breathing skin that knows its place\nIt filters what should not be known\nWith gentle, necessary grace.", sage: "Healthy boundaries are the distance at which I can love you and me simultaneously. - Prentis Hemphill" },
+            { id: "bark_0", poem: "The bark is not a wall of stone\nBut breathing skin that knows its place\nIt filters what should not be known\nWith gentle, necessary grace.", sage: "Healthy boundaries are the distance at which I can love you and me simultaneously. - Prentis Hemphill",
+             youtube: { message: "🎵 Be observer, not mediator - Merabh beyond Mediation by Adamus Saint-Germain ", url: "https://youtu.be/Fz7P30nF2GY?si=k8Lo3KgGjsHEFIeR" } },
             { id: "bark_1", poem: "Like tree bark, strong yet permeable\nYour boundaries let the good light through\nProtecting what is vulnerable\nWhile keeping your core essence true.", sage: "You yourself, as much as anybody in the entire universe, deserve your love and affection. - Buddha" },
             { id: "bark_2", poem: "The wise tree knows which winds to bend to\nWhich weather patterns to allow in\nYour boundaries help your spirit mend to\nIts natural rhythm, free from din.", sage: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment. - Emerson" },
             { id: "bark_3", poem: "Not every breeze deserves admission\nNor every rainfall needs your care\nDiscernment is the bark's commission\nTo guard what's precious, deep, and rare.", sage: "The heart has its reasons which reason knows not. - Pascal" },
