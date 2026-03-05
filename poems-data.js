@@ -64,7 +64,8 @@ const POETIC_WISDOM_EXPORT = {
         // Category 4: Release (12 poems) for letting go, autumn, endings
         release: [
             { id: "release_0", poem: "The tree does not remember\nNor anticipate what's due\nIt simply stands in being\nAs you are learning to.", sage: "Don't grieve. Anything you lose comes round in another form. - Rumi" },
-            { id: "release_1", poem: "What falls away makes room for new\nAs empty branches wait for spring\nRelease what no longer serves you\nAnd hear your inner songbirds sing.", sage: "Life is a balance between holding on and letting go. - Rumi" },
+            { id: "release_1", poem: "What falls away makes room for new\nAs empty branches wait for spring\nRelease what no longer serves you\nAnd hear your inner songbirds sing.", sage: "Life is a balance between holding on and letting go. - Rumi",
+            youtube: { message: "🎵 Blowing up Guilt - by Adamus. So many humans are in a victim game with themselves, holding on to guilt. ", url: "https://youtu.be/g2E8BvXsgz4?si=Sbhy4_otlxNy9CF4" } },
             { id: "release_2", poem: "Like autumn leaves in colored flight\nWhat you release finds its own way\nMaking space for morning light\nAnd possibilities of day.", sage: "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment. - Buddha" },
             { id: "release_3", poem: "The tree lets go without regret\nOf leaves that served their season's role\nIt does not cling with vain upset\nTo what no longer serves the whole.", sage: "Peace comes from within. Do not seek it without. - Buddha" },
             { id: "release_4", poem: "In falling, leaves return to earth\nTo nourish what will later grow\nYour endings have their proper worth\nIn ways you may not ever know.", sage: "The wound is where the light enters you. - Rumi" },
