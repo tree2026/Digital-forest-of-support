@@ -108,7 +108,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "reaching_11", poem: "The tree reaches not to compete\nBut to fulfill its nature's call\nYour aspirations make complete\nThe purpose that includes it all.", sage: "He who has a why to live can bear almost any how. - Nietzsche" },
             { id: "reaching_12", poem: "You cannot force the dawn to break\nNor hurry night to give its gift\nBut stay awake for your own sake\nAnd watch the veils of seeing lift.", sage: "The dawn does not ask permission to arrive. - Ibn Arabi" },
             { id: "reaching_13", poem: "A single flame can light a room\nThat darkness held for countless years\nSo let this truth undo the gloom\nAnd dry the residue of tears.", sage: "What sort of light brings darkness with it?! - Rustaveli" },
-            { id: "reaching_14", poem: "The branch that reaches toward the light\nDoes not despise the shade below\nIt knows that darkness and the bright\nAre partners in the dance of grow.", sage: "The journey is not about reaching the sky, but about the reaching itself. - Ibn Arabi" },
+            { id: "reaching_14", poem: "The branch that reaches toward the light\nDoes not despise the shade below\nIt knows that darkness and the bright\nAre partners in the dance of grow.", sage: "The journey is not about reaching the sky, but about the reaching itself. - Ibn Arabi",
+             youtube: { message: "🎵 You are consciousness and where is home - Adamus insight ", url: "https://youtu.be/8-pkeDj8Fd0?si=5pF7modEGrPvDq9P" } },
             { id: "reaching_15", poem: "Do not ask if you will reach the sun\nOr if your striving will succeed\nThe reaching is what makes you one\nWith every light-desiring seed.", sage: "From there we climbed, and saw the stars once more. - Dante" }
         ],
         
