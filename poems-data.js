@@ -157,7 +157,8 @@ const POETIC_WISDOM_EXPORT = {
         
         // Category 8: Shape (12 poems) for authenticity, uniqueness, being
         shape: [
-            { id: "shape_0", poem: "The oak does not envy pine\nIts needle dress or slender form\nEach tree accepts its own design\nThrough calm and through the raging storm.", sage: "Don't be satisfied with stories, how things have gone with others. Unfold your own myth. - Rumi" },
+            { id: "shape_0", poem: "The oak does not envy pine\nIts needle dress or slender form\nEach tree accepts its own design\nThrough calm and through the raging storm.", sage: "Don't be satisfied with stories, how things have gone with others. Unfold your own myth. - Rumi",
+             youtube: { message: "🎵 In a beautiful message, Adamus (channeled by Geoffrey Hoppe) helps you understand what's really true ", url: "https://youtu.be/f8SzAw0Hh_o?si=RJdLCZR8cgnj9mxP" } },
             { id: "shape_1", poem: "No maple tries to be a birch\nOr cedar emulate the yew\nEach finds its place within the lurch\nOf being perfectly and truly you.", sage: "You yourself, as much as anybody in the entire universe, deserve your love and affection. - Buddha" },
             { id: "shape_2", poem: "Your shape is not a thing to change\nBut gently, slowly come to know\nHowever odd or somewhat strange\nIt's where your deepest truths will grow.", sage: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment. - Emerson" },
             { id: "shape_3", poem: "The bonsai finds its beauty small\nWhile redwood seeks the highest sky\nYour authentic shape says all\nThat makes your spirit truly fly.", sage: "The privilege of a lifetime is to become who you truly are. - Carl Jung" },
