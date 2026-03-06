@@ -52,7 +52,8 @@ const POETIC_WISDOM_EXPORT = {
         
         // Category 3: Rings (12 poems) for growth, experience, time
         rings: [
-            { id: "rings_0", poem: "Each ring, a year of sun and rain\nSome thick with joy, some thin with pain\nAll woven into living grain\nThat makes the sturdy trunk remain.", sage: "The wound is the place where the Light enters you. - Rumi" },
+            { id: "rings_0", poem: "Each ring, a year of sun and rain\nSome thick with joy, some thin with pain\nAll woven into living grain\nThat makes the sturdy trunk remain.", sage: "The wound is the place where the Light enters you. - Rumi",
+             youtube: { message: "🎵 Here's Adamus insight how to integrate the light body, channeled by Geoffrey Hoppe ", url: "https://youtu.be/RtfifqHmjfs?si=-yyHo-fTlMS46QCd" } },
             { id: "rings_1", poem: "You cannot choose which rings grow wide\nOr which years make the narrow bands\nBut every season lived inside\nStrengthens the tree that firmly stands.", sage: "What hurts you, blesses you. Darkness is your candle. - Rumi" },
             { id: "rings_2", poem: "The rings don't show just easy weather\nBut droughts and storms the tree endured\nEach challenge woven all together\nInto the strength that has matured.", sage: "Where there is ruin, there is hope for a treasure. - Rumi" },
             { id: "rings_3", poem: "Count not the rings as good or bad\nBut records of what each year brought\nThe tree accepts the joy and sad\nAs lessons that cannot be bought.", sage: "This being human is a guest house. Every morning a new arrival. - Rumi" },
@@ -84,7 +85,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "release_5", poem: "Bare branches against winter sky\nMake patterns beautiful and stark\nWhen you release, you learn to fly\nInto the freedom of the dark.", sage: "The moon stays bright when it doesn't avoid the night. - Rumi",
              youtube: { message: "🎵 Cleansing Merabh with Adamus (channeled by Geoffrey Hoppe) and Oryom ", url: "https://youtu.be/vQsBSdliAio?si=uDv-QOrpWZzj40bh" } },
             { id: "release_6", poem: "What you release becomes the soil\nFor future growth yet unforeseen\nIn letting go of present toil\nYou make space for what might have been.", sage: "When I let go of what I am, I become what I might be. - Lao Tzu", 
-             youtube: { message: "🎵 Here's Adamus insight how to integrate the light body, channeled by Geoffrey Hoppe ", url: "https://youtu.be/RtfifqHmjfs?si=-yyHo-fTlMS46QCd" } },
+             youtube: { message: "🎵 Adamus Saint-Germain invites to release all that isn't yours and instead allow the goodness that lies within the heart of each of us ", url: "https://youtu.be/XIoiyUfNrqU?si=Jg33XIplPtNyeGw1" } },
             { id: "release_7", poem: "The tree does not clutch dying leaves\nNor beg the autumn to delay\nIt simply trusts what nature weaves\nAnd welcomes each returning day.", sage: "Trust the process. Your time is coming. Just do the work and the results will handle themselves. - Tony Gaskins" },
             { id: "release_8", poem: "Release is not a loss but change\nA transformation of the form\nWhat falls away will rearrange\nInto what different will be born.", sage: "Nothing in nature blooms all year. Be patient with yourself. - Karen Salmansohn" },
             { id: "release_9", poem: "When branches free themselves of weight\nThey rise to meet the coming snow\nYour letting go can change your fate\nIn ways you cannot hope to know.", sage: "Some of us think holding on makes us strong, but sometimes it is letting go. - Hermann Hesse",
