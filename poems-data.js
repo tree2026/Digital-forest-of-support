@@ -264,7 +264,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "patience_13", poem: "The seed does not demand the sun\nTo hurry with its warming rays\nIt knows its work is not yet done\nAnd trusts in slowly growing days.", sage: "Patience is not waiting; it is the art of hoping while hidden. - Ibn Arabi",
             youtube: { message: "🎵 Slow down and truly experience this incredible time of transformation - by Adamus Saint-Germain, channeled by Geoffrey Hoppe ", url: "https://youtu.be/K258ShS-Z_0?si=rV0mJX-7PYzxadx5" } },
             { id: "patience_14", poem: "The oak that stands a thousand years\nWas patient through a thousand springs\nYour waiting holds the same spheres\nThat circle round all growing things.", sage: "Patience, even blamed, is better than haste, even praised. - Rustaveli" },
-            { id: "patience_15", poem: "The seed sleeps in the winter ground\nAnd dreams of what it does not know\nThe sun's return, the rain's soft sound\nWill wake it in its time, and slow.", sage: "Patience is not the absence of action, but the presence of trust while the unseen works. - Ibn Arabi" }
+            { id: "patience_15", poem: "The seed sleeps in the winter ground\nAnd dreams of what it does not know\nThe sun's return, the rain's soft sound\nWill wake it in its time, and slow.", sage: "Patience is not the absence of action, but the presence of trust while the unseen works. - Ibn Arabi",
+             youtube: { message: "🎵 Adamus talked about a collective dream, the Atlantean Dream, and how it is now being fulfilled ", url: "https://youtu.be/HECcQWgHDZY?si=B3AKnSNY1fU0Vwd0" } }
         ],
         
         // Category 12: Presence (12 poems) for mindfulness, now, awareness
