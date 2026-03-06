@@ -193,7 +193,8 @@ const POETIC_WISDOM_EXPORT = {
         // Category 9: Seasons (12 poems) for cycles, change, rhythms
         seasons: [
             { id: "seasons_0", poem: "Spring's bud, summer's full array\nAutumn's gold, winter's rest\nEach season has its proper way\nAnd each one is for what is best.", sage: "This being human is a guest house. Every morning a new arrival. - Rumi" },
-            { id: "seasons_1", poem: "The tree does not resist the frost\nOr cling to blossoms past their prime\nIt understands what must be lost\nTo greet another, better time.", sage: "The only constant in life is change. - Heraclitus" },
+            { id: "seasons_1", poem: "The tree does not resist the frost\nOr cling to blossoms past their prime\nIt understands what must be lost\nTo greet another, better time.", sage: "The only constant in life is change. - Heraclitus",
+            youtube: { message: "🎵 There is a path, destiny that brought us forward lifetime after lifetime. It was The Way that was coded in the times of Atlantis. Now comes the time to release the Atlantean Code, says Adamus, channeled by Geoffrey Hoppe ", url: "https://youtu.be/k06A0pRLgGQ?si=DaQmlnFezBA9oY9I" } },
             { id: "seasons_2", poem: "In winter's sleep, the strength renews\nFor spring's awakening to come\nEach cycle what the tree will use\nTo beat its living, patient drum.", sage: "Peace comes from within. Do not seek it without. - Buddha" },
             { id: "seasons_3", poem: "Spring's urgency, summer's growth\nAutumn's release, winter's dream\nEach season speaks a different oath\nIn life's perpetual, flowing stream.", sage: "To every thing there is a season, and a time to every purpose under the heaven. - Ecclesiastes 3:1" },
             { id: "seasons_4", poem: "The tree accepts each season's turn\nWithout complaint or bitter grief\nYour cycles help your spirit learn\nTo trust in nature's sure relief.", sage: "Change is the only constant in life. - Heraclitus" },
