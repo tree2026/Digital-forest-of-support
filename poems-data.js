@@ -276,7 +276,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "presence_11", poem: "The tree does not miss being elsewhere\nBut stands complete in its own place\nYour presence is the answered prayer\nThat brings you fully into grace.", sage: "Wherever you are, be there totally. - Eckhart Tolle" },
             { id: "presence_12", poem: "The pond reflects the perfect moon\nWhen not a single ripple moves\nSo silence is the sacred boon\nThat clarifies what spirit proves.", sage: "Be silent, that the heart may speak. - Ibn Arabi" },
             { id: "presence_13", poem: "Between the thoughts, between the breaths\nA gap of infinite repose\nWhere dwell the one who never death\nAnd knows the peace the silence knows.", sage: "In the stillness, the stars sang of love. - Dante",
-            youtube: { message: "🎵 Here Adamus (channeled by Geoffrey Hoppe) invites you to feel into the I Am, the pure core of Self without any mirrors ", url: "https://youtu.be/F2qlhGISx38?si=rIopxt1S2mbqrP5s" } },
+            youtube: { message: "🎵 Here's an invitation to feel into the pure core of Self without any mirrors with Adamus Saint-Germain and Amir Yakobi ", url: "https://youtu.be/F2qlhGISx38?si=rIopxt1S2mbqrP5s" } },
             { id: "presence_14", poem: "This breath, this moment, this one leaf\nThat trembles in the present air\nContains all joy, contains all grief\nAnd holds you in its timeless care.", sage: "The present moment is the veil through which eternity gazes. - Ibn Arabi" },
             { id: "presence_15", poem: "The past is ash, the future smoke\nBut here, now, burns the living flame\nPresence is the sacred cloak\nThat wraps you in your own true name.", sage: "The love that moves the sun and other stars is here, now, in this breath. - Dante" }
         ]
