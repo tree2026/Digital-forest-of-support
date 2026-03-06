@@ -54,7 +54,8 @@ const POETIC_WISDOM_EXPORT = {
         rings: [
             { id: "rings_0", poem: "Each ring, a year of sun and rain\nSome thick with joy, some thin with pain\nAll woven into living grain\nThat makes the sturdy trunk remain.", sage: "The wound is the place where the Light enters you. - Rumi",
              youtube: { message: "🎵 Here's Adamus insight how to integrate the light body, channeled by Geoffrey Hoppe ", url: "https://youtu.be/RtfifqHmjfs?si=-yyHo-fTlMS46QCd" } },
-            { id: "rings_1", poem: "You cannot choose which rings grow wide\nOr which years make the narrow bands\nBut every season lived inside\nStrengthens the tree that firmly stands.", sage: "What hurts you, blesses you. Darkness is your candle. - Rumi" },
+            { id: "rings_1", poem: "You cannot choose which rings grow wide\nOr which years make the narrow bands\nBut every season lived inside\nStrengthens the tree that firmly stands.", sage: "What hurts you, blesses you. Darkness is your candle. - Rumi",
+            youtube: { message: "🎵 Sun within and Sun without with Liza Bagrationi and Giorgi Ushikishvili ", url: "https://youtu.be/dWvKOCz00MU?si=cWUgK16PeTo3Rs_s" } },
             { id: "rings_2", poem: "The rings don't show just easy weather\nBut droughts and storms the tree endured\nEach challenge woven all together\nInto the strength that has matured.", sage: "Where there is ruin, there is hope for a treasure. - Rumi" },
             { id: "rings_3", poem: "Count not the rings as good or bad\nBut records of what each year brought\nThe tree accepts the joy and sad\nAs lessons that cannot be bought.", sage: "This being human is a guest house. Every morning a new arrival. - Rumi" },
             { id: "rings_4", poem: "The narrow rings of drought years show\nWhen growth was slow but still occurred\nYour hardest times still help you grow\nIn ways that cannot be inferred.", sage: "The cure for pain is in the pain. - Rumi" },
