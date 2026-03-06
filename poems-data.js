@@ -30,7 +30,8 @@ const POETIC_WISDOM_EXPORT = {
         bark: [
             { id: "bark_0", poem: "The bark is not a wall of stone\nBut breathing skin that knows its place\nIt filters what should not be known\nWith gentle, necessary grace.", sage: "Healthy boundaries are the distance at which I can love you and me simultaneously. - Prentis Hemphill",
              youtube: { message: "🎵 Be observer, not mediator - Merabh beyond Mediation by Adamus Saint-Germain, channeled by Geoffrey Hoppe ", url: "https://youtu.be/Fz7P30nF2GY?si=k8Lo3KgGjsHEFIeR" } },
-            { id: "bark_1", poem: "Like tree bark, strong yet permeable\nYour boundaries let the good light through\nProtecting what is vulnerable\nWhile keeping your core essence true.", sage: "You yourself, as much as anybody in the entire universe, deserve your love and affection. - Buddha" },
+            { id: "bark_1", poem: "Like tree bark, strong yet permeable\nYour boundaries let the good light through\nProtecting what is vulnerable\nWhile keeping your core essence true.", sage: "You yourself, as much as anybody in the entire universe, deserve your love and affection. - Buddha",
+             youtube: { message: "🎵 ✨️In this light language channelling, you will hear chakra balancing sounds ", url: "https://youtu.be/iwxUYTqRois?si=JN4oD1R8nHg3ACt0" } },
             { id: "bark_2", poem: "The wise tree knows which winds to bend to\nWhich weather patterns to allow in\nYour boundaries help your spirit mend to\nIts natural rhythm, free from din.", sage: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment. - Emerson" },
             { id: "bark_3", poem: "Not every breeze deserves admission\nNor every rainfall needs your care\nDiscernment is the bark's commission\nTo guard what's precious, deep, and rare.", sage: "The heart has its reasons which reason knows not. - Pascal" },
             { id: "bark_4", poem: "The bark grows thicker year by year\nFrom weathering what life has sent\nYour boundaries become more clear\nWith wisdom of experience lent.", sage: "We are shaped by our thoughts; we become what we think. - Buddha" },
@@ -67,7 +68,7 @@ const POETIC_WISDOM_EXPORT = {
             { id: "rings_13", poem: "Asleep within the dream of days\nWe grasp at shadows, call them real\nUntil a light cuts through the haze\nAnd teaches wounded hearts to feel.", sage: "In the middle of the journey of our life, I found myself within a dark wood. - Dante" },
             { id: "rings_14", poem: "The narrow rings of famine years\nAnd wide rings of abundant rain\nAre written in the grain that bears\nThe story of what you contain.", sage: "Every moment, the soul is renewed, and in that renewal is its proof. - Ibn Arabi" },
             { id: "rings_15", poem: "No ring is ever truly lost\nThough seasons change and years pass by\nEach one becomes the bridge across\nThe river of your living sky.", sage: "In His will is our peace, and every ring of time turns toward that center. - Dante",
-            youtube: { message: "🎵 Here's a nice light language channelling with solar healing codes which are intended to activate your solar plexus chakra ", url: "https://youtu.be/qHFAZx4Erv0?si=fbF74jff4A4eBbgF" } }
+            youtube: { message: "🎵 ⭐️Here's a nice light language channelling with solar healing codes which are intended to activate your solar plexus chakra ", url: "https://youtu.be/qHFAZx4Erv0?si=fbF74jff4A4eBbgF" } }
         ],
         
         // Category 4: Release (12 poems) for letting go, autumn, endings
