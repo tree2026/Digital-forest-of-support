@@ -134,7 +134,8 @@ const POETIC_WISDOM_EXPORT = {
         
         // Category 6: Network (12 poems) for connection, community, support
         network: [
-            { id: "network_0", poem: "Beneath the silent forest floor\nA web of roots does gently spread\nNo tree stands separate anymore\nBy threads of life we all are led.", sage: "You are not a drop in the ocean. You are the entire ocean in a drop. - Rumi" },
+            { id: "network_0", poem: "Beneath the silent forest floor\nA web of roots does gently spread\nNo tree stands separate anymore\nBy threads of life we all are led.", sage: "You are not a drop in the ocean. You are the entire ocean in a drop. - Rumi",
+            youtube: { message: "🎵 Here's a beautiful experience of visiting your magical child self - which changes every energy and every experience you've ever lived through; with Adamus (channeled by Geoffrey Hoppe) ", url: "https://youtu.be/9CqV7GNrz2o?si=iXTHeCBB7PpxYWg-" } },
             { id: "network_1", poem: "Through hidden fungal networks run\nThe forest's whispered, shared support\nNo single tree beneath the sun\nAlone does need to hold life's fort.", sage: "Lovers don't finally meet somewhere. They're in each other all along. - Rumi" },
             { id: "network_2", poem: "When one tree suffers drought or blight\nThe others send through root and soil\nThe nourishment to aid the fight\nIn nature's interconnected toil.", sage: "Thousands of candles can be lit from a single candle... Happiness never decreases by being shared. - Buddha" },
             { id: "network_3", poem: "The oldest trees, the mother ones\nShare wisdom through the root-knit ground\nYour connections with loved ones\nAre where true healing can be found.", sage: "We are all connected; To each other, biologically. To the earth, chemically. To the rest of the universe atomically. - Neil deGrasse Tyson",
