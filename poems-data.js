@@ -221,7 +221,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "seasons_12", poem: "The tree does not ask spring to stay\nNor begs the winter to depart\nIt knows the turning of the day\nIs written on the seasons' heart.", sage: "Time is a veil; beneath it, eternity breathes. - Ibn Arabi" },
             { id: "seasons_13", poem: "Summer's pride and autumn's sigh\nWinter's sleep and spring's rebirth\nEach season teaches you to fly\nIn circles round the patient earth.", sage: "Winter withers the roses, their petals fall away. - Rustaveli" },
             { id: "seasons_14", poem: "The rose that blooms in April's light\nRemembers not the March wind's chill\nYet carries winter through the night\nIn roots that wait, in stems grown still.", sage: "Every season is a door to eternity, and the wise one enters each without hesitation. - Dante" },
-            { id: "seasons_15", poem: "Not one season lasts forever\nNor should it, though we weep to see\nThe autumn leaf in wind's endeavor\nMake way for what is yet to be.", sage: "When the rose's bloom has withered and grown dry, It falls away—another comes to grace the garden fair. - Rustaveli" }
+            { id: "seasons_15", poem: "Not one season lasts forever\nNor should it, though we weep to see\nThe autumn leaf in wind's endeavor\nMake way for what is yet to be.", sage: "When the rose's bloom has withered and grown dry, It falls away—another comes to grace the garden fair. - Rustaveli",
+            youtube: { message: "🎵 Crossing the Atlantean Line with Adamus Saint-Germain, channeled by Geoffrey Hoppe ", url: "https://youtu.be/K52Ako0HH8Q?si=QAh4b-90MgjW_XTO" } }
         ],
         
         // Category 10: Wholeness (12 poems) for healing, integration, completeness
