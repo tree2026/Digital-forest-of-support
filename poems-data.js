@@ -238,7 +238,8 @@ const POETIC_WISDOM_EXPORT = {
         
         // Category 10: Wholeness (12 poems) for healing, integration, completeness
         wholeness: [
-            { id: "wholeness_0", poem: "The scar becomes a living part\nOf bark that tells a story true\nNot something separate or apart\nBut integrated, through and through.", sage: "The wound is where the light enters you. - Rumi" },
+            { id: "wholeness_0", poem: "The scar becomes a living part\nOf bark that tells a story true\nNot something separate or apart\nBut integrated, through and through.", sage: "The wound is where the light enters you. - Rumi",
+            youtube: { message: "🎵 Allow your own magical Merlin energy to go beyond suffering and become the story-teller, shape-shifter and time-traveler ", url: "https://youtu.be/7R40eVN4xRY?si=iw96e3g8H812qePT" } },
             { id: "wholeness_1", poem: "Broken branches mend with time\nAnd make the tree more interesting\nEach imperfection, not a crime\nBut to the whole, its offering.", sage: "We are shaped by our thoughts; we become what we think. - Buddha" },
             { id: "wholeness_2", poem: "The tree does not seek to be perfect\nBut whole in all its weathered grace\nEach flaw it learns to not reject\nBut give its rightful, honored place.", sage: "The real journey is the one that occurs within. - Ibn Arabi" },
             { id: "wholeness_3", poem: "What lightning splits or storm divides\nThe tree will heal in time's sure span\nYour wholeness in yourself abides\nIn being fully who you can.", sage: "Healing takes courage, and we all have courage, even if we have to dig a little to find it. - Tori Amos" },
