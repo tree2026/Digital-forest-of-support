@@ -159,7 +159,8 @@ const POETIC_WISDOM_EXPORT = {
         
         // Category 7: Bending (12 poems) for flexibility, resilience, storms
         bending: [
-            { id: "bending_0", poem: "The willow bends in tempest's blow\nBut does not break or lose its core\nIts strength is knowing when to go\nWith winds it cannot bar the door.", sage: "What matters is how quickly you do what your soul directs. - Rumi" },
+            { id: "bending_0", poem: "The willow bends in tempest's blow\nBut does not break or lose its core\nIts strength is knowing when to go\nWith winds it cannot bar the door.", sage: "What matters is how quickly you do what your soul directs. - Rumi",
+            youtube: { message: "🎵 Here Adamus (channeled by Geoffrey Hoppe) talked about an ancient Egyptian word Kyeper (kay-pear) that means 'creativity': Creativity replaces Duality ", url: "https://youtu.be/hcY0WSwpEOw?si=Tyq-hARCELePUNiF" } },
             { id: "bending_1", poem: "Rigid oaks in storms may splinter\nWhile supple trees ride out the gale\nSometimes the loser is the winner\nWhen flexibility prevails.", sage: "Respond to every call that excites your spirit. - Rumi" },
             { id: "bending_2", poem: "To bend is not to lose your ground\nBut move with what you can't control\nIn flexibility is found\nThe wisdom that makes warriors whole.", sage: "The art of knowing is knowing what to ignore. - Rumi",
             youtube: { message: "🎵 Adamus (channeled by Geoffrey Hoppe) invites to simply trust and ALLOW all that is going on within us in this intense time of transformation ", url: "https://youtu.be/izZd1UC1CQ4?si=zruw9aL0yjZ10X9u" } },
