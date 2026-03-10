@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#4a7c3f">
     <meta name="description" content="Forest of Support - A digital sanctuary with contextual poetic wisdom">
-    <link rel="manifest" href="manifest.json?v=1.8">
+    <link rel="manifest" href="manifest.json?v=1.9">
     
     <!-- Emoji as Icons (No image files needed) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
@@ -799,15 +799,15 @@
 </footer> 
     </div>
 
-    <!-- poems data 1.0 -->
-    <script src="poems-data.js?v=1.7"></script>
+    <!-- poems data 1.8 -->
+    <script src="poems-data.js?v=1.8"></script>
     
     <script>
         // Forest of Support - Bilingual v1.2
         // 144 poems in both English and Georgian
         
         // APP CONFIG
-        const APP_VERSION = '1.8';
+        const APP_VERSION = '1.9';
         const VERSION_KEY = 'forestAppVersion';
         const LANG_KEY = 'forestLanguage';
         
@@ -924,7 +924,7 @@
                 // Footer
                 languageLabel: "Language / ენა:",
                 currentLang: "Current: English",
-                footerVersion: "🌿 Forest of Support v1.8 • Digital Healing Sanctuary",
+                footerVersion: "🌿 Forest of Support v1.9 • Digital Healing Sanctuary",
                 footerData: "Your data stays in your browser • Share with #ForestOfSupport #HealLikeATree",
                 footerQuote: "\"The wound is where the light enters you.\" - Rumi",
                 footerCreator: "Created by DeepSeek & Geoni",
@@ -3045,7 +3045,7 @@ function checkAppVersion() {
         if (savedVersion && !localStorage.getItem(`updateShown_${APP_VERSION}`)) {
             setTimeout(() => {
                 const t = TEXT[currentLanguage];
-                const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Share button & Canopy' : 'გაზიარების ღილაკი და საჩრდილობელი'}\n\n${t.updatePreserved}`;
+                const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Reference material added in journal' : 'დაემატა საცნობარო მასალა დღიურში'}\n\n${t.updatePreserved}`;
                 alert(updateMsg);
                 //localStorage.setItem(`updateShown_${APP_VERSION}`, 'true');
                 sessionStorage.setItem('versionUpdateShown', 'true');
