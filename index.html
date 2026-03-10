@@ -799,8 +799,8 @@
 </footer> 
     </div>
 
-    <!-- poems data 1.8 -->
-    <script src="poems-data.js?v=1.8"></script>
+    <!-- poems data 1.9 -->
+    <script src="poems-data.js?v=1.9"></script>
     
     <script>
         // Forest of Support - Bilingual v1.2
@@ -3022,7 +3022,7 @@ window.addEventListener('scroll', function() {
         // ==================== SIMPLIFIED UPDATE SYSTEM ====================
 
 // APP VERSION CHECK & DATA MIGRATION
-function checkAppVersion() {
+/*function checkAppVersion() {
     const savedVersion = localStorage.getItem(VERSION_KEY);
     
     if (savedVersion !== APP_VERSION) {
@@ -3143,10 +3143,10 @@ function showSimpleUpdateNotification() {
 // CLEANUP
 window.addEventListener('beforeunload', () => {
     // No cleanup needed anymore
-});
+});*/
         
     // ==================== PWA SERVICE WORKER REGISTRATION ====================
-   /* if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
             // Use relative path (works for both local and GitHub Pages)
             const swPath = 'sw.js?v=' + APP_VERSION;
@@ -3162,9 +3162,9 @@ window.addEventListener('beforeunload', () => {
                     console.log('🌳 ServiceWorker registration failed:', err);
                 });
         });
-    }*/
+    }
     
-     /*  function checkAppVersion() {
+       function checkAppVersion() {
             const savedVersion = localStorage.getItem(VERSION_KEY);
             
             if (savedVersion !== APP_VERSION) {
@@ -3191,7 +3191,7 @@ window.addEventListener('beforeunload', () => {
                         // TEMPORARILY disable service worker notifications
                        // sessionStorage.setItem('suppressServiceWorkerUpdate', 'true');
                         const t = TEXT[currentLanguage];
-                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Share button & Canopy' : 'გაზიარების ღილაკი და საჩრდილობელი'}\n\n${t.updatePreserved}`;
+                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'Reference material added in journal' : 'დაემატა საცნობარო მასალა დღიურში'}\n\n${t.updatePreserved}`;
                        /* if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
                             showCard('welcome');
                             document.getElementById('welcome').innerHTML += `
@@ -3205,7 +3205,7 @@ window.addEventListener('beforeunload', () => {
                                 </div>
                             `;
                         }*/
-                       /* alert(updateMsg); // \n\n${t.updatePreserved}
+                        alert(updateMsg); // \n\n${t.updatePreserved}
                         // Re-enable after 10 seconds
                         //setTimeout(() => {
                             //sessionStorage.removeItem('suppressServiceWorkerUpdate');
@@ -3213,10 +3213,10 @@ window.addEventListener('beforeunload', () => {
                     }, 2000);
                 }
             }
-       }*/
+       }
    // ==================== UNIFIED UPDATE HANDLER ====================
 // Listen for service worker updates
-/*if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {
     // Listen for messages from service worker
     navigator.serviceWorker.addEventListener('message', event => {
         if (event.data && event.data.type === 'UPDATE_READY') {
@@ -3296,7 +3296,7 @@ function showUpdateNotification() {
             }, 60 * 60 * 1000);
         }
     }, 1500);
-}  // 1.7end*/
+}// 1.7 end 
        
 // Unified update notification function
 /*function showUpdateNotification() {
@@ -3344,7 +3344,7 @@ function showUpdateNotification() {
 
 // ========== PERIODIC UPDATE CHECKS offline
 
-/*if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {
     function checkForUpdates() {
         if (!navigator.onLine) return;
         
@@ -3374,7 +3374,7 @@ function showUpdateNotification() {
 // Clear update flag on new session
 window.addEventListener('beforeunload', () => {
     sessionStorage.removeItem('updateNotificationShown');
-}); */
+});
    
        // Add this function for app intall button
        let deferredInstallPrompt;
