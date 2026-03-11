@@ -3187,7 +3187,7 @@ window.addEventListener('beforeunload', () => {
                 if (savedVersion) {
                     setTimeout(() => {
                         // MARK that version update was shown
-                        sessionStorage.setItem('versionUpdateShown', 'true');
+                        //sessionStorage.setItem('versionUpdateShown', 'true');
                         // TEMPORARILY disable service worker notifications
                        // sessionStorage.setItem('suppressServiceWorkerUpdate', 'true');
                         const t = TEXT[currentLanguage];
@@ -3255,7 +3255,7 @@ if ('serviceWorker' in navigator) {
 }
 
 // 1.7 Unified update notification function
-function showUpdateNotification() {
+/*function showUpdateNotification() {
     // Prevent multiple notifications - ADD APP VERSION CHECK
     if (sessionStorage.getItem('updateNotificationShown') || 
         sessionStorage.getItem('versionUpdateShown')) {
@@ -3296,14 +3296,14 @@ function showUpdateNotification() {
             }, 60 * 60 * 1000);
         }
     }, 1500);
-}// 1.7 end 
+}*/// 1.7 end 
        
 // Unified update notification function
-/*function showUpdateNotification() {
+function showUpdateNotification() {
     // Check if suppressed
-    if (sessionStorage.getItem('suppressServiceWorkerUpdate')) {
-        return;
-    }
+    //if (sessionStorage.getItem('suppressServiceWorkerUpdate')) {
+       // return;
+    //}
     // Prevent multiple notifications
     if (sessionStorage.getItem('updateNotificationShown')) {
         return;
@@ -3340,7 +3340,7 @@ function showUpdateNotification() {
             }, 60 * 60 * 1000);
         }
     }, 1500);
-}*/
+}
 
 // ========== PERIODIC UPDATE CHECKS offline
 
