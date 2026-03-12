@@ -227,7 +227,28 @@
     70% { box-shadow: 0 0 0 10px rgba(74, 124, 63, 0); }
     100% { box-shadow: 0 0 0 0 rgba(74, 124, 63, 0); }
     }
-    
+        
+    /* Yellow music button */
+.music-toggle-yellow {
+    border-color: #E6B800 !important;
+    color: #E6B800 !important;
+}
+
+.music-toggle-yellow.playing {
+    background: #E6B800 !important;
+    color: white !important;
+}
+
+[data-theme="dark"] .music-toggle-yellow {
+    border-color: #FFD700 !important;
+    color: #FFD700 !important;
+}
+
+[data-theme="dark"] .music-toggle-yellow.playing {
+    background: #FFD700 !important;
+    color: black !important;
+}
+        
     #become-canopy-btn { background: linear-gradient(to right, #8a5a2d, #a67c52); box-shadow: 0 4px 0 #724115; }
     
     #become-canopy-btn:hover { background: linear-gradient(to right, #724115, #8a5a2d); box-shadow: 0 6px 0 #5a3410; }
@@ -529,10 +550,14 @@
             <h1 id="app-title">
         🌳 <span id="title-text">Forest of Support</span>
             </h1>
-            <div style="position: relative; text-align: center;">
+            <!--<div style="position: relative; text-align: center;">
                 <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds">
             🎵
                 </button>
+            </div>-->
+            <div style="position: relative; text-align: center; display: flex; justify-content: center; gap: 15px;">
+                <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient sounds">🎵</button>
+                <button id="music-toggle2" class="music-toggle music-toggle-yellow" aria-label="Toggle ambient sounds 2">🎵</button>
             </div>
         </header>
         
@@ -2874,7 +2899,7 @@ document.addEventListener('click', function(e) {
     }
 });
         // ==================== AMBIENT SOUND PLAYER ====================
-        
+   /*     
     const audioManager = {
     audio: null,
     isPlaying: false,
@@ -3002,8 +3027,81 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize audio manager after a delay
     setTimeout(() => audioManager.init(), 500);
-}); 
+}); */
 
+        // Simple audio manager for multiple buttons
+const audioPlayers = {};
+
+function createAudioPlayer(buttonId, audioUrl, storageKey) {
+    return {
+        audio: null,
+        isPlaying: false,
+        buttonId: buttonId,
+        storageKey: storageKey,
+        
+        init() {
+            this.audio = new Audio(audioUrl);
+            this.audio.loop = true;
+            this.audio.volume = 0.9;
+            
+            const savedPref = localStorage.getItem(this.storageKey);
+            if (savedPref === 'playing') {
+                setTimeout(() => this.toggle(), 1000);
+            }
+        },
+        
+        toggle() {
+            if (this.isPlaying) {
+                this.pause();
+            } else {
+                this.play();
+            }
+        },
+        
+        play() {
+            this.audio.play().then(() => {
+                this.isPlaying = true;
+                document.getElementById(this.buttonId).innerHTML = '🔊';
+                localStorage.setItem(this.storageKey, 'playing');
+            }).catch(() => {});
+        },
+        
+        pause() {
+            this.audio.pause();
+            this.isPlaying = false;
+            document.getElementById(this.buttonId).innerHTML = '🎵';
+            localStorage.setItem(this.storageKey, 'paused');
+        }
+    };
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Create first player (green)
+    audioPlayers.player1 = createAudioPlayer(
+        'music-toggle', 
+        'https://files.catbox.moe/fw3nxk.mp3',
+        'forestAudioPref1'
+    );
+    
+    // Create second player (yellow)
+    audioPlayers.player2 = createAudioPlayer(
+        'music-toggle2', 
+        'https://files.catbox.moe/532ezq.mp3',  // ← YOUR SECOND AUDIO URL HERE
+        'forestAudioPref2'
+    );
+    
+    // Add click listeners
+    document.getElementById('music-toggle').onclick = () => audioPlayers.player1.toggle();
+    document.getElementById('music-toggle2').onclick = () => audioPlayers.player2.toggle();
+    
+    // Initialize both
+    setTimeout(() => {
+        audioPlayers.player1.init();
+        audioPlayers.player2.init();
+    }, 500);
+});
+                
         //1.999999  Scroll to top functionalit
 function scrollToTop() {
     window.scrollTo({
