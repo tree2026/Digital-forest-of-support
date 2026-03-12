@@ -2963,8 +2963,6 @@ document.addEventListener('click', function(e) {
                 this.isPlaying = true;
                 this.updateUI();
                 localStorage.setItem('forestAudioPref', 'playing');
-                // In play() after this.isPlaying = true
-                updateMediaSession(this, true);
             }).catch(error => {
                 console.log('Audio play failed:', error);
                 // Show user instruction if needed
@@ -2981,8 +2979,6 @@ document.addEventListener('click', function(e) {
             this.isPlaying = false;
             this.updateUI();
             localStorage.setItem('forestAudioPref', 'paused');
-            // In pause() after this.isPlaying = false  
-            updateMediaSession(this, false);
         }
     },
     
@@ -3082,8 +3078,6 @@ const audioManager2 = {
                 this.isPlaying = true;
                 this.updateUI();
                 localStorage.setItem('forestAudioPref2', 'playing');
-                // In play() after this.isPlaying = true
-                updateMediaSession(this, true);
             }).catch(error => {
                 console.log('Audio 2 play failed:', error);
                 if (error.name === 'NotAllowedError') {
@@ -3099,8 +3093,6 @@ const audioManager2 = {
             this.isPlaying = false;
             this.updateUI();
             localStorage.setItem('forestAudioPref2', 'paused');
-            // In pause() after this.isPlaying = false  
-            updateMediaSession(this, false);
         }
     },
     
@@ -3135,37 +3127,6 @@ const audioManager2 = {
         }
     }
 };
-
-// Unified media session controller
-function updateMediaSession(player, isPlaying) {
-    if (!('mediaSession' in navigator)) return;
-    
-    // Update metadata based on which player is active
-    if (player === audioManager && isPlaying) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: 'Forest Birds',
-            artist: 'Forest of Support',
-        });
-    } else if (player === audioManager2 && isPlaying) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: 'Forest Sounds 2',
-            artist: 'Forest of Support',
-        });
-    }
-    
-    navigator.mediaSession.playbackState = isPlaying ? 'playing' : 'paused';
-    
-    // Set action handlers to control the correct player
-    navigator.mediaSession.setActionHandler('play', () => {
-        if (audioManager.isPlaying) audioManager.play();
-        else if (audioManager2.isPlaying) audioManager2.play();
-    });
-    
-    navigator.mediaSession.setActionHandler('pause', () => {
-        if (audioManager.isPlaying) audioManager.pause();
-        else if (audioManager2.isPlaying) audioManager2.pause();
-    });
-}
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
