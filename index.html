@@ -3043,7 +3043,18 @@ const audioManager2 = {
         this.audio.loop = true;
         this.audio.volume = this.volume;
         this.audio.preload = 'auto';
+    // ✨ ADD THIS - Connect to system media controls
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: 'Forest Sounds 2',
+            artist: 'Forest of Support',
+            artwork: [{ src: '🌳', sizes: '512x512', type: 'image/png' }]
+        });
         
+        navigator.mediaSession.setActionHandler('play', () => this.play());
+        navigator.mediaSession.setActionHandler('pause', () => this.pause());
+        navigator.mediaSession.setActionHandler('stop', () => this.pause());
+    }
         const savedPref = localStorage.getItem('forestAudioPref2');
         if (savedPref === 'playing') {
             setTimeout(() => this.toggle(), 1000);
@@ -3078,6 +3089,10 @@ const audioManager2 = {
                 this.isPlaying = true;
                 this.updateUI();
                 localStorage.setItem('forestAudioPref2', 'playing');
+            // ✨ ADD THIS
+            if ('mediaSession' in navigator) {
+                navigator.mediaSession.playbackState = 'playing';
+            }
             }).catch(error => {
                 console.log('Audio 2 play failed:', error);
                 if (error.name === 'NotAllowedError') {
@@ -3093,6 +3108,10 @@ const audioManager2 = {
             this.isPlaying = false;
             this.updateUI();
             localStorage.setItem('forestAudioPref2', 'paused');
+            // ✨ ADD THIS
+            if ('mediaSession' in navigator) {
+            navigator.mediaSession.playbackState = 'paused';
+            }
         }
     },
     
