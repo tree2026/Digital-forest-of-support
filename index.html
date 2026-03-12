@@ -2899,13 +2899,13 @@ document.addEventListener('click', function(e) {
     }
 });
         // ==================== AMBIENT SOUND PLAYER ====================
-   /*     
+       
     const audioManager = {
     audio: null,
     isPlaying: false,
     volume: 0.9, // 90% volume - subtle background
     audioFiles: {
-        birds: 'https://files.catbox.moe/jo9n6n.mp3'//'https://files.catbox.moe/mzd3xd.mp3'//1.⁹99999999990//'https://files.catbox.moe/fw3nxk.mp3'
+        birds: 'https://files.catbox.moe/fw3nxk.mp3'//'https://files.catbox.moe/jo9n6n.mp3'
         
         // 'https://files.catbox.moe/n75sd5.mp3' cleared
         // 'https://files.catbox.moe/fw3nxk.mp3' ++volume
@@ -3017,7 +3017,7 @@ document.addEventListener('click', function(e) {
     }
 };
 
-// Initialize when page loads
+/*// Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
     // Add event listener to button
     const musicButton = document.getElementById('music-toggle');
@@ -3029,7 +3029,126 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => audioManager.init(), 500);
 }); */
 
-        // Simple audio manager for multiple buttons
+        // Second audio manager - yellow button
+const audioManager2 = {
+    audio: null,
+    isPlaying: false,
+    volume: 0.9,
+    audioFiles: {
+        birds: 'https://files.catbox.moe/532ezq.mp3'  // ← CHANGE THIS URL
+    },
+    
+    init() {
+        this.audio = new Audio(this.audioFiles.birds);
+        this.audio.loop = true;
+        this.audio.volume = this.volume;
+        this.audio.preload = 'auto';
+        
+        const savedPref = localStorage.getItem('forestAudioPref2');
+        if (savedPref === 'playing') {
+            setTimeout(() => this.toggle(), 1000);
+        }
+        
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && this.isPlaying) {
+                this.pause();
+                this.shouldResume = true;
+            } else if (this.shouldResume) {
+                this.play();
+                this.shouldResume = false;
+            }
+        });
+    },
+    
+    toggle() {
+        if (this.isPlaying) {
+            this.pause();
+        } else {
+            this.play();
+        }
+    },
+    
+    play() {
+        if (!this.audio) this.init();
+        
+        const playPromise = this.audio.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                this.isPlaying = true;
+                this.updateUI();
+                localStorage.setItem('forestAudioPref2', 'playing');
+            }).catch(error => {
+                console.log('Audio 2 play failed:', error);
+                if (error.name === 'NotAllowedError') {
+                    this.showPlayInstruction();
+                }
+            });
+        }
+    },
+    
+    pause() {
+        if (this.audio) {
+            this.audio.pause();
+            this.isPlaying = false;
+            this.updateUI();
+            localStorage.setItem('forestAudioPref2', 'paused');
+        }
+    },
+    
+    updateUI() {
+        const button = document.getElementById('music-toggle2');
+        if (button) {
+            if (this.isPlaying) {
+                button.classList.add('playing');
+                button.innerHTML = '🔊';
+            } else {
+                button.classList.remove('playing');
+                button.innerHTML = '🎵';
+            }
+        }
+    },
+    
+    showPlayInstruction() {
+        if (!sessionStorage.getItem('audioInstructionShown2')) {
+            const msg = currentLanguage === 'ge' 
+                ? 'ხმის ჩასართავად, დააწკაპუნეთ ყვითელ ღილაკზე'
+                : 'To play sounds, click the yellow button';
+            
+            alert(msg);
+            sessionStorage.setItem('audioInstructionShown2', 'true');
+        }
+    },
+    
+    setVolume(level) {
+        this.volume = Math.max(0, Math.min(1, level));
+        if (this.audio) {
+            this.audio.volume = this.volume;
+        }
+    }
+};
+        // Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // First music button
+    const musicButton = document.getElementById('music-toggle');
+    if (musicButton) {
+        musicButton.addEventListener('click', () => audioManager.toggle());
+    }
+    
+    // Second music button
+    const musicButton2 = document.getElementById('music-toggle2');
+    if (musicButton2) {
+        musicButton2.addEventListener('click', () => audioManager2.toggle());
+    }
+    
+    // Initialize both audio managers after a delay
+    setTimeout(() => {
+        audioManager.init();
+        audioManager2.init();
+    }, 500);
+});
+        
+     /*   // Simple audio manager for multiple buttons
 const audioPlayers = {};
 
 function createAudioPlayer(buttonId, audioUrl, storageKey) {
@@ -3132,7 +3251,7 @@ document.addEventListener('DOMContentLoaded', function() {
         audioPlayers.player1.init();
         audioPlayers.player2.init();
     }, 500);
-});
+});*/
                 
         //1.999999  Scroll to top functionalit
 function scrollToTop() {
