@@ -3043,29 +3043,22 @@ function createAudioPlayer(buttonId, audioUrl, storageKey) {
             this.audio = new Audio(audioUrl);
             this.audio.loop = true;
             this.audio.volume = 0.9;
-    
-    //Connect to system media controls
-            if ('mediaSession' in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: 'Forest Sounds',
-            artist: 'Forest of Support',
-            artwork: [{ src: '🌳', sizes: '512x512', type: 'image/png' }]
-        });
-        
-        // Make the controls work
-        navigator.mediaSession.setActionHandler('play', () => this.play());
-        navigator.mediaSession.setActionHandler('pause', () => this.pause());
-        navigator.mediaSession.setActionHandler('stop', () => this.pause());
-            }
-            }
-            // Enable background playback on mobile
+            
+            // Connect to system media controls
             if ('mediaSession' in navigator) {
                 navigator.mediaSession.metadata = new MediaMetadata({
                     title: 'Forest Sounds',
                     artist: 'Forest of Support',
+                    artwork: [{ src: '🌳', sizes: '512x512', type: 'image/png' }]
                 });
+                
+                // Make the controls work
+                navigator.mediaSession.setActionHandler('play', () => this.play());
+                navigator.mediaSession.setActionHandler('pause', () => this.pause());
+                navigator.mediaSession.setActionHandler('stop', () => this.pause());
             }
             
+            // Load saved preference
             const savedPref = localStorage.getItem(this.storageKey);
             if (savedPref === 'playing') {
                 setTimeout(() => this.toggle(), 1000);
@@ -3126,7 +3119,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create second player (yellow)
     audioPlayers.player2 = createAudioPlayer(
         'music-toggle2', 
-        'https://files.catbox.moe/532ezq.mp3',  // ← YOUR SECOND AUDIO URL
+        'https://files.catbox.moe/532ezq.mp3',
         'forestAudioPref2'
     );
     
