@@ -1,7 +1,7 @@
 {
   "name": "Forest of Support",
   "short_name": "ხეკურნავს", //"ForestHeals",
-  "version": "2.0",
+  "version": "2.1",
   "description": "Digital sanctuary based on tree-healing principles",
   "start_url": "/Digital-forest-of-support/",  // ← YOUR REPOSITORY NAME
   "display": "standalone",
