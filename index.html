@@ -3044,6 +3044,14 @@ function createAudioPlayer(buttonId, audioUrl, storageKey) {
             this.audio.loop = true;
             this.audio.volume = 0.9;
             
+            // Enable background playback on mobile
+            if ('mediaSession' in navigator) {
+                navigator.mediaSession.metadata = new MediaMetadata({
+                    title: 'Forest Sounds',
+                    artist: 'Forest of Support',
+                });
+            }
+            
             const savedPref = localStorage.getItem(this.storageKey);
             if (savedPref === 'playing') {
                 setTimeout(() => this.toggle(), 1000);
@@ -3059,11 +3067,24 @@ function createAudioPlayer(buttonId, audioUrl, storageKey) {
         },
         
         play() {
+            // Stop all other players first
+            for (let key in audioPlayers) {
+                if (audioPlayers[key] !== this && audioPlayers[key].isPlaying) {
+                    audioPlayers[key].pause();
+                }
+            }
+            
             this.audio.play().then(() => {
                 this.isPlaying = true;
                 document.getElementById(this.buttonId).innerHTML = '🔊';
                 localStorage.setItem(this.storageKey, 'playing');
-            }).catch(() => {});
+                
+                if ('mediaSession' in navigator) {
+                    navigator.mediaSession.playbackState = 'playing';
+                }
+            }).catch(err => {
+                console.log('Play failed:', err);
+            });
         },
         
         pause() {
@@ -3071,6 +3092,10 @@ function createAudioPlayer(buttonId, audioUrl, storageKey) {
             this.isPlaying = false;
             document.getElementById(this.buttonId).innerHTML = '🎵';
             localStorage.setItem(this.storageKey, 'paused');
+            
+            if ('mediaSession' in navigator) {
+                navigator.mediaSession.playbackState = 'paused';
+            }
         }
     };
 }
@@ -3087,7 +3112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create second player (yellow)
     audioPlayers.player2 = createAudioPlayer(
         'music-toggle2', 
-        'https://files.catbox.moe/532ezq.mp3',  // ← YOUR SECOND AUDIO URL HERE
+        'https://files.catbox.moe/532ezq.mp3',  // ← YOUR SECOND AUDIO URL
         'forestAudioPref2'
     );
     
