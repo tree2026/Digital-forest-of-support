@@ -3135,26 +3135,6 @@ const audioManager2 = {
         }
     }
 };
-        // Initialize when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    // First music button
-    const musicButton = document.getElementById('music-toggle');
-    if (musicButton) {
-        musicButton.addEventListener('click', () => audioManager.toggle());
-    }
-    
-    // Second music button
-    const musicButton2 = document.getElementById('music-toggle2');
-    if (musicButton2) {
-        musicButton2.addEventListener('click', () => audioManager2.toggle());
-    }
-    
-    // Initialize both audio managers after a delay
-    setTimeout(() => {
-        audioManager.init();
-        audioManager2.init();
-    }, 500);
-});
 
 // Unified media session controller
 function updateMediaSession(player, isPlaying) {
@@ -3186,6 +3166,27 @@ function updateMediaSession(player, isPlaying) {
         else if (audioManager2.isPlaying) audioManager2.pause();
     });
 }
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // First music button
+    const musicButton = document.getElementById('music-toggle');
+    if (musicButton) {
+        musicButton.addEventListener('click', () => audioManager.toggle());
+    }
+    
+    // Second music button
+    const musicButton2 = document.getElementById('music-toggle2');
+    if (musicButton2) {
+        musicButton2.addEventListener('click', () => audioManager2.toggle());
+    }
+    
+    // Initialize both audio managers after a delay
+    setTimeout(() => {
+        audioManager.init();
+        audioManager2.init();
+    }, 500);
+});
         
      /*   // Simple audio manager for multiple buttons
 const audioPlayers = {};
