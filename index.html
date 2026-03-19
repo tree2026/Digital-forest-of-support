@@ -1602,7 +1602,7 @@ function growRingsForTest() {
     }
     
     // Add 33 rings (to reach stage 5+)
-    myTree.rings += 33;
+    myTree.rings += 23;
     
     // Update stage based on new ring count
     if (myTree.rings === 0) myTree.stage = 0;
@@ -1616,14 +1616,14 @@ function growRingsForTest() {
     else myTree.stage = 8;
     
     // Update poems received count (optional)
-    myTree.poemsReceived += 33;
+    myTree.poemsReceived += 23;
     
     // Save and update display
     saveTree();
     updateDisplay();
     
     // Show current stage
-    alert(`🌳 Added 33 rings!\nTotal rings: ${myTree.rings}\nCurrent stage: ${myTree.stage}`);
+    alert(`🌳 Added 23 rings!\nTotal rings: ${myTree.rings}\nCurrent stage: ${myTree.stage}`);
     
     // Go to forest card to see the tree
     showCard('forest');
