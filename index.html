@@ -1436,7 +1436,7 @@
       |||||||
    ~~~~~~~~~~~~`,
         // ===== NEW STAGES START HERE =====
-        // Stage 5: Experienced Tree (rings < 32)
+        // Stage 6: Experienced Tree 
         `     🌳 EXPERIENCED 🌳
      /    🍁    \\
     /   🍃  🍃   \\
@@ -1448,7 +1448,7 @@
    ~~~~~~~~~~~~~
    🐦   🐦   🐦`,
         
-        // Stage 6: Matured Tree (rings < 48)
+        // Stage 7: Matured Tree 
         `    🌳 MATURED TREE 🌳
      /           \\
     /     🐦 🐦   \\
@@ -1461,7 +1461,7 @@
    ~~~~~~~~~~~~~~~
    🐦   🕊️   🐦   🕊️`,
         
-        // Stage 7: Ever Growing Tree (rings < 64)
+        // Stage 8: Ever Growing Tree 
         `  🌳 EVER GROWING 🌳
      /    🌲🌲    \\
     /   🐝 🐝 🐝   \\
@@ -1473,7 +1473,7 @@
    ~~~~~~~~~~~~~~~~~
    🦋  🐦  🦋  🐦  🦋`,
         
-        // Stage 8: Tree Knows (rings >= 64)
+        // Stage 9: Tree Knows 
         `    🌳🌲 TREE KNOWS 🌲🌳
      /          \\
     /     ✨     \\
@@ -1483,8 +1483,8 @@
 /____________________\\
     ||||||||||||
    ~~~~~~~~~~~~~~~~~
-   🕊️  ✨  🕊️  ✨  🕊️`,
-        
+   🕊️  ✨  🕊️  ✨  🕊️`
+        /*
         // Stage 9: Forest Elder / Ancestor Tree (rings >= 92)
 `    🌳 FOREST ELDER 🌳
     /      👑       \\
@@ -1499,17 +1499,7 @@
     \\___________/
     ||||||||||||
    ~~~~~~~~~~~~~~~
-   🌱 🌿 🌳 🌲 🌱`
-
-     /* `      🌳🌲 SAGE 🌲🌳
-     /               \\
-    /   WISDOM OF     \\
-   /     AGES PAST     \\
-  /                     \\
- /                       \\
-/_________________________\\
-        ||||||||
-     ~~~~~~~~~~~~~~`*/
+   🌱 🌿 🌳 🌲 🌱`*/
     ],
     
     ge: [
@@ -1550,7 +1540,7 @@
       |||||||
    ~~~~~~~~~~~~`,
         // ===== NEW STAGES START HERE =====
-        // Stage 5: Experienced Tree (rings < 32)
+        // Stage 6: Experienced Tree
         `     🌳 გამოცდილი 🌳
      /      🍁   \\
     /     🍃  🍃  \\
@@ -1562,7 +1552,7 @@
    ~~~~~~~~~~~~~
    🐦   🐦   🐦`,
         
-        // Stage 6: Matured Tree (rings < 48)
+        // Stage 7: Matured Tree 
         `    🌳 მოწიფული 🌳
      /            \\
     /      🐦🐦    \\
@@ -1575,7 +1565,7 @@
    ~~~~~~~~~~~~~~~~
    🐦   🕊️   🐦   🕊️`,
         
-        // Stage 7: Ever Growing Tree (rings < 64)
+        // Stage 8: Ever Growing Tree 
         `  🌳 კვლავ მზარდი 🌳
      /     🌲🌲   \\
     /    🐝 🐝 🐝  \\
@@ -1587,7 +1577,7 @@
    ~~~~~~~~~~~~~~~~~
    🦋  🐦  🦋  🐦  🦋`,
         
-        // Stage 8: Tree Knows (rings >= 64)
+        // Stage 9: Tree Knows 
         `    🌳🌲 ხემ იცის 🌲🌳
      /            \\
     /      ✨      \\
@@ -1598,7 +1588,7 @@
     ||||||||||||
    ~~~~~~~~~~~~~~~~~
    🕊️  ✨  🕊️  ✨  🕊️`,
-        
+        /*
         // Stage 9: Forest Elder / Ancestor Tree (rings >= 92)
 `    🌳 ტყის უხუცესი 🌳
     /      👑     \\
@@ -1613,17 +1603,7 @@
     \\___________/
     ||||||||||||
    ~~~~~~~~~~~~~~~
-   🌱 🌿 🌳 🌲 🌱`
-
-        /*`      🌳🌲 ბრძენი 🌲🌳
-     /               \\
-    /   ხანის         \\
-   /     სიბრძნე       \\
-  /                     \\
- /                       \\
-/_________________________\\
-        ||||||||
-     ~~~~~~~~~~~~~~`*/
+   🌱 🌿 🌳 🌲 🌱`*/
     ]
 };
 
@@ -1636,7 +1616,7 @@ function growRingsForTest() {
     }
     
     // Add 33 rings (to reach stage 5+)
-    myTree.rings += 18;
+    myTree.rings += 3;
     
     // Update stage based on new ring count
     if (myTree.rings === 0) myTree.stage = 0;
@@ -1648,18 +1628,17 @@ function growRingsForTest() {
     else if (myTree.rings < 48) myTree.stage = 6;
     else if (myTree.rings < 64) myTree.stage = 7;
     else if (myTree.rings < 92) myTree.stage = 8;
-    else if (myTree.rings >= 92) myTree.stage = 9;
-    else myTree.stage = 10;
+    else myTree.stage = 9;
     
     // Update poems received count (optional)
-    myTree.poemsReceived += 18;
+    myTree.poemsReceived += 3;
     
     // Save and update display
     saveTree();
     updateDisplay();
     
     // Show current stage
-    alert(`🌳 Added 18 rings!\nTotal rings: ${myTree.rings}\nCurrent stage: ${myTree.stage}`);
+    alert(`🌳 Added 3 rings!\nTotal rings: ${myTree.rings}\nCurrent stage: ${myTree.stage}`);
     
     // Go to forest card to see the tree
     showCard('forest');
