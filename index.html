@@ -1648,7 +1648,8 @@ function growRingsForTest() {
     else if (myTree.rings < 48) myTree.stage = 6;
     else if (myTree.rings < 64) myTree.stage = 7;
     else if (myTree.rings < 92) myTree.stage = 8;
-    else myTree.stage = 9;
+    else if (myTree.rings >= 92) myTree.stage = 9;
+    else myTree.stage = 10;
     
     // Update poems received count (optional)
     myTree.poemsReceived += 18;
