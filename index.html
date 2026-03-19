@@ -2285,9 +2285,12 @@ function checkVersionAndPreserveData() {
             else if (myTree.rings < 8) myTree.stage = 2;
             else if (myTree.rings < 13) myTree.stage = 3;
             else if (myTree.rings < 18) myTree.stage = 4; 
-           // else if (myTree.rings < 32) myTree.stage = 5;
-            else myTree.stage = 5;
-            
+                /// 2.222 update
+            else if (myTree.rings < 32) myTree.stage = 5;
+            else if (myTree.rings < 48) myTree.stage = 6;
+            else if (myTree.rings < 64) myTree.stage = 7;
+            else myTree.stage = 8;
+            // 2.22 end
             // Add to journals
             myTree.journals.push({
                 date: new Date().toLocaleString(),
@@ -2797,7 +2800,7 @@ function showYoutubePopup(youtubeData) {
             if (!myTree.name) {
                 document.getElementById('treeNameDisplay').textContent = t.noTree;
                 document.getElementById('treeAscii').textContent = t.plantToBegin;
-                document.getElementById('progressText').textContent = "0/5";
+                document.getElementById('progressText').textContent = "0/8"; //2.222 update
                 // Update stats to show 0 when no tree
                 document.getElementById('statRings').textContent = "0";
                 document.getElementById('statStage').textContent = "1";
@@ -2819,10 +2822,10 @@ function showYoutubePopup(youtubeData) {
             document.getElementById('treeAscii').textContent = treeStages[currentLanguage][stageIndex];
             
             // Update progress ring
-            const progressPercent = (myTree.stage / 5) * 100;
+            const progressPercent = (myTree.stage / 8) * 100; // 2.222 update
             document.querySelector('.progress-ring').style.background = 
                 `conic-gradient(#4a7c3f 0% ${progressPercent}%, #e8f5e8 ${progressPercent}% 100%)`;
-            document.getElementById('progressText').textContent = `${myTree.stage}/5`;
+            document.getElementById('progressText').textContent = `${myTree.stage}/8`; // 2.222 update
             
             // Update stats
             document.getElementById('statRings').textContent = myTree.rings;
