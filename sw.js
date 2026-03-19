@@ -42,6 +42,14 @@ self.addEventListener('activate', event => {
     })
   );
 });
+// 2.222 manual update
+/ MESSAGE HANDLER for manual updates
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    console.log('🌳 Manual update triggered - skipping waiting');
+    self.skipWaiting();
+  }
+});// 2.2 end
 
 // FETCH
 self.addEventListener('fetch', event => {
