@@ -1463,8 +1463,8 @@
         
         // Stage 8: Ever Growing Tree 
         `  🌳 EVER GROWING 🌳
-     /    🌲🌲    \\
-    /   🐝 🐝 🐝   \\
+     /   🌲🌲    \\
+    /  🐝 🐝 🐝   \\
    /    BRANCHES    \\
   /      REACH       \\
  /       HIGH        \\
@@ -1553,7 +1553,7 @@
    🐦   🐦   🐦`,
         
         // Stage 7: Matured Tree 
-        `    🌳 მოწიფული 🌳
+        `    🌳 დაბრძენებული 🌳
      /            \\
     /      🐦🐦    \\
    /       ჩიტი     \\
@@ -1567,8 +1567,8 @@
         
         // Stage 8: Ever Growing Tree 
         `  🌳 კვლავ მზარდი 🌳
-     /     🌲🌲   \\
-    /    🐝 🐝 🐝  \\
+     /    🌲🌲   \\
+    /   🐝 🐝 🐝  \\
    /     ტოტები    \\
   /       მაღლა     \\
  /        იწვდება      \\
@@ -1616,7 +1616,7 @@ function growRingsForTest() {
     }
     
     // Add 33 rings (to reach stage 5+)
-    myTree.rings += 3;
+    myTree.rings += 18;
     
     // Update stage based on new ring count
     if (myTree.rings === 0) myTree.stage = 0;
@@ -1631,14 +1631,14 @@ function growRingsForTest() {
     else myTree.stage = 9;
     
     // Update poems received count (optional)
-    myTree.poemsReceived += 3;
+    myTree.poemsReceived += 18;
     
     // Save and update display
     saveTree();
     updateDisplay();
     
     // Show current stage
-    alert(`🌳 Added 3 rings!\nTotal rings: ${myTree.rings}\nCurrent stage: ${myTree.stage}`);
+    alert(`🌳 Added 18 rings!\nTotal rings: ${myTree.rings}\nCurrent stage: ${myTree.stage}`);
     
     // Go to forest card to see the tree
     showCard('forest');
