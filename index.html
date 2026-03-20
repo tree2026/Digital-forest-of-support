@@ -839,9 +839,9 @@
            📱 <span id="install-text">Install App</span>
         </button>
     <!-- 2.222 manual update -->
-    <button class="install-toggle" onclick="manualUpdate()" id="update-btn" style="background: #4a7c3f;">
-    🔄 <span id="update-text">Check for Update</span>
-    </button> <!-- 2.2 end -->
+     <button class="install-toggle" onclick="manualUpdate()" id="update-btn" style="display: none;">
+    🔄 <span id="update-text">Check Update</span>
+     </button><!-- 2.2 end -->
 </footer> 
     </div>
 
@@ -1612,7 +1612,7 @@
 };
 
         // 2.222 temp
-        // TEMPORARY TESTING FUNCTION - Remove after testing
+       /* // TEMPORARY TESTING FUNCTION - Remove after testing
 function growRingsForTest() {
     if (!myTree.name) {
         alert('Please plant a tree first');
@@ -1646,7 +1646,7 @@ function growRingsForTest() {
     
     // Go to forest card to see the tree
     showCard('forest');
-}
+}*/
 
 // Add a test button temporarily - add this HTML somewhere visible (like in the footer)
 // <button onclick="growRingsForTest()" style="background: orange;">🧪 TEST: Add 33 Rings</button>
@@ -1761,6 +1761,8 @@ function growRingsForTest() {
             loadPrinciples();
             
             updateSeedPreview();
+            // 2.222 manual update
+            checkInstallStatus();
             
             // Update practice card if needed
             if (document.getElementById('practiceContent').style.display !== 'none') {
@@ -1772,46 +1774,70 @@ function growRingsForTest() {
             }
         }
 
-        // 2.222 Manual update function for footer button
+        // 2.222 Manual update function
+        // Check if app is installed (running as standalone)
+function isAppInstalled() {
+    return window.matchMedia('(display-mode: standalone)').matches || 
+           window.navigator.standalone === true;
+}
+
+// Show/hide update button based on install status
+function checkInstallStatus() {
+    const updateBtn = document.getElementById('update-btn');
+    if (updateBtn) {
+        if (isAppInstalled()) {
+            updateBtn.style.display = 'inline-block';
+        } else {
+            updateBtn.style.display = 'none';
+        }
+    }
+}
+
+// Manual update function
 function manualUpdate() {
     const t = TEXT[currentLanguage];
     
-    // Check if there's a waiting service worker
     if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
         navigator.serviceWorker.ready.then(registration => {
             if (registration.waiting) {
-                // There's a waiting worker - activate it
                 registration.waiting.postMessage({ type: 'SKIP_WAITING' });
                 showUpdateNotification();
             } else {
-                // Check for updates
                 registration.update().then(() => {
                     setTimeout(() => {
                         if (registration.waiting) {
-                            alert(t.updateAvailable || '🔄 Update ready! Reloading...');
+                            const msg = currentLanguage === 'ge' 
+                                ? '🔄 განახლება მზადაა! გადატვირთვა...' 
+                                : '🔄 Update ready! Reloading...';
+                            alert(msg);
                             window.location.reload();
                         } else {
-                            alert('✅ ' + (currentLanguage === 'ge' ? 'აპლიკაცია განახლებულია!' : 'App is up to date!'));
+                            const msg = currentLanguage === 'ge' 
+                                ? '✅ აპლიკაცია განახლებულია!' 
+                                : '✅ App is up to date!';
+                            alert(msg);
                         }
                     }, 1000);
                 });
             }
         });
     } else {
-        // Simple version check
         checkAppVersion();
-        alert('✅ ' + (currentLanguage === 'ge' ? 'შემოწმება დასრულდა!' : 'Check complete!'));
+        const msg = currentLanguage === 'ge' 
+            ? '✅ შემოწმება დასრულდა!' 
+            : '✅ Check complete!';
+        alert(msg);
     }
 }
 
-// Add message listener for skip waiting
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.addEventListener('message', (event) => {
-        if (event.data && event.data.type === 'RELOAD_PAGE') {
-            window.location.reload();
-        }
-    });
-} // 2.2 end 
+// Initialize check on page load
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(checkInstallStatus, 500);
+});
+
+// Check when returning to app from background
+window.addEventListener('pageshow', checkInstallStatus);
+        // 2.2 end 
 
         function updateUI() {
     const t = TEXT[currentLanguage];
@@ -1906,6 +1932,8 @@ if ('serviceWorker' in navigator) {
     safeUpdate('footer-book3', 'textContent', t.footerBook3);
     safeUpdate('footer-book1', 'textContent', t.footerBook1);
     safeUpdate('footer-book2', 'textContent', t.footerBook2);
+    // 2.222 manual update
+    safeUpdate('update-text', 'textContent', currentLanguage === 'ge' ? 'განახლების შემოწმება' : 'Check Update');
             
     // Update canopy card titles
     safeUpdate('canopy-title', 'textContent', t.canopyTitle);
