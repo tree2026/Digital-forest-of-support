@@ -3696,7 +3696,7 @@ window.addEventListener('beforeunload', () => {
                         // TEMPORARILY disable service worker notifications
                        // sessionStorage.setItem('suppressServiceWorkerUpdate', 'true');
                         const t = TEXT[currentLanguage];
-                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'New Birdsong; Link for book in georgian,' : 'დაემატა ჩიტის ჭიკჭიკი; ბმული ქართულენოვან წიგნზე'}\n\n${t.updatePreserved}`;
+                        const updateMsg = `🌳 ${currentLanguage === 'en' ? 'Forest of Support Updated!' : 'მხარდაჭერის ტყე განახლდა!'}\n\n${currentLanguage === 'en' ? 'Version' : 'ვერსია'} ${APP_VERSION}:\n• ${currentLanguage === 'en' ? 'New check update button, more tree stages' : 'დაემატა განახლების ღილაკი; ხის ახალი სტადიები'}\n\n${t.updatePreserved}`;
                        /* if (confirm(updateMsg + `\n\n${currentLanguage === 'en' ? 'Show detailed update notes?' : 'გამოჩნდეს დეტალური განახლების ინფორმაცია?'}`)) {
                             showCard('welcome');
                             document.getElementById('welcome').innerHTML += `
