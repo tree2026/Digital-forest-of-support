@@ -2140,6 +2140,10 @@ window.addEventListener('pageshow', checkInstallStatus);
     safeUpdate('lang-toggle', 'textContent', '🌐 ' + (currentLanguage === 'en' ? 'ENG/GE' : 'GE/ENG'));
     // Update seed preview text
     updateSeedPreview();
+            // 2.222 seasons
+            if (document.getElementById('forest').classList.contains('active')) {
+                updateForestCard();
+            }// 2.222 end
 }
       
       
