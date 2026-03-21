@@ -3202,7 +3202,48 @@ function showYoutubePopup(youtubeData) {
                 if (canopyBtn) canopyBtn.style.display = 'none';
                 return;
             }
-            
+    // ===== 2.222 SEASONAL CALCULATION HERE =====
+    // Calculate current emotional season
+    const season = calculateEmotionalSeason();
+    currentSeason = season;
+    
+    // Rotate emoji pattern every few seconds for variety (optional)
+    // This cycles through patterns when user views forest
+    if (Math.random() < 0.3) { // 30% chance to rotate when viewing
+        currentEmojiPattern = (currentEmojiPattern + 1) % 3;
+    }
+    
+    // Get seasonal config for display
+    const seasonalConfig = SEASONAL_CONFIG[currentLanguage][season];
+    // ===== END SEASONAL ADDITION =====
+    
+    document.getElementById('treeNameDisplay').textContent = myTree.name;
+    
+    // Show appropriate tree stage with seasonal overlay
+    const stageIndex = Math.min(myTree.stage - 1, treeStages[currentLanguage].length - 1);
+    let baseAscii = treeStages[currentLanguage][stageIndex];
+    
+    // Apply seasonal styling
+    const seasonalAscii = getSeasonalTreeAscii(baseAscii, season, currentEmojiPattern);
+    document.getElementById('treeAscii').textContent = seasonalAscii;
+    
+    // Add seasonal label below tree
+    const seasonLabel = document.createElement('div');
+    const existingSeasonLabel = document.getElementById('season-label');
+    if (existingSeasonLabel) existingSeasonLabel.remove();
+    
+    const seasonDiv = document.createElement('div');
+    seasonDiv.id = 'season-label';
+    seasonDiv.style.marginTop = '10px';
+    seasonDiv.style.fontSize = '0.9em';
+    seasonDiv.style.fontStyle = 'italic';
+    seasonDiv.style.color = 'var(--text-secondary)';
+    seasonDiv.innerHTML = `${seasonalConfig.emojis[0]} ${seasonalConfig.name} • ${seasonalConfig.description} ${seasonalConfig.emojis[2]}`;
+    
+    const treeDisplay = document.getElementById('mainTreeDisplay');
+    treeDisplay.appendChild(seasonDiv);
+    
+    // 2.2222 end 
             document.getElementById('treeNameDisplay').textContent = myTree.name;
             
             // Show appropriate tree stage in current language
