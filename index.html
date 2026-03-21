@@ -1472,93 +1472,7 @@ const seasonKeywords = {
         autumn: ['გაშვება', 'გაშვებ', 'უშვებ', 'ცვლილება', 'ცვლილებ', 'მადლიერი', 'მადლიერ', 'შემოდგომა', 'შემოდგომ', 'მოგონებები', 'მოგონებ', 'მოსავალი', 'მოსავალ', 'მოსავლ'],
         winter: ['დასვენება', 'დასვენებ', 'ჩუმ', 'ჩუმად', 'მშვიდად', 'მშვიდ', 'სიმშვიდ', 'სიმშვიდე', 'ფიქრი', 'ფიქრ', 'ზამთარი', 'ზამთარ', 'ნელ', 'ნელი']
     }
-};
-
-// Calculate emotional season based on recent journal entries
-function calculateEmotionalSeason() {
-    if (!myTree.name || myTree.journals.length === 0) {
-        // Default to spring if no tree or no entries
-        return 'spring';
-    }
-    
-    // Get last 10 journal entries (or all if less)
-    const recentEntries = myTree.journals.slice(-10);
-    let seasonScores = { spring: 0, summer: 0, autumn: 0, winter: 0 };
-    
-    const lang = currentLanguage;
-    const keywords = seasonKeywords[lang];
-    
-    recentEntries.forEach(entry => {
-        const text = (entry.text + ' ' + (entry.poem || '')).toLowerCase();
-        
-        for (const [season, kwList] of Object.entries(keywords)) {
-            kwList.forEach(keyword => {
-                if (text.includes(keyword)) {
-                    seasonScores[season] += 2;
-                }
-            });
-        }
-    });
-    
-    // Add small randomness to avoid always same season (10% random factor)
-    const randomFactor = 0.9 + (Math.random() * 0.2);
-    
-    // Find season with highest score
-    let dominantSeason = 'spring';
-    let highestScore = 0;
-    
-    for (const [season, score] of Object.entries(seasonScores)) {
-        const adjustedScore = score * randomFactor;
-        if (adjustedScore > highestScore) {
-            highestScore = adjustedScore;
-            dominantSeason = season;
-        }
-    }
-    
-    // If no keywords matched, default to seasonal cycle based on real date
-    if (highestScore === 0) {
-        const month = new Date().getMonth();
-        if (month >= 2 && month <= 4) dominantSeason = 'spring';
-        else if (month >= 5 && month <= 7) dominantSeason = 'summer';
-        else if (month >= 8 && month <= 10) dominantSeason = 'autumn';
-        else dominantSeason = 'winter';
-    }
-    
-    return dominantSeason;
-}
-
-// Get seasonal emoji pattern (rotates for variety)
-function getSeasonalEmoji(season, patternIndex) {
-    const config = SEASONAL_CONFIG[currentLanguage][season];
-    const emojiList = config.emojis;
-    return emojiList[patternIndex % emojiList.length];
-}
-
-// Apply seasonal styling to tree display
-function getSeasonalTreeAscii(baseAscii, season, patternIndex) {
-    const seasonalEmoji = getSeasonalEmoji(season, patternIndex);
-    
-    // Add seasonal emoji overlay to tree
-    let seasonalAscii = baseAscii;
-    
-    // Replace some leaves with seasonal emojis
-    if (season === 'spring') {
-        seasonalAscii = seasonalAscii.replace(/🍃/g, '🌸');
-        seasonalAscii = seasonalAscii.replace(/🌿/g, '🌱');
-        seasonalAscii = seasonalAscii.replace(/🌳/g, '🌳' + seasonalEmoji);
-    } else if (season === 'summer') {
-        seasonalAscii = seasonalAscii.replace(/🍃/g, '☀️');
-        seasonalAscii = seasonalAscii.replace(/🌿/g, '🍃');
-    } else if (season === 'autumn') {
-        seasonalAscii = seasonalAscii.replace(/🍃/g, '🍂');
-        seasonalAscii = seasonalAscii.replace(/🌿/g, '🍁');
-    } else if (season === 'winter') {
-        seasonalAscii = seasonalAscii.replace(/🍃/g, '❄️');
-        seasonalAscii = seasonalAscii.replace(/🌿/g, '✨');
-    }
-    
-    return seasonalAscii;
-} // 2.222  end
+}; // 2.222 end 
 
         // Tree visual Stages 
 
@@ -3185,7 +3099,92 @@ function showYoutubePopup(youtubeData) {
     document.body.appendChild(overlay);
 }// 1.9999 end
 
+// 2.222. Calculate emotional season based on recent journal entries
+function calculateEmotionalSeason() {
+    if (!myTree.name || myTree.journals.length === 0) {
+        // Default to spring if no tree or no entries
+        return 'spring';
+    }
+    
+    // Get last 10 journal entries (or all if less)
+    const recentEntries = myTree.journals.slice(-10);
+    let seasonScores = { spring: 0, summer: 0, autumn: 0, winter: 0 };
+    
+    const lang = currentLanguage;
+    const keywords = seasonKeywords[lang];
+    
+    recentEntries.forEach(entry => {
+        const text = (entry.text + ' ' + (entry.poem || '')).toLowerCase();
         
+        for (const [season, kwList] of Object.entries(keywords)) {
+            kwList.forEach(keyword => {
+                if (text.includes(keyword)) {
+                    seasonScores[season] += 2;
+                }
+            });
+        }
+    });
+    
+    // Add small randomness to avoid always same season (10% random factor)
+    const randomFactor = 0.9 + (Math.random() * 0.2);
+    
+    // Find season with highest score
+    let dominantSeason = 'spring';
+    let highestScore = 0;
+    
+    for (const [season, score] of Object.entries(seasonScores)) {
+        const adjustedScore = score * randomFactor;
+        if (adjustedScore > highestScore) {
+            highestScore = adjustedScore;
+            dominantSeason = season;
+        }
+    }
+    
+    // If no keywords matched, default to seasonal cycle based on real date
+    if (highestScore === 0) {
+        const month = new Date().getMonth();
+        if (month >= 2 && month <= 4) dominantSeason = 'spring';
+        else if (month >= 5 && month <= 7) dominantSeason = 'summer';
+        else if (month >= 8 && month <= 10) dominantSeason = 'autumn';
+        else dominantSeason = 'winter';
+    }
+    
+    return dominantSeason;
+}
+
+// Get seasonal emoji pattern (rotates for variety)
+function getSeasonalEmoji(season, patternIndex) {
+    const config = SEASONAL_CONFIG[currentLanguage][season];
+    const emojiList = config.emojis;
+    return emojiList[patternIndex % emojiList.length];
+}
+
+// Apply seasonal styling to tree display
+function getSeasonalTreeAscii(baseAscii, season, patternIndex) {
+    const seasonalEmoji = getSeasonalEmoji(season, patternIndex);
+    
+    // Add seasonal emoji overlay to tree
+    let seasonalAscii = baseAscii;
+    
+    // Replace some leaves with seasonal emojis
+    if (season === 'spring') {
+        seasonalAscii = seasonalAscii.replace(/🍃/g, '🌸');
+        seasonalAscii = seasonalAscii.replace(/🌿/g, '🌱');
+        seasonalAscii = seasonalAscii.replace(/🌳/g, '🌳' + seasonalEmoji);
+    } else if (season === 'summer') {
+        seasonalAscii = seasonalAscii.replace(/🍃/g, '☀️');
+        seasonalAscii = seasonalAscii.replace(/🌿/g, '🍃');
+    } else if (season === 'autumn') {
+        seasonalAscii = seasonalAscii.replace(/🍃/g, '🍂');
+        seasonalAscii = seasonalAscii.replace(/🌿/g, '🍁');
+    } else if (season === 'winter') {
+        seasonalAscii = seasonalAscii.replace(/🍃/g, '❄️');
+        seasonalAscii = seasonalAscii.replace(/🌿/g, '✨');
+    }
+    
+    return seasonalAscii;
+} // 2.222  end
+
         function clearJournal() {
             document.getElementById('newJournalEntry').value = "";
         }
