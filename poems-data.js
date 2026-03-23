@@ -43,7 +43,8 @@ const POETIC_WISDOM_EXPORT = {
             { id: "bark_3", poem: "Not every breeze deserves admission\nNor every rainfall needs your care\nDiscernment is the bark's commission\nTo guard what's precious, deep, and rare.", sage: "The heart has its reasons which reason knows not. - Pascal",
             youtube: { message: "🎵 Energy in action - from Adamus (channeled by Geoffrey Hoppe) ", url: "https://youtu.be/yCwc3nLwhmA?si=muRNK5Ui9decQDAT" } },
             { id: "bark_4", poem: "The bark grows thicker year by year\nFrom weathering what life has sent\nYour boundaries become more clear\nWith wisdom of experience lent.", sage: "We are shaped by our thoughts; we become what we think. - Buddha" },
-            { id: "bark_5", poem: "A tree without its bark would die\nExposed to every insect's bite\nYour boundaries help you clarify\nWhat serves your growth and what brings blight.", sage: "Self-care is not selfish. You cannot serve from an empty vessel. - Eleanor Brown" },
+            { id: "bark_5", poem: "A tree without its bark would die\nExposed to every insect's bite\nYour boundaries help you clarify\nWhat serves your growth and what brings blight.", sage: "Self-care is not selfish. You cannot serve from an empty vessel. - Eleanor Brown",
+             youtube: { message: "🎵 Beautiful as a Pheasant's Neck - by Hamlet Gonashvili ", url: "https://youtu.be/74anYrKCwxA?si=B1eWp9RhMRBeVuSd" } },
             { id: "bark_6", poem: "The bark allows the tree to breathe\nWhile keeping out invasive harm\nYour boundaries help you believe\nIn your own worth and inner calm.", sage: "Love yourself first and everything else falls into line. - Lucille Ball",
              youtube: { message: "🎵 It is known that we can reprogram our minds through positive affirmations. Here you can hear some affirmations intended to be healing ", url: "https://youtu.be/3muD9S6wNas?si=UOl5Oj1iyHzPsPYZ" } },
             { id: "bark_7", poem: "Each scar upon the bark becomes\nA story of survival told\nYour boundaries beat protective drums\nFor what your spirit wants to hold.", sage: "The wound is the place where the Light enters you. - Rumi" },
@@ -53,10 +54,13 @@ const POETIC_WISDOM_EXPORT = {
             { id: "bark_10", poem: "The bark renews itself in time\nShedding what's old to make space new\nYour boundaries help you realign\nWith what is authentically you.", sage: "The only person you are destined to become is the person you decide to be. - Emerson" },
             { id: "bark_11", poem: "A tree stands strong because its bark\nProtects the tender growth within\nYour boundaries light the vital spark\nThat guards where your true self begins.", sage: "He who knows himself knows his Lord. - Ibn Arabi",
              youtube: { message: "🎵 Timeless Prayer by Anders Holte ", url: "https://youtu.be/4huMRJsYWe0?si=mZhRNSgqfcaOtS_V" } },
-            { id: "bark_12", poem: "The fool collects a thousand facts\nAnd calls himself a learned man\nThe wise one slowly, gently acts\nOn one small truth throughout life's span.", sage: "Better to act and settle things than live in doubt and misery. - Rustaveli" },
+            { id: "bark_12", poem: "The fool collects a thousand facts\nAnd calls himself a learned man\nThe wise one slowly, gently acts\nOn one small truth throughout life's span.", sage: "Better to act and settle things than live in doubt and misery. - Rustaveli",
+             youtube: { message: "🎵 This ancient hand map reveals how to control energy ", url: "https://youtu.be/j3pFH-KuWi4?si=Zu3_bRl7tPKWQBmj" } },
             { id: "bark_13", poem: "The bark knows when to close, when open\nWhen to receive, when to defend\nYour boundaries are the gentle token\nOf knowing where your being ends.", sage: "The lover's heart is a sanctuary - do not enter without reverence. - Ibn Arabi" },
-            { id: "bark_14", poem: "Not every hand may touch the wound\nNot every eye may see you weep\nThe sacred bark, the guarded ground\nIs where your soul its watch will keep.", sage: "Heart, awareness, and mind depend upon each other. When the heart departs, they too depart and follow it. - Rustaveli" },
-            { id: "bark_15", poem: "The scar is not a flaw in wood\nBut memory of what survived\nYour wholeness is not understood\nBy what was lost, but what's arrived.", sage: "The heart that breaks open becomes a vessel vast enough for God. - Ibn Arabi" }
+            { id: "bark_14", poem: "Not every hand may touch the wound\nNot every eye may see you weep\nThe sacred bark, the guarded ground\nIs where your soul its watch will keep.", sage: "Heart, awareness, and mind depend upon each other. When the heart departs, they too depart and follow it. - Rustaveli",
+             youtube: { message: "🎵 'If you were so beautiful' by Hamlet Gonashvili ", url: "https://youtu.be/Q7ZiUWfWibY?si=tXhfbdV5Ru4-b8vp" } },
+            { id: "bark_15", poem: "The scar is not a flaw in wood\nBut memory of what survived\nYour wholeness is not understood\nBy what was lost, but what's arrived.", sage: "The heart that breaks open becomes a vessel vast enough for God. - Ibn Arabi",
+             youtube: { message: "🎵 Japanese philosophy of loving imperfection ", url: "https://youtu.be/XCXCvcShNMI?si=LD7EmvRj_3ieQMhR" } }
         ],
         
         // Category 3: Rings (12 poems) for growth, experience, time
@@ -362,7 +366,8 @@ const POETIC_WISDOM_EXPORT = {
              youtube: { message: "🎵 ენერგიის მოქმედების განხილვა ადამუსის მიერ (გადმომცემელი: ჯეფრი ჰოპი) ", url: "https://youtu.be/yCwc3nLwhmA?si=muRNK5Ui9decQDAT" } },
             { id: "bark_4", poem: "ქერქი წლიდან წლამდე სქელდების,\nშედეგია ცხოვრების ზემოქმედების;\nშენი საზღვრები უფრო ნათელი ხდება\nგამოცდილების სიბრძნის ქმედებით.", sage: "ჩვენი აზრები გვაყალიბებს; ვხდებით ის, რასაც ვფიქრობთ. - ბუდა",
              youtube: { message: "🎵 ცნობილია, რომ გონების დაპროგრამება შეიძლება დადებითი მტკიცების მეშვეობით. აქ შეგიძლიათ მოისმინოთ ამგვარი მტკიცება სამკურნალო მიზნით ", url: "https://youtu.be/3muD9S6wNas?si=UOl5Oj1iyHzPsPYZ" } },
-            { id: "bark_5", poem: "ქერქის გარეშე ხეს ცხოვრება ანგრევს,\nყოველი მწერი შიშველ ტანზე დაკბენს;\nსაზღვრები გეხმარება გაარკვიო:\nრა გეხმარება გაზრდაში და რა განგრევს.", sage: "საკუთარ თავზე ზრუნვა ეგოიზმი არ არის. ცარიელი ჭურჭლიდან ვერაფერს მიართმევ. - ელეანორ ბრაუნი" },
+            { id: "bark_5", poem: "ქერქის გარეშე ხეს ცხოვრება ანგრევს,\nყოველი მწერი შიშველ ტანზე დაკბენს;\nსაზღვრები გეხმარება გაარკვიო:\nრა გეხმარება გაზრდაში და რა განგრევს.", sage: "საკუთარ თავზე ზრუნვა ეგოიზმი არ არის. ცარიელი ჭურჭლიდან ვერაფერს მიართმევ. - ელეანორ ბრაუნი",
+             youtube: { message: "🎵 ხოხბის ყელივით ლამაზი - ასრულებს ჰამლეტ გონაშვილი ", url: "https://youtu.be/74anYrKCwxA?si=B1eWp9RhMRBeVuSd" } },
             { id: "bark_6", poem: "ქერქის საშუალებით ხე სუნთქავს,\nშემომტევ ზიანს გარეთვე კლავს;\nშენი საზღვრები გარწმუნებს რომ\nღირსებას შინაგანი სიმშვიდე აქვს.", sage: "ჯერ საკუთარი თავი გიყვარდეს და ყველაფერი დანარჩენი დალაგდება. - ლუსილ ბოლი",
              youtube: { message: "🎵 იყავი დამკვირვებელი, არა შუამავალი - განიხილავს ადამუს სენ-ჟერმენი, გადმომცემელი ჯეფრი ჰოპი ", url: "https://youtu.be/Fz7P30nF2GY?si=k8Lo3KgGjsHEFIeR" } },
             { id: "bark_7", poem: "ყოველი ჭრილობა ხის ქერქზე\nხის გადარჩენის ამბავს თხრობს;\nზღუდე განგაშის ზარს რეკავს\nშენს დასაცავად, სული რომ შეგინახოს.", sage: "ჭრილობა ის ადგილია, სადაც სინათლე შემოდის შენში. - რუმი" },
@@ -371,10 +376,13 @@ const POETIC_WISDOM_EXPORT = {
             { id: "bark_10", poem: "ქერქი თავის დროზე განახლდება,\nგაიცვენს ძველ სამოსს, ახალი ქურქი მზადდება;\nშენი საზღვრები კვლავ დაგაკავშირებს\nიმასთან, ვინც შენში გულწრფელად სახლდება.", sage: "ერთადერთი ადამიანი, რომლად გახდომაც გიწერია, ის არის, რომელსაც გადაწყვეტ რომ იყო. - ემერსონი",
              youtube: { message: "🎵 ადამუსის ხედვა : ყველაფერი აქ არის, ჰაერშია, მხოლოდ უნდა გაარჩიო: რა არის შენი და რა არა ", url: "https://youtu.be/8js61N9qVw8?si=rdyCQzNUJttMJ49l" } },
             { id: "bark_11", poem: "ქერქის იმედით ხე ძლიერად წამოზიდულა,\nსაფარის შიგნით ნაზი სამყარო ხილულა;\nიცავს იმ სასიცოცხლო ნაპერწკლის ნათებას,\nსადაც შენი ნამდვილი მე გამონათდება.", sage: "ვინც იცნობს თავის თავს, იცნობს თავის უფალს. - იბნ არაბი" },
-            { id: "bark_12", poem: "სულელი ათას ფაქტს აგროვებს\nდა თავი განსწავლულ კაცს აგონებს,\nბრძენი ნელა მოქმედებს,\nყოველ პატარა ჭეშმარიტებაზე მოქმედებით აზროვნებს.", sage: "კაცმან საქმე მოიგვაროს, ვეჭვ, ჭმუნვასა ესე სჯობდეს. - რუსთაველი" },
+            { id: "bark_12", poem: "სულელი ათას ფაქტს აგროვებს\nდა თავი განსწავლულ კაცს აგონებს,\nბრძენი ნელა მოქმედებს,\nყოველ პატარა ჭეშმარიტებაზე მოქმედებით აზროვნებს.", sage: "კაცმან საქმე მოიგვაროს, ვეჭვ, ჭმუნვასა ესე სჯობდეს. - რუსთაველი",
+             youtube: { message: "🎵 ხელების დაფარული ძალა და პრაქტიკაში გამოყენება ", url: "https://youtu.be/j3pFH-KuWi4?si=Zu3_bRl7tPKWQBmj" } },
             { id: "bark_13", poem: "ქერქმა იცის როდის გააღოს, როდის დახუროს კარი,\nროდის მიიღოს, როდის დაიცვას თავი,\nშენი საზღვრები ნიშანია იმისა,\nთუ სად მთავრდება შენი არსების ზღვარი.", sage: "შეყვარებულის გული საკურთხეველია - ნუ შეხვალ იქ პატივისცემის გარეშე. - იბნ არაბი" },
-            { id: "bark_14", poem: "ყველა ხელი ნუ შეეხება ჭრილობას,\nყველა თვალი ნუ დაინახავს ცრემლს,\nხის ქერქი დაცული მიწაა,\nსადაც სულის მთავარი მეთვალყურე ძევს.", sage: "გული, ცნობა და გონება ერთმანერთზედა ჰკიდიან. რა გული წავა, იგინიც წავლენ და მისკენ მიდიან. - რუსთაველი" },
-            { id: "bark_15", poem: "ნაწიბური ხის ნაკლი კი არა,\nმოგონებაა რომ გადარჩა;\nმთლიანობას გაიგებს იმით, რაც მოვიდა,\nარა იმით, რაც დაკარგა.", sage: "გული, რომელიც ტყდება და იხსნება, ღმერთის მისაღებ ჭურჭლად იქცევა. - იბნ არაბი" }
+            { id: "bark_14", poem: "ყველა ხელი ნუ შეეხება ჭრილობას,\nყველა თვალი ნუ დაინახავს ცრემლს,\nხის ქერქი დაცული მიწაა,\nსადაც სულის მთავარი მეთვალყურე ძევს.", sage: "გული, ცნობა და გონება ერთმანერთზედა ჰკიდიან. რა გული წავა, იგინიც წავლენ და მისკენ მიდიან. - რუსთაველი",
+             youtube: { message: "🎵 თუ ასე ტურფა იყავი - ჰამლეტ გონაშვილი ", url: "https://youtu.be/Q7ZiUWfWibY?si=tXhfbdV5Ru4-b8vp" } },
+            { id: "bark_15", poem: "ნაწიბური ხის ნაკლი კი არა,\nმოგონებაა რომ გადარჩა;\nმთლიანობას გაიგებს იმით, რაც მოვიდა,\nარა იმით, რაც დაკარგა.", sage: "გული, რომელიც ტყდება და იხსნება, ღმერთის მისაღებ ჭურჭლად იქცევა. - იბნ არაბი",
+             youtube: { message: "🎵 გატეხილის სიყვარული იაპონურად ", url: "https://youtu.be/XCXCvcShNMI?si=LD7EmvRj_3ieQMhR" } }
         ],
         
         // Category 3: Rings (12 poems in Georgian)
