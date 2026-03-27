@@ -2400,10 +2400,19 @@ function checkVersionAndPreserveData() {
                         score = 100;
                     }
                     // 2.3 START: Priority for universal categories when practice category exhausted
+                        // Boost universal categories that match keywords
                     else if (practiceExhausted && universalCategories.includes(category) && isUnseen) {
-                        score = 85;
+                        // Base score 85 PLUS keyword match bonus (0-20 based on relevance)
+                        const keywordBonus = Math.min(categoryScores[category] || 0, 20);
+                        score = 85 + keywordBonus;
                     }
                     // 2.3 END
+                        
+                    /*// 2.3 START: Priority for universal categories when practice category exhausted
+                    else if (practiceExhausted && universalCategories.includes(category) && isUnseen) {
+                        score = 85;
+                    }*/
+                    // 2.3 END 
                     // Priority 2: Exact match + unseen (80 points)
                     else if (category === highestCategory && isUnseen) {
                         score = 80;
