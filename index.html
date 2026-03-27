@@ -2381,10 +2381,29 @@ function checkVersionAndPreserveData() {
                     let score = 0;
                     const isUnseen = usageCount === 0;
                     
+                    // 2.3 START: Universal categories list
+                    const universalCategories = ['presence', 'seasons', 'wholeness', 'patience'];
+                    // Check if current practice category has any unseen poems left
+                    function isPracticeCategoryExhausted(practiceCat) {
+                        if (!practiceCat) return false;
+                        const poemsInPracticeCat = poeticWisdom[currentLanguage][practiceCat] || [];
+                        const allSeenTwice = poemsInPracticeCat.every(poem => {
+                            return (myTree.poemUsage[poem.id] || 0) >= 2;
+                        });
+                        return allSeenTwice;
+                    }
+                    const practiceExhausted = isPracticeCategoryExhausted(priorityCategory);
+                    // 2.3 END
+                    
                     // Priority 1: Latest practice principle + unseen (100 points)
                     if (category === priorityCategory && isUnseen) {
                         score = 100;
                     }
+                    // 2.3 START: Priority for universal categories when practice category exhausted
+                    else if (practiceExhausted && universalCategories.includes(category) && isUnseen) {
+                        score = 85;
+                    }
+                    // 2.3 END
                     // Priority 2: Exact match + unseen (80 points)
                     else if (category === highestCategory && isUnseen) {
                         score = 80;
